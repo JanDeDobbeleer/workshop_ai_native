@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotSlides, instructionsSlides, repeatingSlides } from './sections';
+import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotSlides, instructionsSlides, skillsSlides, repeatingSlides } from './sections';
 import './index.css';
 
 const FourDSlides = () => {
@@ -16,6 +16,7 @@ const FourDSlides = () => {
     ...copilotSlides,
     ...instructionsSlides,
     ...repeatingSlides,
+    ...skillsSlides,
   ];
 
   const nextSlide = () => {
