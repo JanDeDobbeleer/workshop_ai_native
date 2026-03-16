@@ -399,98 +399,42 @@ export const multiagentSlides: SlideType[] = [
   },
   {
     title: "GitHub Copilot CLI: /fleet",
-    subtitle: "Native multi-agent orchestration built into Copilot CLI",
+    subtitle: "Native multi-agent orchestration — automatically break tasks into parallel subagents",
     content: (
-      <div className="flex flex-col space-y-6 max-w-4xl mx-auto">
-        <div className="bg-gradient-to-r from-gray-700 to-gray-900 p-6 rounded-lg shadow-xl">
-          <div className="flex items-center space-x-4 mb-3">
-            <div className="text-4xl">🚀</div>
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-1">The <code className="bg-gray-600 px-2 py-0.5 rounded">/fleet</code> Command</h3>
-              <p className="text-gray-300">
-                GitHub Copilot CLI's built-in orchestrator — break tasks into parallel subagents automatically
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="flex flex-col space-y-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
             <h4 className="font-semibold text-gray-900 mb-3">⚙️ How It Works:</h4>
             <ul className="space-y-2 text-gray-700 text-sm">
               <li className="flex"><span className="mr-2">1.</span><span>You provide a task or implementation plan</span></li>
-              <li className="flex"><span className="mr-2">2.</span><span>Main agent analyzes and splits into subtasks</span></li>
+              <li className="flex"><span className="mr-2">2.</span><span>Main agent splits it into independent subtasks</span></li>
               <li className="flex"><span className="mr-2">3.</span><span>Subtasks run in parallel via subagents</span></li>
               <li className="flex"><span className="mr-2">4.</span><span>Orchestrator merges results into one outcome</span></li>
             </ul>
           </div>
 
           <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
-            <h4 className="font-semibold text-gray-900 mb-3">✨ Key Features:</h4>
+            <h4 className="font-semibold text-gray-900 mb-3">vs. Manual Worktrees:</h4>
             <ul className="space-y-2 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">•</span><span>Respects task dependencies automatically</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Uses your custom agents for specialization</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Full control over what gets applied</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Works with <code className="bg-gray-100 px-1 rounded">-p</code> for scripted workflows</span></li>
+              <li className="flex"><span className="mr-2 text-green-600">✓</span><span>No manual setup or merging needed</span></li>
+              <li className="flex"><span className="mr-2 text-green-600">✓</span><span>Dependency management built in</span></li>
+              <li className="flex"><span className="mr-2 text-green-600">✓</span><span>Uses your custom agents for specialization</span></li>
+              <li className="flex"><span className="mr-2 text-yellow-500">~</span><span>Less control over individual subtasks</span></li>
+              <li className="flex"><span className="mr-2 text-yellow-500">~</span><span>Higher LLM request consumption</span></li>
             </ul>
           </div>
         </div>
 
         <div className="bg-gray-900 p-4 rounded-lg font-mono text-sm">
-          <p className="text-gray-400 mb-2"># Run fleet in interactive mode</p>
-          <p className="text-green-400">copilot</p>
-          <p className="text-yellow-300 mt-2">&gt; /fleet implement the new user auth feature with tests and docs</p>
-          <p className="text-gray-400 mt-3"># Or programmatically</p>
+          <p className="text-gray-400 mb-1"># Interactive</p>
+          <p className="text-yellow-300">&gt; /fleet implement the new user auth feature with tests and docs</p>
+          <p className="text-gray-400 mt-3 mb-1"># Programmatic</p>
           <p className="text-green-400">copilot -p "/fleet implement the new user auth feature"</p>
         </div>
 
-        <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-          <p className="text-sm text-yellow-900">
-            <strong>⚠️ Note on Cost:</strong> Each subagent interacts with the LLM independently — <code>/fleet</code> may consume more premium requests than a single-agent approach.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "/fleet vs Manual Worktrees",
-    subtitle: "Choosing the right approach for your multi-agent workflow",
-    content: (
-      <div className="flex flex-col space-y-6 max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-gray-50 p-5 rounded-lg border-l-4 border-gray-600">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Manual Worktrees</h3>
-            <ul className="space-y-2 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2 text-green-600">✓</span><span>Full control over each agent's task</span></li>
-              <li className="flex"><span className="mr-2 text-green-600">✓</span><span>Review work before merging</span></li>
-              <li className="flex"><span className="mr-2 text-green-600">✓</span><span>Compare competing implementations</span></li>
-              <li className="flex"><span className="mr-2 text-red-500">✗</span><span>Manual setup and coordination</span></li>
-              <li className="flex"><span className="mr-2 text-red-500">✗</span><span>You manage dependencies and merging</span></li>
-            </ul>
-            <div className="mt-4 bg-gray-100 p-3 rounded text-xs text-gray-600">
-              <strong>Best for:</strong> Long-running parallel experiments, when you want to compare different approaches
-            </div>
-          </div>
-
-          <div className="bg-gray-800 p-5 rounded-lg border-l-4 border-green-400">
-            <h3 className="text-xl font-bold text-white mb-4"><code className="text-green-400">/fleet</code> Command</h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
-              <li className="flex"><span className="mr-2 text-green-400">✓</span><span>Automatic task decomposition</span></li>
-              <li className="flex"><span className="mr-2 text-green-400">✓</span><span>Dependency management built in</span></li>
-              <li className="flex"><span className="mr-2 text-green-400">✓</span><span>Unified result — no manual merging</span></li>
-              <li className="flex"><span className="mr-2 text-yellow-400">~</span><span>Less control over individual subtasks</span></li>
-              <li className="flex"><span className="mr-2 text-yellow-400">~</span><span>Higher LLM request consumption</span></li>
-            </ul>
-            <div className="mt-4 bg-gray-700 p-3 rounded text-xs text-gray-300">
-              <strong>Best for:</strong> Complex features with clear subtasks, when you want speed over granular control
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
-          <h4 className="font-semibold text-blue-900 mb-2">Mission Control: Managing Your Fleet</h4>
-          <p className="text-gray-700 text-sm">
-            GitHub's <strong>Agent HQ Mission Control</strong> gives you a unified interface to assign tasks, monitor agent progress in real time, steer mid-run, and jump directly to resulting pull requests — across GitHub.com, VS Code, mobile, and the CLI.
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+          <p className="text-sm text-blue-900">
+            <strong>Mission Control:</strong> GitHub's Agent HQ gives you a unified interface to assign tasks, monitor agents in real time, steer mid-run, and jump straight to resulting pull requests — across GitHub.com, VS Code, and the CLI.
           </p>
         </div>
       </div>
