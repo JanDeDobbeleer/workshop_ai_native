@@ -23,84 +23,121 @@ export const securitySlides: SlideType[] = [
     )
   },
   {
-    title: "Life Cycle of a Copilot Code Suggestion",
-    subtitle: "Data is held in memory, not written to disk",
+    title: "Agent Flow + Lifecycle",
+    subtitle: "End-to-end view from prompt and context through tools, filters, and user output",
     content: (
-      <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
-        {/* Flow Steps */}
-        <div className="flex flex-col space-y-2">
-          {/* Step 1-2: IDE Input */}
-          <div className="bg-green-50 p-3 rounded-lg border border-green-200">
-            <div className="flex items-start">
-              <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-2 flex-shrink-0">1</span>
-              <div className="text-sm">
-                <span className="font-semibold text-green-900">Developer enters text</span>
-                <span className="text-gray-600"> → Copilot gathers context: code before/after cursor, file name/type, other open tabs</span>
+      <div className="w-full h-full px-1 md:px-3">
+        <div className="relative mx-auto h-full max-w-6xl overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-blue-50 p-3 shadow-sm md:p-4">
+          <div className="pointer-events-none absolute -top-12 -right-14 h-36 w-36 rounded-full bg-amber-200/30 blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-14 -left-10 h-36 w-36 rounded-full bg-blue-300/20 blur-2xl" />
+
+          <div className="relative flex h-full flex-col gap-3">
+            <div className="grid grid-cols-1 gap-1.5 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center">
+              <div className="flex min-h-[86px] flex-col justify-center rounded-lg border border-blue-200 bg-blue-50 p-2.5 text-center md:min-h-[92px]">
+                <p className="text-sm font-bold text-blue-900">Client + User</p>
+                <p className="text-xs text-blue-700 md:text-sm">Prompt + workspace context</p>
+              </div>
+              <span className="hidden text-2xl font-black text-slate-400 md:block">→</span>
+              <span className="text-center text-2xl font-black text-slate-400 md:hidden">↓</span>
+
+              <div className="flex min-h-[86px] flex-col justify-center rounded-lg border border-indigo-200 bg-indigo-50 p-2.5 text-center md:min-h-[92px]">
+                <p className="text-sm font-bold text-indigo-900">Pre-Model Filters</p>
+                <p className="text-xs text-indigo-700 md:text-sm">Toxicity, relevance, anti-injection</p>
+              </div>
+              <span className="hidden text-2xl font-black text-slate-400 md:block">→</span>
+              <span className="text-center text-2xl font-black text-slate-400 md:hidden">↓</span>
+
+              <div className="flex min-h-[86px] flex-col justify-center rounded-lg border border-amber-300 bg-amber-50 p-2.5 text-center md:min-h-[92px]">
+                <p className="text-sm font-bold text-amber-900">LLM + Tool Loop</p>
+                <p className="text-xs text-amber-800 md:text-sm">Reason, call tools, update context</p>
+              </div>
+              <span className="hidden text-2xl font-black text-slate-400 md:block">→</span>
+              <span className="text-center text-2xl font-black text-slate-400 md:hidden">↓</span>
+
+              <div className="flex min-h-[86px] flex-col justify-center rounded-lg border border-emerald-200 bg-emerald-50 p-2.5 text-center md:min-h-[92px]">
+                <p className="text-sm font-bold text-emerald-900">Post-Model Filters</p>
+                <p className="text-xs text-emerald-700 md:text-sm">Policy and output validation</p>
+              </div>
+              <span className="hidden text-2xl font-black text-slate-400 md:block">→</span>
+              <span className="text-center text-2xl font-black text-slate-400 md:hidden">↓</span>
+
+              <div className="flex min-h-[86px] flex-col justify-center rounded-lg border border-blue-200 bg-blue-50 p-2.5 text-center md:min-h-[92px]">
+                <p className="text-sm font-bold text-blue-900">User Output</p>
+                <p className="text-xs text-blue-700 md:text-sm">Streamed response in client</p>
               </div>
             </div>
-          </div>
 
-          <div className="bg-green-50 p-3 rounded-lg border border-green-200">
-            <div className="flex items-start">
-              <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-2 flex-shrink-0">2</span>
-              <span className="text-sm font-semibold text-green-900">Prompt constructed from context</span>
-            </div>
-          </div>
+            <div className="grid flex-1 grid-cols-1 gap-3 lg:grid-cols-12">
+              <div className="space-y-2.5 rounded-xl border border-slate-200 bg-white/90 p-3 lg:col-span-7">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs font-semibold uppercase tracking-wide text-slate-500 md:text-sm">Execution flow</span>
+                  <span className="rounded-full border border-slate-200 bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600 md:text-sm">Agentic cycle</span>
+                </div>
 
-          {/* Encryption indicator */}
-          <div className="flex justify-center">
-            <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">🔒 Encrypted in transit</span>
-          </div>
+                <div className="space-y-2">
+                  <div className="grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-slate-200 bg-slate-50 p-2.5">
+                    <span className="text-sm font-bold text-slate-500">1</span>
+                    <div className="space-y-1">
+                      <p className="text-sm font-semibold text-slate-800">Machine + user context enters Copilot</p>
+                      <p className="text-xs text-slate-600 md:text-sm">System context and user intent are assembled into a single payload.</p>
+                    </div>
+                  </div>
 
-          {/* Step 3: Proxy Input Filter */}
-          <div className="bg-indigo-100 p-3 rounded-lg border border-indigo-300">
-            <div className="flex items-start">
-              <span className="bg-indigo-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-2 flex-shrink-0">3</span>
-              <div className="text-sm">
-                <span className="font-semibold text-indigo-900">Proxy — Terminate requests containing:</span>
-                <span className="text-gray-700"> toxic language, requests unrelated to code, hacking attempts</span>
+                  <div className="grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-amber-200 bg-amber-50 p-2.5">
+                    <span className="text-sm font-bold text-amber-700">2</span>
+                    <div className="space-y-1">
+                      <p className="text-sm font-semibold text-amber-900">LLM reasons, then responds or calls tools</p>
+                      <p className="text-xs text-amber-800 md:text-sm">Each tool result refreshes context and feeds the next LLM iteration.</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-blue-200 bg-blue-50 p-2.5">
+                    <span className="text-sm font-bold text-blue-700">3</span>
+                    <div className="space-y-1">
+                      <p className="text-sm font-semibold text-blue-900">Validated output is streamed back to the user</p>
+                      <p className="text-xs text-blue-800 md:text-sm">Post-model checks run before final output reaches the client.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-1.5 md:grid-cols-4">
+                  <div className="rounded-full border border-blue-500 bg-white px-2 py-1.5 text-center text-xs font-bold text-blue-700 md:text-sm">read_file</div>
+                  <div className="rounded-full border border-blue-500 bg-white px-2 py-1.5 text-center text-xs font-bold text-blue-700 md:text-sm">edit_file</div>
+                  <div className="rounded-full border border-blue-500 bg-white px-2 py-1.5 text-center text-xs font-bold text-blue-700 md:text-sm">run_in_terminal</div>
+                  <div className="rounded-full border border-blue-400 border-dashed bg-white px-2 py-1.5 text-center text-xs font-bold text-blue-500 md:text-sm">...</div>
+                </div>
+              </div>
+
+              <div className="space-y-2.5 rounded-xl border border-slate-200 bg-white/90 p-3 lg:col-span-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 md:text-sm">Safety lifecycle detail</div>
+
+                <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-2.5">
+                  <p className="mb-1 text-xs font-bold uppercase tracking-wide text-indigo-800 md:text-sm">Pre-model checks</p>
+                  <ul className="list-disc space-y-0.5 pl-4 text-xs text-indigo-900 md:text-sm">
+                    <li>Toxic language screening</li>
+                    <li>Relevance checks for chat</li>
+                    <li>Prompt-hacking protections</li>
+                  </ul>
+                </div>
+
+                <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-2.5">
+                  <p className="mb-1 text-xs font-bold uppercase tracking-wide text-emerald-800 md:text-sm">Post-model checks</p>
+                  <ul className="list-disc space-y-0.5 pl-4 text-xs text-emerald-900 md:text-sm">
+                    <li>Code quality and policy checks</li>
+                    <li>Sensitive identifier redaction (PII, tokens, IDs)</li>
+                    <li>Public-code match filtering</li>
+                  </ul>
+                </div>
+
+                <div className="rounded-lg border border-amber-200 bg-amber-50 p-2.5">
+                  <p className="text-xs font-medium text-amber-900 md:text-sm">
+                    Data remains encrypted in transit and processed in memory.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Step 4: LLM */}
-          <div className="bg-indigo-200 p-3 rounded-lg border border-indigo-400">
-            <div className="flex items-start">
-              <span className="bg-indigo-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-2 flex-shrink-0">4</span>
-              <span className="text-sm font-semibold text-indigo-900">GitHub Copilot LLM — Code suggestion formulated</span>
-            </div>
           </div>
-
-          {/* Step 5: Proxy Output Filter */}
-          <div className="bg-indigo-100 p-3 rounded-lg border border-indigo-300">
-            <div className="flex items-start">
-              <span className="bg-indigo-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-2 flex-shrink-0">5</span>
-              <div className="text-sm">
-                <span className="font-semibold text-indigo-900">Proxy — Test suggestions for:</span>
-                <span className="text-gray-700"> obvious bugs, security vulnerabilities, truncate unique identifiers, filter public code matches</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Encryption indicator */}
-          <div className="flex justify-center">
-            <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">🔒 Encrypted in transit</span>
-          </div>
-
-          {/* Step 6: Response */}
-          <div className="bg-green-50 p-3 rounded-lg border border-green-200">
-            <div className="flex items-start">
-              <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-2 flex-shrink-0">6</span>
-              <span className="text-sm font-semibold text-green-900">Code suggestion presented to user to accept or reject</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Key Point */}
-        <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-300">
-          <p className="text-sm text-yellow-900 text-center">
-            <strong>📝 Note:</strong> Data is held in memory, not written to disk — your code is never stored or used for training.
-          </p>
         </div>
       </div>
     )
