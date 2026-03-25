@@ -10,10 +10,10 @@ export const speckitSlides: SlideType[] = [
       <div className="flex flex-col items-center justify-center h-full space-y-6">
         <FileCode className="w-20 h-20 text-teal-500" />
         <h1 className="text-5xl md:text-6xl font-bold text-teal-900 text-center">
-          Spec Kit & SDD
+          Spec Driven Development
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Specification-Driven Development for AI agents
+          Making technical decisions explicit, reviewable, and executable
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-teal-300 rounded-full"></div>
@@ -71,48 +71,85 @@ export const speckitSlides: SlideType[] = [
     )
   },
   {
-    title: "GitHub Spec Kit Overview",
-    subtitle: "Open toolkit to operationalize SDD with templates and CLI tooling",
+    title: "SDD Implementations: Two Approaches",
+    subtitle: "Different tools, same philosophy — choose what works for your workflow",
     content: (
-      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
-          <div className="flex items-center space-x-4">
-            <div className="text-4xl">🌱</div>
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-2">An open source toolkit for building high-quality software faster</h3>
-              <p className="text-gray-400">Focus on product scenarios and predictable outcomes instead of vibe coding every piece from scratch.</p>
+      <div className="flex flex-col space-y-3 max-w-4xl mx-auto">
+        <div className="bg-gradient-to-r from-teal-500 to-blue-500 p-4 rounded-lg text-white">
+          <p className="text-center text-sm">Both implementations provide <strong>plan and execute</strong> capabilities to go from spec to working code</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border-2 border-teal-500">
+            <div className="flex items-center space-x-2 mb-3">
+              <div className="text-2xl">🌱</div>
+              <h3 className="text-lg font-bold text-gray-900">GitHub Spec Kit</h3>
+            </div>
+            <p className="text-xs text-gray-700 mb-3">CLI-based, template-driven approach with slash commands for AI agents</p>
+
+            <div className="space-y-2">
+              <div className="bg-teal-50 p-2 rounded">
+                <h4 className="text-xs font-bold text-gray-900 mb-1">Key Features</h4>
+                <ul className="text-xs text-gray-700 space-y-0.5">
+                  <li className="flex"><span className="mr-1">•</span><span>Specify CLI for bootstrapping</span></li>
+                  <li className="flex"><span className="mr-1">•</span><span>Sequential workflow: spec → plan → tasks</span></li>
+                  <li className="flex"><span className="mr-1">•</span><span>Template-based scaffolding</span></li>
+                  <li className="flex"><span className="mr-1">•</span><span>Cross-agent compatibility</span></li>
+                </ul>
+              </div>
+
+              <div className="bg-blue-50 p-2 rounded">
+                <h4 className="text-xs font-bold text-gray-900 mb-1">Plan & Execute</h4>
+                <p className="text-xs text-gray-700"><code className="bg-blue-100 px-1 rounded">/speckit.plan</code> generates technical plans, <code className="bg-blue-100 px-1 rounded">/speckit.tasks</code> breaks them down, <code className="bg-blue-100 px-1 rounded">/speckit.implement</code> executes</p>
+              </div>
+            </div>
+
+            <div className="mt-3 text-xs text-center">
+              <code className="bg-gray-100 px-2 py-0.5 rounded">github.com/github/spec-kit</code>
+            </div>
+          </div>
+
+          <div className="bg-white p-4 rounded-lg shadow border-2 border-purple-500">
+            <div className="flex items-center space-x-2 mb-3">
+              <div className="text-2xl">🔧</div>
+              <h3 className="text-lg font-bold text-gray-900">Compound Engineering</h3>
+            </div>
+            <p className="text-xs text-gray-700 mb-3">Claude Code plugin with CLI converter for 10+ AI coding assistants</p>
+
+            <div className="space-y-2">
+              <div className="bg-purple-50 p-2 rounded">
+                <h4 className="text-xs font-bold text-gray-900 mb-1">Key Features</h4>
+                <ul className="text-xs text-gray-700 space-y-0.5">
+                  <li className="flex"><span className="mr-1">•</span><span>Plugin for Claude Code (primary)</span></li>
+                  <li className="flex"><span className="mr-1">•</span><span>Converter for Copilot, Cursor, Gemini, etc.</span></li>
+                  <li className="flex"><span className="mr-1">•</span><span>Compound workflow philosophy</span></li>
+                  <li className="flex"><span className="mr-1">•</span><span>80% planning/review, 20% execution</span></li>
+                </ul>
+              </div>
+
+              <div className="bg-blue-50 p-2 rounded">
+                <h4 className="text-xs font-bold text-gray-900 mb-1">Plan & Execute</h4>
+                <p className="text-xs text-gray-700"><code className="bg-blue-100 px-1 rounded">/ce:plan</code> creates detailed plans, <code className="bg-blue-100 px-1 rounded">/ce:work</code> executes with tracking, <code className="bg-blue-100 px-1 rounded">/ce:review</code> validates & compounds learnings</p>
+              </div>
+            </div>
+
+            <div className="mt-3 text-xs text-center">
+              <code className="bg-gray-100 px-2 py-0.5 rounded">github.com/EveryInc/compound-engineering-plugin</code>
             </div>
           </div>
         </div>
 
-        <div className="space-y-4">
-          <div className="bg-white p-5 rounded-lg shadow border-l-4 border-teal-500">
-            <h4 className="font-bold text-gray-900 mb-2">🔧 Specify CLI</h4>
-            <p className="text-sm text-gray-700">Bootstrapping tool that downloads official templates and sets up SDD scaffolding for your chosen AI agent. Helps initialize projects and manage the spec-driven workflow.</p>
-          </div>
-
-          <div className="bg-white p-5 rounded-lg shadow border-l-4 border-teal-500">
-            <h4 className="font-bold text-gray-900 mb-2">📁 Templates & Scripts</h4>
-            <p className="text-sm text-gray-700">Foundation for the SDD experience — defines what specs, technical plans, and tasks look like. Includes helper scripts to ensure consistent scaffolding application.</p>
-          </div>
-
-          <div className="bg-white p-5 rounded-lg shadow border-l-4 border-teal-500">
-            <h4 className="font-bold text-gray-900 mb-2">🤖 Cross-Agent Support</h4>
-            <p className="text-sm text-gray-700">Designed to work with Claude Code, GitHub Copilot, Cursor, Gemini CLI, Qoder, Windsurf, and many more. Works in the environment you're already using.</p>
-          </div>
-        </div>
-
-        <div className="bg-green-50 px-6 py-4 rounded-lg">
-          <p className="text-center text-green-900 text-sm">
-            <strong>Open Source:</strong> Available at <code className="bg-green-100 px-2 py-1 rounded">github.com/github/spec-kit</code> — no magic, just good patterns you can customize.
+        <div className="bg-orange-50 px-4 py-3 rounded-lg border border-orange-200">
+          <p className="text-center text-orange-900 text-xs">
+            <strong>Choose Based On:</strong> Spec Kit for AI-agnostic templates; Compound Engineering for Claude Code with cross-tool support
           </p>
         </div>
       </div>
     )
   },
   {
-    title: "Installing Spec Kit",
-    subtitle: "Get started with Specify CLI in seconds",
+    title: "Using Spec Kit",
+    subtitle: "CLI-based approach: install once, use everywhere",
     content: (
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
         <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
@@ -183,13 +220,13 @@ export const speckitSlides: SlideType[] = [
     )
   },
   {
-    title: "Spec Kit Workflow",
-    subtitle: "Sequential slash commands guide you from idea to implementation",
+    title: "Spec Kit: Plan & Execute Workflow",
+    subtitle: "Structured commands take you from requirements to running code",
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-gradient-to-r from-teal-500 to-blue-500 p-4 rounded-lg text-white">
-          <h3 className="text-xl font-bold mb-1">The SDD Process</h3>
-          <p className="text-teal-50 text-sm">Bootstrap → constitution → spec → plan → tasks → implement</p>
+          <h3 className="text-xl font-bold mb-1">The Spec Kit Process</h3>
+          <p className="text-teal-50 text-sm">Bootstrap → constitution → spec → <strong>plan → tasks → implement</strong></p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -251,6 +288,69 @@ export const speckitSlides: SlideType[] = [
         <div className="bg-orange-50 px-4 py-3 rounded-lg border border-orange-200">
           <p className="text-center text-orange-900 text-xs">
             <strong>Pro Tip:</strong> Provide detailed initial prompts for higher quality specs. More detail = less tweaking later.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Compound Engineering: Plan & Execute",
+    subtitle: "Plugin-based approach emphasizing planning, review, and knowledge compounding",
+    content: (
+      <div className="flex flex-col space-y-3 max-w-4xl mx-auto">
+        <div className="bg-gradient-to-r from-purple-500 to-indigo-500 p-4 rounded-lg text-white">
+          <h3 className="text-xl font-bold mb-1">The Compound Engineering Workflow</h3>
+          <p className="text-purple-50 text-sm"><strong>Ideate → Brainstorm → Plan → Work → Review → Compound → Repeat</strong></p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="bg-white p-3 rounded-lg shadow border-l-4 border-purple-500">
+            <h4 className="font-bold text-gray-900 text-sm mb-2">🔄 The Workflow</h4>
+            <ul className="text-xs text-gray-700 space-y-1">
+              <li className="flex"><span className="mr-2">1.</span><span><code className="bg-gray-100 px-1 rounded">/ce:ideate</code> — Discover high-impact improvements</span></li>
+              <li className="flex"><span className="mr-2">2.</span><span><code className="bg-gray-100 px-1 rounded">/ce:brainstorm</code> — Explore requirements & approaches</span></li>
+              <li className="flex"><span className="mr-2">3.</span><span><code className="bg-gray-100 px-1 rounded">/ce:plan</code> — Turn ideas into detailed plans</span></li>
+              <li className="flex"><span className="mr-2">4.</span><span><code className="bg-gray-100 px-1 rounded">/ce:work</code> — Execute with worktrees & task tracking</span></li>
+              <li className="flex"><span className="mr-2">5.</span><span><code className="bg-gray-100 px-1 rounded">/ce:review</code> — Multi-agent code review</span></li>
+              <li className="flex"><span className="mr-2">6.</span><span><code className="bg-gray-100 px-1 rounded">/ce:compound</code> — Document learnings for next cycle</span></li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-3 rounded-lg shadow border-l-4 border-indigo-500">
+            <h4 className="font-bold text-gray-900 text-sm mb-2">💡 Philosophy</h4>
+            <ul className="text-xs text-gray-700 space-y-1">
+              <li className="flex"><span className="mr-2">•</span><span><strong>80% planning & review, 20% execution</strong></span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Each unit of work makes the next easier</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Plans inform future plans, reviews catch more</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Patterns get documented & reused</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Quality stays high so changes stay easy</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-purple-50 p-3 rounded-lg border border-purple-200">
+          <h4 className="font-bold text-purple-900 text-sm mb-2">Installation & Setup</h4>
+          <div className="space-y-2">
+            <div className="bg-white p-2 rounded">
+              <p className="text-xs text-gray-700 mb-1"><strong>Claude Code (primary):</strong></p>
+              <CodeBlock
+                code="/plugin marketplace add EveryInc/compound-engineering-plugin"
+                className="bg-gray-900 p-2 rounded"
+              >
+                <code className="text-green-400 text-xs font-mono">
+                  /plugin marketplace add EveryInc/compound-engineering-plugin
+                </code>
+              </CodeBlock>
+            </div>
+            <div className="bg-white p-2 rounded">
+              <p className="text-xs text-gray-700"><strong>Other tools (Copilot, Cursor, Gemini, etc.):</strong> Use CLI converter: <code className="bg-gray-100 px-1 rounded">bunx @every-env/compound-plugin install compound-engineering --to [tool]</code></p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-blue-50 px-4 py-2 rounded-lg">
+          <p className="text-center text-blue-900 text-xs">
+            <strong>Best For:</strong> Teams wanting structured compound workflows where each cycle makes future work easier
           </p>
         </div>
       </div>
