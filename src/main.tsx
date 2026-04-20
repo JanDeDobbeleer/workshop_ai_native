@@ -261,6 +261,9 @@ const FourDSlides = () => {
                 green: 'bg-green-50 border-green-500 text-green-900',
                 purple: 'bg-purple-50 border-purple-500 text-purple-900',
                 orange: 'bg-orange-50 border-orange-500 text-orange-900',
+                indigo: 'bg-indigo-50 border-indigo-500 text-indigo-900',
+                teal: 'bg-teal-50 border-teal-500 text-teal-900',
+                red: 'bg-red-50 border-red-500 text-red-900',
               };
               const iconColorClasses: Record<string, string> = {
                 gray: 'text-gray-600',
@@ -268,6 +271,9 @@ const FourDSlides = () => {
                 green: 'text-green-600',
                 purple: 'text-purple-600',
                 orange: 'text-orange-600',
+                indigo: 'text-indigo-600',
+                teal: 'text-teal-600',
+                red: 'text-red-600',
               };
               const activeClass = isActive
                 ? `${colorClasses[section.color]} border-l-4`
