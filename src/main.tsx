@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { ChevronLeft, ChevronRight, Menu, X, Presentation, Sparkles, Target, Box, Code, Terminal, Shield, ShieldAlert, ScrollText, MessageSquare, Brain, Puzzle, Network, PanelRight, PanelLeft, Plug, TrendingUp, Cpu, FileCode, Users, Trophy } from 'lucide-react';
-import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotSlides, copilotCliSlides, privacySlides, securitySlides, instructionsSlides, promptingSlides, skillsSlides, spacesSlides, contextSlides, evolutionSlides, multiagentSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, speckitSlides, prosSlides } from './sections';
+import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotSlides, copilotCliSlides, privacySlides, securitySlides, instructionsSlides, promptingSlides, agentsSlides, spacesSlides, contextSlides, evolutionSlides, multiagentSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, speckitSlides, prosSlides } from './sections';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import './index.css';
@@ -27,8 +27,8 @@ const sections = [
   { name: 'Copilot', slides: copilotSlides, color: 'blue', icon: Code },
   { name: 'Prompting', slides: promptingSlides, color: 'indigo', icon: MessageSquare },
   { name: 'Instructions', slides: instructionsSlides, color: 'green', icon: ScrollText },
+  { name: 'Agents & Skills', slides: agentsSlides, color: 'purple', icon: Puzzle },
   { name: 'Context', slides: contextSlides, color: 'purple', icon: Brain },
-  { name: 'Reuse & Skills', slides: skillsSlides, color: 'purple', icon: Puzzle },
   { name: 'Spec Kit', slides: speckitSlides, color: 'teal', icon: FileCode },
   { name: 'Privacy', slides: privacySlides, color: 'purple', icon: Shield },
   { name: 'Security', slides: securitySlides, color: 'red', icon: ShieldAlert },
@@ -84,8 +84,8 @@ const FourDSlides = () => {
     ...copilotSlides,
     ...promptingSlides,
     ...instructionsSlides,
+    ...agentsSlides,
     ...contextSlides,
-    ...skillsSlides,
     ...speckitSlides,
     ...privacySlides,
     ...securitySlides,

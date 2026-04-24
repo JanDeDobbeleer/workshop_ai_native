@@ -2,7 +2,7 @@ import { Puzzle, Repeat } from 'lucide-react';
 import { SlideType } from './types';
 import { CodeBlock } from '../components/CodeBlock';
 
-export const skillsSlides: SlideType[] = [
+export const agentsSlides: SlideType[] = [
   {
     title: "",
     subtitle: "",
@@ -13,7 +13,7 @@ export const skillsSlides: SlideType[] = [
           <Puzzle className="w-16 h-16 md:w-20 md:h-20 text-purple-500" />
         </div>
         <h1 className="text-5xl md:text-6xl font-bold text-purple-900 text-center">
-          Reuse &amp; Skills
+          Agents &amp; Skills
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
           Prompt files, custom agents, and agent skills
@@ -79,32 +79,31 @@ export const skillsSlides: SlideType[] = [
       </div>
     )
   },
-  {
+    {
     title: "Stop Repeating Yourself",
-    subtitle: "Custom Agents in VS Code",
+    subtitle: "Agents",
     content: (
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
-          <h3 className="text-xl font-bold text-purple-900 mb-2">What are Custom Agents?</h3>
-          <p className="text-gray-700">
+        <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+          <h3 className="text-2xl font-bold text-purple-900 mb-4">What are Custom Agents?</h3>
+          <p className="text-lg text-gray-700">
             Specialized AI personas tailored to specific development roles. Each agent has its own behavior, available tools, and instructions for consistent task execution.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
+          <div className="bg-white p-5 rounded-lg shadow border border-purple-200">
             <h4 className="font-semibold text-purple-900 mb-2">🤖 File Structure (.agent.md)</h4>
-            <ul className="space-y-1 text-sm text-gray-700">
-              <li>• Stored in <code className="bg-gray-100 px-1 rounded">.github/agents</code> folder</li>
+            <ul className="space-y-2 text-gray-700">
               <li>• YAML frontmatter: name, description, tools, handoffs</li>
               <li>• Markdown body with agent-specific instructions</li>
               <li>• Restrict tools per agent (e.g., read-only for planners)</li>
             </ul>
           </div>
 
-          <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
+          <div className="bg-white p-5 rounded-lg shadow border border-purple-200">
             <h4 className="font-semibold text-purple-900 mb-2">🔄 Handoffs Between Agents</h4>
-            <ul className="space-y-1 text-sm text-gray-700">
+            <ul className="space-y-2 text-gray-700">
               <li>• Create guided workflows between agents</li>
               <li>• Handoff buttons appear after responses complete</li>
               <li>• Example: Planner → Implementation → Review</li>
@@ -113,21 +112,166 @@ export const skillsSlides: SlideType[] = [
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded-lg shadow border border-green-200">
-            <h4 className="font-semibold text-green-900 mb-2">💡 Example Agents</h4>
-            <div className="flex justify-around text-sm text-gray-700">
-              <div className="text-center"><span className="text-xl">📋</span><div>Planner</div><div className="text-xs text-gray-500">Read-only</div></div>
-              <div className="text-center"><span className="text-xl">🔍</span><div>Reviewer</div><div className="text-xs text-gray-500">Security</div></div>
-              <div className="text-center"><span className="text-xl">🏗️</span><div>Implementer</div><div className="text-xs text-gray-500">Full access</div></div>
+        <div className="bg-white p-5 rounded-lg shadow border border-green-200">
+          <h4 className="font-semibold text-green-900 mb-2">💡 Example Agents</h4>
+          <div className="flex justify-around text-gray-700">
+            <div className="text-center"><span className="text-xl">📋</span><div>Planner</div><div className="text-xs text-gray-500">Read-only</div></div>
+            <div className="text-center"><span className="text-xl">🔍</span><div>Reviewer</div><div className="text-xs text-gray-500">Security</div></div>
+            <div className="text-center"><span className="text-xl">🏗️</span><div>Implementer</div><div className="text-xs text-gray-500">Full access</div></div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Agents",
+    subtitle: "Where to Store Agent Files",
+    content: (
+      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
+        <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-400">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Where you put the file determines who can use it</h3>
+          <p className="text-lg text-gray-700">
+            Both GitHub Copilot and Claude Code scope agents to project, user, or organization level.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-col gap-4">
+            <div className="bg-purple-50 p-5 rounded-lg border border-purple-300">
+              <h4 className="font-semibold text-purple-900 mb-2">🟣 GitHub Copilot</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex"><span className="mr-2">📁</span><span><strong>Repo:</strong> <code className="bg-gray-100 px-1 rounded">.github/agents/name.md</code></span></li>
+                <li className="flex"><span className="mr-2">🏢</span><span><strong>Org/Enterprise:</strong> <code className="bg-gray-100 px-1 rounded">/agents/name.md</code> in your <code className="bg-gray-100 px-1 rounded">.github-private</code> repo</span></li>
+              </ul>
             </div>
+            <a href="https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents" target="_blank" rel="noopener noreferrer" className="text-sm text-purple-600 hover:underline">docs.github.com → Copilot → Custom Agents</a>
           </div>
 
-          <div className="bg-purple-100 p-4 rounded-lg flex items-center">
-            <p className="text-sm italic text-purple-900">
-              <strong>Pro Tip:</strong> Share agents via <code className="bg-white px-1 rounded">.github/agents</code> folder, or organization-wide through GitHub settings.
-            </p>
+          <div className="flex flex-col gap-4">
+            <div className="bg-blue-50 p-5 rounded-lg border border-blue-300">
+              <h4 className="font-semibold text-blue-900 mb-2">🔵 Claude Code</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex"><span className="mr-2">📁</span><span><strong>Project:</strong> <code className="bg-gray-100 px-1 rounded">.claude/agents/name.md</code></span></li>
+                <li className="flex"><span className="mr-2">👤</span><span><strong>User:</strong> <code className="bg-gray-100 px-1 rounded">~/.claude/agents/name.md</code></span></li>
+                <li className="flex"><span className="mr-2">🏢</span><span><strong>Org:</strong> Managed settings (admin console)</span></li>
+              </ul>
+            </div>
+            <a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">code.claude.com/docs → Sub-agents</a>
           </div>
+        </div>
+
+        <div className="bg-green-100 p-4 rounded-lg">
+          <p className="text-sm italic text-green-900">
+            <strong>Pro Tip:</strong> Commit <code className="bg-white px-1 rounded">.github/agents/</code> (Copilot) or <code className="bg-white px-1 rounded">.claude/agents/</code> (Claude Code) to version control — your whole team shares the same agents.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Agents",
+    subtitle: "Frontmatter",
+    content: (
+      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
+        <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+          <h3 className="text-2xl font-bold text-blue-900 mb-4">
+            Subagent files: <code className="bg-white px-1 rounded">.claude/agents/name.md</code>
+          </h3>
+          <p className="text-lg text-gray-700">
+            YAML frontmatter configures the agent; the markdown body becomes its system prompt. Only <code className="bg-white px-1 rounded">name</code> and <code className="bg-white px-1 rounded">description</code> are required.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-gray-900 p-4 rounded-lg text-xs font-mono leading-relaxed">
+            <p className="text-gray-400">---</p>
+            <p><span className="text-yellow-300">name</span><span className="text-white">: code-reviewer</span></p>
+            <p><span className="text-yellow-300">description</span><span className="text-white">: Reviews code quality</span></p>
+            <p><span className="text-yellow-300">tools</span><span className="text-white">: Read, Grep, Glob</span></p>
+            <p><span className="text-yellow-300">model</span><span className="text-white">: haiku</span></p>
+            <p><span className="text-yellow-300">permissionMode</span><span className="text-white">: plan</span></p>
+            <p><span className="text-yellow-300">color</span><span className="text-white">: blue</span></p>
+            <p className="text-gray-400">---</p>
+            <p className="text-green-300 mt-1">You are a code reviewer...</p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <div className="bg-white p-4 rounded-lg shadow border border-blue-200">
+              <h4 className="font-semibold text-blue-900 mb-2">🔧 Tools &amp; Permissions</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• <code className="bg-gray-100 px-1 rounded">tools</code> — allowlist (inherits all if omitted)</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">disallowedTools</code> — denylist</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">permissionMode</code> — default / acceptEdits / auto / bypassPermissions / plan</li>
+              </ul>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow border border-blue-200">
+              <h4 className="font-semibold text-blue-900 mb-2">⚙️ Behavior</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>• <code className="bg-gray-100 px-1 rounded">model</code> — sonnet / opus / haiku / inherit</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">maxTurns</code> — cap on agentic turns</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">isolation</code> — <code className="bg-gray-100 px-1 rounded">worktree</code> for git isolation</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">memory</code> — user / project / local</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">color</code> — task list display color</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-blue-100 p-4 rounded-lg">
+          <p className="text-sm italic text-blue-900">
+            <strong>Learn More:</strong>{' '}
+            <a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              code.claude.com/docs/en/sub-agents
+            </a>
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Agents",
+    subtitle: "Scope & Usage",
+    content: (
+      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
+        <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+          <h3 className="text-2xl font-bold text-blue-900 mb-4">How Copilot/Claude decides to delegate</h3>
+          <p className="text-lg text-gray-700">
+            Copilot/Claude reads each subagent's <code className="bg-white px-1 rounded">description</code> and automatically delegates when a task matches. Write clear, specific descriptions.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-white p-5 rounded-lg shadow border border-blue-200">
+            <h4 className="font-semibold text-blue-900 mb-2">📂 Storage Scope (by priority)</h4>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex"><span className="mr-2 font-bold">1.</span><span>Managed settings — org-wide</span></li>
+              <li className="flex"><span className="mr-2 font-bold">2.</span><span><code className="bg-gray-100 px-1 rounded">--agents</code> CLI flag — session only</span></li>
+              <li className="flex"><span className="mr-2 font-bold">3.</span><span><code className="bg-gray-100 px-1 rounded">.claude/agents/</code> — current project ✅</span></li>
+              <li className="flex"><span className="mr-2 font-bold">4.</span><span><code className="bg-gray-100 px-1 rounded">~/.claude/agents/</code> — all your projects</span></li>
+              <li className="flex"><span className="mr-2 font-bold">5.</span><span>Plugin <code className="bg-gray-100 px-1 rounded">agents/</code> — where plugin is enabled</span></li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-5 rounded-lg shadow border border-blue-200">
+            <h4 className="font-semibold text-blue-900 mb-2">🛠️ Managing Subagents</h4>
+            <ul className="space-y-2 text-gray-700">
+              <li>• <code className="bg-gray-100 px-1 rounded">/agents</code> — interactive UI to create/edit/delete</li>
+              <li>• <code className="bg-gray-100 px-1 rounded">claude agents</code> — list all from CLI</li>
+              <li>• <strong>Running</strong> tab: view live agents, stop them</li>
+              <li>• <strong>Library</strong> tab: browse built-in + custom</li>
+            </ul>
+            <h4 className="font-semibold text-blue-900 mb-2 mt-3">🏗️ Built-in Subagents</h4>
+            <ul className="space-y-2 text-gray-700">
+              <li>• <strong>Explore</strong> — Haiku, read-only codebase search</li>
+              <li>• <strong>Plan</strong> — inherited model, read-only planning</li>
+              <li>• <strong>General Purpose</strong> — all tools, complex tasks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-blue-100 p-4 rounded-lg">
+          <p className="text-sm italic text-blue-900">
+            <strong>Pro Tip:</strong>Commit <code className="bg-white px-1 rounded">.claude/agents/</code> to version control — your whole team shares and improves the same subagents.
+          </p>
         </div>
       </div>
     )
@@ -308,7 +452,7 @@ export const skillsSlides: SlideType[] = [
     )
   },
   {
-    title: "How Copilot Uses Skills",
+    title: "How Copilot/Claude uses Skills",
     subtitle: "Automatic Skill Selection and Injection",
     content: (
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
