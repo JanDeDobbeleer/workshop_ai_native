@@ -10,7 +10,7 @@ export { privacySlides } from './privacy';
 export { securitySlides } from './security';
 export { instructionsSlides } from './instructions';
 export { contextSlides } from './context';
-export { skillsSlides } from './skills';
+export { agentsSlides } from './agents';
 export { spacesSlides } from './spaces';
 export { evolutionSlides } from './evolution';
 export { multiagentSlides } from './multiagent';

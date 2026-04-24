@@ -216,23 +216,23 @@ After making any changes to slide files:
 </div>
 ```
 
-**4. Compact 2-Column Comparison Pattern** (optimal readability):
+**4. 2-Column Comparison Pattern**:
 ```tsx
-<div className="flex flex-col space-y-5 max-w-3xl mx-auto">
-  <div className="bg-{color}-50 p-4 rounded-lg border-l-4 border-{color}-500">
-    <h3 className="text-xl font-bold text-{color}-900 mb-2">Topic Title</h3>
-    <p className="text-gray-700">One clear sentence explaining the topic.</p>
+<div className="flex flex-col space-y-6 max-w-3xl mx-auto">
+  <div className="bg-{color}-50 p-6 rounded-lg border-l-4 border-{color}-500">
+    <h3 className="text-2xl font-bold text-{color}-900 mb-4">Topic Title</h3>
+    <p className="text-lg text-gray-700">One clear sentence explaining the topic.</p>
   </div>
 
   <div className="grid grid-cols-2 gap-4">
-    <div className="bg-white p-4 rounded-lg shadow border border-{color}-200">
+    <div className="bg-white p-5 rounded-lg shadow border border-{color}-200">
       <h4 className="font-semibold text-{color}-900 mb-2">Section 1:</h4>
       <ul className="space-y-2 text-gray-700">
         <li>• Concise bullet point</li>
         <li>• 3-4 items maximum per column</li>
       </ul>
     </div>
-    <div className="bg-white p-4 rounded-lg shadow border border-{color}-200">
+    <div className="bg-white p-5 rounded-lg shadow border border-{color}-200">
       <h4 className="font-semibold text-{color}-900 mb-2">Section 2:</h4>
       <ul className="space-y-2 text-gray-700">
         <li>• Parallel structure</li>
@@ -250,14 +250,6 @@ After making any changes to slide files:
   </div>
 </div>
 ```
-
-**Typography Guide for Pattern 4 (Recommended for Readability):**
-- Overall spacing: `space-y-5` (slightly tighter than standard)
-- Header: `text-xl font-bold` (more readable than `text-2xl`)
-- Body text: `text-gray-700` (default size, no `text-lg`)
-- Lists: `space-y-2` with `text-gray-700`
-- Cards: `p-4` padding (balanced, not too bulky)
-- This pattern provides optimal readability with minimal eye strain
 
 ## Content Density Rules
 
@@ -319,6 +311,8 @@ This pattern prevents wrapped text from aligning under the bullet point. When te
 ❌ Nested complexity (sub-bullets with sub-bullets)
 ❌ Plain text URLs or repository references without links
 ❌ Data or statistics without linked source citations
+❌ Using `text-sm` or `text-xs` for body/list text — standard size is `text-gray-700` (unsized)
+❌ Using `text-xl` or smaller for h3 headings — standard is `text-2xl font-bold`
 
 ✅ Clear focus, adequate spacing, visual variety, scannable content
 ## Responsive Design Guidelines
