@@ -288,8 +288,8 @@ export const agentsSlides: SlideType[] = [
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <div className="bg-white p-4 rounded-lg shadow border border-blue-200">
             <div className="text-2xl mb-2 text-center">🖥️</div>
-            <h4 className="font-bold text-blue-900 text-sm mb-2 text-center">Local Agent</h4>
-            <ul className="space-y-1 text-xs text-gray-700">
+            <h4 className="font-bold text-blue-900 mb-2 text-center">Local Agent</h4>
+            <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-1">•</span><span>Full VS Code IDE integration</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Interactive approval flow</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Best for exploratory work</span></li>
@@ -297,8 +297,8 @@ export const agentsSlides: SlideType[] = [
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
             <div className="text-2xl mb-2 text-center">⚙️</div>
-            <h4 className="font-bold text-purple-900 text-sm mb-2 text-center">Background Agent</h4>
-            <ul className="space-y-1 text-xs text-gray-700">
+            <h4 className="font-bold text-purple-900 mb-2 text-center">Background Agent</h4>
+            <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-1">•</span><span>Isolated git worktree per session</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Auto-commits each turn</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Run while you keep working</span></li>
@@ -306,8 +306,8 @@ export const agentsSlides: SlideType[] = [
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-green-200">
             <div className="text-2xl mb-2 text-center">☁️</div>
-            <h4 className="font-bold text-green-900 text-sm mb-2 text-center">Cloud Agent</h4>
-            <ul className="space-y-1 text-xs text-gray-700">
+            <h4 className="font-bold text-green-900 mb-2 text-center">Cloud Agent</h4>
+            <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-1">•</span><span>GitHub-hosted (Copilot CLI)</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Claude &amp; Codex as providers</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Creates a PR when done</span></li>
@@ -328,13 +328,13 @@ export const agentsSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-          <h3 className="text-xl font-bold text-blue-900 mb-1">What are Subagents?</h3>
-          <p className="text-gray-700 text-sm">Subagents let the main agent spawn child agents to handle independent subtasks — each in its own dedicated context window, so they don't consume the main agent's token budget.</p>
+          <h3 className="text-2xl font-bold text-blue-900 mb-1">What are Subagents?</h3>
+          <p className="text-gray-700">Subagents let the main agent spawn child agents to handle independent subtasks — each in its own dedicated context window, so they don't consume the main agent's token budget.</p>
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-white p-3 rounded-lg shadow border border-blue-200">
-            <h4 className="font-semibold text-blue-900 mb-2 text-sm">Key Capabilities:</h4>
-            <ul className="space-y-1 text-xs text-gray-700">
+            <h4 className="font-semibold text-blue-900 mb-2">Key Capabilities:</h4>
+            <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-1">•</span><span>Run in <strong>parallel</strong> for independent tasks</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Own context window — no token spillover</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Shows progress &amp; tool calls inline</span></li>
@@ -342,8 +342,8 @@ export const agentsSlides: SlideType[] = [
             </ul>
           </div>
           <div className="bg-white p-3 rounded-lg shadow border border-blue-200">
-            <h4 className="font-semibold text-blue-900 mb-2 text-sm">Search Subagent (Experimental):</h4>
-            <ul className="space-y-1 text-xs text-gray-700">
+            <h4 className="font-semibold text-blue-900 mb-2">Search Subagent (Experimental):</h4>
+            <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-1">•</span><span>Dedicated agent for codebase search</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Iteratively refines queries</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Runs while main agent keeps working</span></li>
@@ -374,12 +374,12 @@ export const agentsSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
-          <p className="text-gray-700 text-sm">Background agents run in an <strong>isolated git worktree</strong>, auto-committing each turn. You stay in your main branch while the agent builds a feature independently — then review the PR when it's done.</p>
+          <p className="text-gray-700">Background agents run in an <strong>isolated git worktree</strong>, auto-committing each turn. You stay in your main branch while the agent builds a feature independently — then review the PR when it's done.</p>
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-white p-3 rounded-lg shadow border border-purple-200">
-            <h4 className="font-semibold text-purple-900 mb-2 text-sm">New in 1.109:</h4>
-            <ul className="space-y-1 text-xs text-gray-700">
+            <h4 className="font-semibold text-purple-900 mb-2">New in 1.109:</h4>
+            <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-1">•</span><span>Custom agent selection at launch</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Attach images as context</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Multi-root workspace support</span></li>
@@ -388,8 +388,8 @@ export const agentsSlides: SlideType[] = [
             </ul>
           </div>
           <div className="bg-white p-3 rounded-lg shadow border border-purple-200">
-            <h4 className="font-semibold text-purple-900 mb-2 text-sm">Workflow:</h4>
-            <ol className="space-y-1 text-xs text-gray-700">
+            <h4 className="font-semibold text-purple-900 mb-2">Workflow:</h4>
+            <ol className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-1 font-bold text-purple-600">1.</span><span>Pick session type → Background</span></li>
               <li className="flex"><span className="mr-1 font-bold text-purple-600">2.</span><span>Choose agent &amp; model</span></li>
               <li className="flex"><span className="mr-1 font-bold text-purple-600">3.</span><span>Describe the task &amp; send</span></li>
@@ -412,12 +412,12 @@ export const agentsSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-          <p className="text-gray-700 text-sm">As of February 2026, <strong>Claude (Anthropic)</strong> and <strong>Codex (OpenAI)</strong> are available as cloud agent providers directly inside VS Code — no separate subscriptions or tools required if you have GitHub Copilot.</p>
+          <p className="text-gray-700">As of February 2026, <strong>Claude (Anthropic)</strong> and <strong>Codex (OpenAI)</strong> are available as cloud agent providers directly inside VS Code — no separate subscriptions or tools required if you have GitHub Copilot.</p>
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-white p-3 rounded-lg shadow border border-green-200">
-            <h4 className="font-semibold text-green-900 mb-2 text-sm">Claude compatibility:</h4>
-            <ul className="space-y-1 text-xs text-gray-700">
+            <h4 className="font-semibold text-green-900 mb-2">Claude compatibility:</h4>
+            <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-1">•</span><span>VS Code reads <code className="bg-gray-100 px-1 rounded">CLAUDE.md</code> natively</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Agents, skills &amp; hooks shared across both</span></li>
               <li className="flex"><span className="mr-1">•</span><span>No duplicate configuration needed</span></li>
@@ -425,8 +425,8 @@ export const agentsSlides: SlideType[] = [
             </ul>
           </div>
           <div className="bg-white p-3 rounded-lg shadow border border-green-200">
-            <h4 className="font-semibold text-green-900 mb-2 text-sm">Cloud agent launch options:</h4>
-            <ul className="space-y-1 text-xs text-gray-700">
+            <h4 className="font-semibold text-green-900 mb-2">Cloud agent launch options:</h4>
+            <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-1">•</span><span>Choose model (Claude / Codex / Copilot)</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Select a custom <code className="bg-gray-100 px-1 rounded">.agent.md</code></span></li>
               <li className="flex"><span className="mr-1">•</span><span>Pick folder for multi-root workspaces</span></li>
@@ -435,7 +435,7 @@ export const agentsSlides: SlideType[] = [
           </div>
         </div>
         <div className="bg-white p-3 rounded-lg shadow border border-gray-200">
-          <h4 className="text-sm font-semibold text-gray-900 mb-1">Agent orchestration via <code className="bg-gray-100 px-1 rounded">.agent.md</code>:</h4>
+          <h4 className="font-semibold text-gray-900 mb-1">Agent orchestration via <code className="bg-gray-100 px-1 rounded">.agent.md</code>:</h4>
           <div className="font-mono text-xs text-gray-700 space-y-0.5">
             <div className="text-purple-700">---</div>
             <div>name: Planner</div>
