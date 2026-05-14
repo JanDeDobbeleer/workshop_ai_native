@@ -1,0 +1,63 @@
+# AI Native Software Engineering Workshop
+
+> A full-day interactive workshop teaching software developers how to work effectively with AI tools. Covers everything from LLM fundamentals to agentic workflows, with hands-on GitHub Copilot demos. Built and presented by Jan De Dobbeleer (Engineering Leader & Open Source Innovator).
+
+**Audience:** Software developers of all levels. No prior AI experience required — comfortable with software development is enough.
+
+**Format:** Full-day, instructor-led, hands-on. Delivered as a web-based interactive slideshow at [https://workshop.itdepends.be](https://workshop.itdepends.be). Navigation is sequential (slide by slide) with the ability to jump to any section. The source code is available at [https://github.com/JanDeDobbeleer/workshop_ai_native](https://github.com/JanDeDobbeleer/workshop_ai_native).
+
+**Note for agents:** The slideshow is password-protected (lightweight SHA-256 client-side gate). The `llms.txt` file (this file) and `favicon.svg` are the only public static assets served without authentication.
+
+## Workshop Sections
+
+- [Introduction](https://workshop.itdepends.be): Workshop overview, the AI-native developer mindset, and the "quantum state" of AI adoption — how developers simultaneously exist across multiple adoption stages
+- [LLMs](https://workshop.itdepends.be): How large language models actually work — transformers, tokenisation, context windows, hallucinations, and GPU acceleration
+- [AI Fluency](https://workshop.itdepends.be): The 4D framework for effective AI collaboration — Delegation (when to engage AI), Description (communicating goals clearly), Discernment (evaluating AI outputs critically), Diligence (taking responsibility for AI use). Three interaction modes: Augmentation, Automation, Agency
+- [Prompting](https://workshop.itdepends.be): The art of communicating with AI — prompt engineering patterns, chain-of-thought, few-shot examples, and avoiding common mistakes
+- [Models](https://workshop.itdepends.be): Choosing the right model for the job — the model landscape, capability vs cost tradeoffs, reasoning models, and when to use each
+- [Ollama](https://workshop.itdepends.be): Running AI models locally — transforming AI accessibility, local inference, and use cases for on-device models
+- [GitHub Copilot](https://workshop.itdepends.be): Your AI pair programmer — code completions, Copilot Chat, inline editing, and IDE integration
+- [GitHub Copilot CLI](https://workshop.itdepends.be): The standalone `copilot` CLI — interactive and programmatic modes, approval flags (`--allow-all-tools`, `--yolo`), hooks for workflow automation (preToolUse, postToolUse, etc.), fleet mode for parallel subagents, custom agents, and MCP server integration
+- [Copilot Privacy](https://workshop.itdepends.be): Data handling and privacy controls — what gets sent to the model, enterprise controls, and data retention policies
+- [Security](https://workshop.itdepends.be): Risks and best practices for secure AI-assisted coding — OWASP Top 10, prompt injection, insecure code generation, and mitigation strategies
+- [Instructions](https://workshop.itdepends.be): Teaching AI how you work — custom instructions, repository-level `AGENTS.md` / `.github/copilot-instructions.md`, system prompts, and persona configuration
+- [Context](https://workshop.itdepends.be): How AI processes and manages information — context window strategies, what to include, file references, and keeping context clean
+- [Spec Driven Development](https://workshop.itdepends.be): Making technical decisions explicit, reviewable, and executable — writing specs before coding, using AI to validate and implement from specs
+- [Agents & Skills](https://workshop.itdepends.be): Prompt files, custom agents, and agent skills — building reusable AI behaviours, the agent loop, tool use, and skill composition
+- [Team AI Sharing](https://workshop.itdepends.be): Sharing instructions, prompts, and skills across a team — Copilot Spaces, organisational knowledge management with AI
+- [Evolution of the Programmer](https://workshop.itdepends.be): The 8 stages from traditional developer to AI-native engineer — Stage 1: zero/minimal AI; Stage 2: coding agent in IDE with permissions; Stage 3: broader agentic use; … Stage 8: orchestrating 30+ parallel agents. Covers how the role changes and what skills matter most
+- [Multi-Agent](https://workshop.itdepends.be): Orchestrating multiple AI agents — orchestrator/subagent patterns, parallelism, agent communication, and when multi-agent helps
+- [GitHub Copilot SDK](https://workshop.itdepends.be): Embedding AI agents directly into applications — building custom Copilot extensions and integrations
+- [Model Context Protocol (MCP)](https://workshop.itdepends.be): The universal standard for connecting AI to external systems — MCP servers, tools, resources, and how to expose your own APIs to AI
+- [What the Pros Use](https://workshop.itdepends.be): Advanced patterns from the AI-native developer playbook — workflows, tooling, and practices used by experienced AI developers
+- [Closing](https://workshop.itdepends.be): Workshop summary, next steps, and feedback
+
+## Optional
+
+- [Source code](https://github.com/JanDeDobbeleer/workshop_ai_native): React + TypeScript + Tailwind slideshow. Each section is a self-contained component under `src/sections/`
+- [Slide Content Creator agent](.github/agents/create-section.md): Custom agent definition used to generate new slide sections from source material
+
+## Key Concepts
+
+Core mental models taught in the workshop, useful for answering questions about its content:
+
+- **Quantum State of Adoption** — AI is unique in that developers simultaneously exist across multiple stages of the technology adoption lifecycle, rather than moving through them sequentially
+- **4D Fluency Framework** — Four competencies for AI collaboration: *Delegation* (deciding when/how to engage AI), *Description* (communicating effectively), *Discernment* (evaluating outputs critically), *Diligence* (taking responsibility for AI-assisted work)
+- **Three AI Interaction Modes** — *Augmentation* (human and AI collaborate), *Automation* (AI executes specific tasks), *Agency* (AI acts independently on future tasks)
+- **Agent Loop** — The repeating cycle of: LLM receives context → decides on tool call → tool executes → result fed back to LLM → repeat. Underpins all agentic AI behaviour
+- **Spec-Driven Development (SDD)** — Writing an explicit specification document before writing code. Makes assumptions reviewable, aligns teams and AI agents, documents the "why" not just the "what", and prevents costly rewrites from divergent assumptions
+- **Agent vs Skill** — An *agent* (`.github/agents/`) defines *what is demanded* of the AI for a task. A *skill* (`.github/skills/<name>/SKILL.md`) defines *how to execute* it step by step. Skills are reusable across agents; agents can be chained (Refinement → Architecture → Implementation → Execution)
+- **Pro Tool Stack principle** — Cheap/repetitive tasks → fast local models (Ollama). Complex reasoning → frontier cloud (Claude, GPT, Gemini). Sensitive/regulated code → private on-premises infrastructure
+
+## Tools & Resources
+
+External tools and resources referenced throughout the workshop:
+
+- [GitHub Copilot](https://github.com/features/copilot): The primary AI coding tool covered in the workshop
+- [GitHub Copilot CLI docs](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli): Official docs for the standalone `copilot` CLI agent
+- [Ollama](https://ollama.ai): Run large language models locally
+- [OpenCode CLI](https://opencode.ai): Open-source terminal AI agent supporting 75+ LLM providers
+- [Wispr Flow](https://wisprflow.ai): Voice-to-text for developers — dictate prompts at 220 wpm
+- [Model Context Protocol](https://modelcontextprotocol.io): Open standard for connecting AI to external systems (tools, data sources)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/): Security risk reference used in the Security section
+- [llms.txt spec](https://llmstxt.org): The standard this file follows
