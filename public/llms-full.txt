@@ -1,0 +1,139 @@
+# AI Native Software Engineering Workshop — Full Text
+
+> A full-day interactive workshop teaching software developers how to work effectively with AI tools. Covers everything from LLM fundamentals to agentic workflows, with hands-on GitHub Copilot demos. Built and presented by Jan De Dobbeleer (Engineering Leader & Open Source Innovator).
+
+**URL:** https://ainativedev.itdepends.be/
+**Source:** https://github.com/JanDeDobbeleer/workshop_ai_native
+
+**Audience:** Software developers of all levels. No prior AI experience required — comfortable with software development is enough.
+
+**Format:** Full-day, instructor-led, hands-on. Delivered as a web-based interactive slideshow. Navigation is sequential (slide by slide) with the ability to jump to any section.
+
+---
+
+## Section: Introduction
+
+Workshop overview and the AI-native developer mindset. Covers the "quantum state" of AI adoption — how developers simultaneously exist across multiple adoption stages of the technology lifecycle, rather than moving through them sequentially. Introduces the 4D Fluency Framework and three AI interaction modes.
+
+## Section: LLMs (Large Language Models)
+
+How large language models actually work. Topics: transformer architecture, tokenisation, context windows, attention mechanisms, hallucinations and their causes, GPU acceleration, and the difference between base models and instruction-tuned models. Understanding these fundamentals helps developers set correct expectations and use models more effectively.
+
+## Section: AI Fluency
+
+The 4D framework for effective AI collaboration:
+- **Delegation** — deciding when and how to engage AI; knowing which tasks benefit from AI and which don't
+- **Description** — communicating goals clearly; writing effective prompts; providing the right context
+- **Discernment** — evaluating AI outputs critically; knowing when to trust, verify, or discard suggestions
+- **Diligence** — taking responsibility for AI-assisted work; reviewing, testing, and owning what AI produces
+
+Three interaction modes:
+- **Augmentation** — human and AI collaborate interactively; human remains in the loop at every step
+- **Automation** — AI executes specific, well-defined tasks autonomously; human reviews output
+- **Agency** — AI acts independently on future tasks; human defines goals and approves outcomes
+
+## Section: Prompting
+
+The art of communicating with AI. Topics: prompt engineering patterns, chain-of-thought prompting, few-shot examples, zero-shot vs few-shot, role prompting, structured output, and avoiding common mistakes. Practical exercises with real-world coding scenarios.
+
+## Section: Models
+
+Choosing the right model for the job. Topics: the current model landscape (GPT, Claude, Gemini, Llama, Mistral, etc.), capability vs cost tradeoffs, reasoning models vs standard models, context window sizes, multimodal capabilities, and decision framework for model selection. Pro Tool Stack principle: cheap/repetitive tasks → fast local models; complex reasoning → frontier cloud; sensitive/regulated code → private on-premises.
+
+## Section: Ollama
+
+Running AI models locally. Topics: transforming AI accessibility, local inference on consumer hardware, model quantisation, use cases for on-device models (privacy, offline work, low-latency), and how local models complement cloud models.
+
+## Section: GitHub Copilot
+
+Your AI pair programmer. Topics: code completions, Copilot Chat, inline editing, IDE integration (VS Code, JetBrains, Neovim), Copilot in the terminal, slash commands, and best practices for working with Copilot effectively.
+
+## Section: GitHub Copilot CLI
+
+The standalone `copilot` CLI agent. Topics: interactive and programmatic modes, approval flags (`--allow-all-tools`, `--yolo`), hooks for workflow automation (preToolUse, postToolUse, notification, stop), fleet mode for parallel subagents, custom agents, MCP server integration, and building agentic workflows in the terminal.
+
+## Section: Copilot Privacy
+
+Data handling and privacy controls for GitHub Copilot. Topics: what gets sent to the model, enterprise controls, data retention policies, telemetry settings, IP indemnification, and organisational policy management.
+
+## Section: Security
+
+Risks and best practices for secure AI-assisted coding. Topics: OWASP Top 10 risks in AI-generated code, prompt injection attacks, insecure code generation patterns, supply chain risks, secrets in context, and mitigation strategies. How to use AI to find security issues rather than introduce them.
+
+## Section: Instructions
+
+Teaching AI how you work. Topics: custom instructions, repository-level `AGENTS.md` / `.github/copilot-instructions.md`, system prompts, persona configuration, and instruction layering (user-level, repo-level, org-level). How good instructions reduce friction and improve output quality.
+
+## Section: Context
+
+How AI processes and manages information. Topics: context window strategies, what to include and exclude, file references, keeping context clean, context poisoning risks, and techniques for long-running tasks (checkpoints, handoffs, summarisation).
+
+## Section: Spec Driven Development
+
+Making technical decisions explicit, reviewable, and executable. Topics: writing specifications before coding, using AI to validate specs, implementing from specs, the benefits of explicit assumptions, and how specs align teams and AI agents. Prevents costly rewrites from divergent assumptions.
+
+## Section: Agents & Skills
+
+Prompt files, custom agents, and agent skills. Topics: building reusable AI behaviours, the agent loop (LLM receives context → decides on tool call → tool executes → result fed back → repeat), tool use, skill composition, agent vs skill distinction, and the `.github/agents/` / `.github/skills/` conventions used in GitHub Copilot CLI.
+
+## Section: Team AI Sharing
+
+Sharing instructions, prompts, and skills across a team. Topics: Copilot Spaces, organisational knowledge management with AI, versioning prompts and instructions, onboarding new team members to AI workflows, and building a shared AI culture.
+
+## Section: Evolution of the Programmer
+
+The 8 stages from traditional developer to AI-native engineer:
+- Stage 1: Zero or minimal AI use — traditional development workflow
+- Stage 2: Coding agent in IDE with permission prompts — accepting/rejecting suggestions
+- Stage 3: Broader agentic use — terminal agents, chat, multi-file edits
+- Stage 4: Customised AI environment — custom instructions, MCP tools, personal workflows
+- Stage 5: Spec-driven development — writing specs first, AI implements
+- Stage 6: Agent orchestration — directing multiple agents on sub-tasks
+- Stage 7: Continuous agentic workflows — background agents, async work, fleet mode
+- Stage 8: Orchestrating 30+ parallel agents — fully AI-native engineering at scale
+
+Covers how the developer role changes at each stage and what skills matter most.
+
+## Section: Multi-Agent
+
+Orchestrating multiple AI agents. Topics: orchestrator/subagent patterns, parallelism, agent communication, shared context strategies, fleet mode in Copilot CLI, when multi-agent helps vs hurts, and practical patterns for complex tasks.
+
+## Section: GitHub Copilot SDK
+
+Embedding AI agents directly into applications. Topics: building custom Copilot extensions and integrations, the Copilot Extensions API, creating GitHub Apps with AI capabilities, and practical examples of AI-powered developer tooling.
+
+## Section: Model Context Protocol (MCP)
+
+The universal standard for connecting AI to external systems. Topics: MCP servers, tools, resources, prompts, the client-server architecture, how to expose your own APIs to AI, existing MCP servers ecosystem, and building custom MCP tools.
+
+## Section: What the Pros Use
+
+Advanced patterns from the AI-native developer playbook. Topics: workflows, tooling stacks, and practices used by experienced AI developers. Voice-to-text (Wispr Flow), multi-model strategies, compound AI systems, and the meta-skill of tool selection.
+
+## Section: Closing
+
+Workshop summary, key takeaways, next steps for continued learning, and feedback.
+
+---
+
+## Key Concepts
+
+- **Quantum State of Adoption** — AI is unique in that developers simultaneously exist across multiple stages of the technology adoption lifecycle, rather than moving through them sequentially
+- **4D Fluency Framework** — Four competencies for AI collaboration: Delegation, Description, Discernment, Diligence
+- **Three AI Interaction Modes** — Augmentation (collaborative), Automation (task-specific), Agency (goal-directed)
+- **Agent Loop** — LLM receives context → decides on tool call → tool executes → result fed back to LLM → repeat
+- **Spec-Driven Development (SDD)** — Writing an explicit specification document before writing code; makes assumptions reviewable and prevents divergent implementations
+- **Agent vs Skill** — An agent defines what is demanded; a skill defines how to execute it. Skills are reusable; agents can be chained
+- **Pro Tool Stack principle** — Cheap/repetitive → fast local models (Ollama). Complex reasoning → frontier cloud (Claude, GPT, Gemini). Sensitive/regulated → private on-premises
+
+## Tools & Resources Referenced
+
+- GitHub Copilot: https://github.com/features/copilot
+- GitHub Copilot CLI docs: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli
+- Ollama: https://ollama.ai
+- OpenCode CLI: https://opencode.ai
+- Wispr Flow: https://wisprflow.ai
+- Model Context Protocol: https://modelcontextprotocol.io
+- OWASP Top 10: https://owasp.org/www-project-top-ten/
+- llms.txt spec: https://llmstxt.org
+- Workshop source code: https://github.com/JanDeDobbeleer/workshop_ai_native
