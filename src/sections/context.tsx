@@ -383,6 +383,79 @@ export const contextSlides: SlideType[] = [
     )
   },
   {
+    title: "Retrieval-Augmented Generation (RAG)",
+    subtitle: "Dynamically injecting relevant knowledge into context",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+          <h3 className="text-2xl font-bold text-indigo-900 mb-2">The Core Idea</h3>
+          <p className="text-gray-700">Instead of stuffing everything into the context window upfront, RAG <strong>retrieves only the relevant pieces</strong> of a large knowledge base at query time — keeping context lean and targeted.</p>
+        </div>
+
+        <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
+          <h4 className="font-semibold text-indigo-900 mb-3 text-center">How RAG Works</h4>
+          <div className="flex items-center justify-between gap-1 text-xs text-center">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-2 flex-1">
+              <div className="text-lg mb-1">📥</div>
+              <div className="font-medium text-blue-900">User Query</div>
+              <div className="text-gray-500">Natural language</div>
+            </div>
+            <div className="text-gray-400 font-bold text-lg">→</div>
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-2 flex-1">
+              <div className="text-lg mb-1">🔍</div>
+              <div className="font-medium text-purple-900">Semantic Search</div>
+              <div className="text-gray-500">Vector DB</div>
+            </div>
+            <div className="text-gray-400 font-bold text-lg">→</div>
+            <div className="bg-green-50 border border-green-200 rounded-lg p-2 flex-1">
+              <div className="text-lg mb-1">📄</div>
+              <div className="font-medium text-green-900">Relevant Chunks</div>
+              <div className="text-gray-500">Injected into context</div>
+            </div>
+            <div className="text-gray-400 font-bold text-lg">→</div>
+            <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-2 flex-1">
+              <div className="text-lg mb-1">🤖</div>
+              <div className="font-medium text-indigo-900">LLM Response</div>
+              <div className="text-gray-500">Grounded answer</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
+            <h4 className="font-semibold text-indigo-900 mb-2">🎯 When to Use RAG</h4>
+            <ul className="space-y-1 text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>Knowledge base too large to fit in context</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Information changes frequently (docs, tickets)</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Need grounded, citable answers</span></li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
+            <h4 className="font-semibold text-indigo-900 mb-2">🌍 RAG in the Wild</h4>
+            <ul className="space-y-1 text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>GitHub Copilot <code className="bg-gray-100 px-1 rounded font-mono text-xs">@workspace</code> — semantic code search</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Copilot Spaces — retrieval over space documents</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Enterprise search, internal wikis, support bots</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-indigo-100 p-3 rounded-lg">
+          <p className="text-sm italic text-indigo-900">
+            <strong>Key Insight:</strong> RAG solves the "can't fit everything" problem by making retrieval a first-class part of your context strategy.
+          </p>
+        </div>
+
+        <div className="bg-green-50 border border-green-300 p-3 rounded-lg">
+          <p className="text-sm text-green-900">
+            🏕️ <strong>Want to run RAG locally?</strong> Combine <strong>Ollama</strong> + <strong>LlamaIndex</strong> + <strong>ChromaDB</strong> — no cloud, no cost, full privacy.{" "}
+            <a href="https://dev.to/the_aayush_mishra/setting-up-rag-locally-with-ollama-a-beginner-friendly-guide-428m" target="_blank" rel="noopener noreferrer" className="text-green-700 underline hover:text-green-900">Step-by-step guide →</a>
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
     title: "Architecting Instructions for Context Efficiency",
     subtitle: "Keeping your context window lean and relevant",
     content: (
