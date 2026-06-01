@@ -388,7 +388,7 @@ export const contextSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
-          <h3 className="text-xl font-bold text-indigo-900 mb-2">The Core Idea</h3>
+          <h3 className="text-2xl font-bold text-indigo-900 mb-2">The Core Idea</h3>
           <p className="text-gray-700">Instead of stuffing everything into the context window upfront, RAG <strong>retrieves only the relevant pieces</strong> of a large knowledge base at query time — keeping context lean and targeted.</p>
         </div>
 
@@ -396,7 +396,7 @@ export const contextSlides: SlideType[] = [
           <h4 className="font-semibold text-indigo-900 mb-3 text-center">How RAG Works</h4>
           <div className="flex items-center justify-between gap-1 text-xs text-center">
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-2 flex-1">
-              <div className="text-lg mb-1">📝</div>
+              <div className="text-lg mb-1">📥</div>
               <div className="font-medium text-blue-900">User Query</div>
               <div className="text-gray-500">Natural language</div>
             </div>
@@ -424,15 +424,15 @@ export const contextSlides: SlideType[] = [
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
             <h4 className="font-semibold text-indigo-900 mb-2">🎯 When to Use RAG</h4>
-            <ul className="space-y-1 text-gray-700 text-sm">
+            <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-2">•</span><span>Knowledge base too large to fit in context</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Information changes frequently (docs, tickets)</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Need grounded, citable answers</span></li>
             </ul>
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
-            <h4 className="font-semibold text-indigo-900 mb-2">🌐 RAG in the Wild</h4>
-            <ul className="space-y-1 text-gray-700 text-sm">
+            <h4 className="font-semibold text-indigo-900 mb-2">🌍 RAG in the Wild</h4>
+            <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-2">•</span><span>GitHub Copilot <code className="bg-gray-100 px-1 rounded font-mono text-xs">@workspace</code> — semantic code search</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Copilot Spaces — retrieval over space documents</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Enterprise search, internal wikis, support bots</span></li>
@@ -448,7 +448,7 @@ export const contextSlides: SlideType[] = [
 
         <div className="bg-green-50 border border-green-300 p-3 rounded-lg">
           <p className="text-sm text-green-900">
-            🛠️ <strong>Want to run RAG locally?</strong> Combine <strong>Ollama</strong> + <strong>LlamaIndex</strong> + <strong>ChromaDB</strong> — no cloud, no cost, full privacy.{" "}
+            🏕️ <strong>Want to run RAG locally?</strong> Combine <strong>Ollama</strong> + <strong>LlamaIndex</strong> + <strong>ChromaDB</strong> — no cloud, no cost, full privacy.{" "}
             <a href="https://dev.to/the_aayush_mishra/setting-up-rag-locally-with-ollama-a-beginner-friendly-guide-428m" target="_blank" rel="noopener noreferrer" className="text-green-700 underline hover:text-green-900">Step-by-step guide →</a>
           </p>
         </div>
@@ -666,6 +666,65 @@ export const contextSlides: SlideType[] = [
         <div className="bg-blue-50 p-2 rounded-lg">
           <p className="text-sm italic text-blue-900 text-center">
             <strong>Key Insight:</strong> Well-architected code = dramatically more effective AI. Small, focused files = maximum context efficiency.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Code Maps: Structural Context for AI",
+    subtitle: "Navigate large codebases without flooding your context window",
+    content: (
+      <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
+        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+          <p className="text-gray-700">
+            <strong>Code maps</strong> give AI agents a structural overview of your codebase — file relationships, function signatures, module boundaries — without loading every line of source code into context.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
+            <h4 className="font-semibold text-indigo-900 mb-2">
+              🗺️ <a href="https://github.com/JordanCoin/codemap" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">JordanCoin/codemap</a>
+            </h4>
+            <ul className="space-y-1 text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>Generates a concise map of your entire codebase</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Shows file structure, exports, and relationships</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Feeds AI a high-level view, not raw source</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Great starting context for onboarding agents</span></li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
+            <h4 className="font-semibold text-purple-900 mb-2">
+              🔍 <a href="https://github.com/ast-grep/ast-grep" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">ast-grep/ast-grep</a>
+            </h4>
+            <ul className="space-y-1 text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>AST-based structural code search & rewrite</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Find patterns by shape, not just text</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Surgically extract relevant code snippets</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Supports 20+ languages out of the box</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-indigo-100 to-purple-100 p-3 rounded-lg">
+          <h4 className="font-semibold text-gray-900 mb-2">🎯 When to Use Each</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div className="bg-white/70 p-2 rounded">
+              <div className="font-medium text-indigo-700 mb-1">codemap → Orientation</div>
+              <div className="text-xs text-gray-600">Give the agent a project overview before asking it to navigate or modify code</div>
+            </div>
+            <div className="bg-white/70 p-2 rounded">
+              <div className="font-medium text-purple-700 mb-1">ast-grep → Precision</div>
+              <div className="text-xs text-gray-600">Pull only the exact functions or patterns the agent needs, not entire files</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-indigo-100 p-3 rounded-lg">
+          <p className="text-sm italic text-indigo-900 text-center">
+            <strong>Key Insight:</strong> Structural understanding beats full-file dumps — give AI the map, not the whole territory.
           </p>
         </div>
       </div>
