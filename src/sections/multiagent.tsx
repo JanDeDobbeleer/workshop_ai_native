@@ -336,64 +336,80 @@ export const multiagentSlides: SlideType[] = [
     )
   },
   {
-    title: "Other Tools That Abstract Worktree Management",
-    subtitle: "Simplify your multi-agent workflow with dedicated tools",
+    title: "GitHub Copilot App",
+    subtitle: "A desktop control center for parallel agent-driven development",
     content: (
-      <div className="flex flex-col space-y-6 max-w-4xl mx-auto">
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-5 rounded-lg border-l-4 border-purple-500">
-          <h3 className="text-2xl font-bold text-purple-900 mb-3">Worktree Management Tools</h3>
-          <p className="text-lg text-gray-700">
-            These tools handle worktree setup and management automatically, letting you focus on development.
+          <h3 className="text-2xl font-bold text-purple-900 mb-3">What It Is</h3>
+          <p className="text-base text-gray-700">
+            GitHub Copilot App is a desktop application built for agent-driven development with parallel workstreams, GitHub issue and PR workflows, and lifecycle management in one place.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg border border-gray-200">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="text-3xl">⚙️</div>
-              <div>
-                <h4 className="text-xl font-bold text-gray-900">gw (by golbin)</h4>
-                <a href="https://github.com/golbin/gw" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline text-sm">github.com/golbin/gw</a>
-              </div>
-            </div>
-            <p className="text-gray-700 mb-4">
-              Cross-platform CLI that wraps git worktree for multi-agent/parallel work management
-            </p>
-            <div className="bg-gray-50 p-3 rounded border border-gray-200">
-              <p className="text-sm font-semibold text-gray-900 mb-2">Key Features:</p>
-              <ul className="space-y-1 text-sm text-gray-700">
-                <li className="flex"><span className="mr-2">•</span><span>Commands: <code className="text-xs bg-gray-200 px-1 rounded">gw add</code>, <code className="text-xs bg-gray-200 px-1 rounded">gw status</code>, <code className="text-xs bg-gray-200 px-1 rounded">gw apply</code></span></li>
-                <li className="flex"><span className="mr-2">•</span><span>Metadata tracking and locking</span></li>
-                <li className="flex"><span className="mr-2">•</span><span>Verification bundles for testing</span></li>
-              </ul>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
+            <h4 className="font-semibold text-purple-900 mb-2">Why It Fits Multi-Agent Work</h4>
+            <ul className="space-y-1 text-sm text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>Direct agents across parallel workstreams</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Native GitHub integration for repos, branches, and CI</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Designed to reduce switching between tools</span></li>
+            </ul>
           </div>
 
-          <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg border border-gray-200">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="text-3xl">🤖</div>
-              <div>
-                <h4 className="text-lg md:text-xl font-bold text-gray-900">Claude Squad</h4>
-                <a href="https://smtg-ai.github.io/claude-squad/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline text-sm">smtg-ai.github.io/claude-squad</a>
-              </div>
-            </div>
-            <p className="text-gray-700 mb-4">
-              Manage multiple AI agents (Claude Code, Codex, Aider) in one unified interface
-            </p>
-            <div className="bg-gray-50 p-3 rounded border border-gray-200">
-              <p className="text-sm font-semibold text-gray-900 mb-2">Key Features:</p>
-              <ul className="space-y-1 text-sm text-gray-700">
-                <li className="flex"><span className="mr-2">•</span><span>Supervise multiple agents in one UI</span></li>
-                <li className="flex"><span className="mr-2">•</span><span>Isolate tasks in git workspaces</span></li>
-                <li className="flex"><span className="mr-2">•</span><span>Review work before shipping</span></li>
-              </ul>
-            </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
+            <h4 className="font-semibold text-purple-900 mb-2">Practical Notes</h4>
+            <ul className="space-y-1 text-sm text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>Built on GitHub Copilot CLI</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Public preview availability</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Installers for Windows, macOS, and Linux</span></li>
+            </ul>
           </div>
         </div>
 
-        <div className="bg-purple-100 p-4 rounded-lg">
-          <p className="text-sm italic text-purple-900 text-center">
-            <strong>Both tools abstract away the complexity</strong> of worktree management, letting you focus on orchestrating AI agents.
+        <div className="bg-purple-100 p-3 rounded-lg border border-purple-200">
+          <p className="text-sm italic text-purple-900">
+            <strong>Source:</strong> github.com/github/app
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Multica.ai",
+    subtitle: "Assign issues to agents while execution stays local",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
+          <h3 className="text-2xl font-bold text-blue-900 mb-3">How It Works</h3>
+          <p className="text-base text-gray-700">
+            Multica is a collaboration platform where humans and agents share the same workspace: assign an issue to an agent, track progress, and work through comments.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-blue-200">
+            <h4 className="font-semibold text-blue-900 mb-2">Architecture</h4>
+            <ul className="space-y-1 text-sm text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>Server stores workspaces, issues, and tasks</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Daemon runs on your machine and executes tasks</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Code and API keys stay on your side</span></li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-4 rounded-lg shadow border border-blue-200">
+            <h4 className="font-semibold text-blue-900 mb-2">Runtime and Tooling</h4>
+            <ul className="space-y-1 text-sm text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>Current runtime model: local daemon</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Cloud runtimes are listed as coming soon</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Supports 12 AI coding tools with a capability matrix</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-blue-100 p-3 rounded-lg border border-blue-200">
+          <p className="text-sm italic text-blue-900">
+            <strong>Source:</strong> multica.ai/docs
           </p>
         </div>
       </div>
