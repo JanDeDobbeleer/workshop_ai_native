@@ -473,7 +473,7 @@ export const agentsSlides: SlideType[] = [
               <li>• Open standard hosted at <a href="https://github.com/agentskills/agentskills" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">github.com/agentskills/agentskills</a></li>
               <li>• Works with Copilot coding agent, GitHub Copilot CLI, and VS Code Insiders</li>
               <li>• Create your own or use community skills</li>
-              <li>• Find examples at <a href="https://github.com/anthropics/skills" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">anthropics/skills</a> and <a href="https://github.com/github/awesome-copilot" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">github/awesome-copilot</a></li>
+              <li>• Find examples at <a href="https://github.com/anthropics/skills" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">anthropics/skills</a>, <a href="https://github.com/github/awesome-copilot" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">github/awesome-copilot</a>, and <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">obra/superpowers</a></li>
               <li>• Browse and discover skills at <a href="https://skillsmp.com/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">skillsmp.com</a></li>
             </ul>
           </div>
