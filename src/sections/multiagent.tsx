@@ -166,48 +166,6 @@ export const multiagentSlides: SlideType[] = [
     )
   },
   {
-    title: "Why Worktrees Work Perfectly for AI Agents",
-    subtitle: "Parallel work without interference",
-    content: (
-      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-          <h3 className="text-2xl font-bold text-blue-900 mb-4">Multi-Agent Development</h3>
-          <p className="text-lg text-gray-700">
-            When working with AI agents, they need their own space to work without interfering with your current tasks.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 md:p-5 rounded-lg shadow border border-blue-200">
-            <div className="text-3xl mb-3 text-center">🤖</div>
-            <h4 className="font-semibold text-blue-900 mb-2">Isolated Agent Workspace:</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex"><span className="mr-2">•</span><span>Each agent gets its own worktree</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>No interference with your work</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Safe to delete if agent fails</span></li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-4 md:p-5 rounded-lg shadow border border-blue-200">
-            <div className="text-3xl mb-3 text-center">⚡</div>
-            <h4 className="font-semibold text-blue-900 mb-2">Parallel Execution:</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex"><span className="mr-2">•</span><span>AI agents work while you continue</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Multiple agents on different tasks</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Compare different approaches easily</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-blue-100 p-4 rounded-lg">
-          <p className="text-sm italic text-blue-900">
-            <strong>Key Benefit:</strong> Spin up a worktree for an agent, let it work in parallel, then review changes without any context switching.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
     title: "Multi-Agent Workflow Pattern",
     subtitle: "Organize your work with purpose-driven worktrees",
     content: (
@@ -241,53 +199,6 @@ export const multiagentSlides: SlideType[] = [
         <div className="bg-gray-100 px-6 py-4 rounded-lg max-w-3xl w-full">
           <p className="text-center text-gray-900">
             <strong>Clear Organization:</strong> See at a glance what's happening where, with each worktree having a clear, defined purpose.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Key Benefits",
-    subtitle: "Why the worktree + agent workflow improves productivity",
-    content: (
-      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-          <div className="bg-green-50 p-4 md:p-5 rounded-lg border-l-4 border-green-500">
-            <div className="text-3xl mb-3">💾</div>
-            <h4 className="text-lg font-bold text-green-900 mb-2">Context Preservation</h4>
-            <p className="text-gray-700">
-              Leave your work exactly as it is, chaos and all, and switch to something else without losing your train of thought.
-            </p>
-          </div>
-
-          <div className="bg-blue-50 p-4 md:p-5 rounded-lg border-l-4 border-blue-500">
-            <div className="text-3xl mb-3">✨</div>
-            <h4 className="text-lg font-bold text-blue-900 mb-2">No More WIP Commits</h4>
-            <p className="text-gray-700">
-              Every commit is meaningful. No more "WIP", "temp", or "fix later" commits cluttering your history.
-            </p>
-          </div>
-
-          <div className="bg-purple-50 p-4 md:p-5 rounded-lg border-l-4 border-purple-500">
-            <div className="text-3xl mb-3">🔬</div>
-            <h4 className="text-lg font-bold text-purple-900 mb-2">Parallel Experimentation</h4>
-            <p className="text-gray-700">
-              Have multiple agents trying different approaches to the same problem, then compare the results side-by-side.
-            </p>
-          </div>
-
-          <div className="bg-orange-50 p-4 md:p-5 rounded-lg border-l-4 border-orange-500">
-            <div className="text-3xl mb-3">🧠</div>
-            <h4 className="text-lg font-bold text-orange-900 mb-2">Mental Clarity</h4>
-            <p className="text-gray-700">
-              Each worktree serves a specific purpose, helping you stay organized even when juggling multiple tasks.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-gray-100 p-4 rounded-lg">
-          <p className="text-center text-gray-900">
-            <strong>The Future of Development:</strong> Parallel workflows for both humans and their AI assistants.
           </p>
         </div>
       </div>
