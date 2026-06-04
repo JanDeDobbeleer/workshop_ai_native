@@ -16,7 +16,7 @@ export const agentsSlides: SlideType[] = [
           Agents &amp; Skills
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Prompt files, custom agents, and agent skills
+          Custom agents and agent skills
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-green-400 rounded-full"></div>
@@ -27,59 +27,6 @@ export const agentsSlides: SlideType[] = [
     )
   },
   {
-    title: "Stop Repeating Yourself",
-    subtitle: "Reusable Prompt Files in VS Code",
-    content: (
-      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-          <h3 className="text-xl font-bold text-green-900 mb-2">What are Prompt Files?</h3>
-          <p className="text-gray-700">
-            Markdown files that define reusable prompts for common development tasks. Run them on-demand in chat to ensure consistent, high-quality AI interactions.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded-lg shadow border border-green-200">
-            <h4 className="font-semibold text-green-900 mb-2">📄 File Structure (.prompt.md)</h4>
-            <ul className="space-y-1 text-sm text-gray-700">
-              <li>• Stored in <code className="bg-gray-100 px-1 rounded">.github/prompts</code> folder</li>
-              <li>• YAML frontmatter for metadata (description, agent, tools)</li>
-              <li>• Markdown body with instructions and guidelines</li>
-              <li>• Variables: <code className="bg-gray-100 px-1 rounded">${'${selection}'}</code>, <code className="bg-gray-100 px-1 rounded">${'${file}'}</code>, <code className="bg-gray-100 px-1 rounded">${'${input:name}'}</code></li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-4 rounded-lg shadow border border-green-200">
-            <h4 className="font-semibold text-green-900 mb-2">🚀 How to Use</h4>
-            <ul className="space-y-1 text-sm text-gray-700">
-              <li>• Type <code className="bg-gray-100 px-1 rounded">/prompt-name</code> in chat to run</li>
-              <li>• Add extra context after the command</li>
-              <li>• Use play button in editor to test prompts</li>
-              <li>• Workspace or user-scoped (synced across devices)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded-lg shadow border border-green-200">
-            <h4 className="font-semibold text-green-900 mb-2">💡 Example Use Cases</h4>
-            <div className="flex justify-around text-sm text-gray-700">
-              <div className="text-center"><span className="text-xl">⚛️</span><div>React components</div></div>
-              <div className="text-center"><span className="text-xl">🔒</span><div>Security reviews</div></div>
-              <div className="text-center"><span className="text-xl">📚</span><div>API docs</div></div>
-            </div>
-          </div>
-
-          <div className="bg-green-100 p-4 rounded-lg flex items-center">
-            <p className="text-sm italic text-green-900">
-              <strong>Pro Tip:</strong> Use Markdown links to reference custom instructions rather than duplicating guidelines.
-            </p>
-          </div>
-        </div>
-      </div>
-    )
-  },
-    {
     title: "Stop Repeating Yourself",
     subtitle: "Agents",
     content: (
