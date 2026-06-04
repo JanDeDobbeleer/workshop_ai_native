@@ -51,6 +51,9 @@ const getSectionStartIndices = () => {
 };
 
 const sectionData = getSectionStartIndices();
+const mainContentEndIndex =
+  sectionData.find((s) => s.name === 'Closing')?.endIndex ??
+  sectionData.reduce((acc, s) => acc + s.slides.length, 0) - 1;
 
 const FourDSlides = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -125,7 +128,7 @@ const FourDSlides = () => {
   };
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => Math.min(prev + 1, mainContentEndIndex));
   };
 
   const prevSlide = () => {
@@ -146,7 +149,7 @@ const FourDSlides = () => {
       if (e.key === 'Escape' && menuOpen) {
         setMenuOpen(false);
       } else if (e.key === 'ArrowRight' && !menuOpen) {
-        setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1));
+        setCurrentSlide((prev) => Math.min(prev + 1, mainContentEndIndex));
       } else if (e.key === 'ArrowLeft' && !menuOpen) {
         setCurrentSlide((prev) => Math.max(prev - 1, 0));
       }
@@ -177,7 +180,7 @@ const FourDSlides = () => {
           setCurrentSlide((prev) => Math.max(prev - 1, 0));
         } else {
           // Swiped left - go to next slide
-          setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1));
+          setCurrentSlide((prev) => Math.min(prev + 1, mainContentEndIndex));
         }
       }
     };
@@ -368,7 +371,7 @@ const FourDSlides = () => {
             </div>
 
             <div className="flex justify-end">
-              {currentSlide < slides.length - 2 && (
+              {currentSlide < mainContentEndIndex - 1 && (
                 <button
                   onClick={nextSlide}
                   className="flex items-center space-x-1 md:space-x-2 px-3 py-1.5 md:px-4 md:py-2 bg-white rounded-lg shadow hover:bg-gray-50 transition-all text-sm md:text-base md:hidden"
@@ -384,7 +387,7 @@ const FourDSlides = () => {
           </div>
 
           <div className="hidden md:flex md:flex-1 md:justify-end">
-            {currentSlide < slides.length - 2 && (
+            {currentSlide < mainContentEndIndex - 1 && (
               <button
                 onClick={nextSlide}
                 className="flex items-center space-x-2 px-4 py-2 bg-white rounded-lg shadow hover:bg-gray-50 transition-all"
