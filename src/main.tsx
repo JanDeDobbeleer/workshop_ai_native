@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { ChevronLeft, ChevronRight, Menu, X, Presentation, Sparkles, Target, Box, Code, Terminal, Shield, ShieldAlert, ScrollText, MessageSquare, Brain, Puzzle, Network, PanelRight, PanelLeft, Plug, TrendingUp, Cpu, FileCode, Users, Trophy } from 'lucide-react';
-import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotSlides, copilotCliSlides, privacySlides, securitySlides, instructionsSlides, promptingSlides, agentsSlides, spacesSlides, contextSlides, evolutionSlides, multiagentSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, speckitSlides, prosSlides } from './sections';
+import { ChevronLeft, ChevronRight, Menu, X, Presentation, Sparkles, Target, Box, Code, Terminal, ShieldAlert, ScrollText, MessageSquare, Brain, Puzzle, Network, PanelRight, PanelLeft, Plug, TrendingUp, Cpu, FileCode, Users } from 'lucide-react';
+import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotSlides, copilotCliSlides, securitySlides, instructionsSlides, promptingSlides, agentsSlides, spacesSlides, contextSlides, evolutionSlides, multiagentSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, speckitSlides } from './sections';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import './index.css';
@@ -23,22 +23,21 @@ const sections = [
   { name: 'LLM Basics', slides: llmSlides, color: 'blue', icon: Sparkles },
   { name: '4D Fluency', slides: fluencySlides, color: 'green', icon: Target },
   { name: 'Models', slides: modelsSlides, color: 'orange', icon: Box },
-  { name: 'Ollama', slides: ollamaSlides, color: 'blue', icon: Cpu },
   { name: 'Copilot', slides: copilotSlides, color: 'blue', icon: Code },
   { name: 'Prompting', slides: promptingSlides, color: 'indigo', icon: MessageSquare },
   { name: 'Instructions', slides: instructionsSlides, color: 'green', icon: ScrollText },
   { name: 'Agents & Skills', slides: agentsSlides, color: 'purple', icon: Puzzle },
   { name: 'Context', slides: contextSlides, color: 'purple', icon: Brain },
   { name: 'Spec Kit', slides: speckitSlides, color: 'teal', icon: FileCode },
-  { name: 'Privacy', slides: privacySlides, color: 'purple', icon: Shield },
   { name: 'Security', slides: securitySlides, color: 'red', icon: ShieldAlert },
   { name: 'MCP', slides: mcpSlides, color: 'teal', icon: Plug },
   { name: 'Team Sharing', slides: spacesSlides, color: 'blue', icon: Users },
   { name: 'Copilot CLI', slides: copilotCliSlides, color: 'gray', icon: Terminal },
   { name: 'Multi-Agent', slides: multiagentSlides, color: 'purple', icon: Network },
-  { name: 'Copilot SDK', slides: sdkSlides, color: 'indigo', icon: Code },
-  { name: 'What the Pros Use', slides: prosSlides, color: 'orange', icon: Trophy },
   { name: 'Closing', slides: closingSlides, color: 'gray', icon: Presentation },
+  { name: '__addendum__', slides: [], color: 'gray', icon: Presentation },
+  { name: 'Ollama', slides: ollamaSlides, color: 'blue', icon: Cpu },
+  { name: 'Copilot SDK', slides: sdkSlides, color: 'indigo', icon: Code },
 ];
 
 // Calculate section start indices
@@ -80,22 +79,20 @@ const FourDSlides = () => {
     ...llmSlides,
     ...fluencySlides,
     ...modelsSlides,
-    ...ollamaSlides,
     ...copilotSlides,
     ...promptingSlides,
     ...instructionsSlides,
     ...agentsSlides,
     ...contextSlides,
     ...speckitSlides,
-    ...privacySlides,
     ...securitySlides,
     ...mcpSlides,
     ...spacesSlides,
     ...copilotCliSlides,
     ...multiagentSlides,
-    ...sdkSlides,
-    ...prosSlides,
     ...closingSlides,
+    ...ollamaSlides,
+    ...sdkSlides,
   ];
 
   // Get current section based on slide index
@@ -254,6 +251,17 @@ const FourDSlides = () => {
         <nav className="overflow-y-auto flex-1">
           <ul className="py-2">
             {sectionData.map((section, index) => {
+              if (section.name === '__addendum__') {
+                return (
+                  <li key={index} className="px-4 py-2">
+                    <div className="flex items-center gap-2">
+                      <div className="flex-1 h-px bg-gray-200"></div>
+                      <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Addendum</span>
+                      <div className="flex-1 h-px bg-gray-200"></div>
+                    </div>
+                  </li>
+                );
+              }
               const isActive = getCurrentSection()?.name === section.name;
               const colorClasses: Record<string, string> = {
                 gray: 'bg-gray-100 border-gray-500 text-gray-900',
