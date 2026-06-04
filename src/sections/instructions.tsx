@@ -227,14 +227,14 @@ export const instructionsSlides: SlideType[] = [
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white p-3 rounded-lg shadow border border-green-200">
               <h4 className="font-semibold text-sm text-green-900 mb-2">📄 File Structure (.prompt.md)</h4>
               <ul className="space-y-1 text-sm text-gray-700">
-                <li>• Stored in <code className="bg-gray-100 px-1 rounded">.github/prompts</code> folder</li>
+                <li>• Conventionally stored in <code className="bg-gray-100 px-1 rounded">.github/prompts/</code></li>
                 <li>• YAML frontmatter for metadata (description, agent, tools)</li>
                 <li>• Markdown body with instructions and guidelines</li>
-                <li>• Variables: <code className="bg-gray-100 px-1 rounded">${'${selection}'}</code>, <code className="bg-gray-100 px-1 rounded">${'${file}'}</code>, <code className="bg-gray-100 px-1 rounded">${'${input:name}'}</code></li>
+                <li>• Variables: <code className="bg-gray-100 px-1 rounded">{'${selection}'}</code>, <code className="bg-gray-100 px-1 rounded">{'${file}'}</code>, <code className="bg-gray-100 px-1 rounded">{'${input:name}'}</code></li>
               </ul>
             </div>
 
@@ -249,7 +249,7 @@ export const instructionsSlides: SlideType[] = [
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white p-3 rounded-lg shadow border border-green-200">
               <h4 className="font-semibold text-sm text-green-900 mb-2">💡 Example Use Cases</h4>
               <div className="flex justify-around text-sm text-gray-700">
