@@ -60,18 +60,8 @@ const ExportDeck: React.FC = () => (
             <p className="text-xl text-gray-600">{slide.subtitle}</p>
           </div>
         )}
-        <div
-          className={`flex-1 min-h-0 flex items-center justify-center ${
-            !slide.title && !slide.subtitle ? 'items-center justify-center' : ''
-          }`}
-        >
-          <div
-            className={`w-full h-full overflow-hidden ${
-              !slide.title && !slide.subtitle ? 'flex items-center justify-center' : ''
-            }`}
-          >
-            {slide.content}
-          </div>
+        <div className="flex-1 min-h-0 flex items-center justify-center overflow-hidden">
+          {slide.content}
         </div>
       </div>
     ))}
