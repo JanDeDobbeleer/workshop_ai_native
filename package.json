@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:export": "vite build --config vite.config.export.ts",
+    "export": "node scripts/export-pdf.js"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -18,9 +20,12 @@
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
+    "pdf-lib": "^1.17.1",
     "postcss": "^8.4.32",
+    "puppeteer-core": "^21.0.0",
     "tailwindcss": "^3.3.6",
     "typescript": "^5.3.3",
     "vite": "^5.0.8"
   }
 }
+
