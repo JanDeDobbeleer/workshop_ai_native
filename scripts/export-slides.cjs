@@ -56,7 +56,7 @@ function findChromePath() {
 function usage() {
     return [
         "Usage:",
-        "  node export_deck_pdf.js --input <path> [--output <path>]",
+        "  node export-slides.cjs --input <path> [--output <path>]",
         "Options:",
         "  --width <px>       Slide width. Default 1920",
         "  --height <px>      Slide height. Default 1080",
