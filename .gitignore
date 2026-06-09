@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/react,visualstudiocode,node,vue
 # Edit at https://www.toptal.com/developers/gitignore?templates=react,visualstudiocode,node,vue
 
+# PDF export artifacts
+*.pdf
+dist-export/
+
 ### Node ###
 # Logs
 logs
