@@ -1,6 +1,8 @@
 import { Puzzle, Repeat } from 'lucide-react';
 import { SlideType } from './types';
 import { CodeBlock } from '../components/CodeBlock';
+import { ToolMatrix, STANDARD_TOOL_COLUMNS } from '../components/ToolMatrix';
+import { agentsMatrixRows } from '../components/toolMatrixRows';
 
 export const agentsSlides: SlideType[] = [
   {
@@ -16,7 +18,7 @@ export const agentsSlides: SlideType[] = [
           Agents &amp; Skills
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Custom agents and agent skills
+          Custom agents, skills, delegation, and permissions
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-green-400 rounded-full"></div>
@@ -27,8 +29,142 @@ export const agentsSlides: SlideType[] = [
     )
   },
   {
+    title: "Agents & Skills by Tool",
+    subtitle: "Where to define agents, skills, and permissions",
+    content: (
+      <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
+        <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+          <p className="text-gray-700">
+            Custom agents are <strong>files</strong> in most tools. Copilot <strong>subagents</strong> are runtime-only — no file path.
+          </p>
+        </div>
+        <ToolMatrix columns={STANDARD_TOOL_COLUMNS} rows={agentsMatrixRows} />
+      </div>
+    )
+  },
+  {
+    title: "Agent Modes",
+    subtitle: "Ask, Plan, Agent — universal interaction levels",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+          <p className="text-gray-700">
+            Every major IDE assistant offers modes from <strong>read-only Q&amp;A</strong> to <strong>autonomous execution</strong>. Names differ; the spectrum is the same.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+            <h4 className="font-bold text-blue-900 mb-2 text-center">Ask</h4>
+            <ul className="text-sm text-gray-700 space-y-1">
+              <li>• Explore and explain</li>
+              <li>• No file changes</li>
+              <li>• Safe for learning</li>
+            </ul>
+          </div>
+          <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+            <h4 className="font-bold text-orange-900 mb-2 text-center">Plan</h4>
+            <ul className="text-sm text-gray-700 space-y-1">
+              <li>• Step-by-step strategy</li>
+              <li>• Review before execution</li>
+              <li>• Complex features</li>
+            </ul>
+          </div>
+          <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+            <h4 className="font-bold text-purple-900 mb-2 text-center">Agent</h4>
+            <ul className="text-sm text-gray-700 space-y-1">
+              <li>• Multi-file edits</li>
+              <li>• Terminal commands</li>
+              <li>• Iterates until done</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="relative w-full">
+          <div className="flex items-center justify-between mb-1 text-xs text-gray-500">
+            <span>More human control</span>
+            <span>More AI autonomy</span>
+          </div>
+          <div className="h-3 bg-gradient-to-r from-blue-500 via-orange-500 to-purple-500 rounded-full" />
+        </div>
+
+        <div className="bg-gray-100 p-3 rounded-lg">
+          <p className="text-sm italic text-gray-700 text-center">
+            <strong>Pro tip:</strong> Ask → Plan → Agent. Switch modes anytime in Copilot, Cursor, and Claude Code.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Agent Approval Levels",
+    subtitle: "How much autonomy to grant (Copilot callout)",
+    content: (
+      <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
+        <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+          <p className="text-gray-700">
+            <strong>Copilot (VS Code):</strong> permissions picker — Default (confirm each tool), Bypass (auto-approve tools), Autopilot preview (fully autonomous).
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="bg-white p-3 rounded-lg shadow border border-gray-300">
+            <h4 className="font-bold text-gray-900 text-sm mb-1">Default</h4>
+            <p className="text-xs text-gray-600">Confirm every tool call — maximum oversight</p>
+          </div>
+          <div className="bg-white p-3 rounded-lg shadow border border-yellow-400">
+            <h4 className="font-bold text-gray-900 text-sm mb-1">Bypass</h4>
+            <p className="text-xs text-gray-600">Auto-approve tools; still pauses on ambiguous decisions</p>
+          </div>
+          <div className="bg-white p-3 rounded-lg shadow border border-purple-400">
+            <h4 className="font-bold text-gray-900 text-sm mb-1">Autopilot</h4>
+            <p className="text-xs text-gray-600">Runs until complete — use only with clear, scoped tasks</p>
+          </div>
+        </div>
+        <div className="bg-white p-3 rounded-lg border border-purple-200">
+          <p className="text-sm text-gray-700">
+            <strong>Other tools:</strong> Claude Code uses <code className="bg-gray-100 px-1 rounded">permissionMode</code> in agent frontmatter; Cursor offers auto-run and sandbox settings.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Agent Handoffs",
+    subtitle: "Pass tasks between session types",
+    content: (
+      <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
+        <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+          <p className="text-gray-700">
+            Hand off a task between agents or session types — conversation history carries over. Plan locally, implement in cloud, review in IDE.
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
+          <div className="bg-blue-500 text-white p-3 rounded-lg text-center min-w-[120px]">
+            <div className="font-bold text-sm">Local</div>
+            <div className="text-xs text-blue-100">Plan &amp; explore</div>
+          </div>
+          <div className="text-purple-400 font-bold">→</div>
+          <div className="bg-gray-600 text-white p-3 rounded-lg text-center min-w-[120px]">
+            <div className="font-bold text-sm">CLI / Background</div>
+            <div className="text-xs text-gray-200">Isolated worktree</div>
+          </div>
+          <div className="text-purple-400 font-bold">→</div>
+          <div className="bg-green-500 text-white p-3 rounded-lg text-center min-w-[120px]">
+            <div className="font-bold text-sm">Cloud</div>
+            <div className="text-xs text-green-100">PR when done</div>
+          </div>
+        </div>
+        <div className="bg-purple-100 p-3 rounded-lg">
+          <p className="text-sm italic text-purple-900">
+            <strong>Copilot:</strong> session type dropdown or <code className="bg-white px-1 rounded">/delegate</code> in CLI. Pattern applies across tools with different UI.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
     title: "Stop Repeating Yourself",
-    subtitle: "Agents",
+    subtitle: "Custom agent files",
     content: (
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
@@ -40,11 +176,11 @@ export const agentsSlides: SlideType[] = [
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white p-5 rounded-lg shadow border border-purple-200">
-            <h4 className="font-semibold text-purple-900 mb-2">🤖 File Structure (.agent.md)</h4>
+            <h4 className="font-semibold text-purple-900 mb-2">🤖 Agent file format</h4>
             <ul className="space-y-2 text-gray-700">
               <li>• YAML frontmatter: name, description, tools, handoffs</li>
               <li>• Markdown body with agent-specific instructions</li>
-              <li>• Restrict tools per agent (e.g., read-only for planners)</li>
+              <li>• Copilot: <code className="bg-gray-100 px-1 rounded">.github/agents/AGENT-NAME.md</code></li>
             </ul>
           </div>
 
@@ -375,14 +511,14 @@ export const agentsSlides: SlideType[] = [
             <h4 className="font-semibold text-green-900 mb-2">Cloud agent launch options:</h4>
             <ul className="space-y-1 text-gray-700">
               <li className="flex"><span className="mr-1">•</span><span>Choose model (Claude / Codex / Copilot)</span></li>
-              <li className="flex"><span className="mr-1">•</span><span>Select a custom <code className="bg-gray-100 px-1 rounded">.agent.md</code></span></li>
+              <li className="flex"><span className="mr-1">•</span><span>Select a custom agent from <code className="bg-gray-100 px-1 rounded">.github/agents/</code></span></li>
               <li className="flex"><span className="mr-1">•</span><span>Pick folder for multi-root workspaces</span></li>
               <li className="flex"><span className="mr-1">•</span><span>Checkout result via PR extension</span></li>
             </ul>
           </div>
         </div>
         <div className="bg-white p-3 rounded-lg shadow border border-gray-200">
-          <h4 className="font-semibold text-gray-900 mb-1">Agent orchestration via <code className="bg-gray-100 px-1 rounded">.agent.md</code>:</h4>
+          <h4 className="font-semibold text-gray-900 mb-1">Agent orchestration via <code className="bg-gray-100 px-1 rounded">.github/agents/AGENT-NAME.md</code>:</h4>
           <div className="font-mono text-xs text-gray-700 space-y-0.5">
             <div className="text-purple-700">---</div>
             <div>name: Planner</div>
@@ -403,13 +539,13 @@ export const agentsSlides: SlideType[] = [
   },
   {
     title: "Agent Skills",
-    subtitle: "Teaching Copilot to Perform Specialized Tasks",
+    subtitle: "Teaching agents specialized tasks",
     content: (
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
           <h3 className="text-2xl font-bold text-purple-900 mb-4">What Are Agent Skills?</h3>
           <p className="text-lg text-gray-700">
-            Agent Skills are folders of instructions, scripts, and resources that Copilot can load when relevant to your task.
+            Agent Skills are folders of instructions, scripts, and resources that agents load when relevant to your task.
           </p>
         </div>
 

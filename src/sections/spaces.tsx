@@ -1,5 +1,7 @@
 import { Users } from 'lucide-react';
 import { SlideType } from './types';
+import { ToolMatrix, STANDARD_TOOL_COLUMNS } from '../components/ToolMatrix';
+import { teamKnowledgeMatrixRows } from '../components/toolMatrixRows';
 
 export const spacesSlides: SlideType[] = [
   {
@@ -9,16 +11,30 @@ export const spacesSlides: SlideType[] = [
       <div className="flex flex-col items-center md:justify-center md:h-full space-y-6">
         <Users className="w-16 h-16 md:w-20 md:h-20 text-blue-500" />
         <h1 className="text-5xl md:text-6xl font-bold text-blue-900 text-center">
-          Team AI Sharing
+          Team Knowledge
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Sharing instructions, prompts, and skills across your team
+          Shared knowledge bases and team-wide AI configuration
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-blue-300 rounded-full"></div>
           <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
           <div className="w-3 h-3 bg-blue-300 rounded-full"></div>
         </div>
+      </div>
+    )
+  },
+  {
+    title: "Team Knowledge by Tool",
+    subtitle: "Shared bases — Spaces, APM, and shared repos",
+    content: (
+      <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
+        <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+          <p className="text-gray-700">
+            Team knowledge = versioned instructions, agents, and curated context everyone shares — not per-developer prompt hacks.
+          </p>
+        </div>
+        <ToolMatrix columns={STANDARD_TOOL_COLUMNS} rows={teamKnowledgeMatrixRows} />
       </div>
     )
   },
@@ -68,8 +84,8 @@ export const spacesSlides: SlideType[] = [
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
-            <h3 className="text-lg font-bold text-blue-900 mb-2">🌐 Copilot Spaces</h3>
-            <p className="text-sm text-gray-700 mb-3">A curated, shareable knowledge base that grounds Copilot in your team's context—instructions, repos, docs, and more.</p>
+            <h3 className="text-lg font-bold text-blue-900 mb-2">🌐 Copilot Spaces <span className="text-xs font-normal text-blue-600">(Copilot column)</span></h3>
+            <p className="text-sm text-gray-700 mb-3">Curated, shareable knowledge base — instructions, repos, docs — that grounds Copilot in team context.</p>
             <ul className="space-y-1 text-sm text-gray-700">
               <li className="flex"><span className="mr-2">✓</span><span>Share context &amp; knowledge</span></li>
               <li className="flex"><span className="mr-2">✓</span><span>GitHub-native, no setup</span></li>

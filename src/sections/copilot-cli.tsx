@@ -1,6 +1,8 @@
 import { Terminal } from 'lucide-react';
 import { SlideType } from './types';
 import { CodeBlock } from '../components/CodeBlock';
+import { ToolMatrix, STANDARD_TOOL_COLUMNS } from '../components/ToolMatrix';
+import { terminalAgentsMatrixRows } from '../components/toolMatrixRows';
 
 export const copilotCliSlides: SlideType[] = [
   {
@@ -10,10 +12,10 @@ export const copilotCliSlides: SlideType[] = [
       <div className="flex flex-col items-center md:justify-center md:h-full space-y-6">
         <Terminal className="w-20 h-20 text-gray-700" />
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 text-center">
-          GitHub Copilot CLI
+          Terminal Agents
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          AI assistance directly in your terminal
+          CLI entry points for agentic coding across tools
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
@@ -24,8 +26,22 @@ export const copilotCliSlides: SlideType[] = [
     )
   },
   {
+    title: "Terminal Agents by Tool",
+    subtitle: "CLI entry points and cloud vs local",
+    content: (
+      <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
+        <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-500">
+          <p className="text-gray-700">
+            Terminal agents share the same capabilities as IDE agents — often with richer scripting, CI integration, and cloud delegation.
+          </p>
+        </div>
+        <ToolMatrix columns={STANDARD_TOOL_COLUMNS} rows={terminalAgentsMatrixRows} />
+      </div>
+    )
+  },
+  {
     title: "GitHub Copilot CLI",
-    subtitle: "Introduction & Platform Support",
+    subtitle: "One terminal agent — deep dive (Copilot callout)",
     content: (
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-500">
