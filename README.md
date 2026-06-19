@@ -13,7 +13,7 @@ An interactive slideshow for the **AI Native Developer Workshop**, built with Re
 | Models            | Model landscape and selection guidance             |
 | Prompting         | Prompt engineering techniques                      |
 | Instructions      | Custom instructions — cross-tool config paths      |
-| Agents & Skills   | Custom agents, skills, delegation, permissions     |
+| Agents & Skills   | Two portable layers, custom agents, skills, delegation, permissions |
 | Context           | Context window management and attachment           |
 | Spec Kit          | Spec-driven development with AI                    |
 | Security          | OWASP Top 10, secure AI-assisted coding            |

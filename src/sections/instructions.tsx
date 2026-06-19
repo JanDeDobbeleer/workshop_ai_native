@@ -392,6 +392,9 @@ description: "React component standards"
             <p className="text-gray-700">
               <code className="bg-purple-100 px-1 rounded font-mono">AGENTS.md</code> is a convention that works across multiple AI coding assistants — GitHub Copilot, Claude Code, Cursor, and more.
             </p>
+            <p className="text-sm text-gray-600 mt-2">
+              For portable <strong>skills</strong> (not instructions), see <strong>Agents &amp; Skills → Two Portable Layers</strong>.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">

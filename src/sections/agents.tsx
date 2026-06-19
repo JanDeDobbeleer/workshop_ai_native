@@ -29,6 +29,74 @@ export const agentsSlides: SlideType[] = [
     )
   },
   {
+    title: "Two Portable Layers",
+    subtitle: "AGENTS.md for instructions · .agents/skills/ for skills",
+    content: (
+      <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
+        <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+          <p className="text-gray-700">
+            Two conventions travel across tools. Everything else stays in <strong>tool-native folders</strong>.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <div className="bg-white p-4 rounded-lg shadow border-l-4 border-green-500 border border-gray-200">
+            <div className="flex items-start gap-3">
+              <span className="text-lg font-bold text-green-700 shrink-0">1</span>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-1">
+                  <code className="bg-gray-100 px-1 rounded font-mono text-sm">AGENTS.md</code> — instructions
+                </h4>
+                <p className="text-sm text-gray-700">Root markdown file for persistent project guidance. Read by Cursor, Copilot, Claude Code, Codex, and more.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white p-4 rounded-lg shadow border-l-4 border-purple-500 border border-gray-200">
+            <div className="flex items-start gap-3">
+              <span className="text-lg font-bold text-purple-700 shrink-0">2</span>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-1">
+                  <code className="bg-gray-100 px-1 rounded font-mono text-sm">.agents/skills/</code> — portable skills
+                </h4>
+                <p className="text-sm text-gray-700">Open-standard <code className="bg-gray-100 px-1 rounded text-xs">SKILL.md</code> bundles. Shared discovery path for Cursor, Copilot, Codex, and Devin (Claude uses native path — see matrix).</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white p-4 rounded-lg shadow border-l-4 border-gray-400 border border-gray-200">
+            <div className="flex items-start gap-3">
+              <span className="text-lg font-bold text-gray-600 shrink-0">3</span>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-1">Tool-native folders — agents, rules, MCP</h4>
+                <p className="text-sm text-gray-700">
+                  <code className="bg-gray-100 px-1 rounded text-xs">.cursor/</code>{' '}
+                  <code className="bg-gray-100 px-1 rounded text-xs">.claude/</code>{' '}
+                  <code className="bg-gray-100 px-1 rounded text-xs">.github/</code>{' '}
+                  <code className="bg-gray-100 px-1 rounded text-xs">.codex/</code>{' '}
+                  <code className="bg-gray-100 px-1 rounded text-xs">.devin/</code> — still required for custom agents, scoped rules, and MCP config.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-amber-50 p-3 rounded-lg border-l-4 border-amber-500">
+          <p className="text-sm text-amber-900">
+            <strong>Anti-pattern:</strong> Don&apos;t put instructions in <code className="bg-amber-100 px-1 rounded">.agents/</code> — use <code className="bg-amber-100 px-1 rounded">AGENTS.md</code>.
+          </p>
+        </div>
+
+        <div className="bg-gray-100 p-3 rounded-lg">
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>• Install community skills: <code className="bg-white px-1 rounded font-mono text-xs">npx skills add &lt;owner/repo&gt;</code></li>
+            <li>• For portable <strong>instructions</strong>, see <strong>Instructions → AGENTS.md</strong></li>
+          </ul>
+        </div>
+      </div>
+    )
+  },
+  {
     title: "Agents & Skills by Tool",
     subtitle: "Where to define agents, skills, and permissions",
     content: (
@@ -38,7 +106,17 @@ export const agentsSlides: SlideType[] = [
             Custom agents are <strong>files</strong> in most tools. Copilot <strong>subagents</strong> are runtime-only — no file path.
           </p>
         </div>
-        <ToolMatrix columns={STANDARD_TOOL_COLUMNS} rows={agentsMatrixRows} />
+        <ToolMatrix
+          columns={STANDARD_TOOL_COLUMNS}
+          rows={agentsMatrixRows}
+          footnote={
+            <>
+              <code className="bg-gray-200 px-1 rounded">npx skills</code> installs to{' '}
+              <code className="bg-gray-200 px-1 rounded">.agents/skills/</code> for Copilot/Cursor/Codex; Claude gets{' '}
+              <code className="bg-gray-200 px-1 rounded">.claude/skills/</code> copy/symlink. Portable paths as of mid-2026.
+            </>
+          }
+        />
       </div>
     )
   },
