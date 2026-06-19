@@ -4,7 +4,6 @@ export { llmSlides } from './llm';
 export { fluencySlides } from './fluency';
 export { promptingSlides } from './prompting';
 export { modelsSlides } from './models';
-export { copilotSlides } from './copilot';
 export { copilotCliSlides } from './copilot-cli';
 export { securitySlides } from './security';
 export { instructionsSlides } from './instructions';

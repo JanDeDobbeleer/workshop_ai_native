@@ -251,6 +251,42 @@ After making any changes to slide files:
 </div>
 ```
 
+**5. Tool Comparison Matrix Pattern** (capability-first cross-tool slides):
+
+Use the shared `ToolMatrix` component from `src/components/ToolMatrix.tsx` for cross-tool configuration comparisons.
+
+```tsx
+import { ToolMatrix, STANDARD_TOOL_COLUMNS } from '../components/ToolMatrix';
+import { instructionsMatrixRows } from '../components/toolMatrixRows';
+
+{
+  title: "Where Do I Put Instructions?",
+  subtitle: "Same capability, different paths per tool",
+  content: (
+    <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
+      <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+        <p className="text-gray-700">Rows = capability concepts. Columns = tools. Answer &quot;where do I put X?&quot; first.</p>
+      </div>
+      <ToolMatrix
+        columns={STANDARD_TOOL_COLUMNS}
+        rows={instructionsMatrixRows}
+        footnote="Primary columns: Cursor, Claude Code, Copilot. Secondary: Codex, Devin Desktop."
+      />
+    </div>
+  )
+}
+```
+
+**Matrix rules:**
+- Max **6 rows** per slide; split by group if exceeded
+- **Primary columns** (Cursor, Claude Code, Copilot): full detail in cells
+- **Secondary columns** (Codex, Devin Desktop): path + brief note or "—"
+- Cell kinds: `text`, `code`, `link`, `status` (yes/no/partial/na)
+- Mobile: row-as-card layout (automatic in component)
+- Desktop: semantic `<table>` with sticky row-label column
+- Matrix slides may use tighter spacing (`space-y-4`) instead of `space-y-6` for viewport fit
+- Row data lives in `src/components/toolMatrixRows.ts` — add section-specific rows there
+
 ## Content Density Rules
 
 1. **Bullet Points**: Max 5 bullets per list, 1-2 lines each

@@ -11,22 +11,19 @@ An interactive slideshow for the **AI Native Developer Workshop**, built with Re
 | LLM Basics        | Transformers, context windows, GPU acceleration    |
 | 4D Fluency        | Framework for effective AI collaboration           |
 | Models            | Model landscape and selection guidance             |
-| Ollama            | Running models locally                             |
 | Prompting         | Prompt engineering techniques                      |
-| Copilot           | GitHub Copilot features and usage                  |
-| Privacy           | Data handling and enterprise privacy controls      |
-| Security          | OWASP Top 10, secure AI-assisted coding            |
-| Instructions      | Custom instructions and system prompts             |
-| Context           | Context window management strategies               |
+| Instructions      | Custom instructions — cross-tool config paths      |
+| Agents & Skills   | Custom agents, skills, delegation, permissions     |
+| Context           | Context window management and attachment           |
 | Spec Kit          | Spec-driven development with AI                    |
-| Reuse & Skills    | Prompt libraries, reuse patterns                   |
+| Security          | OWASP Top 10, secure AI-assisted coding            |
 | MCP               | Model Context Protocol                             |
-| Team Sharing      | Copilot for organizational knowledge sharing       |
-| Copilot CLI       | Terminal-based AI assistance                       |
-| Multi-Agent       | Agentic workflows and orchestration                |
-| Copilot SDK       | Building custom Copilot extensions                 |
-| What the Pros Use | Tools and practices from experienced AI developers |
+| Team Knowledge    | Shared knowledge bases (Spaces, APM, repos)        |
+| Terminal Agents   | CLI entry points — Copilot, Claude, Cursor, Codex  |
+| Multi-Agent       | Parallel orchestration, worktrees, synthesis       |
 | Closing           | Summary and next steps                             |
+| Ollama *(addendum)* | Running models locally                           |
+| Agent SDKs *(addendum)* | Programmatic agent runtimes                    |
 
 ## Tech Stack
 

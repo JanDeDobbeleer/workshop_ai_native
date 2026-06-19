@@ -1,6 +1,8 @@
 import { Code } from 'lucide-react';
 import { SlideType } from './types';
 import { CodeBlock } from '../components/CodeBlock';
+import { ToolMatrix, STANDARD_TOOL_COLUMNS } from '../components/ToolMatrix';
+import { agentSdksMatrixRows } from '../components/toolMatrixRows';
 
 export const sdkSlides: SlideType[] = [
   {
@@ -10,10 +12,10 @@ export const sdkSlides: SlideType[] = [
       <div className="flex flex-col items-center md:justify-center md:h-full space-y-6">
         <Code className="w-20 h-20 text-indigo-500" />
         <h1 className="text-5xl md:text-6xl font-bold text-indigo-900 text-center">
-          GitHub Copilot SDK
+          Agent SDKs
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Embed AI agents directly into your applications
+          Programmatic agent runtimes for your applications
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-indigo-300 rounded-full"></div>
@@ -24,8 +26,22 @@ export const sdkSlides: SlideType[] = [
     )
   },
   {
-    title: "GitHub Copilot SDK - What it is",
-    subtitle: "Multi-platform SDK for integrating GitHub Copilot Agent",
+    title: "Agent SDKs by Tool",
+    subtitle: "Programmatic runtimes — maturity varies",
+    content: (
+      <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
+        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+          <p className="text-gray-700">
+            SDKs embed the same agent loop (plan → tools → iterate) in your app. Copilot SDK is the most integrated with GitHub; others use their vendor APIs.
+          </p>
+        </div>
+        <ToolMatrix columns={STANDARD_TOOL_COLUMNS} rows={agentSdksMatrixRows} />
+      </div>
+    )
+  },
+  {
+    title: "GitHub Copilot SDK",
+    subtitle: "Primary SDK deep dive (Copilot callout)",
     content: (
       <div className="flex flex-col space-y-6 max-w-4xl mx-auto">
         <div className="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500">

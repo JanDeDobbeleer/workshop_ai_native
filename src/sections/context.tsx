@@ -1,5 +1,7 @@
 import { Brain } from 'lucide-react';
 import { SlideType } from './types';
+import { ToolMatrix, STANDARD_TOOL_COLUMNS } from '../components/ToolMatrix';
+import { contextMatrixRows } from '../components/toolMatrixRows';
 
 export const contextSlides: SlideType[] = [
   {
@@ -12,7 +14,7 @@ export const contextSlides: SlideType[] = [
           Context
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Understanding how AI processes and manages information
+          What the model sees — implicit, explicit, and attached
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-indigo-300 rounded-full"></div>
@@ -63,7 +65,68 @@ export const contextSlides: SlideType[] = [
       </div>
     )
   },
-    {
+  {
+    title: "Context by Tool",
+    subtitle: "Attach files and indexing — cross-tool paths",
+    content: (
+      <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
+        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+          <p className="text-gray-700">
+            Every tool combines <strong>implicit context</strong> (open files, index) with <strong>explicit attachments</strong> you add per prompt.
+          </p>
+        </div>
+        <ToolMatrix columns={STANDARD_TOOL_COLUMNS} rows={contextMatrixRows} />
+      </div>
+    )
+  },
+  {
+    title: "Explicit Context",
+    subtitle: "Attach what the model needs — tool-specific syntax",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+          <p className="text-gray-700">
+            Better context = better responses. Use your tool&apos;s attach syntax — don&apos;t paste entire files when a mention works.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
+            <h4 className="font-semibold text-indigo-900 mb-2">Copilot (VS Code)</h4>
+            <ul className="space-y-1 text-sm text-gray-700">
+              <li><code className="bg-gray-100 px-1 rounded">#file</code>, <code className="bg-gray-100 px-1 rounded">#folder</code>, <code className="bg-gray-100 px-1 rounded">#codebase</code></li>
+              <li><code className="bg-gray-100 px-1 rounded">@workspace</code>, <code className="bg-gray-100 px-1 rounded">@terminal</code></li>
+              <li>Drag-and-drop files; selection auto-included</li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
+            <h4 className="font-semibold text-indigo-900 mb-2">Cursor / Claude / others</h4>
+            <ul className="space-y-1 text-sm text-gray-700">
+              <li><code className="bg-gray-100 px-1 rounded">@file</code>, <code className="bg-gray-100 px-1 rounded">@folder</code> (Cursor)</li>
+              <li><code className="bg-gray-100 px-1 rounded">/add-dir</code> (Claude Code)</li>
+              <li>Images, terminal output, git diffs where supported</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-white p-4 rounded-lg shadow border border-cyan-200">
+          <h4 className="font-semibold text-cyan-900 mb-2">Implicit context (all tools)</h4>
+          <ul className="space-y-1 text-sm text-gray-700">
+            <li>• Workspace indexing — semantic search over your codebase</li>
+            <li>• Active file and editor selection included automatically</li>
+            <li>• Agent mode may fetch additional files autonomously</li>
+          </ul>
+        </div>
+
+        <div className="bg-indigo-100 p-3 rounded-lg">
+          <p className="text-sm italic text-indigo-900">
+            <strong>Key Insight:</strong> You don&apos;t always need to manually attach — but when you do, use the right symbol for your tool.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
     title: "Context Window",
     subtitle: "Understanding the model's working memory",
     content: (

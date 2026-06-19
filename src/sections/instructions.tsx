@@ -1,6 +1,8 @@
 import { ScrollText } from 'lucide-react';
 import { SlideType } from './types';
 import { CodeBlock } from '../components/CodeBlock';
+import { ToolMatrix, STANDARD_TOOL_COLUMNS } from '../components/ToolMatrix';
+import { instructionsMatrixRows } from '../components/toolMatrixRows';
 
 export const instructionsSlides: SlideType[] = [
   {
@@ -13,7 +15,7 @@ export const instructionsSlides: SlideType[] = [
           Instructions
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Teaching AI how you work
+          Persistent guidance — where to put it in each tool
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-green-300 rounded-full"></div>
@@ -25,7 +27,7 @@ export const instructionsSlides: SlideType[] = [
   },
   {
     title: "Custom Instructions",
-      subtitle: "Teaching AI Your Coding Standards",
+      subtitle: "Concept first: persistent guidance for every session",
       content: (
         <div className="flex flex-col items-center md:justify-center md:h-full space-y-8">
           <div className="bg-gray-900 p-6 rounded-lg border border-gray-700 max-w-2xl">
@@ -33,20 +35,18 @@ export const instructionsSlides: SlideType[] = [
               <div className="text-4xl">📋</div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Context That Persists</h3>
-                <p className="text-gray-400">Define guidelines once, apply them automatically to every AI interaction</p>
+                <p className="text-gray-400">Define standards once — every agent session inherits them automatically</p>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl px-4 md:px-0">
             <div className="bg-white p-4 md:p-5 rounded-lg shadow border border-gray-200">
-              <h4 className="font-bold text-gray-900 mb-3">🎯 What Custom Instructions Do</h4>
+              <h4 className="font-bold text-gray-900 mb-3">🎯 Three Concepts (not filenames)</h4>
               <ul className="text-sm text-gray-700 space-y-2">
-                <li>• Set coding style & conventions</li>
-                <li>• Define project-specific patterns</li>
-                <li>• Specify preferred frameworks/libraries</li>
-                <li>• Establish documentation standards</li>
-                <li>• Share team knowledge with AI</li>
+                <li>• <strong>Project-wide rules</strong> — apply everywhere in the repo</li>
+                <li>• <strong>Scoped rules</strong> — only for certain files or folders</li>
+                <li>• <strong>Cross-tool convention</strong> — one file multiple tools read</li>
               </ul>
             </div>
 
@@ -57,22 +57,46 @@ export const instructionsSlides: SlideType[] = [
                 <li>• No need to repeat context every prompt</li>
                 <li>• Team-wide shared understanding</li>
                 <li>• Version controlled with your code</li>
-                <li>• Works across multiple AI agents</li>
+                <li>• Works across Cursor, Claude, Copilot, and more</li>
               </ul>
             </div>
           </div>
 
           <div className="bg-blue-50 px-6 py-4 rounded-lg max-w-2xl">
             <p className="text-center text-blue-900">
-              <strong>Description + Delegation:</strong> Good instructions reduce the need to describe context repeatedly and help delegate tasks more effectively.
+              <strong>Next:</strong> The matrix slide maps each concept to the right path in your tool.
             </p>
           </div>
         </div>
       )
     },
     {
+      title: "Where Do I Put Instructions?",
+      subtitle: "Same capability — different paths per tool",
+      content: (
+        <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
+          <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+            <p className="text-gray-700">
+              Rows are <strong>concepts</strong>. Columns are <strong>tools</strong>. Find your column — that is where you put project standards.
+            </p>
+          </div>
+          <ToolMatrix
+            columns={STANDARD_TOOL_COLUMNS}
+            rows={instructionsMatrixRows}
+            footnote={
+              <>
+                <strong>Callouts:</strong> <code className="bg-gray-200 px-1 rounded">.cursorrules</code> is deprecated → use{' '}
+                <code className="bg-gray-200 px-1 rounded">.cursor/rules/</code>. Devin still reads legacy{' '}
+                <code className="bg-gray-200 px-1 rounded">.windsurfrules</code> during transition.
+              </>
+            }
+          />
+        </div>
+      )
+    },
+    {
       title: "Instruction File Types",
-      subtitle: "Three Ways to Customize AI Behavior",
+      subtitle: "Copilot-specific filenames (one column in the matrix)",
       content: (
         <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
           <div className="grid grid-cols-1 gap-5">

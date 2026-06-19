@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { ChevronLeft, ChevronRight, Menu, X, Presentation, Sparkles, Target, Box, Code, Terminal, ShieldAlert, ScrollText, MessageSquare, Brain, Puzzle, Network, PanelRight, PanelLeft, Plug, TrendingUp, Cpu, FileCode, Users } from 'lucide-react';
-import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotSlides, copilotCliSlides, securitySlides, instructionsSlides, promptingSlides, agentsSlides, spacesSlides, contextSlides, evolutionSlides, multiagentSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, speckitSlides } from './sections';
+import { ChevronLeft, ChevronRight, Menu, X, Presentation, Sparkles, Target, Box, Terminal, ShieldAlert, ScrollText, MessageSquare, Brain, Puzzle, Network, PanelRight, PanelLeft, Plug, TrendingUp, Cpu, FileCode, Users, Code } from 'lucide-react';
+import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotCliSlides, securitySlides, instructionsSlides, promptingSlides, agentsSlides, spacesSlides, contextSlides, evolutionSlides, multiagentSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, speckitSlides } from './sections';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import './index.css';
@@ -23,7 +23,6 @@ const sections = [
   { name: 'LLM Basics', slides: llmSlides, color: 'blue', icon: Sparkles },
   { name: '4D Fluency', slides: fluencySlides, color: 'green', icon: Target },
   { name: 'Models', slides: modelsSlides, color: 'orange', icon: Box },
-  { name: 'Copilot', slides: copilotSlides, color: 'blue', icon: Code },
   { name: 'Prompting', slides: promptingSlides, color: 'indigo', icon: MessageSquare },
   { name: 'Instructions', slides: instructionsSlides, color: 'green', icon: ScrollText },
   { name: 'Agents & Skills', slides: agentsSlides, color: 'purple', icon: Puzzle },
@@ -31,13 +30,13 @@ const sections = [
   { name: 'Spec Kit', slides: speckitSlides, color: 'teal', icon: FileCode },
   { name: 'Security', slides: securitySlides, color: 'red', icon: ShieldAlert },
   { name: 'MCP', slides: mcpSlides, color: 'teal', icon: Plug },
-  { name: 'Team Sharing', slides: spacesSlides, color: 'blue', icon: Users },
-  { name: 'Copilot CLI', slides: copilotCliSlides, color: 'gray', icon: Terminal },
+  { name: 'Team Knowledge', slides: spacesSlides, color: 'blue', icon: Users },
+  { name: 'Terminal Agents', slides: copilotCliSlides, color: 'gray', icon: Terminal },
   { name: 'Multi-Agent', slides: multiagentSlides, color: 'purple', icon: Network },
   { name: 'Closing', slides: closingSlides, color: 'gray', icon: Presentation },
   { name: '__addendum__', slides: [], color: 'gray', icon: Presentation },
   { name: 'Ollama', slides: ollamaSlides, color: 'blue', icon: Cpu },
-  { name: 'Copilot SDK', slides: sdkSlides, color: 'indigo', icon: Code },
+  { name: 'Agent SDKs', slides: sdkSlides, color: 'indigo', icon: Code },
 ];
 
 // Calculate section start indices
@@ -82,7 +81,6 @@ const FourDSlides = () => {
     ...llmSlides,
     ...fluencySlides,
     ...modelsSlides,
-    ...copilotSlides,
     ...promptingSlides,
     ...instructionsSlides,
     ...agentsSlides,

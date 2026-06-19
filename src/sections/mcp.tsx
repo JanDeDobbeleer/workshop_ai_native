@@ -1,5 +1,7 @@
 import { Plug } from 'lucide-react';
 import { SlideType } from './types';
+import { ToolMatrix, STANDARD_TOOL_COLUMNS } from '../components/ToolMatrix';
+import { mcpMatrixRows } from '../components/toolMatrixRows';
 
 export const mcpSlides: SlideType[] = [
   {
@@ -19,6 +21,32 @@ export const mcpSlides: SlideType[] = [
           <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
           <div className="w-3 h-3 bg-teal-300 rounded-full"></div>
         </div>
+      </div>
+    )
+  },
+  {
+    title: "MCP Config by Tool",
+    subtitle: "Where to register MCP servers",
+    content: (
+      <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
+        <div className="bg-teal-50 p-4 rounded-lg border-l-4 border-teal-500">
+          <p className="text-gray-700">
+            MCP is tool-agnostic — but each assistant has its own config file path. Project-level configs commit with your repo.
+          </p>
+        </div>
+        <ToolMatrix
+          columns={STANDARD_TOOL_COLUMNS}
+          rows={mcpMatrixRows}
+          footnote={
+            <>
+              Copilot MCP outside VS Code is IDE-specific — see{' '}
+              <a href="https://docs.github.com/en/copilot/customizing-copilot/extending-copilot-chat-with-mcp" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">
+                GitHub MCP docs
+              </a>
+              .
+            </>
+          }
+        />
       </div>
     )
   },

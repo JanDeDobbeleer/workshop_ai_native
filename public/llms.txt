@@ -1,6 +1,6 @@
 # AI Native Software Engineering Workshop
 
-> A full-day interactive workshop teaching software developers how to work effectively with AI tools. Covers everything from LLM fundamentals to agentic workflows, with hands-on GitHub Copilot demos. Built and presented by Jan De Dobbeleer (Engineering Leader & Open Source Innovator).
+> A full-day interactive workshop teaching software developers how to work effectively with AI tools. Covers everything from LLM fundamentals to capability-first agentic workflows across Cursor, Claude Code, Copilot, Codex, and Devin Desktop. Built and presented by Jan De Dobbeleer (Engineering Leader & Open Source Innovator).
 
 **Audience:** Software developers of all levels. No prior AI experience required — comfortable with software development is enough.
 
@@ -15,24 +15,22 @@
 - [AI Fluency](https://ainativedev.itdepends.be): The 4D framework for effective AI collaboration — Delegation (when to engage AI), Description (communicating goals clearly), Discernment (evaluating AI outputs critically), Diligence (taking responsibility for AI use). Three interaction modes: Augmentation, Automation, Agency
 - [Prompting](https://ainativedev.itdepends.be): The art of communicating with AI — prompt engineering patterns, chain-of-thought, few-shot examples, and avoiding common mistakes
 - [Models](https://ainativedev.itdepends.be): Choosing the right model for the job — the model landscape, capability vs cost tradeoffs, reasoning models, and when to use each
-- [Ollama](https://ainativedev.itdepends.be): Running AI models locally — transforming AI accessibility, local inference, and use cases for on-device models
-- [GitHub Copilot](https://ainativedev.itdepends.be): Your AI pair programmer — code completions, Copilot Chat, inline editing, and IDE integration
-- [GitHub Copilot CLI](https://ainativedev.itdepends.be): The standalone `copilot` CLI — interactive and programmatic modes, approval flags (`--allow-all-tools`, `--yolo`), hooks for workflow automation (preToolUse, postToolUse, etc.), fleet mode for parallel subagents, custom agents, and MCP server integration
-- [Copilot Privacy](https://ainativedev.itdepends.be): Data handling and privacy controls — what gets sent to the model, enterprise controls, and data retention policies
-- [Security](https://ainativedev.itdepends.be): Risks and best practices for secure AI-assisted coding — OWASP Top 10, prompt injection, insecure code generation, and mitigation strategies
-- [Instructions](https://ainativedev.itdepends.be): Teaching AI how you work — custom instructions, repository-level `AGENTS.md` / `.github/copilot-instructions.md`, system prompts, and persona configuration
-- [Context](https://ainativedev.itdepends.be): How AI processes and manages information — context window strategies, what to include, file references, and keeping context clean
+- [Instructions](https://ainativedev.itdepends.be): Persistent guidance — cross-tool config paths, AGENTS.md, scoped rules, comparison matrices
+- [Agents & Skills](https://ainativedev.itdepends.be): Custom agents, skills, delegation, handoffs, approval levels — cross-tool matrix
+- [Context](https://ainativedev.itdepends.be): Context engineering — attach syntax, indexing, implicit vs explicit context
 - [Spec Driven Development](https://ainativedev.itdepends.be): Making technical decisions explicit, reviewable, and executable — writing specs before coding, using AI to validate and implement from specs
-- [Agents & Skills](https://ainativedev.itdepends.be): Prompt files, custom agents, and agent skills — building reusable AI behaviours, the agent loop, tool use, and skill composition
-- [Team AI Sharing](https://ainativedev.itdepends.be): Sharing instructions, prompts, and skills across a team — Copilot Spaces, organisational knowledge management with AI
-- [Evolution of the Programmer](https://ainativedev.itdepends.be): The 8 stages from traditional developer to AI-native engineer — Stage 1: zero/minimal AI; Stage 2: coding agent in IDE with permissions; Stage 3: broader agentic use; … Stage 8: orchestrating 30+ parallel agents. Covers how the role changes and what skills matter most
-- [Multi-Agent](https://ainativedev.itdepends.be): Orchestrating multiple AI agents — orchestrator/subagent patterns, parallelism, agent communication, and when multi-agent helps
-- [GitHub Copilot SDK](https://ainativedev.itdepends.be): Embedding AI agents directly into applications — building custom Copilot extensions and integrations
+- [Security](https://ainativedev.itdepends.be): Risks and best practices for secure AI-assisted coding — OWASP Top 10, prompt injection, insecure code generation, and mitigation strategies
 - [Model Context Protocol (MCP)](https://ainativedev.itdepends.be): The universal standard for connecting AI to external systems — MCP servers, tools, resources, and how to expose your own APIs to AI
-- [What the Pros Use](https://ainativedev.itdepends.be): Advanced patterns from the AI-native developer playbook — workflows, tooling, and practices used by experienced AI developers
+- [Team Knowledge](https://ainativedev.itdepends.be): Shared knowledge bases and team-wide AI configuration — Copilot Spaces, APM, shared instruction repos
+- [Terminal Agents](https://ainativedev.itdepends.be): CLI entry points across tools — Copilot CLI deep dive, Claude Code, Cursor, Codex, Devin Desktop
+- [Multi-Agent](https://ainativedev.itdepends.be): Parallel orchestration — define/delegate/parallelize/isolate/synthesize, worktrees, and when multi-agent helps vs hurts
 - [Closing](https://ainativedev.itdepends.be): Workshop summary, next steps, and feedback
 
-## Optional
+## Optional / Addendum
+
+- [Ollama](https://ainativedev.itdepends.be): Running AI models locally — transforming AI accessibility, local inference, and use cases for on-device models
+- [Agent SDKs](https://ainativedev.itdepends.be): Programmatic agent runtimes — Copilot SDK primary, gaps for other vendors
+- [Evolution of the Programmer](https://ainativedev.itdepends.be): The 8 stages from traditional developer to AI-native engineer
 
 - [Source code](https://github.com/JanDeDobbeleer/workshop_ai_native): React + TypeScript + Tailwind slideshow. Each section is a self-contained component under `src/sections/`
 - [Slide Content Creator agent](.github/agents/create-section.md): Custom agent definition used to generate new slide sections from source material

@@ -1,6 +1,6 @@
 # AI Native Software Engineering Workshop — Full Text
 
-> A full-day interactive workshop teaching software developers how to work effectively with AI tools. Covers everything from LLM fundamentals to agentic workflows, with hands-on GitHub Copilot demos. Built and presented by Jan De Dobbeleer (Engineering Leader & Open Source Innovator).
+> A full-day interactive workshop teaching software developers how to work effectively with AI tools. Covers everything from LLM fundamentals to capability-first agentic workflows across Cursor, Claude Code, Copilot, Codex, and Devin Desktop. Built and presented by Jan De Dobbeleer (Engineering Leader & Open Source Innovator).
 
 **URL:** https://ainativedev.itdepends.be/
 **Source:** https://github.com/JanDeDobbeleer/workshop_ai_native
@@ -44,17 +44,9 @@ Choosing the right model for the job. Topics: the current model landscape (GPT, 
 
 Running AI models locally. Topics: transforming AI accessibility, local inference on consumer hardware, model quantisation, use cases for on-device models (privacy, offline work, low-latency), and how local models complement cloud models.
 
-## Section: GitHub Copilot
+## Section: Terminal Agents
 
-Your AI pair programmer. Topics: code completions, Copilot Chat, inline editing, IDE integration (VS Code, JetBrains, Neovim), Copilot in the terminal, slash commands, and best practices for working with Copilot effectively.
-
-## Section: GitHub Copilot CLI
-
-The standalone `copilot` CLI agent. Topics: interactive and programmatic modes, approval flags (`--allow-all-tools`, `--yolo`), hooks for workflow automation (preToolUse, postToolUse, notification, stop), fleet mode for parallel subagents, custom agents, MCP server integration, and building agentic workflows in the terminal.
-
-## Section: Copilot Privacy
-
-Data handling and privacy controls for GitHub Copilot. Topics: what gets sent to the model, enterprise controls, data retention policies, telemetry settings, IP indemnification, and organisational policy management.
+CLI entry points for agentic coding across tools. Topics: GitHub Copilot CLI (interactive and programmatic modes, approval flags, hooks, fleet mode), Claude Code CLI, Cursor agent CLI, Codex, and Devin Desktop — cloud vs local agents, MCP integration, and building agentic workflows in the terminal.
 
 ## Section: Security
 
@@ -62,7 +54,7 @@ Risks and best practices for secure AI-assisted coding. Topics: OWASP Top 10 ris
 
 ## Section: Instructions
 
-Teaching AI how you work. Topics: custom instructions, repository-level `AGENTS.md` / `.github/copilot-instructions.md`, system prompts, persona configuration, and instruction layering (user-level, repo-level, org-level). How good instructions reduce friction and improve output quality.
+Teaching AI how you work — capability-first. Topics: project-wide vs scoped instructions, cross-tool `AGENTS.md`, tool-specific paths (`.cursor/rules`, `CLAUDE.md`, `.github/copilot-instructions.md`), system prompts, and instruction layering. Comparison matrices map concepts to each tool.
 
 ## Section: Context
 
@@ -76,9 +68,9 @@ Making technical decisions explicit, reviewable, and executable. Topics: writing
 
 Prompt files, custom agents, and agent skills. Topics: building reusable AI behaviours, the agent loop (LLM receives context → decides on tool call → tool executes → result fed back → repeat), tool use, skill composition, agent vs skill distinction, and the `.github/agents/` / `.github/skills/` conventions used in GitHub Copilot CLI.
 
-## Section: Team AI Sharing
+## Section: Team Knowledge
 
-Sharing instructions, prompts, and skills across a team. Topics: Copilot Spaces, organisational knowledge management with AI, versioning prompts and instructions, onboarding new team members to AI workflows, and building a shared AI culture.
+Shared knowledge bases and team-wide AI configuration. Topics: Copilot Spaces (Copilot callout), APM compile, shared instruction repos, organisational knowledge management, versioning prompts and instructions, and onboarding new team members to AI workflows.
 
 ## Section: Evolution of the Programmer
 
@@ -96,11 +88,11 @@ Covers how the developer role changes at each stage and what skills matter most.
 
 ## Section: Multi-Agent
 
-Orchestrating multiple AI agents. Topics: orchestrator/subagent patterns, parallelism, agent communication, shared context strategies, fleet mode in Copilot CLI, when multi-agent helps vs hurts, and practical patterns for complex tasks.
+Orchestrating multiple AI agents. Topics: five-step loop (define → delegate → parallelize → isolate → synthesize), hub-and-spoke delegation, git worktrees for isolation, orchestration matrices across tools, when multi-agent helps vs hurts, synthesis and merge discipline, and practical patterns for complex tasks.
 
-## Section: GitHub Copilot SDK
+## Section: Agent SDKs
 
-Embedding AI agents directly into applications. Topics: building custom Copilot extensions and integrations, the Copilot Extensions API, creating GitHub Apps with AI capabilities, and practical examples of AI-powered developer tooling.
+Programmatic agent runtimes for applications. Topics: GitHub Copilot SDK (primary deep dive), Claude Agent SDK, OpenAI Agents API, embedding agentic workflows in apps, and gaps where vendor SDKs are still maturing.
 
 ## Section: Model Context Protocol (MCP)
 
