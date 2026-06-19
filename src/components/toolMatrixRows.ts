@@ -70,11 +70,11 @@ export const agentsMatrixRows: ToolMatrixRow[] = [
   {
     label: 'Skills',
     cells: {
-      cursor: { kind: 'code', value: '.cursor/skills/*/SKILL.md' },
+      cursor: { kind: 'code', value: '.agents/skills/* (+ .cursor/skills/)' },
       claude: { kind: 'code', value: '.claude/skills/*/SKILL.md' },
-      copilot: { kind: 'code', value: '.github/skills/*/SKILL.md' },
+      copilot: { kind: 'code', value: '.agents/skills/* (+ .github/skills/)' },
       codex: { kind: 'code', value: '.agents/skills/*/SKILL.md' },
-      devin: { kind: 'code', value: '.devin/skills/*/SKILL.md' },
+      devin: { kind: 'code', value: '.agents/skills/* (+ .devin/skills/)' },
     },
   },
   {

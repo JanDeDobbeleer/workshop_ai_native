@@ -54,7 +54,7 @@ Risks and best practices for secure AI-assisted coding. Topics: OWASP Top 10 ris
 
 ## Section: Instructions
 
-Teaching AI how you work — capability-first. Topics: project-wide vs scoped instructions, cross-tool `AGENTS.md`, tool-specific paths (`.cursor/rules`, `CLAUDE.md`, `.github/copilot-instructions.md`), system prompts, and instruction layering. Comparison matrices map concepts to each tool.
+Teaching AI how you work — capability-first. Topics: project-wide vs scoped instructions, cross-tool `AGENTS.md` (portable instructions file — not the `.agents/` folder), tool-specific paths (`.cursor/rules`, `CLAUDE.md`, `.github/copilot-instructions.md`), system prompts, and instruction layering. Comparison matrices map concepts to each tool. For portable **skills** (not instructions), see Agents & Skills → Two Portable Layers.
 
 ## Section: Context
 
@@ -66,7 +66,13 @@ Making technical decisions explicit, reviewable, and executable. Topics: writing
 
 ## Section: Agents & Skills
 
-Prompt files, custom agents, and agent skills. Topics: building reusable AI behaviours, the agent loop (LLM receives context → decides on tool call → tool executes → result fed back → repeat), tool use, skill composition, agent vs skill distinction, and the `.github/agents/` / `.github/skills/` conventions used in GitHub Copilot CLI.
+Prompt files, custom agents, and agent skills. Topics: **Two Portable Layers** — `AGENTS.md` for cross-tool instructions and `.agents/skills/` for portable skills; `.agents/` is **skills-only** portability, not full cross-tool compatibility. Tool-native folders (`.cursor/`, `.claude/`, `.github/`, `.codex/`, `.devin/`) remain required for custom agents, rules, and MCP. Building reusable AI behaviours, the agent loop (LLM receives context → decides on tool call → tool executes → result fed back → repeat), tool use, skill composition, agent vs skill distinction, cross-tool comparison matrices, and Copilot subagents (runtime-only — no file path). For portable **instructions**, see Instructions → AGENTS.md.
+
+**Facilitator gaps (as of mid-2026):**
+- **Claude Code:** no native `.agents/skills/` — use `.claude/skills/` or `npx skills` symlink/copy
+- **Cursor:** project `.agents/skills/` supported; global skills prefer `~/.cursor/skills/`
+- **Devin Desktop:** reads `.agents/skills/` for compatibility; prefers `.devin/skills/` for writes
+- **Copilot subagents:** runtime-only (unchanged from capability-first matrices)
 
 ## Section: Team Knowledge
 
@@ -115,7 +121,8 @@ Workshop summary, key takeaways, next steps for continued learning, and feedback
 - **Three AI Interaction Modes** — Augmentation (collaborative), Automation (task-specific), Agency (goal-directed)
 - **Agent Loop** — LLM receives context → decides on tool call → tool executes → result fed back to LLM → repeat
 - **Spec-Driven Development (SDD)** — Writing an explicit specification document before writing code; makes assumptions reviewable and prevents divergent implementations
-- **Agent vs Skill** — An agent defines what is demanded; a skill defines how to execute it. Skills are reusable; agents can be chained
+- **Two Portable Layers** — `AGENTS.md` for instructions and `.agents/skills/` for skills; partial cross-tool portability (skills only). Custom agents, rules, and MCP stay tool-native
+- **Agent vs Skill** — An agent defines what is demanded; a skill defines how to execute it. Skills live in tool-native paths or portable `.agents/skills/` where supported; agents can be chained
 - **Pro Tool Stack principle** — Cheap/repetitive → fast local models (Ollama). Complex reasoning → frontier cloud (Claude, GPT, Gemini). Sensitive/regulated → private on-premises
 
 ## Tools & Resources Referenced

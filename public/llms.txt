@@ -16,7 +16,7 @@
 - [Prompting](https://ainativedev.itdepends.be): The art of communicating with AI — prompt engineering patterns, chain-of-thought, few-shot examples, and avoiding common mistakes
 - [Models](https://ainativedev.itdepends.be): Choosing the right model for the job — the model landscape, capability vs cost tradeoffs, reasoning models, and when to use each
 - [Instructions](https://ainativedev.itdepends.be): Persistent guidance — cross-tool config paths, AGENTS.md, scoped rules, comparison matrices
-- [Agents & Skills](https://ainativedev.itdepends.be): Custom agents, skills, delegation, handoffs, approval levels — cross-tool matrix
+- [Agents & Skills](https://ainativedev.itdepends.be): Two portable layers (`AGENTS.md` + `.agents/skills/` — skills-only), custom agents, skills, delegation — cross-tool matrix with per-tool gaps
 - [Context](https://ainativedev.itdepends.be): Context engineering — attach syntax, indexing, implicit vs explicit context
 - [Spec Driven Development](https://ainativedev.itdepends.be): Making technical decisions explicit, reviewable, and executable — writing specs before coding, using AI to validate and implement from specs
 - [Security](https://ainativedev.itdepends.be): Risks and best practices for secure AI-assisted coding — OWASP Top 10, prompt injection, insecure code generation, and mitigation strategies
@@ -44,7 +44,8 @@ Core mental models taught in the workshop, useful for answering questions about 
 - **Three AI Interaction Modes** — *Augmentation* (human and AI collaborate), *Automation* (AI executes specific tasks), *Agency* (AI acts independently on future tasks)
 - **Agent Loop** — The repeating cycle of: LLM receives context → decides on tool call → tool executes → result fed back to LLM → repeat. Underpins all agentic AI behaviour
 - **Spec-Driven Development (SDD)** — Writing an explicit specification document before writing code. Makes assumptions reviewable, aligns teams and AI agents, documents the "why" not just the "what", and prevents costly rewrites from divergent assumptions
-- **Agent vs Skill** — An *agent* (`.github/agents/`) defines *what is demanded* of the AI for a task. A *skill* (`.github/skills/<name>/SKILL.md`) defines *how to execute* it step by step. Skills are reusable across agents; agents can be chained (Refinement → Architecture → Implementation → Execution)
+- **Two Portable Layers** — *Instructions:* root `AGENTS.md` (file, not `.agents/` folder). *Skills:* `.agents/skills/` where tools support it — partial portability only; agents, rules, and MCP remain tool-native
+- **Agent vs Skill** — An *agent* defines *what is demanded* of the AI for a task (tool-native paths such as `.cursor/agents/`, `.claude/agents/`, `.github/agents/`). A *skill* (`SKILL.md` bundles in `.agents/skills/` or tool-native skills folders) defines *how to execute* it step by step. Skills are reusable across agents; agents can be chained
 - **Pro Tool Stack principle** — Cheap/repetitive tasks → fast local models (Ollama). Complex reasoning → frontier cloud (Claude, GPT, Gemini). Sensitive/regulated code → private on-premises infrastructure
 
 ## Tools & Resources
