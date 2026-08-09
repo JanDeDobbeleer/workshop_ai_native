@@ -394,6 +394,53 @@ export const contextSlides: SlideType[] = [
     )
   },
   {
+    title: "The Dump Zone & the Smart Zone",
+    subtitle: "Why 'more context window' isn't the whole answer",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+          <p className="text-gray-700">
+            A million-token context window doesn't mean you should fill it. Output quality measurably <strong>degrades</strong> well before the limit — often somewhere around 200K–400K tokens, depending on the model. Two informal zones are useful to keep in mind.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-green-200">
+            <h4 className="font-semibold text-green-900 mb-2">✅ Smart Zone</h4>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li className="flex"><span className="mr-2">•</span><span>Well below the model's max context</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Reasoning stays sharp, instructions stay followed</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Where you want to keep every working session</span></li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-red-200">
+            <h4 className="font-semibold text-red-900 mb-2">🗑️ Dump Zone</h4>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li className="flex"><span className="mr-2">•</span><span>Approaching the raw token ceiling</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Output quality quietly degrades before you notice</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Signal that it's time to compact, delegate, or start fresh</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
+          <h4 className="font-semibold text-indigo-900 mb-2">🧰 Staying in the Smart Zone</h4>
+          <ul className="space-y-2 text-gray-700 text-sm">
+            <li className="flex"><span className="mr-2">•</span><span>Compaction — summarize and drop the raw history (see next slide)</span></li>
+            <li className="flex"><span className="mr-2">•</span><span>Sub-agents — hand off research/exploration to a subagent with its own fresh window</span></li>
+            <li className="flex"><span className="mr-2">•</span><span>New sessions — when a task genuinely ends, start clean rather than carrying it forward</span></li>
+          </ul>
+        </div>
+
+        <div className="bg-indigo-100 p-4 rounded-lg">
+          <p className="text-sm italic text-indigo-900">
+            <strong>Looking ahead:</strong> today, staying in the smart zone is your job. Expect more of this to be handled automatically by the harness/tooling layer over time — but for now, treat context window size as a budget to manage, not a target to fill.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
     title: "Context Compression Strategies",
     subtitle: "Keeping your context window lean and effective",
     content: (

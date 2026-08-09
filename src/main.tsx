@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { ChevronLeft, ChevronRight, Menu, X, Presentation, Sparkles, Target, Box, Terminal, ShieldAlert, ScrollText, MessageSquare, Brain, Puzzle, Network, PanelRight, PanelLeft, Plug, TrendingUp, Cpu, FileCode, Users, Code } from 'lucide-react';
-import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotCliSlides, securitySlides, instructionsSlides, promptingSlides, agentsSlides, spacesSlides, contextSlides, evolutionSlides, multiagentSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, speckitSlides } from './sections';
+import { ChevronLeft, ChevronRight, Menu, X, Presentation, Sparkles, Target, Box, Terminal, ShieldAlert, ScrollText, MessageSquare, Brain, Puzzle, Network, PanelRight, PanelLeft, Plug, TrendingUp, Cpu, FileCode, Users, Code, Wrench, HeartHandshake, RefreshCw, Workflow, Factory } from 'lucide-react';
+import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotCliSlides, securitySlides, instructionsSlides, promptingSlides, agentsSlides, harnessEngineeringSlides, spacesSlides, habitatEngineeringSlides, contextSlides, evolutionSlides, multiagentSlides, loopEngineeringSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, graphEngineeringSlides, softwareFactoriesSlides, speckitSlides } from './sections';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import './index.css';
@@ -26,17 +26,22 @@ const sections = [
   { name: 'Prompting', slides: promptingSlides, color: 'indigo', icon: MessageSquare },
   { name: 'Instructions', slides: instructionsSlides, color: 'green', icon: ScrollText },
   { name: 'Agents & Skills', slides: agentsSlides, color: 'purple', icon: Puzzle },
+  { name: 'Harness Engineering', slides: harnessEngineeringSlides, color: 'amber', icon: Wrench },
   { name: 'Context', slides: contextSlides, color: 'purple', icon: Brain },
   { name: 'Spec Kit', slides: speckitSlides, color: 'teal', icon: FileCode },
   { name: 'Security', slides: securitySlides, color: 'red', icon: ShieldAlert },
   { name: 'MCP', slides: mcpSlides, color: 'teal', icon: Plug },
   { name: 'Team Knowledge', slides: spacesSlides, color: 'blue', icon: Users },
+  { name: 'Habitat Engineering', slides: habitatEngineeringSlides, color: 'rose', icon: HeartHandshake },
   { name: 'Terminal Agents', slides: copilotCliSlides, color: 'gray', icon: Terminal },
   { name: 'Multi-Agent', slides: multiagentSlides, color: 'purple', icon: Network },
+  { name: 'Loop Engineering', slides: loopEngineeringSlides, color: 'cyan', icon: RefreshCw },
   { name: 'Closing', slides: closingSlides, color: 'gray', icon: Presentation },
   { name: '__addendum__', slides: [], color: 'gray', icon: Presentation },
   { name: 'Ollama', slides: ollamaSlides, color: 'blue', icon: Cpu },
   { name: 'Agent SDKs', slides: sdkSlides, color: 'indigo', icon: Code },
+  { name: 'Graph Engineering', slides: graphEngineeringSlides, color: 'slate', icon: Workflow },
+  { name: 'Software Factories', slides: softwareFactoriesSlides, color: 'slate', icon: Factory },
 ];
 
 // Calculate section start indices
@@ -84,16 +89,21 @@ const FourDSlides = () => {
     ...promptingSlides,
     ...instructionsSlides,
     ...agentsSlides,
+    ...harnessEngineeringSlides,
     ...contextSlides,
     ...speckitSlides,
     ...securitySlides,
     ...mcpSlides,
     ...spacesSlides,
+    ...habitatEngineeringSlides,
     ...copilotCliSlides,
     ...multiagentSlides,
+    ...loopEngineeringSlides,
     ...closingSlides,
     ...ollamaSlides,
     ...sdkSlides,
+    ...graphEngineeringSlides,
+    ...softwareFactoriesSlides,
   ];
 
   // Get current section based on slide index
@@ -273,6 +283,10 @@ const FourDSlides = () => {
                 indigo: 'bg-indigo-50 border-indigo-500 text-indigo-900',
                 teal: 'bg-teal-50 border-teal-500 text-teal-900',
                 red: 'bg-red-50 border-red-500 text-red-900',
+                amber: 'bg-amber-50 border-amber-500 text-amber-900',
+                rose: 'bg-rose-50 border-rose-500 text-rose-900',
+                cyan: 'bg-cyan-50 border-cyan-500 text-cyan-900',
+                slate: 'bg-slate-50 border-slate-500 text-slate-900',
               };
               const iconColorClasses: Record<string, string> = {
                 gray: 'text-gray-600',
@@ -283,6 +297,10 @@ const FourDSlides = () => {
                 indigo: 'text-indigo-600',
                 teal: 'text-teal-600',
                 red: 'text-red-600',
+                amber: 'text-amber-600',
+                rose: 'text-rose-600',
+                cyan: 'text-cyan-600',
+                slate: 'text-slate-600',
               };
               const activeClass = isActive
                 ? `${colorClasses[section.color]} border-l-4`
