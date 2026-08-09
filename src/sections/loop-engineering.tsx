@@ -38,7 +38,7 @@ export const loopEngineeringSlides: SlideType[] = [
           <div className="bg-white p-4 rounded-lg shadow border border-cyan-200">
             <h4 className="font-semibold text-cyan-900 mb-2">🔁 How It Works</h4>
             <ul className="space-y-2 text-gray-700">
-              <li>• Let an agent work until it hits the context window's "dump zone"</li>
+              <li>• Let an agent work until it hits the context window's "dumb zone"</li>
               <li>• Throw the context away, start a fresh agent</li>
               <li>• Keep steady progress via a hill-climbing signal</li>
             </ul>

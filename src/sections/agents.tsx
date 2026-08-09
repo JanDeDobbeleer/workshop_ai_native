@@ -484,52 +484,6 @@ export const agentsSlides: SlideType[] = [
     )
   },
   {
-    title: "Parallel Subagents",
-    subtitle: "Break complex tasks into simultaneous, isolated workstreams",
-    content: (
-      <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
-        <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-          <h3 className="text-2xl font-bold text-blue-900 mb-1">What are Subagents?</h3>
-          <p className="text-gray-700">Subagents let the main agent spawn child agents to handle independent subtasks — each in its own dedicated context window, so they don't consume the main agent's token budget.</p>
-        </div>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-white p-3 rounded-lg shadow border border-blue-200">
-            <h4 className="font-semibold text-blue-900 mb-2">Key Capabilities:</h4>
-            <ul className="space-y-1 text-gray-700">
-              <li className="flex"><span className="mr-1">•</span><span>Run in <strong>parallel</strong> for independent tasks</span></li>
-              <li className="flex"><span className="mr-1">•</span><span>Own context window — no token spillover</span></li>
-              <li className="flex"><span className="mr-1">•</span><span>Shows progress &amp; tool calls inline</span></li>
-              <li className="flex"><span className="mr-1">•</span><span>Expand to see full prompt &amp; result</span></li>
-            </ul>
-          </div>
-          <div className="bg-white p-3 rounded-lg shadow border border-blue-200">
-            <h4 className="font-semibold text-blue-900 mb-2">Search Subagent (Experimental):</h4>
-            <ul className="space-y-1 text-gray-700">
-              <li className="flex"><span className="mr-1">•</span><span>Dedicated agent for codebase search</span></li>
-              <li className="flex"><span className="mr-1">•</span><span>Iteratively refines queries</span></li>
-              <li className="flex"><span className="mr-1">•</span><span>Runs while main agent keeps working</span></li>
-              <li className="flex"><span className="mr-1">•</span><span>Dramatically improves search quality</span></li>
-            </ul>
-          </div>
-        </div>
-        <div className="bg-gray-50 p-3 rounded-lg border border-gray-200 font-mono text-xs">
-          <div className="text-gray-500 mb-1"># Example: orchestrating via custom agent frontmatter</div>
-          <div className="text-purple-700">---</div>
-          <div className="text-gray-700">name: Foo</div>
-          <div className="text-gray-700">tools: ['agent']</div>
-          <div className="text-gray-700">agents: ['Search', 'Modify']</div>
-          <div className="text-purple-700">---</div>
-          <div className="text-gray-500"># Uses only Search &amp; Modify as subagents</div>
-        </div>
-        <div className="bg-blue-100 p-3 rounded-lg">
-          <p className="text-sm italic text-blue-900">
-            <strong>Result:</strong> Tasks that used to run sequentially now run in parallel — dramatically cutting end-to-end time for complex requests.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
     title: "Background Agents",
     subtitle: "Delegate work and keep coding — no interruptions",
     content: (
