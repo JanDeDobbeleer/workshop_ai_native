@@ -11,9 +11,9 @@
     "export": "node scripts/export-pdf.js"
   },
   "dependencies": {
+    "lucide-react": "^0.294.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "lucide-react": "^0.294.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
@@ -22,10 +22,9 @@
     "autoprefixer": "^10.4.16",
     "pdf-lib": "^1.17.1",
     "postcss": "^8.4.32",
-    "puppeteer-core": "^21.0.0",
+    "puppeteer-core": "^25.5.0",
     "tailwindcss": "^3.3.6",
     "typescript": "^5.3.3",
     "vite": "^5.0.8"
   }
 }
-
