@@ -45,10 +45,10 @@ const slides: SlideType[] = [
   ...copilotCliSlides,
   ...multiagentSlides,
   ...loopEngineeringSlides,
+  ...graphEngineeringSlides,
   ...closingSlides,
   ...ollamaSlides,
   ...sdkSlides,
-  ...graphEngineeringSlides,
   ...softwareFactoriesSlides,
 ];
 
