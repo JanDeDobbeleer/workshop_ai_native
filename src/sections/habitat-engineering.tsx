@@ -139,6 +139,140 @@ export const habitatEngineeringSlides: SlideType[] = [
     )
   },
   {
+    title: "The Config Drift Problem",
+    subtitle: "Habitat rules that only live in your head don't scale.",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
+          <h3 className="text-xl font-bold text-rose-900 mb-2">Sound familiar?</h3>
+          <p className="text-gray-700">Teams adopt AI tools individually—each developer configures their own instructions, prompts, and skills from scratch. The habitat you designed exists in one person's setup, not the team's.</p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
+            <h4 className="font-semibold text-rose-900 mb-2">😤 Common Pain Points</h4>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li className="flex"><span className="mr-2">•</span><span>Each dev configs AI tools from scratch</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>No shared prompts or instructions</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>New hires spend hours on AI setup</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Best practices never get shared</span></li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
+            <h4 className="font-semibold text-rose-900 mb-2">🎯 What a Habitat Needs</h4>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li className="flex"><span className="mr-2">•</span><span>Shared, versioned AI configuration</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Consistent context across the team</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Reproducible, auditable setups</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Easy onboarding for new members</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-rose-100 p-4 rounded-lg">
+          <p className="text-sm italic text-rose-900">
+            <strong>The Analogy:</strong> Just as teams use package managers for code dependencies, they need a way to manage AI configuration as a shared, version-controlled artifact.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "APM: Agent Package Manager",
+    subtitle: "npm for AI agent configuration—one way to build the habitat",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
+          <h3 className="text-xl font-bold text-rose-900 mb-2">What is APM?</h3>
+          <p className="text-gray-700">APM treats AI agent configuration as a managed dependency. Declare your team's instructions, skills, prompts, and MCP servers in <code className="bg-rose-100 px-1 rounded">apm.yml</code>—then install them reproducibly anywhere. It's a concrete tool for habitat engineering: the habitat's rules become code, not tribal knowledge.</p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
+            <h4 className="font-semibold text-rose-900 mb-2">📦 7 Config Primitives</h4>
+            <ul className="space-y-1 text-gray-700 text-sm">
+              <li className="flex"><span className="mr-2">•</span><span><strong>Instructions</strong> — coding standards</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Skills</strong> — reusable AI capabilities</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Prompts</strong> — slash command workflows</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Agents</strong> — specialized AI personas</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Context</strong> — project knowledge</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Hooks</strong> — lifecycle event handlers</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>MCP Servers</strong> — tool integrations</span></li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
+            <h4 className="font-semibold text-rose-900 mb-2">🔑 Key Benefits</h4>
+            <ul className="space-y-1 text-gray-700 text-sm">
+              <li className="flex"><span className="mr-2">✓</span><span>Reproducible via <code className="bg-gray-100 px-1 rounded text-xs">apm.lock</code></span></li>
+              <li className="flex"><span className="mr-2">✓</span><span>Install from any git host</span></li>
+              <li className="flex"><span className="mr-2">✓</span><span>Compile for Copilot, Claude, Cursor</span></li>
+              <li className="flex"><span className="mr-2">✓</span><span>Transitive dependency resolution</span></li>
+              <li className="flex"><span className="mr-2">✓</span><span>Version control &amp; auditable</span></li>
+              <li className="flex"><span className="mr-2">✓</span><span>CI/CD integration via GitHub Actions</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-rose-100 p-4 rounded-lg">
+          <p className="text-sm italic text-rose-900">
+            <strong>Guiding principle:</strong> "Collaboration over isolation — prompts as shared, version-controlled artifacts." — <a href="https://github.com/microsoft/apm" target="_blank" rel="noopener noreferrer" className="text-rose-700 hover:underline">github.com/microsoft/apm</a>
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "APM + Copilot Coding Agent",
+    subtitle: "Auto-initialize your team's habitat in the agent environment",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
+          <h3 className="text-xl font-bold text-rose-900 mb-2">The Problem</h3>
+          <p className="text-gray-700">When Copilot coding agent spins up an ephemeral environment to work on a task, it starts fresh — with none of your team's APM-managed instructions, skills, or MCP servers installed. The habitat doesn't travel with it by default.</p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
+            <h4 className="font-semibold text-rose-900 mb-2">🛠️ The Solution</h4>
+            <p className="text-sm text-gray-700 mb-2">Create a <strong>Copilot setup steps</strong> file to run <code className="bg-gray-100 px-1 rounded text-xs">apm install</code> before the agent starts work.</p>
+            <ul className="space-y-1 text-sm text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>Runs in GitHub Actions before Copilot starts</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Deterministic — no trial-and-error installs</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Agent gets full team habitat every time</span></li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
+            <h4 className="font-semibold text-rose-900 mb-2">📂 File Location</h4>
+            <code className="block bg-gray-100 p-2 rounded text-xs text-gray-800 mb-2">.github/workflows/<br/>copilot-setup-steps.yml</code>
+            <ul className="space-y-1 text-sm text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>Must be on your default branch</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Job must be named <code className="bg-gray-100 px-1 rounded text-xs">copilot-setup-steps</code></span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Auto-runs on push to validate</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-gray-900 p-4 rounded-lg">
+          <pre className="text-green-400 text-xs overflow-x-auto">{`jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install APM config
+        run: npx apm install`}</pre>
+        </div>
+
+        <div className="bg-rose-100 p-4 rounded-lg">
+          <p className="text-sm italic text-rose-900">
+            <strong>Docs:</strong> <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment" target="_blank" rel="noopener noreferrer" className="text-rose-700 hover:underline">Customize the Copilot coding agent environment</a>
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
     title: "A Hidden Gem, Still Early",
     subtitle: "Less hype than harness/loop engineering—for now.",
     content: (
@@ -174,6 +308,7 @@ export const habitatEngineeringSlides: SlideType[] = [
             <li className="flex"><span className="mr-2">✅</span><span>Architecture documented somewhere agents and humans both read</span></li>
             <li className="flex"><span className="mr-2">✅</span><span>AGENTS.md / custom instructions kept current</span></li>
             <li className="flex"><span className="mr-2">✅</span><span>Skills capture recurring workflows</span></li>
+            <li className="flex"><span className="mr-2">✅</span><span>Config packaged &amp; versioned (e.g. APM) so it travels with the repo</span></li>
             <li className="flex"><span className="mr-2">✅</span><span>A review process both humans and agents participate in</span></li>
             <li className="flex"><span className="mr-2">✅</span><span>Onboarding docs a new hire—or a new agent session—could actually follow</span></li>
           </ul>

@@ -10,7 +10,6 @@ export { instructionsSlides } from './instructions';
 export { contextSlides } from './context';
 export { agentsSlides } from './agents';
 export { harnessEngineeringSlides } from './harness-engineering';
-export { spacesSlides } from './spaces';
 export { habitatEngineeringSlides } from './habitat-engineering';
 export { evolutionSlides } from './evolution';
 export { multiagentSlides } from './multiagent';

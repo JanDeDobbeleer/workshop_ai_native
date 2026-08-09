@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { ChevronLeft, ChevronRight, Menu, X, Presentation, Sparkles, Target, Box, Terminal, ShieldAlert, ScrollText, MessageSquare, Brain, Puzzle, Network, PanelRight, PanelLeft, Plug, TrendingUp, Cpu, FileCode, Users, Code, Wrench, HeartHandshake, RefreshCw, Workflow, Factory } from 'lucide-react';
-import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotCliSlides, securitySlides, instructionsSlides, promptingSlides, agentsSlides, harnessEngineeringSlides, spacesSlides, habitatEngineeringSlides, contextSlides, evolutionSlides, multiagentSlides, loopEngineeringSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, graphEngineeringSlides, softwareFactoriesSlides, speckitSlides } from './sections';
+import { ChevronLeft, ChevronRight, Menu, X, Presentation, Sparkles, Target, Box, Code, Terminal, ShieldAlert, ScrollText, MessageSquare, Brain, Puzzle, Network, PanelRight, PanelLeft, Plug, TrendingUp, Cpu, FileCode, Wrench, HeartHandshake, RefreshCw, Workflow, Factory } from 'lucide-react';
+import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotCliSlides, securitySlides, instructionsSlides, promptingSlides, agentsSlides, harnessEngineeringSlides, habitatEngineeringSlides, contextSlides, evolutionSlides, multiagentSlides, loopEngineeringSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, graphEngineeringSlides, softwareFactoriesSlides, speckitSlides } from './sections';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import './index.css';
@@ -31,7 +31,6 @@ const sections = [
   { name: 'Spec Kit', slides: speckitSlides, color: 'teal', icon: FileCode },
   { name: 'Security', slides: securitySlides, color: 'red', icon: ShieldAlert },
   { name: 'MCP', slides: mcpSlides, color: 'teal', icon: Plug },
-  { name: 'Team Knowledge', slides: spacesSlides, color: 'blue', icon: Users },
   { name: 'Habitat Engineering', slides: habitatEngineeringSlides, color: 'rose', icon: HeartHandshake },
   { name: 'Terminal Agents', slides: copilotCliSlides, color: 'gray', icon: Terminal },
   { name: 'Multi-Agent', slides: multiagentSlides, color: 'purple', icon: Network },
@@ -94,7 +93,6 @@ const FourDSlides = () => {
     ...speckitSlides,
     ...securitySlides,
     ...mcpSlides,
-    ...spacesSlides,
     ...habitatEngineeringSlides,
     ...copilotCliSlides,
     ...multiagentSlides,
