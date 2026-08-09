@@ -35,11 +35,11 @@ const sections = [
   { name: 'Terminal Agents', slides: copilotCliSlides, color: 'gray', icon: Terminal },
   { name: 'Multi-Agent', slides: multiagentSlides, color: 'purple', icon: Network },
   { name: 'Loop Engineering', slides: loopEngineeringSlides, color: 'cyan', icon: RefreshCw },
+  { name: 'Graph Engineering', slides: graphEngineeringSlides, color: 'slate', icon: Workflow },
   { name: 'Closing', slides: closingSlides, color: 'gray', icon: Presentation },
   { name: '__addendum__', slides: [], color: 'gray', icon: Presentation },
   { name: 'Ollama', slides: ollamaSlides, color: 'blue', icon: Cpu },
   { name: 'Agent SDKs', slides: sdkSlides, color: 'indigo', icon: Code },
-  { name: 'Graph Engineering', slides: graphEngineeringSlides, color: 'slate', icon: Workflow },
   { name: 'Software Factories', slides: softwareFactoriesSlides, color: 'slate', icon: Factory },
 ];
 
@@ -97,10 +97,10 @@ const FourDSlides = () => {
     ...copilotCliSlides,
     ...multiagentSlides,
     ...loopEngineeringSlides,
+    ...graphEngineeringSlides,
     ...closingSlides,
     ...ollamaSlides,
     ...sdkSlides,
-    ...graphEngineeringSlides,
     ...softwareFactoriesSlides,
   ];
 
