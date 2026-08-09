@@ -443,5 +443,47 @@ these mistakes in the future.`}
         </div>
       </div>
     )
+  },
+  {
+    title: "Is Prompt Engineering Still Relevant?",
+    subtitle: "A Term in Decline",
+    content: (
+      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
+        <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+          <h3 className="text-2xl font-bold text-blue-900 mb-4">
+            It Had Its Moment
+          </h3>
+          <p className="text-lg text-gray-700">
+            Techniques like few-shot examples and chain-of-thought earned their keep with older, less capable models that needed heavy structure to perform well.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-5 rounded-lg shadow border border-blue-200">
+            <h4 className="font-semibold text-blue-900 mb-2">📉 Then</h4>
+            <ul className="space-y-2 text-gray-700">
+              <li>• Carefully structured, templated prompts</li>
+              <li>• Few-shot examples to steer behavior</li>
+              <li>• Explicit chain-of-thought scaffolding</li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-5 rounded-lg shadow border border-blue-200">
+            <h4 className="font-semibold text-blue-900 mb-2">📈 Now</h4>
+            <ul className="space-y-2 text-gray-700">
+              <li>• Modern coding agents handle loose, conversational input well</li>
+              <li>• Long, rambling voice-transcribed asks work about as well as a polished prompt</li>
+              <li>• What matters more: good context and a harness that lets the agent check its own work</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-blue-100 p-4 rounded-lg">
+          <p className="text-sm italic text-blue-900">
+            <strong>Takeaway:</strong> The 4 S's and techniques on this page are still useful scaffolding, especially early on — but as models improve, the bar for "good enough" prompting keeps dropping. Where your time pays off more today: context engineering and harness engineering, covered later in this workshop.
+          </p>
+        </div>
+      </div>
+    )
   }
 ];
