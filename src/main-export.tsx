@@ -9,16 +9,20 @@ import {
   promptingSlides,
   instructionsSlides,
   agentsSlides,
+  harnessEngineeringSlides,
   contextSlides,
   speckitSlides,
   securitySlides,
   mcpSlides,
-  spacesSlides,
+  habitatEngineeringSlides,
   copilotCliSlides,
   multiagentSlides,
+  loopEngineeringSlides,
   closingSlides,
   ollamaSlides,
   sdkSlides,
+  graphEngineeringSlides,
+  softwareFactoriesSlides,
 } from './sections';
 import { SlideType } from './sections/types';
 import './index.css';
@@ -32,16 +36,20 @@ const slides: SlideType[] = [
   ...promptingSlides,
   ...instructionsSlides,
   ...agentsSlides,
+  ...harnessEngineeringSlides,
   ...contextSlides,
   ...speckitSlides,
   ...securitySlides,
   ...mcpSlides,
-  ...spacesSlides,
+  ...habitatEngineeringSlides,
   ...copilotCliSlides,
   ...multiagentSlides,
+  ...loopEngineeringSlides,
   ...closingSlides,
   ...ollamaSlides,
   ...sdkSlides,
+  ...graphEngineeringSlides,
+  ...softwareFactoriesSlides,
 ];
 
 const ExportDeck: React.FC = () => (
