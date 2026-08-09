@@ -216,107 +216,6 @@ export const contextSlides: SlideType[] = [
     )
   },
   {
-    title: "Lost in the Middle",
-    subtitle: "How model attention varies across long contexts",
-    content: (
-      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
-        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
-          <h3 className="text-xl font-bold text-indigo-900 mb-2">The Research Finding</h3>
-          <p className="text-gray-700">Models perform significantly better when relevant information is at the <strong>beginning or end</strong> of the context. Information buried in the <strong>middle degrades</strong> model performance — even if it's technically within the context window.</p>
-        </div>
-
-        <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
-          <h4 className="font-semibold text-indigo-900 mb-3 text-center">Relative Attention Across the Context Window</h4>
-          <div className="flex items-end justify-center gap-6 h-24 mb-2 px-8">
-            <div className="flex flex-col items-center">
-              <div className="bg-green-500 rounded-t w-16" style={{height: '72px'}}></div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Start</p>
-              <p className="text-xs text-green-600">High recall</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-red-400 rounded-t w-16" style={{height: '24px'}}></div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Middle</p>
-              <p className="text-xs text-red-600">Low recall</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-green-500 rounded-t w-16" style={{height: '64px'}}></div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">End</p>
-              <p className="text-xs text-green-600">High recall</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded-lg shadow border border-green-200">
-            <h4 className="font-semibold text-green-900 mb-2">✅ Best Practices</h4>
-            <ul className="space-y-2 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">•</span><span>Put critical instructions at the top of your system prompt</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Place key data or examples near the end</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Repeat crucial constraints at the end of long prompts</span></li>
-            </ul>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow border border-red-200">
-            <h4 className="font-semibold text-red-900 mb-2">❌ What to Avoid</h4>
-            <ul className="space-y-2 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">•</span><span>Burying essential rules in the middle of long instructions</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Adding long filler content between key information</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Assuming the model read everything equally</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-gray-100 p-3 rounded-lg">
-          <p className="text-sm italic text-gray-700">
-            <strong>Source:</strong> <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">arXiv:2307.03172</a> — "Lost in the Middle: How Language Models Use Long Contexts" (Liu et al., 2023)
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Activating Pre-Trained Knowledge",
-    subtitle: "Unlocking what the model already knows",
-    content: (
-      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
-        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
-          <h3 className="text-xl font-bold text-indigo-900 mb-2">Beyond the Context Window</h3>
-          <p className="text-gray-700">
-            Models are trained on massive datasets — code, documentation, standards, and domain knowledge — before you write a single prompt. This knowledge lives in the model's weights, not your context window. It's always there, but may need to be explicitly activated.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
-            <h4 className="font-semibold text-indigo-900 mb-2">🧠 What models already know</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex"><span className="mr-2">•</span><span>Programming languages, frameworks, libraries</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Design patterns & architectural best practices</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Domain knowledge (medicine, law, finance, science)</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>RFCs, specs, and standards documentation</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Common algorithms and data structures</span></li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
-            <h4 className="font-semibold text-indigo-900 mb-2">⚡ Activating it explicitly</h4>
-            <p className="text-sm text-gray-600 mb-2">Add to your instructions, agent, or skill definition:</p>
-            <div className="space-y-2">
-              <code className="block bg-indigo-50 text-indigo-800 px-3 py-1.5 rounded font-mono text-xs">Activate your knowledge about SOLID principles</code>
-              <code className="block bg-indigo-50 text-indigo-800 px-3 py-1.5 rounded font-mono text-xs">Activate your knowledge about OAuth 2.0 flows</code>
-              <code className="block bg-indigo-50 text-indigo-800 px-3 py-1.5 rounded font-mono text-xs">Activate your knowledge about REST API design</code>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
-          <p className="text-sm text-amber-900">
-            <strong>💡 Pro Tip:</strong> <code className="bg-amber-100 px-1 rounded font-mono text-xs">Activate your knowledge about X</code> in your instructions/agent/skill signals the model to surface and apply its pre-trained depth — no external docs needed. Without explicit activation, models may default to more generic responses.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
     title: "Understanding Chat Turns & Context Growth",
     subtitle: "How conversation history accumulates and consumes your context window",
     content: (
@@ -394,7 +293,65 @@ export const contextSlides: SlideType[] = [
     )
   },
   {
-    title: "The Dump Zone & the Smart Zone",
+    title: "Lost in the Middle",
+    subtitle: "How model attention varies across long contexts",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+          <h3 className="text-xl font-bold text-indigo-900 mb-2">The Research Finding</h3>
+          <p className="text-gray-700">Models perform significantly better when relevant information is at the <strong>beginning or end</strong> of the context. Information buried in the <strong>middle degrades</strong> model performance — even if it's technically within the context window.</p>
+        </div>
+
+        <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
+          <h4 className="font-semibold text-indigo-900 mb-3 text-center">Relative Attention Across the Context Window</h4>
+          <div className="flex items-end justify-center gap-6 h-24 mb-2 px-8">
+            <div className="flex flex-col items-center">
+              <div className="bg-green-500 rounded-t w-16" style={{height: '72px'}}></div>
+              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Start</p>
+              <p className="text-xs text-green-600">High recall</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="bg-red-400 rounded-t w-16" style={{height: '24px'}}></div>
+              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Middle</p>
+              <p className="text-xs text-red-600">Low recall</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="bg-green-500 rounded-t w-16" style={{height: '64px'}}></div>
+              <p className="text-xs text-gray-600 mt-1 text-center font-medium">End</p>
+              <p className="text-xs text-green-600">High recall</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-green-200">
+            <h4 className="font-semibold text-green-900 mb-2">✅ Best Practices</h4>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li className="flex"><span className="mr-2">•</span><span>Put critical instructions at the top of your system prompt</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Place key data or examples near the end</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Repeat crucial constraints at the end of long prompts</span></li>
+            </ul>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-red-200">
+            <h4 className="font-semibold text-red-900 mb-2">❌ What to Avoid</h4>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li className="flex"><span className="mr-2">•</span><span>Burying essential rules in the middle of long instructions</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Adding long filler content between key information</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Assuming the model read everything equally</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-gray-100 p-3 rounded-lg">
+          <p className="text-sm italic text-gray-700">
+            <strong>Source:</strong> <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">arXiv:2307.03172</a> — "Lost in the Middle: How Language Models Use Long Contexts" (Liu et al., 2023)
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "The Dumb Zone & the Smart Zone",
     subtitle: "Why 'more context window' isn't the whole answer",
     content: (
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
@@ -414,7 +371,7 @@ export const contextSlides: SlideType[] = [
             </ul>
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-red-200">
-            <h4 className="font-semibold text-red-900 mb-2">🗑️ Dump Zone</h4>
+            <h4 className="font-semibold text-red-900 mb-2">😵 Dumb Zone</h4>
             <ul className="space-y-2 text-gray-700 text-sm">
               <li className="flex"><span className="mr-2">•</span><span>Approaching the raw token ceiling</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Output quality quietly degrades before you notice</span></li>
@@ -435,58 +392,6 @@ export const contextSlides: SlideType[] = [
         <div className="bg-indigo-100 p-4 rounded-lg">
           <p className="text-sm italic text-indigo-900">
             <strong>Looking ahead:</strong> today, staying in the smart zone is your job. Expect more of this to be handled automatically by the harness/tooling layer over time — but for now, treat context window size as a budget to manage, not a target to fill.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Context Compression Strategies",
-    subtitle: "Keeping your context window lean and effective",
-    content: (
-      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
-        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
-          <p className="text-gray-700">As conversations grow, context fills up. Strategic compression keeps AI working effectively without hitting limits or degrading quality.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
-            <h4 className="font-semibold text-indigo-900 mb-2">🗜️ Summarize History</h4>
-            <ul className="space-y-1 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">•</span><span>Ask AI to summarize the conversation so far</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Start a new thread with the summary as context</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Retains key decisions without full history</span></li>
-            </ul>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
-            <h4 className="font-semibold text-indigo-900 mb-2">✂️ Selective Context</h4>
-            <ul className="space-y-1 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">•</span><span>Only attach files directly relevant to the current task</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Use <code className="bg-gray-100 px-1 rounded font-mono text-xs">#file</code> and <code className="bg-gray-100 px-1 rounded font-mono text-xs">@workspace</code> selectively in Copilot</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Remove attachments no longer needed</span></li>
-            </ul>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
-            <h4 className="font-semibold text-indigo-900 mb-2">⚡ Prompt Caching</h4>
-            <ul className="space-y-1 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">•</span><span>Cache static portions (system prompt, large docs)</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Reduces cost & latency for repeated context</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Supported by Anthropic (Claude) and OpenAI</span></li>
-            </ul>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
-            <h4 className="font-semibold text-indigo-900 mb-2">🔄 Agentic Compacting</h4>
-            <ul className="space-y-1 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">•</span><span>Copilot CLI: <code className="bg-gray-100 px-1 rounded font-mono text-xs">/compact</code> to compress history</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Claude Code auto-compacts at 95% context usage</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Agents auto-summarize long task histories</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-indigo-100 p-3 rounded-lg">
-          <p className="text-sm italic text-indigo-900">
-            <strong>Rule of thumb:</strong> When quality degrades in a long conversation, start fresh with a focused context — don't keep accumulating.
           </p>
         </div>
       </div>
@@ -762,6 +667,49 @@ export const contextSlides: SlideType[] = [
         <div className="bg-indigo-100 p-3 rounded-lg">
           <p className="text-sm italic text-indigo-900 text-center">
             <strong>Key Insight:</strong> Structural understanding beats full-file dumps — give AI the map, not the whole territory.
+          </p>
+        </div>
+      </div>
+    )
+  },
+    {
+    title: "Activating Pre-Trained Knowledge",
+    subtitle: "Unlocking what the model already knows",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+          <h3 className="text-xl font-bold text-indigo-900 mb-2">Beyond the Context Window</h3>
+          <p className="text-gray-700">
+            Models are trained on massive datasets — code, documentation, standards, and domain knowledge — before you write a single prompt. This knowledge lives in the model's weights, not your context window. It's always there, but may need to be explicitly activated.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
+            <h4 className="font-semibold text-indigo-900 mb-2">🧠 What models already know</h4>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex"><span className="mr-2">•</span><span>Programming languages, frameworks, libraries</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Design patterns & architectural best practices</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Domain knowledge (medicine, law, finance, science)</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>RFCs, specs, and standards documentation</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Common algorithms and data structures</span></li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
+            <h4 className="font-semibold text-indigo-900 mb-2">⚡ Activating it explicitly</h4>
+            <p className="text-sm text-gray-600 mb-2">Add to your instructions, agent, or skill definition:</p>
+            <div className="space-y-2">
+              <code className="block bg-indigo-50 text-indigo-800 px-3 py-1.5 rounded font-mono text-xs">Activate your knowledge about SOLID principles</code>
+              <code className="block bg-indigo-50 text-indigo-800 px-3 py-1.5 rounded font-mono text-xs">Activate your knowledge about OAuth 2.0 flows</code>
+              <code className="block bg-indigo-50 text-indigo-800 px-3 py-1.5 rounded font-mono text-xs">Activate your knowledge about REST API design</code>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
+          <p className="text-sm text-amber-900">
+            <strong>💡 Pro Tip:</strong> <code className="bg-amber-100 px-1 rounded font-mono text-xs">Activate your knowledge about X</code> in your instructions/agent/skill signals the model to surface and apply its pre-trained depth — no external docs needed. Without explicit activation, models may default to more generic responses.
           </p>
         </div>
       </div>

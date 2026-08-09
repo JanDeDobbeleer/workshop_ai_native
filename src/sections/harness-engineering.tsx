@@ -174,45 +174,5 @@ export const harnessEngineeringSlides: SlideType[] = [
         </div>
       </div>
     )
-  },
-  {
-    title: "Should You Build Your Own Harness?",
-    subtitle: "Learn from it, don't necessarily ship it",
-    content: (
-      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
-          <h3 className="text-2xl font-bold text-amber-900 mb-4">Build One to Understand One</h3>
-          <p className="text-lg text-gray-700">
-            You don't need to ship a custom agent loop to benefit from understanding how one works.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">🔧 Build a Tiny One, Once</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li>• A few hours, purely to learn</li>
-              <li>• Inference calls, context window, tool-calling</li>
-              <li>• Demystifies what's happening under the hood of Claude Code / Copilot CLI</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">✅ Where to Spend Real Effort</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li>• Invest in the outer harness — specs and feedback signals</li>
-              <li>• Leave the inner harness to the tool vendors</li>
-              <li>• That's where day-to-day professional work actually pays off</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-amber-100 p-4 rounded-lg">
-          <p className="text-sm italic text-amber-900">
-            <strong>Pro Tip:</strong> Build a minimal agent loop once for the education — then put your real energy into specs and feedback signals, not reinventing the inner harness.
-          </p>
-        </div>
-      </div>
-    )
   }
 ];
