@@ -45,7 +45,7 @@ export const agentsSlides: SlideType[] = [
               <span className="text-lg font-bold text-green-700 shrink-0">1</span>
               <div>
                 <h4 className="font-bold text-gray-900 mb-1">
-                  <code className="bg-gray-100 px-1 rounded font-mono text-sm">AGENTS.md</code> — instructions
+                  <code className="bg-gray-100 px-1 rounded font-mono text-sm">AGENTS.md</code>: instructions
                 </h4>
                 <p className="text-sm text-gray-700">Root markdown file for persistent project guidance. Read by Cursor, Copilot, Claude Code, Codex, and more.</p>
               </div>
@@ -57,9 +57,9 @@ export const agentsSlides: SlideType[] = [
               <span className="text-lg font-bold text-purple-700 shrink-0">2</span>
               <div>
                 <h4 className="font-bold text-gray-900 mb-1">
-                  <code className="bg-gray-100 px-1 rounded font-mono text-sm">.agents/skills/</code> — portable skills
+                  <code className="bg-gray-100 px-1 rounded font-mono text-sm">.agents/skills/</code>: portable skills
                 </h4>
-                <p className="text-sm text-gray-700">Open-standard <code className="bg-gray-100 px-1 rounded text-xs">SKILL.md</code> bundles. Shared discovery path for Cursor, Copilot, Codex, and Devin (Claude uses native path — see matrix).</p>
+                <p className="text-sm text-gray-700">Open-standard <code className="bg-gray-100 px-1 rounded text-xs">SKILL.md</code> bundles. Shared discovery path for Cursor, Copilot, Codex, and Devin (Claude uses its native path; see matrix).</p>
               </div>
             </div>
           </div>
@@ -68,13 +68,13 @@ export const agentsSlides: SlideType[] = [
             <div className="flex items-start gap-3">
               <span className="text-lg font-bold text-gray-600 shrink-0">3</span>
               <div>
-                <h4 className="font-bold text-gray-900 mb-1">Tool-native folders — agents, rules, MCP</h4>
+                <h4 className="font-bold text-gray-900 mb-1">Tool-native folders: agents, rules, MCP</h4>
                 <p className="text-sm text-gray-700">
                   <code className="bg-gray-100 px-1 rounded text-xs">.cursor/</code>{' '}
                   <code className="bg-gray-100 px-1 rounded text-xs">.claude/</code>{' '}
                   <code className="bg-gray-100 px-1 rounded text-xs">.github/</code>{' '}
                   <code className="bg-gray-100 px-1 rounded text-xs">.codex/</code>{' '}
-                  <code className="bg-gray-100 px-1 rounded text-xs">.devin/</code> — still required for custom agents, scoped rules, and MCP config.
+                  <code className="bg-gray-100 px-1 rounded text-xs">.devin/</code>: still required for custom agents, scoped rules, and MCP config.
                 </p>
               </div>
             </div>
@@ -83,7 +83,7 @@ export const agentsSlides: SlideType[] = [
 
         <div className="bg-amber-50 p-3 rounded-lg border-l-4 border-amber-500">
           <p className="text-sm text-amber-900">
-            <strong>Anti-pattern:</strong> Don&apos;t put instructions in <code className="bg-amber-100 px-1 rounded">.agents/</code> — use <code className="bg-amber-100 px-1 rounded">AGENTS.md</code>.
+            <strong>Anti-pattern:</strong> Don&apos;t put instructions in <code className="bg-amber-100 px-1 rounded">.agents/</code>; use <code className="bg-amber-100 px-1 rounded">AGENTS.md</code> instead.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export const agentsSlides: SlideType[] = [
       <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
           <p className="text-gray-700">
-            Custom agents are <strong>files</strong> in most tools. Copilot <strong>subagents</strong> are runtime-only — no file path.
+            Custom agents are <strong>files</strong> in most tools. Copilot <strong>subagents</strong> are runtime-only: they have no file path.
           </p>
         </div>
         <ToolMatrix
@@ -122,7 +122,7 @@ export const agentsSlides: SlideType[] = [
   },
   {
     title: "Agent Modes",
-    subtitle: "Ask, Plan, Agent — universal interaction levels",
+    subtitle: "Ask, Plan, Agent: universal interaction levels",
     content: (
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
@@ -181,13 +181,13 @@ export const agentsSlides: SlideType[] = [
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
           <p className="text-gray-700">
-            <strong>Copilot (VS Code):</strong> permissions picker — Default (confirm each tool), Bypass (auto-approve tools), Autopilot preview (fully autonomous).
+            <strong>Copilot (VS Code):</strong> permissions picker: Default (confirm each tool), Bypass (auto-approve tools), Autopilot preview (fully autonomous).
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <div className="bg-white p-3 rounded-lg shadow border border-gray-300">
             <h4 className="font-bold text-gray-900 text-sm mb-1">Default</h4>
-            <p className="text-xs text-gray-600">Confirm every tool call — maximum oversight</p>
+            <p className="text-xs text-gray-600">Confirm every tool call: maximum oversight</p>
           </div>
           <div className="bg-white p-3 rounded-lg shadow border border-yellow-400">
             <h4 className="font-bold text-gray-900 text-sm mb-1">Bypass</h4>
@@ -195,7 +195,7 @@ export const agentsSlides: SlideType[] = [
           </div>
           <div className="bg-white p-3 rounded-lg shadow border border-purple-400">
             <h4 className="font-bold text-gray-900 text-sm mb-1">Autopilot</h4>
-            <p className="text-xs text-gray-600">Runs until complete — use only with clear, scoped tasks</p>
+            <p className="text-xs text-gray-600">Runs until complete: use only with clear, scoped tasks</p>
           </div>
         </div>
         <div className="bg-white p-3 rounded-lg border border-purple-200">
@@ -213,7 +213,7 @@ export const agentsSlides: SlideType[] = [
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
           <p className="text-gray-700">
-            Hand off a task between agents or session types — conversation history carries over. Plan locally, implement in cloud, review in IDE.
+            Hand off a task between agents or session types. Conversation history carries over: plan locally, implement in cloud, review in IDE.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
@@ -323,7 +323,7 @@ export const agentsSlides: SlideType[] = [
 
         <div className="bg-green-100 p-4 rounded-lg">
           <p className="text-sm italic text-green-900">
-            <strong>Pro Tip:</strong> Commit <code className="bg-white px-1 rounded">.github/agents/</code> (Copilot) or <code className="bg-white px-1 rounded">.claude/agents/</code> (Claude Code) to version control — your whole team shares the same agents.
+            <strong>Pro Tip:</strong> Commit <code className="bg-white px-1 rounded">.github/agents/</code> (Copilot) or <code className="bg-white px-1 rounded">.claude/agents/</code> (Claude Code) to version control. Your whole team shares the same agents.
           </p>
         </div>
       </div>
@@ -359,19 +359,19 @@ export const agentsSlides: SlideType[] = [
             <div className="bg-white p-4 rounded-lg shadow border border-blue-200">
               <h4 className="font-semibold text-blue-900 mb-2">🔧 Tools &amp; Permissions</h4>
               <ul className="space-y-2 text-gray-700">
-                <li>• <code className="bg-gray-100 px-1 rounded">tools</code> — allowlist (inherits all if omitted)</li>
-                <li>• <code className="bg-gray-100 px-1 rounded">disallowedTools</code> — denylist</li>
-                <li>• <code className="bg-gray-100 px-1 rounded">permissionMode</code> — default / acceptEdits / auto / bypassPermissions / plan</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">tools</code>: allowlist (inherits all if omitted)</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">disallowedTools</code>: denylist</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">permissionMode</code>: default / acceptEdits / auto / bypassPermissions / plan</li>
               </ul>
             </div>
             <div className="bg-white p-4 rounded-lg shadow border border-blue-200">
               <h4 className="font-semibold text-blue-900 mb-2">⚙️ Behavior</h4>
               <ul className="space-y-2 text-gray-700">
-                <li>• <code className="bg-gray-100 px-1 rounded">model</code> — sonnet / opus / haiku / inherit</li>
-                <li>• <code className="bg-gray-100 px-1 rounded">maxTurns</code> — cap on agentic turns</li>
-                <li>• <code className="bg-gray-100 px-1 rounded">isolation</code> — <code className="bg-gray-100 px-1 rounded">worktree</code> for git isolation</li>
-                <li>• <code className="bg-gray-100 px-1 rounded">memory</code> — user / project / local</li>
-                <li>• <code className="bg-gray-100 px-1 rounded">color</code> — task list display color</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">model</code>: sonnet / opus / haiku / inherit</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">maxTurns</code>: cap on agentic turns</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">isolation</code>: <code className="bg-gray-100 px-1 rounded">worktree</code> for git isolation</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">memory</code>: user / project / local</li>
+                <li>• <code className="bg-gray-100 px-1 rounded">color</code>: task list display color</li>
               </ul>
             </div>
           </div>
@@ -404,34 +404,34 @@ export const agentsSlides: SlideType[] = [
           <div className="bg-white p-5 rounded-lg shadow border border-blue-200">
             <h4 className="font-semibold text-blue-900 mb-2">📂 Storage Scope (by priority)</h4>
             <ul className="space-y-2 text-gray-700">
-              <li className="flex"><span className="mr-2 font-bold">1.</span><span>Managed settings — org-wide</span></li>
-              <li className="flex"><span className="mr-2 font-bold">2.</span><span><code className="bg-gray-100 px-1 rounded">--agents</code> CLI flag — session only</span></li>
-              <li className="flex"><span className="mr-2 font-bold">3.</span><span><code className="bg-gray-100 px-1 rounded">.claude/agents/</code> — current project ✅</span></li>
-              <li className="flex"><span className="mr-2 font-bold">4.</span><span><code className="bg-gray-100 px-1 rounded">~/.claude/agents/</code> — all your projects</span></li>
-              <li className="flex"><span className="mr-2 font-bold">5.</span><span>Plugin <code className="bg-gray-100 px-1 rounded">agents/</code> — where plugin is enabled</span></li>
+              <li className="flex"><span className="mr-2 font-bold">1.</span><span>Managed settings: org-wide</span></li>
+              <li className="flex"><span className="mr-2 font-bold">2.</span><span><code className="bg-gray-100 px-1 rounded">--agents</code> CLI flag: session only</span></li>
+              <li className="flex"><span className="mr-2 font-bold">3.</span><span><code className="bg-gray-100 px-1 rounded">.claude/agents/</code>: current project ✅</span></li>
+              <li className="flex"><span className="mr-2 font-bold">4.</span><span><code className="bg-gray-100 px-1 rounded">~/.claude/agents/</code>: all your projects</span></li>
+              <li className="flex"><span className="mr-2 font-bold">5.</span><span>Plugin <code className="bg-gray-100 px-1 rounded">agents/</code>: where plugin is enabled</span></li>
             </ul>
           </div>
 
           <div className="bg-white p-5 rounded-lg shadow border border-blue-200">
             <h4 className="font-semibold text-blue-900 mb-2">🛠️ Managing Subagents</h4>
             <ul className="space-y-2 text-gray-700">
-              <li>• <code className="bg-gray-100 px-1 rounded">/agents</code> — interactive UI to create/edit/delete</li>
-              <li>• <code className="bg-gray-100 px-1 rounded">claude agents</code> — list all from CLI</li>
+              <li>• <code className="bg-gray-100 px-1 rounded">/agents</code>: interactive UI to create/edit/delete</li>
+              <li>• <code className="bg-gray-100 px-1 rounded">claude agents</code>: list all from CLI</li>
               <li>• <strong>Running</strong> tab: view live agents, stop them</li>
               <li>• <strong>Library</strong> tab: browse built-in + custom</li>
             </ul>
             <h4 className="font-semibold text-blue-900 mb-2 mt-3">🏗️ Built-in Subagents</h4>
             <ul className="space-y-2 text-gray-700">
-              <li>• <strong>Explore</strong> — Haiku, read-only codebase search</li>
-              <li>• <strong>Plan</strong> — inherited model, read-only planning</li>
-              <li>• <strong>General Purpose</strong> — all tools, complex tasks</li>
+              <li>• <strong>Explore</strong>: Haiku, read-only codebase search</li>
+              <li>• <strong>Plan</strong>: inherited model, read-only planning</li>
+              <li>• <strong>General Purpose</strong>: all tools, complex tasks</li>
             </ul>
           </div>
         </div>
 
         <div className="bg-blue-100 p-4 rounded-lg">
           <p className="text-sm italic text-blue-900">
-            <strong>Pro Tip:</strong>Commit <code className="bg-white px-1 rounded">.claude/agents/</code> to version control — your whole team shares and improves the same subagents.
+            <strong>Pro Tip:</strong> Commit <code className="bg-white px-1 rounded">.claude/agents/</code> to version control. Your whole team shares and improves the same subagents.
           </p>
         </div>
       </div>
@@ -444,7 +444,7 @@ export const agentsSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
-          <p className="text-gray-700">VS Code 1.109 unified local, background, and cloud agents into one seamless orchestration layer — switch or hand off between them mid-session.</p>
+          <p className="text-gray-700">VS Code 1.109 unified local, background, and cloud agents into one orchestration layer. Switch or hand off between them mid-session.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <div className="bg-white p-4 rounded-lg shadow border border-blue-200">
@@ -477,7 +477,7 @@ export const agentsSlides: SlideType[] = [
         </div>
         <div className="bg-purple-100 p-3 rounded-lg">
           <p className="text-sm italic text-purple-900 text-center">
-            <strong>New:</strong> A session type picker lets you delegate or hand off work between types mid-conversation — plan locally, implement in the cloud.
+            <strong>New:</strong> A session type picker lets you delegate or hand off work between types mid-conversation. Plan locally, implement in the cloud.
           </p>
         </div>
       </div>
@@ -485,11 +485,11 @@ export const agentsSlides: SlideType[] = [
   },
   {
     title: "Background Agents",
-    subtitle: "Delegate work and keep coding — no interruptions",
+    subtitle: "Delegate work and keep coding: no interruptions",
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
-          <p className="text-gray-700">Background agents run in an <strong>isolated git worktree</strong>, auto-committing each turn. You stay in your main branch while the agent builds a feature independently — then review the PR when it's done.</p>
+          <p className="text-gray-700">Background agents run in an <strong>isolated git worktree</strong>, auto-committing each turn. You stay on your main branch while the agent builds a feature independently, then you review the PR when it's done.</p>
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-white p-3 rounded-lg shadow border border-purple-200">
@@ -515,7 +515,7 @@ export const agentsSlides: SlideType[] = [
         </div>
         <div className="bg-gray-100 p-3 rounded-lg">
           <p className="text-sm italic text-gray-900 text-center">
-            <strong>Agent status indicator</strong> in the VS Code command center shows which sessions need your attention — green (running), yellow (input needed), or done.
+            <strong>Agent status indicator</strong> in the VS Code command center shows which sessions need your attention: green (running), yellow (input needed), or done.
           </p>
         </div>
       </div>
@@ -527,7 +527,7 @@ export const agentsSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-          <p className="text-gray-700">As of February 2026, <strong>Claude (Anthropic)</strong> and <strong>Codex (OpenAI)</strong> are available as cloud agent providers directly inside VS Code — no separate subscriptions or tools required if you have GitHub Copilot.</p>
+          <p className="text-gray-700">As of February 2026, <strong>Claude (Anthropic)</strong> and <strong>Codex (OpenAI)</strong> are available as cloud agent providers directly inside VS Code, with no separate subscriptions or tools required if you have GitHub Copilot.</p>
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-white p-3 rounded-lg shadow border border-green-200">
@@ -780,6 +780,40 @@ export const agentsSlides: SlideType[] = [
         <div className="bg-purple-100 p-4 rounded-lg">
           <p className="text-sm italic text-purple-900">
             <strong>Remember:</strong> Well-written descriptions are the key to automatic skill activation.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Demo: Repo-Owned Skills at Scale",
+    subtitle: "oh-my-posh: segment-create, segment-docs, project-knowledge",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+          <p className="text-gray-700">
+            <code className="bg-purple-100 px-1 rounded">.agents/skills/</code> is the vendor-neutral location Copilot, Claude Code, and Codex all discover automatically. Most skills there arrive via APM; oh-my-posh commits three of its own because they're specific to this codebase.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
+            <h4 className="font-semibold text-purple-900 mb-2">🧩 segment-create</h4>
+            <p className="text-sm text-gray-700">
+              A new segment needs 5 artifacts: Go source, test file, MDX docs, sidebar + schema updates, and a <code className="bg-gray-100 px-1 rounded text-xs">gob.Register</code> call. Miss step 5 and it fails silently at runtime. AGENTS.md says so; the skill scaffolds all 5 so nothing gets missed.
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
+            <h4 className="font-semibold text-purple-900 mb-2">📄 segment-docs</h4>
+            <p className="text-sm text-gray-700">
+              Canonical mapping between Go source constructs and MDX documentation fields: template properties, type representations, option tables. Keeps docs structurally consistent across 100+ segments.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-purple-100 p-4 rounded-lg">
+          <p className="text-sm italic text-purple-900">
+            <strong>Live:</strong> <a href="https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/.agents/skills" target="_blank" rel="noopener noreferrer" className="text-purple-700 hover:underline">github.com/JanDeDobbeleer/oh-my-posh/.agents/skills</a>
           </p>
         </div>
       </div>

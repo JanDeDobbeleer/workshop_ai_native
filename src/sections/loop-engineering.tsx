@@ -57,7 +57,7 @@ export const loopEngineeringSlides: SlideType[] = [
           <div className="flex items-start space-x-2">
             <span className="text-amber-600 text-lg">⚠️</span>
             <p className="text-amber-800 text-sm">
-              <strong>Caution:</strong> Pointing a Ralph loop at a blind metric — "hit 90% coverage" — backfires. The agent optimizes for the number, not the outcome, and will game the test suite rather than deliver real quality.
+              <strong>Caution:</strong> Pointing a Ralph loop at a blind metric ("hit 90% coverage") backfires. The agent optimizes for the number, not the outcome, and games the test suite instead of delivering real quality.
             </p>
           </div>
         </div>
@@ -70,12 +70,12 @@ export const loopEngineeringSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-cyan-50 p-4 rounded-lg border-l-4 border-cyan-500">
-          <p className="text-gray-700">Loop engineering isn't one pattern — it's a ladder of scope, from a single agent's inner loop up to fully triggered automation.</p>
+          <p className="text-gray-700">Loop engineering isn't one pattern. It's a ladder of scope, from a single agent's inner loop up to fully triggered automation.</p>
         </div>
         <div className="grid grid-cols-1 gap-3">
           <div className="bg-white p-4 rounded-lg shadow border border-cyan-200">
             <h4 className="font-semibold text-cyan-900 mb-2">1️⃣ Agent Loop</h4>
-            <p className="text-gray-700">Simon Willison's informal definition: an agent is an LLM, given some tools, put in a loop, with a goal — <em>"while goal not fulfilled..."</em>. This is the Ralph pattern at its smallest.</p>
+            <p className="text-gray-700">Simon Willison's informal definition: an agent is an LLM, given some tools, put in a loop, with a goal: <em>"while goal not fulfilled..."</em>. This is the Ralph pattern at its smallest.</p>
           </div>
 
           <div className="bg-white p-4 rounded-lg shadow border border-cyan-200">
@@ -85,7 +85,7 @@ export const loopEngineeringSlides: SlideType[] = [
 
           <div className="bg-white p-4 rounded-lg shadow border border-cyan-200">
             <h4 className="font-semibold text-cyan-900 mb-2">3️⃣ Scheduled / Triggered Loop</h4>
-            <p className="text-gray-700">The loop is hooked to an external trigger — a cron job, a new pull request, a new issue being filed. This is what most people mean today when they say "loop engineering" out loud, and it's the on-ramp to "software factories."</p>
+            <p className="text-gray-700">The loop is hooked to an external trigger: a cron job, a new pull request, a new issue being filed. This is what most people mean today when they say "loop engineering" out loud, and it's the on-ramp to "software factories."</p>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@ export const loopEngineeringSlides: SlideType[] = [
   },
   {
     title: "Where Loops Pay Off Today",
-    subtitle: "Small, scoped automations — not the whole SDLC",
+    subtitle: "Small, scoped automations, not the whole SDLC",
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-cyan-50 p-4 rounded-lg border-l-4 border-cyan-500">
@@ -137,13 +137,13 @@ export const loopEngineeringSlides: SlideType[] = [
         <div className="bg-cyan-50 p-6 rounded-lg border-l-4 border-cyan-500">
           <h3 className="text-2xl font-bold text-cyan-900 mb-4">Access, not orchestration, is the bottleneck</h3>
           <p className="text-lg text-gray-700">
-            For most teams — especially enterprise ones — writing the loop itself is easy. The hard part is giving agents secure, scoped access to the systems they need: code, logs, issue trackers, in an environment actually built for that.
+            For most teams, especially enterprise ones, writing the loop itself is easy. The hard part is giving agents secure, scoped access to the systems they need: code, logs, issue trackers, in an environment actually built for that.
           </p>
         </div>
 
         <div className="bg-cyan-100 p-4 rounded-lg">
           <p className="text-sm italic text-cyan-900">
-            <strong>Where things stand:</strong> This infrastructure layer is still maturing. Expect a lot more of it — secure agent-to-system access, scoped credentials, audit trails — to land in the coming months.
+            <strong>Where things stand:</strong> This infrastructure layer is still maturing. Expect a lot more of it (secure agent-to-system access, scoped credentials, audit trails) to land in the coming months.
           </p>
         </div>
       </div>
@@ -151,13 +151,13 @@ export const loopEngineeringSlides: SlideType[] = [
   },
   {
     title: "Further Reading",
-    subtitle: "Where the term is still being defined",
+    subtitle: "Where the term is still evolving",
     content: (
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
         <div className="bg-cyan-50 p-6 rounded-lg border-l-4 border-cyan-500">
           <h3 className="text-2xl font-bold text-cyan-900 mb-4">Loop engineering is a moving target</h3>
           <p className="text-lg text-gray-700">
-            No settled definition yet — these are the people and sources actively shaping the term.
+            No settled definition yet: these are the people and sources shaping the term.
           </p>
         </div>
 
@@ -172,13 +172,43 @@ export const loopEngineeringSlides: SlideType[] = [
     )
   },
   {
+    title: "Demo: An Agent Definition, Triggered",
+    subtitle: "oh-my-posh: issue-analyzer.agent.md",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-cyan-50 p-4 rounded-lg border-l-4 border-cyan-500">
+          <p className="text-gray-700">
+            <code className="bg-cyan-100 px-1 rounded">.github/agents/issue-analyzer.agent.md</code>: say "analyze issue #N" and it fetches the issue via <code className="bg-cyan-100 px-1 rounded">gh issue view</code>, locates code with ast-grep, delegates to <code className="bg-cyan-100 px-1 rounded">reproduce-bug</code> / performance-review sub-skills, synthesizes root cause + fix path + test coverage, and posts the analysis back as a comment.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-cyan-200">
+            <h4 className="font-semibold text-cyan-900 mb-2">📍 Where This Sits Today</h4>
+            <p className="text-sm text-gray-700">Human-triggered, not cron- or webhook-triggered: the agent-loop-plus-delegation stage, one step before wiring it to a trigger.</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-cyan-200">
+            <h4 className="font-semibold text-cyan-900 mb-2">➡️ Next Step, Planned</h4>
+            <p className="text-sm text-gray-700">Extend agent definitions like this one to drive Claude Code automation routines directly, instead of re-embedding the instructions inside the routine's own UI. issue-analyzer already qualifies.</p>
+          </div>
+        </div>
+
+        <div className="bg-cyan-100 p-4 rounded-lg">
+          <p className="text-sm italic text-cyan-900">
+            <strong>Why it matters:</strong> one agent definition, reusable both as a manual "@agent do this" call and, later, as the body of a scheduled routine. No separate copy of the instructions to keep in sync.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
     title: "Key Takeaway",
     subtitle: "Loops before graphs",
     content: (
       <div className="flex flex-col items-center md:justify-center md:h-full space-y-8">
         <div className="bg-cyan-100 px-8 py-6 rounded-lg max-w-3xl w-full border border-cyan-300">
           <p className="text-center text-cyan-900 text-lg">
-            Master the loop ladder — <strong>agent → adversarial → scheduled</strong> — before reaching for full graph-based orchestration. It's cheaper, easier to reason about, and covers most real team needs today.
+            Master the loop ladder (<strong>agent → adversarial → scheduled</strong>) before reaching for full graph-based orchestration. It's cheaper, easier to reason about, and covers most real team needs today.
           </p>
         </div>
       </div>

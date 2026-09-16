@@ -78,7 +78,7 @@ export const fluencySlides: SlideType[] = [
         <div className="bg-blue-50 p-4 md:p-6 rounded-lg border-l-4 border-blue-500">
           <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-4">What is Delegation?</h3>
           <p className="text-lg text-gray-700">
-            Delegation is the process of setting goals and making strategic decisions about whether, when, and how to engage with AI systems.
+            Delegation means setting goals and deciding whether, when, and how to engage AI systems.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export const fluencySlides: SlideType[] = [
               <li>• Should I use AI for this task?</li>
               <li>• Which mode is most appropriate? (Automation, Augmentation, or Agency)</li>
               <li>• What are the risks and benefits?</li>
-              <li>• What level of human oversight is needed?</li>
+              <li>• How much human oversight does it need?</li>
             </ul>
           </div>
 
@@ -106,7 +106,7 @@ export const fluencySlides: SlideType[] = [
 
         <div className="bg-blue-100 p-4 rounded-lg">
           <p className="text-sm italic text-blue-900">
-            <strong>Remember:</strong> Delegation is about being intentional with AI - not every task needs AI, and not every AI task needs the same approach.
+            <strong>Remember:</strong> Delegation means being intentional with AI. Not every task needs AI, and not every AI task needs the same approach.
           </p>
         </div>
       </div>
@@ -120,7 +120,7 @@ export const fluencySlides: SlideType[] = [
         <div className="bg-green-50 p-4 md:p-6 rounded-lg border-l-4 border-green-500">
           <h3 className="text-xl md:text-2xl font-bold text-green-900 mb-4">What is Description?</h3>
           <p className="text-lg text-gray-700">
-            Description involves effectively communicating your goals, context, and requirements to AI systems to prompt useful behaviors and outputs.
+            Description means clearly communicating your goals, context, and requirements to AI systems to prompt useful behavior and output.
           </p>
         </div>
 
@@ -148,7 +148,7 @@ export const fluencySlides: SlideType[] = [
 
         <div className="bg-green-100 p-4 rounded-lg">
           <p className="text-sm italic text-green-900">
-            <strong>Key Insight:</strong> Better descriptions lead to better outputs. Subject matter expertise is crucial for crafting effective prompts.
+            <strong>Key Insight:</strong> Better descriptions produce better outputs. Subject-matter expertise helps you write effective prompts.
           </p>
         </div>
       </div>
@@ -162,7 +162,7 @@ export const fluencySlides: SlideType[] = [
         <div className="bg-purple-50 p-4 md:p-6 rounded-lg border-l-4 border-purple-500">
           <h3 className="text-xl md:text-2xl font-bold text-purple-900 mb-4">What is Discernment?</h3>
           <p className="text-lg text-gray-700">
-            Discernment is the ability to accurately evaluate and assess the quality, accuracy, and usefulness of AI outputs and behaviors.
+            Discernment means accurately evaluating the quality, accuracy, and usefulness of AI outputs and behavior.
           </p>
         </div>
 
@@ -170,7 +170,7 @@ export const fluencySlides: SlideType[] = [
           <div className="bg-white p-5 rounded-lg shadow border border-purple-200">
             <h4 className="font-semibold text-purple-900 mb-2">Critical Evaluation Skills:</h4>
             <ul className="space-y-2 text-gray-700">
-              <li>• Fact-checking and verification of AI outputs</li>
+              <li>• Fact-checking and verifying AI outputs</li>
               <li>• Recognizing potential biases or limitations</li>
               <li>• Identifying hallucinations or fabricated information</li>
               <li>• Assessing relevance and quality for your specific needs</li>
@@ -190,7 +190,7 @@ export const fluencySlides: SlideType[] = [
 
         <div className="bg-purple-100 p-4 rounded-lg">
           <p className="text-sm italic text-purple-900">
-            <strong>Critical Point:</strong> AI outputs should be treated as drafts requiring human review. Your expertise is essential for proper evaluation.
+            <strong>Critical Point:</strong> Treat AI outputs as drafts that need human review. Your expertise is essential for evaluating them properly.
           </p>
         </div>
       </div>
@@ -232,7 +232,7 @@ export const fluencySlides: SlideType[] = [
 
         <div className="bg-orange-100 p-4 rounded-lg">
           <p className="text-sm italic text-orange-900">
-            <strong>Remember:</strong> You remain accountable for work done with AI assistance. Diligence ensures AI use is responsible, ethical, and safe.
+            <strong>Remember:</strong> You remain accountable for the work you do with AI assistance. Diligence keeps AI use responsible, ethical, and safe.
           </p>
         </div>
       </div>

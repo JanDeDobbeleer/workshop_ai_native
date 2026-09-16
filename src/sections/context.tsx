@@ -14,7 +14,7 @@ export const contextSlides: SlideType[] = [
           Context
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          What the model sees — implicit, explicit, and attached
+          What the model sees: implicit, explicit, and attached
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-indigo-300 rounded-full"></div>
@@ -34,7 +34,7 @@ export const contextSlides: SlideType[] = [
           <p className="text-gray-700 italic text-lg">
             "Context engineering is the delicate art and science of filling the context window with just the right information for the next step."
           </p>
-          <p className="text-sm text-indigo-700 mt-2">— <a href="https://twitter.com/karpathy/status/1937902205765607626" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Andrej Karpathy</a> (June 2025)</p>
+          <p className="text-sm text-indigo-700 mt-2">Source: <a href="https://twitter.com/karpathy/status/1937902205765607626" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Andrej Karpathy</a> (June 2025)</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -50,16 +50,16 @@ export const contextSlides: SlideType[] = [
           <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
             <h4 className="font-semibold text-indigo-900 mb-2">Why It Matters</h4>
             <ul className="space-y-2 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">•</span><span>Model quality is fixed — context quality is in your control</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Model quality is fixed; context quality is in your control</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Garbage in → garbage out (at any model size)</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Right context = dramatically better results</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Right context = much better results</span></li>
             </ul>
           </div>
         </div>
 
         <div className="bg-indigo-100 p-4 rounded-lg">
           <p className="text-sm italic text-indigo-900">
-            <strong>Key Insight:</strong> You can't change the model's weights, but you can engineer exactly what it sees. That's where your leverage is.
+            <strong>Key Insight:</strong> You can't change the model's weights, but you can control exactly what it sees. Focus your effort there.
           </p>
         </div>
       </div>
@@ -67,7 +67,7 @@ export const contextSlides: SlideType[] = [
   },
   {
     title: "Context by Tool",
-    subtitle: "Attach files and indexing — cross-tool paths",
+    subtitle: "Attach files and indexing: cross-tool paths",
     content: (
       <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
         <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
@@ -81,12 +81,12 @@ export const contextSlides: SlideType[] = [
   },
   {
     title: "Explicit Context",
-    subtitle: "Attach what the model needs — tool-specific syntax",
+    subtitle: "Attach what the model needs: tool-specific syntax",
     content: (
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
           <p className="text-gray-700">
-            Better context = better responses. Use your tool&apos;s attach syntax — don&apos;t paste entire files when a mention works.
+            Better context produces better responses. Use your tool&apos;s attach syntax; don&apos;t paste entire files when a mention works.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export const contextSlides: SlideType[] = [
         <div className="bg-white p-4 rounded-lg shadow border border-cyan-200">
           <h4 className="font-semibold text-cyan-900 mb-2">Implicit context (all tools)</h4>
           <ul className="space-y-1 text-sm text-gray-700">
-            <li>• Workspace indexing — semantic search over your codebase</li>
+            <li>• Workspace indexing: semantic search over your codebase</li>
             <li>• Active file and editor selection included automatically</li>
             <li>• Agent mode may fetch additional files autonomously</li>
           </ul>
@@ -120,7 +120,7 @@ export const contextSlides: SlideType[] = [
 
         <div className="bg-indigo-100 p-3 rounded-lg">
           <p className="text-sm italic text-indigo-900">
-            <strong>Key Insight:</strong> You don&apos;t always need to manually attach — but when you do, use the right symbol for your tool.
+            <strong>Key Insight:</strong> You don&apos;t always need to manually attach, but when you do, use the right symbol for your tool.
           </p>
         </div>
       </div>
@@ -132,7 +132,7 @@ export const contextSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-4xl w-full mx-auto items-center md:justify-center md:h-full">
         <div className="bg-indigo-50 p-5 rounded-lg border-l-4 border-indigo-500 w-full">
-          <p className="text-gray-700 italic">The maximum amount of text (measured in tokens) an LLM can process at once - includes both your input and the model's response</p>
+          <p className="text-gray-700 italic">The maximum amount of text, measured in tokens, an LLM can process at once. This includes both your input and the model's response.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
@@ -148,12 +148,12 @@ export const contextSlides: SlideType[] = [
 
           <div className="bg-white p-4 rounded-lg shadow border border-gray-200">
             <h4 className="font-semibold text-gray-900 mb-2">↔️ Input vs. Output</h4>
-            <p className="text-gray-700 text-sm">Input windows are far larger than output limits — models can read a 500-page book but won't recite it back</p>
+            <p className="text-gray-700 text-sm">Input windows are far larger than output limits. Models can read a 500-page book but won't recite it back.</p>
           </div>
 
           <div className="bg-white p-4 rounded-lg shadow border border-gray-200">
             <h4 className="font-semibold text-gray-900 mb-2">🚫 Beyond the Window</h4>
-            <p className="text-gray-700 text-sm">Information outside the context window is effectively "forgotten" - the model can't reference it</p>
+            <p className="text-gray-700 text-sm">Information outside the context window is effectively "forgotten." The model can't reference it.</p>
           </div>
         </div>
 
@@ -180,17 +180,17 @@ export const contextSlides: SlideType[] = [
           <div className="bg-white p-3 rounded-lg shadow border border-indigo-200">
             <div className="text-lg mb-1">📋</div>
             <h4 className="font-semibold text-indigo-900 text-sm mb-1">System Prompt</h4>
-            <p className="text-xs text-gray-600">Instructions, persona, behavior rules — always present</p>
+            <p className="text-xs text-gray-600">Instructions, persona, behavior rules (always present)</p>
           </div>
           <div className="bg-white p-3 rounded-lg shadow border border-indigo-200">
             <div className="text-lg mb-1">💬</div>
             <h4 className="font-semibold text-indigo-900 text-sm mb-1">Conversation History</h4>
-            <p className="text-xs text-gray-600">All previous turns — grows with every exchange</p>
+            <p className="text-xs text-gray-600">All previous turns, growing with every exchange</p>
           </div>
           <div className="bg-white p-3 rounded-lg shadow border border-indigo-200">
             <div className="text-lg mb-1">📎</div>
             <h4 className="font-semibold text-indigo-900 text-sm mb-1">Files & Attachments</h4>
-            <p className="text-xs text-gray-600">Documents, code files, PDFs — can be large</p>
+            <p className="text-xs text-gray-600">Documents, code files, PDFs: can be large</p>
           </div>
           <div className="bg-white p-3 rounded-lg shadow border border-indigo-200">
             <div className="text-lg mb-1">🔧</div>
@@ -221,7 +221,7 @@ export const contextSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
-          <p className="text-gray-700">Each turn includes <strong>everything</strong> that came before. The AI doesn't have persistent memory — it rebuilds context from scratch every conversation.</p>
+          <p className="text-gray-700">Each turn includes <strong>everything</strong> that came before. The AI has no persistent memory: it rebuilds context from scratch every conversation.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
@@ -286,7 +286,7 @@ export const contextSlides: SlideType[] = [
 
         <div className="bg-indigo-100 p-3 rounded-lg">
           <p className="text-sm italic text-indigo-900">
-            <strong>Key Insight:</strong> Be intentional about what goes into your context — every message takes space away from the AI's ability to reason.
+            <strong>Key Insight:</strong> Be intentional about what goes into your context. Every message takes space away from the AI's ability to reason.
           </p>
         </div>
       </div>
@@ -299,7 +299,7 @@ export const contextSlides: SlideType[] = [
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
           <h3 className="text-xl font-bold text-indigo-900 mb-2">The Research Finding</h3>
-          <p className="text-gray-700">Models perform significantly better when relevant information is at the <strong>beginning or end</strong> of the context. Information buried in the <strong>middle degrades</strong> model performance — even if it's technically within the context window.</p>
+          <p className="text-gray-700">Models perform significantly better when relevant information is at the <strong>beginning or end</strong> of the context. Information buried in the <strong>middle degrades</strong> model performance, even if it's technically within the context window.</p>
         </div>
 
         <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
@@ -329,7 +329,7 @@ export const contextSlides: SlideType[] = [
             <ul className="space-y-2 text-gray-700 text-sm">
               <li className="flex"><span className="mr-2">•</span><span>Put critical instructions at the top of your system prompt</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Place key data or examples near the end</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Repeat crucial constraints at the end of long prompts</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Repeat key constraints at the end of long prompts</span></li>
             </ul>
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-red-200">
@@ -344,7 +344,7 @@ export const contextSlides: SlideType[] = [
 
         <div className="bg-gray-100 p-3 rounded-lg">
           <p className="text-sm italic text-gray-700">
-            <strong>Source:</strong> <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">arXiv:2307.03172</a> — "Lost in the Middle: How Language Models Use Long Contexts" (Liu et al., 2023)
+            <strong>Source:</strong> <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">arXiv:2307.03172</a>, "Lost in the Middle: How Language Models Use Long Contexts" (Liu et al., 2023)
           </p>
         </div>
       </div>
@@ -357,7 +357,7 @@ export const contextSlides: SlideType[] = [
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
           <p className="text-gray-700">
-            A million-token context window doesn't mean you should fill it. Output quality measurably <strong>degrades</strong> well before the limit — often somewhere around 200K–400K tokens, depending on the model. Two informal zones are useful to keep in mind.
+            A million-token context window doesn't mean you should fill it. Output quality measurably <strong>degrades</strong> well before the limit, often somewhere around 200K-400K tokens, depending on the model. Two informal zones are useful to keep in mind.
           </p>
         </div>
 
@@ -383,15 +383,15 @@ export const contextSlides: SlideType[] = [
         <div className="bg-white p-4 rounded-lg shadow border border-indigo-200">
           <h4 className="font-semibold text-indigo-900 mb-2">🧰 Staying in the Smart Zone</h4>
           <ul className="space-y-2 text-gray-700 text-sm">
-            <li className="flex"><span className="mr-2">•</span><span>Compaction — summarize and drop the raw history (see next slide)</span></li>
-            <li className="flex"><span className="mr-2">•</span><span>Sub-agents — hand off research/exploration to a subagent with its own fresh window</span></li>
-            <li className="flex"><span className="mr-2">•</span><span>New sessions — when a task genuinely ends, start clean rather than carrying it forward</span></li>
+            <li className="flex"><span className="mr-2">•</span><span>Compaction: summarize and drop the raw history (see next slide)</span></li>
+            <li className="flex"><span className="mr-2">•</span><span>Sub-agents: hand off research or exploration to a subagent with its own fresh window</span></li>
+            <li className="flex"><span className="mr-2">•</span><span>New sessions: when a task genuinely ends, start clean rather than carrying it forward</span></li>
           </ul>
         </div>
 
         <div className="bg-indigo-100 p-4 rounded-lg">
           <p className="text-sm italic text-indigo-900">
-            <strong>Looking ahead:</strong> today, staying in the smart zone is your job. Expect more of this to be handled automatically by the harness/tooling layer over time — but for now, treat context window size as a budget to manage, not a target to fill.
+            <strong>Looking ahead:</strong> today, staying in the smart zone is your job. Expect more of this to be handled automatically by the harness and tooling layer over time. For now, treat context window size as a budget to manage, not a target to fill.
           </p>
         </div>
       </div>
@@ -404,7 +404,7 @@ export const contextSlides: SlideType[] = [
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
         <div className="bg-indigo-50 p-5 rounded-lg border-l-4 border-indigo-500">
           <p className="text-gray-700">
-            <strong>Remember:</strong> Every instruction file loaded consumes precious context window space. Scoped instructions ensure only relevant context is loaded — keeping your window available for what matters.
+            <strong>Remember:</strong> Every instruction file loaded consumes precious context window space. Scoped instructions load only relevant context, so your window stays available for what matters.
           </p>
         </div>
 
@@ -506,7 +506,7 @@ export const contextSlides: SlideType[] = [
 
         <div className="bg-amber-50 p-3 rounded-lg border border-amber-200">
           <p className="text-sm text-amber-900">
-            <strong>💡 Pro Tip:</strong> Put detailed, verbose instructions in scoped files. Keep root instructions minimal — they're always loaded.
+            <strong>💡 Pro Tip:</strong> Put detailed, verbose instructions in scoped files. Keep root instructions minimal: they're always loaded.
           </p>
         </div>
       </div>
@@ -607,7 +607,7 @@ export const contextSlides: SlideType[] = [
 
         <div className="bg-blue-50 p-2 rounded-lg">
           <p className="text-sm italic text-blue-900 text-center">
-            <strong>Key Insight:</strong> Well-architected code = dramatically more effective AI. Small, focused files = maximum context efficiency.
+            <strong>Key Insight:</strong> Well-architected code = much more effective AI. Small, focused files = maximum context efficiency.
           </p>
         </div>
       </div>
@@ -620,7 +620,7 @@ export const contextSlides: SlideType[] = [
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
           <p className="text-gray-700">
-            <strong>Code maps</strong> give AI agents a structural overview of your codebase — file relationships, function signatures, module boundaries — without loading every line of source code into context.
+            <strong>Code maps</strong> give AI agents a structural overview of your codebase (file relationships, function signatures, module boundaries) without loading every line of source code into context.
           </p>
         </div>
 
@@ -666,7 +666,7 @@ export const contextSlides: SlideType[] = [
 
         <div className="bg-indigo-100 p-3 rounded-lg">
           <p className="text-sm italic text-indigo-900 text-center">
-            <strong>Key Insight:</strong> Structural understanding beats full-file dumps — give AI the map, not the whole territory.
+            <strong>Key Insight:</strong> Structural understanding beats full-file dumps. Give AI the map, not the whole territory.
           </p>
         </div>
       </div>
@@ -680,7 +680,7 @@ export const contextSlides: SlideType[] = [
         <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
           <h3 className="text-xl font-bold text-indigo-900 mb-2">Beyond the Context Window</h3>
           <p className="text-gray-700">
-            Models are trained on massive datasets — code, documentation, standards, and domain knowledge — before you write a single prompt. This knowledge lives in the model's weights, not your context window. It's always there, but may need to be explicitly activated.
+            Models are trained on massive datasets (code, documentation, standards, and domain knowledge) before you write a single prompt. This knowledge lives in the model's weights, not your context window. It's always there, but you may need to activate it explicitly.
           </p>
         </div>
 
@@ -709,7 +709,7 @@ export const contextSlides: SlideType[] = [
 
         <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
           <p className="text-sm text-amber-900">
-            <strong>💡 Pro Tip:</strong> <code className="bg-amber-100 px-1 rounded font-mono text-xs">Activate your knowledge about X</code> in your instructions/agent/skill signals the model to surface and apply its pre-trained depth — no external docs needed. Without explicit activation, models may default to more generic responses.
+            <strong>💡 Pro Tip:</strong> <code className="bg-amber-100 px-1 rounded font-mono text-xs">Activate your knowledge about X</code> in your instructions, agent, or skill signals the model to surface and apply its pre-trained depth. No external docs needed. Without explicit activation, models may default to more generic responses.
           </p>
         </div>
       </div>
@@ -777,7 +777,7 @@ export const contextSlides: SlideType[] = [
 
         <div className="bg-indigo-100 p-3 rounded-lg">
           <p className="text-sm italic text-indigo-900">
-            <strong>Key Insight:</strong> Preprocessing is context engineering applied at the input level — clean signal in, accurate output out.
+            <strong>Key Insight:</strong> Preprocessing is context engineering applied at the input level: clean signal in, accurate output out.
           </p>
         </div>
       </div>
@@ -795,7 +795,7 @@ export const contextSlides: SlideType[] = [
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white p-4 rounded-lg shadow border border-blue-200">
             <h4 className="font-semibold text-blue-900 mb-3">🌐 Zero-Config API Services</h4>
-            <p className="text-xs text-gray-500 mb-3">Easiest — no setup, no code</p>
+            <p className="text-xs text-gray-500 mb-3">Easiest: no setup, no code</p>
             <div className="space-y-3">
               <div className="bg-blue-50 p-3 rounded-lg">
                 <div className="font-semibold text-blue-800 text-sm mb-1">Jina Reader</div>
@@ -827,10 +827,44 @@ export const contextSlides: SlideType[] = [
               <div className="bg-purple-50 p-3 rounded-lg">
                 <div className="font-semibold text-purple-800 text-sm mb-1">Microsoft MarkItDown</div>
                 <code className="text-xs bg-purple-100 text-purple-800 px-2 py-0.5 rounded font-mono block mb-1">pip install markitdown</code>
-                <p className="text-xs text-gray-600">Converts PDF, Word, Excel, and PowerPoint files to Markdown — not just web content, but office documents too.</p>
+                <p className="text-xs text-gray-600">Converts PDF, Word, Excel, and PowerPoint files to Markdown, covering office documents as well as web content.</p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Demo: Structure Over Full-File Reads",
+    subtitle: "oh-my-posh: AGENTS.md layout table, ast-grep in issue-analyzer",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+          <p className="text-gray-700">
+            AGENTS.md line 36: <em>"Always explore the actual codebase before planning or writing code. Do not rely on memory or assumptions."</em> Two concrete practices make that cheap instead of expensive.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
+            <h4 className="font-semibold text-purple-900 mb-2">🗺️ A Written Orientation Table</h4>
+            <p className="text-sm text-gray-700">
+              AGENTS.md hand-maintains a "Key Paths" table: <code className="bg-gray-100 px-1 rounded text-xs">src/segments/</code>, <code className="bg-gray-100 px-1 rounded text-xs">src/prompt/engine.go</code>, <code className="bg-gray-100 px-1 rounded text-xs">src/cache/</code>. One read replaces re-deriving the structure every session.
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
+            <h4 className="font-semibold text-purple-900 mb-2">🔎 ast-grep, Not grep/cat</h4>
+            <p className="text-sm text-gray-700">
+              The issue-analyzer agent's instructions: <em>"invoke ast-grep to locate symbols... do not read entire directories or files to find them."</em> Structural match first, open files only once the target is known.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-purple-100 p-4 rounded-lg">
+          <p className="text-sm italic text-purple-900">
+            <strong>Live:</strong> <a href="https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/AGENTS.md" target="_blank" rel="noopener noreferrer" className="text-purple-700 hover:underline">github.com/JanDeDobbeleer/oh-my-posh/AGENTS.md</a>
+          </p>
         </div>
       </div>
     )

@@ -38,7 +38,7 @@ export const modelsSlides: SlideType[] = [
           <div className="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-4 md:p-6 rounded-lg shadow-lg">
             <div className="text-xl md:text-2xl font-bold mb-2">🎯 SWE-bench</div>
             <div className="text-sm">
-              Real-world GitHub issue resolution - the gold standard for
+              Real-world GitHub issue resolution: the gold standard for
               practical coding ability
             </div>
           </div>
@@ -46,7 +46,7 @@ export const modelsSlides: SlideType[] = [
           <div className="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-4 md:p-6 rounded-lg shadow-lg">
             <div className="text-xl md:text-2xl font-bold mb-2">🧮 HumanEval</div>
             <div className="text-sm">
-              Algorithmic problem-solving - measures fundamental coding
+              Algorithmic problem-solving: measures fundamental coding
               capabilities
             </div>
           </div>
@@ -54,7 +54,7 @@ export const modelsSlides: SlideType[] = [
           <div className="bg-gradient-to-br from-green-500 to-green-700 text-white p-4 md:p-6 rounded-lg shadow-lg">
             <div className="text-xl md:text-2xl font-bold mb-2">📊 Context Window</div>
             <div className="text-sm">
-              How much code the model can "see" at once - critical for large
+              How much code the model can "see" at once: critical for large
               codebases
             </div>
           </div>
@@ -62,7 +62,7 @@ export const modelsSlides: SlideType[] = [
           <div className="bg-gradient-to-br from-orange-500 to-orange-700 text-white p-4 md:p-6 rounded-lg shadow-lg">
             <div className="text-xl md:text-2xl font-bold mb-2">⚡ Use Case Fit</div>
             <div className="text-sm">
-              Different models excel at different tasks - match the tool to the
+              Different models excel at different tasks: match the tool to the
               job
             </div>
           </div>
@@ -88,7 +88,7 @@ export const modelsSlides: SlideType[] = [
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
           <p className="text-lg text-gray-700">
             <strong>SWE-bench</strong> measures ability to resolve actual GitHub
-            issues - real bugs from production codebases requiring understanding
+            issues: real bugs from production codebases that require understanding
             of complex systems.
           </p>
         </div>
@@ -172,7 +172,7 @@ export const modelsSlides: SlideType[] = [
 
         <div className="bg-purple-100 p-4 rounded-lg">
           <p className="text-sm italic text-purple-900">
-            <strong>Key Insight:</strong> Top models now resolve ~3 out of 4 real GitHub issues autonomously. The field is rapidly improving — and converging. All top 5 sit within 7 points of each other.
+            <strong>Key Insight:</strong> Top models now resolve ~3 out of 4 real GitHub issues autonomously. The field is rapidly improving and converging. All top 5 sit within 7 points of each other.
           </p>
         </div>
 
@@ -180,7 +180,7 @@ export const modelsSlides: SlideType[] = [
           <p className="text-sm text-gray-600 italic">
             Source:{" "}
             <a href="https://www.swebench.com/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">SWE-bench Verified Leaderboard</a>
-            {" "}— evaluated with mini-SWE-agent (March 2026)
+            {" "}(evaluated with mini-SWE-agent, March 2026)
           </p>
         </div>
       </div>
@@ -194,7 +194,7 @@ export const modelsSlides: SlideType[] = [
         <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
           <p className="text-lg text-gray-700">
             <strong>HumanEval</strong> measures fundamental coding ability on
-            well-defined algorithmic challenges - syntax, data structures, and
+            well-defined algorithmic challenges: syntax, data structures, and
             clean implementations.
           </p>
         </div>
@@ -263,14 +263,14 @@ export const modelsSlides: SlideType[] = [
 
         <div className="bg-blue-100 p-4 rounded-lg">
           <p className="text-sm italic text-blue-900">
-            <strong>Notice:</strong> HumanEval is near-saturated — the top 7 models all score 93–95%, a gap of just 2 points. This benchmark no longer meaningfully differentiates frontier models. SWE-bench Verified tells the more useful story.
+            <strong>Notice:</strong> HumanEval is near-saturated. The top 7 models all score 93–95%, a gap of just 2 points. This benchmark no longer meaningfully differentiates frontier models. SWE-bench Verified tells the more useful story.
           </p>
         </div>
 
         <div className="bg-gray-100 px-4 py-3 rounded-lg">
           <p className="text-sm text-gray-600 italic">
             Source:{" "}
-            <a href="https://benchlm.ai/benchmarks/humaneval" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">BenchLM — HumanEval Leaderboard</a>
+            <a href="https://benchlm.ai/benchmarks/humaneval" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">BenchLM HumanEval Leaderboard</a>
             {" "}(March 2026, 114 models evaluated)
           </p>
         </div>
@@ -284,7 +284,7 @@ export const modelsSlides: SlideType[] = [
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-400">
           <p className="text-lg text-gray-700">
-            No single model optimizes all dimensions—selection depends on your
+            No single model optimizes every dimension. Selection depends on your
             specific requirements, constraints, and risk tolerance.
           </p>
         </div>
@@ -307,7 +307,7 @@ export const modelsSlides: SlideType[] = [
               Best Value / Speed
             </div>
             <div className="flex-1 text-gray-700">
-              High accuracy at low cost — 75.8% SWE-bench at $0.36/1M tokens
+              High accuracy at low cost: 75.8% SWE-bench at $0.36/1M tokens
             </div>
             <div className="bg-green-100 px-3 py-1 rounded-full text-green-800 font-semibold text-sm">
               Gemini 3 Flash
@@ -368,7 +368,7 @@ export const modelsSlides: SlideType[] = [
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
         <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-400">
           <p className="text-lg text-gray-700">
-            <strong>Inference costs matter</strong> — the environmental footprint of AI varies dramatically between models and infrastructure choices.
+            <strong>Inference costs matter:</strong> the environmental footprint of AI varies dramatically between models and infrastructure choices.
           </p>
         </div>
 
@@ -422,7 +422,7 @@ export const modelsSlides: SlideType[] = [
 
         <div className="bg-gray-100 p-4 rounded-lg">
           <p className="text-sm italic text-gray-700">
-            <strong>Source:</strong> <a href="https://arxiv.org/abs/2505.09598" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">arXiv:2505.09598</a> — "How Hungry is AI?" (May 2025)
+            <strong>Source:</strong> <a href="https://arxiv.org/abs/2505.09598" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">arXiv:2505.09598</a>, "How Hungry is AI?" (May 2025)
           </p>
         </div>
       </div>

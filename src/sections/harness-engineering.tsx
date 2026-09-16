@@ -30,7 +30,7 @@ export const harnessEngineeringSlides: SlideType[] = [
         <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
           <h3 className="text-2xl font-bold text-amber-900 mb-4">The Terminology Keeps Evolving</h3>
           <p className="text-lg text-gray-700">
-            Prompt engineering → context engineering → harness engineering. Each layer doesn't replace the last — it builds on it and subsumes it. Better words don't help if the agent has no way to run them, check its own output, or iterate.
+            Prompt engineering → context engineering → harness engineering. Each layer doesn't replace the last: it builds on and subsumes it. Better words don't help if the agent has no way to run them, check its own output, or iterate.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export const harnessEngineeringSlides: SlideType[] = [
           <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
             <h4 className="font-semibold text-amber-900 mb-2">🔧 What It Means</h4>
             <ul className="space-y-2 text-gray-700">
-              <li>• Building the surrounding feedback loop — not just the words you type</li>
+              <li>• Building the surrounding feedback loop, not just the words you type</li>
               <li>• The scaffolding that lets an agent act, observe, and correct itself</li>
               <li>• A discipline, not a single prompt or tool setting</li>
             </ul>
@@ -64,13 +64,13 @@ export const harnessEngineeringSlides: SlideType[] = [
   },
   {
     title: "Inner Harness vs Outer Harness",
-    subtitle: "Two very different jobs",
+    subtitle: "Two different jobs",
     content: (
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
         <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
           <h3 className="text-2xl font-bold text-amber-900 mb-4">Who Builds What</h3>
           <p className="text-lg text-gray-700">
-            A framing popularized in recent harness-engineering writing splits the work into two layers with very different owners.
+            A framing popularized in recent harness-engineering writing splits the work into two layers with different owners.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export const harnessEngineeringSlides: SlideType[] = [
           <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
             <h4 className="font-semibold text-amber-900 mb-2">⚙️ Inner Harness</h4>
             <ul className="space-y-2 text-gray-700">
-              <li>• Built by tool vendors — Anthropic, OpenAI, GitHub</li>
+              <li>• Built by tool vendors: Anthropic, OpenAI, GitHub</li>
               <li>• The agent loop, the tool-calling runtime</li>
               <li>• The CLI/IDE product itself (Claude Code, Copilot CLI)</li>
               <li>• Worth understanding, but you don't need to rebuild it</li>
@@ -99,7 +99,7 @@ export const harnessEngineeringSlides: SlideType[] = [
 
         <div className="bg-amber-100 p-4 rounded-lg">
           <p className="text-sm italic text-amber-900">
-            <strong>Pro Tip:</strong> You don't control the inner harness, but you fully control the outer one — that's where your leverage as an engineering team actually lives.
+            <strong>Pro Tip:</strong> You don't control the inner harness, but you fully control the outer one. That's where your influence as an engineering team lives.
           </p>
         </div>
       </div>
@@ -113,7 +113,7 @@ export const harnessEngineeringSlides: SlideType[] = [
         <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
           <h3 className="text-2xl font-bold text-amber-900 mb-4">Wire Up Back-Pressure</h3>
           <p className="text-lg text-gray-700">
-            An outer harness needs ways for the agent to verify itself instead of asserting it's done. This builds directly on what the Security section already covers — linters, security scanners, and static analysis aren't just review-time gates, they're feedback signals an agent can run itself.
+            An outer harness needs ways for the agent to verify itself instead of asserting it's done. This builds directly on what the Security section already covers: linters, security scanners, and static analysis aren't just review-time gates. They're feedback signals an agent can run itself.
           </p>
         </div>
 
@@ -154,7 +154,7 @@ export const harnessEngineeringSlides: SlideType[] = [
         <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
           <h3 className="text-2xl font-bold text-amber-900 mb-4">Verifiable Goals, Round After Round</h3>
           <p className="text-lg text-gray-700">
-            Give the agent an objectively checkable goal so it can verify its own progress and keep climbing toward the target, round after round — the agent doesn't need you to grade each attempt.
+            Give the agent an objectively checkable goal so it can verify its own progress and keep climbing toward the target, round after round. The agent doesn't need you to grade each attempt.
           </p>
         </div>
 
@@ -163,13 +163,46 @@ export const harnessEngineeringSlides: SlideType[] = [
           <ul className="space-y-2 text-gray-700">
             <li>• Pick a metric that reflects the actual outcome you want</li>
             <li>• Correctness and behavior parity, not just a single number</li>
-            <li>• A naive target like "90% test coverage" can backfire — the agent games the number instead of improving real quality</li>
+            <li>• A naive target like "90% test coverage" can backfire: the agent games the number instead of improving real quality</li>
           </ul>
         </div>
 
         <div className="bg-amber-100 p-4 rounded-lg">
           <p className="text-sm italic text-amber-900">
-            <strong>See Loop Engineering</strong> for where this pattern came from — the Ralph loop.
+            <strong>See Loop Engineering</strong> for where this pattern came from: the Ralph loop.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Demo: Signals + an Automated Reviewer",
+    subtitle: "oh-my-posh: AGENTS.md commands, architecture.agent.md",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-500">
+          <p className="text-gray-700">
+            Two layers of back-pressure, both real and running: an objective pass/fail signal an agent checks itself, and a review agent enforcing standards a human doesn't have to restate every time.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
+            <h4 className="font-semibold text-amber-900 mb-2">⚙️ Objective Signal</h4>
+            <p className="text-sm text-gray-700 mb-2">AGENTS.md's Key Commands, run from <code className="bg-gray-100 px-1 rounded text-xs">src/</code>:</p>
+            <code className="block bg-gray-900 text-green-400 text-xs p-2 rounded">go test ./...<br/>golangci-lint run</code>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
+            <h4 className="font-semibold text-amber-900 mb-2">🔍 architecture.agent.md</h4>
+            <p className="text-sm text-gray-700">
+              A committed review agent checks nesting depth, hot-path I/O, Law-of-Demeter dot chains, and primitive obsession: the same checklist every time, not whatever a reviewer happens to remember.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-amber-100 p-4 rounded-lg">
+          <p className="text-sm italic text-amber-900">
+            <strong>Also real:</strong> AGENTS.md's PR-review protocol. Every comment gets a fixup commit, squashed with <code className="bg-amber-50 px-1 rounded">git rebase --autosquash</code>, then force-pushed to the PR branch. Main history is never rewritten.
           </p>
         </div>
       </div>

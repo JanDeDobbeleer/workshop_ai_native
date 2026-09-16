@@ -12,7 +12,7 @@ export const ollamaSlides: SlideType[] = [
           Ollama
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Transforming AI Accessibility and Language Processing
+          Run Large Language Models Locally and Privately
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-blue-300 rounded-full"></div>
@@ -32,10 +32,10 @@ export const ollamaSlides: SlideType[] = [
             What is Ollama?
           </h3>
           <p className="text-lg text-gray-700">
-            Ollama is a platform that enables users to run large language models
-            (LLMs) locally on their machines, democratizing access to AI and
-            ensuring privacy. It provides a user-friendly interface and seamless
-            integration capabilities for various applications.
+            Ollama is a platform that lets users run large language models
+            (LLMs) locally on their own machines, giving them access to AI
+            with privacy. It offers a user-friendly interface and integrates
+            easily with a range of applications.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -50,7 +50,7 @@ export const ollamaSlides: SlideType[] = [
                 3, Phi-3, Mistral
               </li>
               <li>
-                • Seamless Integration: Works with Python, LangChain, LlamaIndex
+                • Easy Integration: Works with Python, LangChain, LlamaIndex
               </li>
               <li>• Customization: Fine-tune models for specific needs</li>
             </ul>
@@ -180,11 +180,11 @@ export const ollamaSlides: SlideType[] = [
             What are Model Tags?
           </h3>
           <p className="text-lg text-gray-700">
-            Model tags in Ollama indicate how the model has been compressed
-            through quantization, trading some accuracy for smaller size and
-            faster performance. Each weight is typically a 16-bit float at full
-            precision; quantization maps these to integers (e.g., 4-bit),
-            dramatically reducing memory at the cost of rounding precision.
+            Model tags in Ollama show how quantization compressed the model,
+            trading some accuracy for smaller size and faster performance.
+            Each weight is typically a 16-bit float at full precision;
+            quantization maps these to integers (e.g., 4-bit), cutting memory
+            use at the cost of rounding precision.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -225,15 +225,15 @@ export const ollamaSlides: SlideType[] = [
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
             <h5 className="font-semibold text-blue-800 mb-1">_S</h5>
-            <p className="text-sm text-gray-600">Small - More compression</p>
+            <p className="text-sm text-gray-600">Small: more compression</p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
             <h5 className="font-semibold text-blue-800 mb-1">_M</h5>
-            <p className="text-sm text-gray-600">Medium - Best balance</p>
+            <p className="text-sm text-gray-600">Medium: best balance</p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-sm border text-center">
             <h5 className="font-semibold text-blue-800 mb-1">_L</h5>
-            <p className="text-sm text-gray-600">Large - Higher quality</p>
+            <p className="text-sm text-gray-600">Large: higher quality</p>
           </div>
         </div>
         <div className="bg-blue-50 p-4 rounded-lg">

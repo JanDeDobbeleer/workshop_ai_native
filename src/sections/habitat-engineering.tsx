@@ -29,7 +29,7 @@ export const habitatEngineeringSlides: SlideType[] = [
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
           <h3 className="text-xl font-bold text-rose-900 mb-2">A quiet assumption</h3>
-          <p className="text-gray-700">Up to now, most agentic-coding advice—and most of this workshop—has assumed one engineer working solo with an agent. Great for a solo founder. It doesn't scale infinitely once more than one engineer touches the codebase.</p>
+          <p className="text-gray-700">Up to now, most agentic-coding advice (and most of this workshop) has assumed one engineer working solo with an agent. That works for a solo founder, but it doesn't scale once more than one engineer touches the codebase.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -38,7 +38,7 @@ export const habitatEngineeringSlides: SlideType[] = [
             <ul className="space-y-2 text-gray-700 text-sm">
               <li className="flex"><span className="mr-2">•</span><span>One dev, one agent, one context</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Instructions live in your head</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Works great—until it doesn't</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Works great, until it doesn't</span></li>
             </ul>
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
@@ -53,7 +53,7 @@ export const habitatEngineeringSlides: SlideType[] = [
 
         <div className="bg-rose-100 p-4 rounded-lg">
           <p className="text-sm italic text-rose-900">
-            <strong>Habitat engineering</strong> is the discipline of designing your repo, environment, and team practices for the multiplayer case—both human teammates and agents working in it together.
+            <strong>Habitat engineering</strong> is the discipline of designing your repo, environment, and team practices for the multiplayer case: both human teammates and agents working in it together.
           </p>
         </div>
       </div>
@@ -66,7 +66,7 @@ export const habitatEngineeringSlides: SlideType[] = [
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
           <h3 className="text-xl font-bold text-rose-900 mb-2">The investment pays twice</h3>
-          <p className="text-gray-700">An environment you design for agents to understand quickly also onboards new human engineers faster. Habitat work isn't extra work—it's the same work, done once, that benefits both.</p>
+          <p className="text-gray-700">An environment you design for agents to understand quickly also onboards new human engineers faster. Habitat work isn't extra work: it's the same work, done once, that benefits both.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -109,7 +109,7 @@ export const habitatEngineeringSlides: SlideType[] = [
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
           <h3 className="text-xl font-bold text-rose-900 mb-2">None of this is required. All of it helps.</h3>
-          <p className="text-gray-700">Good naming, modular code, clear docs—an agent doesn't strictly need any of it to work in your codebase. They can grep their way around messy code. But clarity makes every change faster and safer for both the agent and the human reviewing it.</p>
+          <p className="text-gray-700">Good naming, modular code, clear docs: an agent doesn't strictly need any of it to work in your codebase. It can grep its way around messy code. But clarity makes every change faster and safer for both the agent and the human reviewing it.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -125,14 +125,14 @@ export const habitatEngineeringSlides: SlideType[] = [
             <h4 className="font-semibold text-rose-900 mb-2">⚠️ The Tempting Shortcut</h4>
             <ul className="space-y-2 text-gray-700 text-sm">
               <li className="flex"><span className="mr-2">•</span><span>"The AI can handle messy code, so why bother?"</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Slower reviews, harder debugging—for humans too</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Slower reviews, harder debugging, for humans too</span></li>
             </ul>
           </div>
         </div>
 
         <div className="bg-rose-100 p-4 rounded-lg">
           <p className="text-sm italic text-rose-900">
-            <strong>Bottom line:</strong> code clarity isn't a courtesy you extend to human readers anymore—it's infrastructure that both your teammates and your agents run on.
+            <strong>Bottom line:</strong> code clarity isn't a courtesy you extend to human readers anymore: it's infrastructure that both your teammates and your agents run on.
           </p>
         </div>
       </div>
@@ -145,7 +145,7 @@ export const habitatEngineeringSlides: SlideType[] = [
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
           <h3 className="text-xl font-bold text-rose-900 mb-2">Sound familiar?</h3>
-          <p className="text-gray-700">Teams adopt AI tools individually—each developer configures their own instructions, prompts, and skills from scratch. The habitat you designed exists in one person's setup, not the team's.</p>
+          <p className="text-gray-700">Teams adopt AI tools individually: each developer configures their own instructions, prompts, and skills from scratch. The habitat you designed exists in one person's setup, not the team's.</p>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -179,25 +179,25 @@ export const habitatEngineeringSlides: SlideType[] = [
   },
   {
     title: "APM: Agent Package Manager",
-    subtitle: "npm for AI agent configuration—one way to build the habitat",
+    subtitle: "npm for AI agent configuration: one way to build the habitat",
     content: (
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
           <h3 className="text-xl font-bold text-rose-900 mb-2">What is APM?</h3>
-          <p className="text-gray-700">APM treats AI agent configuration as a managed dependency. Declare your team's instructions, skills, prompts, and MCP servers in <code className="bg-rose-100 px-1 rounded">apm.yml</code>—then install them reproducibly anywhere. It's a concrete tool for habitat engineering: the habitat's rules become code, not tribal knowledge.</p>
+          <p className="text-gray-700">APM treats AI agent configuration as a managed dependency. Declare your team's instructions, skills, prompts, and MCP servers in <code className="bg-rose-100 px-1 rounded">apm.yml</code>, then install them reproducibly anywhere. It's a concrete tool for habitat engineering: the habitat's rules become code, not tribal knowledge.</p>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
             <h4 className="font-semibold text-rose-900 mb-2">📦 7 Config Primitives</h4>
             <ul className="space-y-1 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">•</span><span><strong>Instructions</strong> — coding standards</span></li>
-              <li className="flex"><span className="mr-2">•</span><span><strong>Skills</strong> — reusable AI capabilities</span></li>
-              <li className="flex"><span className="mr-2">•</span><span><strong>Prompts</strong> — slash command workflows</span></li>
-              <li className="flex"><span className="mr-2">•</span><span><strong>Agents</strong> — specialized AI personas</span></li>
-              <li className="flex"><span className="mr-2">•</span><span><strong>Context</strong> — project knowledge</span></li>
-              <li className="flex"><span className="mr-2">•</span><span><strong>Hooks</strong> — lifecycle event handlers</span></li>
-              <li className="flex"><span className="mr-2">•</span><span><strong>MCP Servers</strong> — tool integrations</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Instructions</strong>: coding standards</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Skills</strong>: reusable AI capabilities</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Prompts</strong>: slash command workflows</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Agents</strong>: specialized AI personas</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Context</strong>: project knowledge</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>Hooks</strong>: lifecycle event handlers</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>MCP Servers</strong>: tool integrations</span></li>
             </ul>
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
@@ -215,7 +215,7 @@ export const habitatEngineeringSlides: SlideType[] = [
 
         <div className="bg-rose-100 p-4 rounded-lg">
           <p className="text-sm italic text-rose-900">
-            <strong>Guiding principle:</strong> "Collaboration over isolation — prompts as shared, version-controlled artifacts." — <a href="https://github.com/microsoft/apm" target="_blank" rel="noopener noreferrer" className="text-rose-700 hover:underline">github.com/microsoft/apm</a>
+            <strong>Guiding principle:</strong> "Collaboration over isolation — prompts as shared, version-controlled artifacts." (<a href="https://github.com/microsoft/apm" target="_blank" rel="noopener noreferrer" className="text-rose-700 hover:underline">github.com/microsoft/apm</a>)
           </p>
         </div>
       </div>
@@ -228,7 +228,7 @@ export const habitatEngineeringSlides: SlideType[] = [
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
           <h3 className="text-xl font-bold text-rose-900 mb-2">The Problem</h3>
-          <p className="text-gray-700">When Copilot coding agent spins up an ephemeral environment to work on a task, it starts fresh — with none of your team's APM-managed instructions, skills, or MCP servers installed. The habitat doesn't travel with it by default.</p>
+          <p className="text-gray-700">When Copilot coding agent spins up an ephemeral environment to work on a task, it starts fresh, with none of your team's APM-managed instructions, skills, or MCP servers installed. The habitat doesn't travel with it by default.</p>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -237,7 +237,7 @@ export const habitatEngineeringSlides: SlideType[] = [
             <p className="text-sm text-gray-700 mb-2">Create a <strong>Copilot setup steps</strong> file to run <code className="bg-gray-100 px-1 rounded text-xs">apm install</code> before the agent starts work.</p>
             <ul className="space-y-1 text-sm text-gray-700">
               <li className="flex"><span className="mr-2">•</span><span>Runs in GitHub Actions before Copilot starts</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Deterministic — no trial-and-error installs</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Deterministic: no trial-and-error installs</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Agent gets full team habitat every time</span></li>
             </ul>
           </div>
@@ -274,7 +274,7 @@ export const habitatEngineeringSlides: SlideType[] = [
   },
   {
     title: "A Hidden Gem, Still Early",
-    subtitle: "Less hype than harness/loop engineering—for now.",
+    subtitle: "Less hype than harness/loop engineering, for now.",
     content: (
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
@@ -285,7 +285,7 @@ export const habitatEngineeringSlides: SlideType[] = [
         <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
           <h4 className="font-semibold text-rose-900 mb-2">📖 Where the Term Comes From</h4>
           <p className="text-sm text-gray-700">
-            The term is associated with <strong>Russ Miles</strong>, who writes about it as part of his "Sovereign Engineer" / "Sovereign Apprentice" work. Worth reading as further exploration of the idea—though fair warning, the writing style leans heavily AI-generated. The underlying ideas are still worth engaging with.
+            The term is associated with <strong>Russ Miles</strong>, who writes about it as part of his "Sovereign Engineer" / "Sovereign Apprentice" work. Worth reading as further exploration of the idea, though the writing style leans heavily AI-generated. The underlying ideas are still worth engaging with.
           </p>
         </div>
 
@@ -310,13 +310,47 @@ export const habitatEngineeringSlides: SlideType[] = [
             <li className="flex"><span className="mr-2">✅</span><span>Skills capture recurring workflows</span></li>
             <li className="flex"><span className="mr-2">✅</span><span>Config packaged &amp; versioned (e.g. APM) so it travels with the repo</span></li>
             <li className="flex"><span className="mr-2">✅</span><span>A review process both humans and agents participate in</span></li>
-            <li className="flex"><span className="mr-2">✅</span><span>Onboarding docs a new hire—or a new agent session—could actually follow</span></li>
+            <li className="flex"><span className="mr-2">✅</span><span>Onboarding docs a new hire (or a new agent session) could actually follow</span></li>
           </ul>
         </div>
 
         <div className="bg-rose-100 p-4 rounded-lg">
           <p className="text-sm italic text-rose-900">
             <strong>Pro Tip:</strong> Design your habitat for the multiplayer case from day one. The team you build for today is never just you plus one agent for long.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Demo: A Real Habitat in Production",
+    subtitle: "oh-my-posh: project-knowledge skill + apm.yml",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
+          <p className="text-gray-700">
+            This is the live version of the APM slides earlier: same project, real config, running today.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
+            <h4 className="font-semibold text-rose-900 mb-2">🧠 project-knowledge skill</h4>
+            <p className="text-sm text-gray-700">
+              Dated, verified gotchas per topic: zsh, pwsh, fish, terminal, testing. "Everything here was learned the expensive way." A session reads the matching topic before touching pty/shell code, and appends what it learns before it ends.
+            </p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
+            <h4 className="font-semibold text-rose-900 mb-2">📦 apm.yml, for real</h4>
+            <p className="text-sm text-gray-700">
+              Pulls instructions and skills (golang, markdown, conventional-commit, code-changes) from <code className="bg-gray-100 px-1 rounded text-xs">JanDeDobbeleer/agentic</code>, compiles for <code className="bg-gray-100 px-1 rounded text-xs">claude</code> and <code className="bg-gray-100 px-1 rounded text-xs">copilot</code> both: one source, no drift.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-rose-100 p-4 rounded-lg">
+          <p className="text-sm italic text-rose-900">
+            <strong>Live:</strong> run <code className="bg-rose-50 px-1 rounded">apm install</code> against <a href="https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/apm.yml" target="_blank" rel="noopener noreferrer" className="text-rose-700 hover:underline">apm.yml</a> and watch <code className="bg-rose-50 px-1 rounded">.agents/skills/</code> and <code className="bg-rose-50 px-1 rounded">.claude/skills/</code> materialize from one source.
           </p>
         </div>
       </div>

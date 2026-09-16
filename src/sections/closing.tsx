@@ -106,7 +106,7 @@ export const closingSlides: SlideType[] = [
             "The best way to predict the future is to create it."
           </p>
           <p className="text-sm md:text-base text-gray-500 mt-2">
-            — Peter Drucker
+            (Peter Drucker)
           </p>
         </div>
       </div>

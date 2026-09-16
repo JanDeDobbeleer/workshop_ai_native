@@ -31,7 +31,7 @@ export const mcpSlides: SlideType[] = [
       <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
         <div className="bg-teal-50 p-4 rounded-lg border-l-4 border-teal-500">
           <p className="text-gray-700">
-            MCP is tool-agnostic — but each assistant has its own config file path. Project-level configs commit with your repo.
+            MCP is tool-agnostic, but each assistant has its own config file path. Project-level configs commit with your repo.
           </p>
         </div>
         <ToolMatrix
@@ -39,7 +39,7 @@ export const mcpSlides: SlideType[] = [
           rows={mcpMatrixRows}
           footnote={
             <>
-              Copilot MCP outside VS Code is IDE-specific — see{' '}
+              Copilot MCP outside VS Code is IDE-specific. See{' '}
               <a href="https://docs.github.com/en/copilot/customizing-copilot/extending-copilot-chat-with-mcp" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">
                 GitHub MCP docs
               </a>
@@ -57,7 +57,7 @@ export const mcpSlides: SlideType[] = [
       <div className="flex flex-col space-y-6 max-w-4xl mx-auto">
         <div className="bg-teal-50 p-5 rounded-lg border-l-4 border-teal-500">
           <p className="text-gray-700 text-lg">
-            <strong>Model Context Protocol (MCP)</strong> is an open-source standard for connecting AI applications to external systems — data sources, tools, and workflows.
+            <strong>Model Context Protocol (MCP)</strong> is an open-source standard for connecting AI applications to external systems: data sources, tools, and workflows.
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export const mcpSlides: SlideType[] = [
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
             <h4 className="font-semibold text-purple-900 mb-2 text-center">🤖 For AI Apps</h4>
-            <p className="text-gray-700 text-sm text-center">Access to ecosystem of data sources, tools, and apps</p>
+            <p className="text-gray-700 text-sm text-center">Access to an ecosystem of data sources, tools, and apps</p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-green-200">
             <h4 className="font-semibold text-green-900 mb-2 text-center">👤 For End Users</h4>
@@ -180,7 +180,7 @@ export const mcpSlides: SlideType[] = [
           </div>
           <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
             <h4 className="font-semibold text-purple-900 mb-2">⚙️ MCP Server</h4>
-            <p className="text-gray-700 text-sm">External program providing capabilities — connects to Google Drive, Slack, GitHub, databases, etc.</p>
+            <p className="text-gray-700 text-sm">External program that provides capabilities. It connects to Google Drive, Slack, GitHub, databases, and more.</p>
           </div>
         </div>
       </div>
@@ -197,7 +197,7 @@ export const mcpSlides: SlideType[] = [
               <span className="text-4xl">📁</span>
             </div>
             <h4 className="font-bold text-blue-900 text-center mb-2">Resources</h4>
-            <p className="text-gray-700 text-sm text-center mb-3">Data and content that can be read by clients</p>
+            <p className="text-gray-700 text-sm text-center mb-3">Data and content that clients can read</p>
             <div className="bg-blue-50 p-2 rounded">
               <p className="text-xs text-blue-700 text-center font-medium">Application-controlled</p>
             </div>
@@ -268,7 +268,7 @@ export const mcpSlides: SlideType[] = [
               <span className="text-3xl">🏢</span>
               <h4 className="font-bold text-gray-900">Enterprise Chatbots</h4>
             </div>
-            <p className="text-gray-700 text-sm">Connect to multiple databases across an organization, empowering users to analyze data using natural language.</p>
+            <p className="text-gray-700 text-sm">Connects to multiple databases across an organization so users can analyze data in natural language.</p>
           </div>
 
           <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
@@ -276,7 +276,7 @@ export const mcpSlides: SlideType[] = [
               <span className="text-3xl">📅</span>
               <h4 className="font-bold text-gray-900">Personal AI Assistants</h4>
             </div>
-            <p className="text-gray-700 text-sm">Agents that access Google Calendar and Notion, acting as a more personalized AI assistant.</p>
+            <p className="text-gray-700 text-sm">Agents that access Google Calendar and Notion act as a more personalized assistant.</p>
           </div>
 
           <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
@@ -404,6 +404,36 @@ export const mcpSlides: SlideType[] = [
             <h4 className="font-semibold text-teal-900 mb-2">🎨 Storybook Integration</h4>
             <p className="text-gray-700 text-sm">Preview Storybook stories directly in VS Code.</p>
           </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Demo: A Published, Public MCP Server",
+    subtitle: "oh-my-posh: the config validator, on the official registry",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-teal-50 p-4 rounded-lg border-l-4 border-teal-500">
+          <p className="text-gray-700">
+            <code className="bg-teal-100 px-1 rounded">website/api/mcp/</code> is a real, remote (<code className="bg-teal-100 px-1 rounded">streamable-http</code>) MCP server, published to the official MCP Registry on every push to main.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-teal-200">
+            <h4 className="font-semibold text-teal-900 mb-2">🧪 What It Does</h4>
+            <p className="text-sm text-gray-700">Validates an oh-my-posh theme config (JSON/YAML/TOML) against the official schema: one tool call instead of guessing whether a field name is stale.</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-teal-200">
+            <h4 className="font-semibold text-teal-900 mb-2">🚀 CI-Published</h4>
+            <p className="text-sm text-gray-700"><code className="bg-gray-100 px-1 rounded text-xs">publish-mcp.yml</code> bumps the version from the git tag, validates <code className="bg-gray-100 px-1 rounded text-xs">server.json</code>, and publishes via DNS-authenticated <code className="bg-gray-100 px-1 rounded text-xs">mcp-publisher</code>. No manual registry step.</p>
+          </div>
+        </div>
+
+        <div className="bg-teal-100 p-4 rounded-lg">
+          <p className="text-sm italic text-teal-900">
+            <strong>Try it:</strong> any MCP client (Claude Desktop, Cursor, Copilot) can call <a href="https://ohmyposh.dev/api/mcp" target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">ohmyposh.dev/api/mcp</a> live. Feed it a broken theme and watch the validation error come back.
+          </p>
         </div>
       </div>
     )

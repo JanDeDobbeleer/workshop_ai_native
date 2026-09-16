@@ -32,7 +32,7 @@ export const copilotCliSlides: SlideType[] = [
       <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
         <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-500">
           <p className="text-gray-700">
-            Terminal agents share the same capabilities as IDE agents — often with richer scripting, CI integration, and cloud delegation.
+            Terminal agents share the same capabilities as IDE agents. They often add richer scripting, CI integration, and cloud delegation.
           </p>
         </div>
         <ToolMatrix columns={STANDARD_TOOL_COLUMNS} rows={terminalAgentsMatrixRows} />
@@ -41,13 +41,13 @@ export const copilotCliSlides: SlideType[] = [
   },
   {
     title: "GitHub Copilot CLI",
-    subtitle: "One terminal agent — deep dive (Copilot callout)",
+    subtitle: "One terminal agent in depth (Copilot callout)",
     content: (
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-500">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">What is GitHub Copilot CLI?</h3>
           <p className="text-lg text-gray-700">
-            Command-line interface for GitHub Copilot that lets you use AI directly from your terminal to answer questions, write and debug code, and interact with GitHub.com — including creating pull requests.
+            Command-line interface for GitHub Copilot that lets you use AI directly from your terminal to answer questions, write and debug code, and interact with GitHub.com (including creating pull requests).
           </p>
         </div>
 
@@ -162,7 +162,7 @@ export const copilotCliSlides: SlideType[] = [
           <div className="bg-white p-5 rounded-lg shadow border border-blue-200">
             <h4 className="font-semibold text-blue-900 mb-3">📝 Custom Instructions</h4>
             <p className="text-gray-700 text-sm">
-              Provide additional context on your project — how to build, test, and validate changes.
+              Provide additional context on your project: how to build, test, and validate changes.
             </p>
           </div>
           <div className="bg-white p-5 rounded-lg shadow border border-green-200">
@@ -209,11 +209,11 @@ export const copilotCliSlides: SlideType[] = [
           <div className="bg-white p-4 rounded-lg shadow border border-gray-200">
             <h4 className="font-semibold text-gray-900 mb-3">🎯 Hook Types:</h4>
             <ul className="space-y-2 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">•</span><span><strong>sessionStart/End</strong> — Initialize/cleanup</span></li>
-              <li className="flex"><span className="mr-2">•</span><span><strong>userPromptSubmitted</strong> — Log requests</span></li>
-              <li className="flex"><span className="mr-2">•</span><span><strong>preToolUse</strong> — Approve/deny tools</span></li>
-              <li className="flex"><span className="mr-2">•</span><span><strong>postToolUse</strong> — Log execution results</span></li>
-              <li className="flex"><span className="mr-2">•</span><span><strong>errorOccurred</strong> — Handle failures</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>sessionStart/End</strong>: Initialize/cleanup</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>userPromptSubmitted</strong>: Log requests</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>preToolUse</strong>: Approve/deny tools</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>postToolUse</strong>: Log execution results</span></li>
+              <li className="flex"><span className="mr-2">•</span><span><strong>errorOccurred</strong>: Handle failures</span></li>
             </ul>
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-gray-200">
@@ -244,7 +244,7 @@ export const copilotCliSlides: SlideType[] = [
   },
   {
     title: "Fleet",
-    subtitle: "Run tasks in parallel with subagents — faster completion of complex requests",
+    subtitle: "Run tasks in parallel with subagents for faster completion of complex requests",
     content: (
       <div className="flex flex-col space-y-5 max-w-4xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

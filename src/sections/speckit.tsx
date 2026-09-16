@@ -25,7 +25,7 @@ export const speckitSlides: SlideType[] = [
   },
   {
     title: "What is Spec-Driven Development?",
-    subtitle: "Version control for your thinking — specifications become executable",
+    subtitle: "Version control for your thinking: specifications become executable",
     content: (
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
         <div className="bg-teal-50 p-6 rounded-lg border border-teal-200">
@@ -33,7 +33,7 @@ export const speckitSlides: SlideType[] = [
             <div className="text-4xl">📋</div>
             <div>
               <h3 className="text-2xl font-bold text-teal-900 mb-2">SDD makes technical decisions explicit, reviewable, and evolvable</h3>
-              <p className="text-gray-700">Instead of having crucial architectural decisions trapped in email threads or someone's head, capture the "why" behind your technical choices in a format that grows with your project.</p>
+              <p className="text-gray-700">Instead of trapping architectural decisions in email threads or someone's head, capture the "why" behind your technical choices in a format that grows with your project.</p>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ export const speckitSlides: SlideType[] = [
             <h4 className="font-bold text-gray-900 mb-3">✨ Key Benefits</h4>
             <ul className="text-sm text-gray-700 space-y-2">
               <li className="flex"><span className="mr-2">•</span><span>Living docs that evolve with code</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Guides AI agents to right solution</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Guides AI agents to the right solution</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Enables multi-variant implementations</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Natural as refactoring code</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Unlocks parallel exploration</span></li>
@@ -64,7 +64,7 @@ export const speckitSlides: SlideType[] = [
 
         <div className="bg-blue-50 px-6 py-4 rounded-lg">
           <p className="text-center text-blue-900">
-            <strong>Core Idea:</strong> Treat specs as first-class, versioned artifacts that steer implementation choices — not dusty documents written once and forgotten.
+            <strong>Core Idea:</strong> Treat specs as first-class, versioned artifacts that steer implementation choices, rather than dusty documents written once and forgotten.
           </p>
         </div>
       </div>
@@ -72,7 +72,7 @@ export const speckitSlides: SlideType[] = [
   },
   {
     title: "SDD Implementations: Two Approaches",
-    subtitle: "Different tools, same philosophy — choose what works for your workflow",
+    subtitle: "Different tools, same philosophy: choose what works for your workflow",
     content: (
       <div className="flex flex-col space-y-3 max-w-4xl mx-auto">
         <div className="bg-gradient-to-r from-teal-500 to-blue-500 p-4 rounded-lg text-white">
@@ -177,7 +177,7 @@ export const speckitSlides: SlideType[] = [
         <div className="space-y-4">
           <div className="bg-white p-5 rounded-lg shadow border-l-4 border-green-500">
             <h4 className="font-bold text-gray-900 mb-3">Option 1: Persistent Install (Recommended)</h4>
-            <p className="text-sm text-gray-700 mb-3">Install once, use everywhere — tool stays in PATH and available via <code className="bg-gray-100 px-2 py-1 rounded text-xs">specify</code> command.</p>
+            <p className="text-sm text-gray-700 mb-3">Install once, use everywhere: the tool stays on PATH and runs via the <code className="bg-gray-100 px-2 py-1 rounded text-xs">specify</code> command.</p>
             <CodeBlock
               code="uv tool install specify-cli --from git+https://github.com/github/spec-kit.git"
               className="bg-gray-900 p-4 rounded overflow-x-auto"
@@ -199,7 +199,7 @@ export const speckitSlides: SlideType[] = [
 
           <div className="bg-white p-5 rounded-lg shadow border-l-4 border-blue-500">
             <h4 className="font-bold text-gray-900 mb-3">Option 2: One-Time Usage</h4>
-            <p className="text-sm text-gray-700 mb-3">Run directly without installing — good for trying it out.</p>
+            <p className="text-sm text-gray-700 mb-3">Run directly without installing. Good for trying it out.</p>
             <CodeBlock
               code="uvx --from git+https://github.com/github/spec-kit.git \\\n  specify init my-project --ai copilot"
               className="bg-gray-900 p-4 rounded overflow-x-auto"
@@ -307,12 +307,12 @@ export const speckitSlides: SlideType[] = [
           <div className="bg-white p-3 rounded-lg shadow border-l-4 border-purple-500">
             <h4 className="font-bold text-gray-900 text-sm mb-2">🔄 The Workflow</h4>
             <ul className="text-xs text-gray-700 space-y-1">
-              <li className="flex"><span className="mr-2">1.</span><span><code className="bg-gray-100 px-1 rounded">/ce:ideate</code> — Discover high-impact improvements</span></li>
-              <li className="flex"><span className="mr-2">2.</span><span><code className="bg-gray-100 px-1 rounded">/ce:brainstorm</code> — Explore requirements & approaches</span></li>
-              <li className="flex"><span className="mr-2">3.</span><span><code className="bg-gray-100 px-1 rounded">/ce:plan</code> — Turn ideas into detailed plans</span></li>
-              <li className="flex"><span className="mr-2">4.</span><span><code className="bg-gray-100 px-1 rounded">/ce:work</code> — Execute with worktrees & task tracking</span></li>
-              <li className="flex"><span className="mr-2">5.</span><span><code className="bg-gray-100 px-1 rounded">/ce:review</code> — Multi-agent code review</span></li>
-              <li className="flex"><span className="mr-2">6.</span><span><code className="bg-gray-100 px-1 rounded">/ce:compound</code> — Document learnings for next cycle</span></li>
+              <li className="flex"><span className="mr-2">1.</span><span><code className="bg-gray-100 px-1 rounded">/ce:ideate</code>: Discover high-impact improvements</span></li>
+              <li className="flex"><span className="mr-2">2.</span><span><code className="bg-gray-100 px-1 rounded">/ce:brainstorm</code>: Explore requirements & approaches</span></li>
+              <li className="flex"><span className="mr-2">3.</span><span><code className="bg-gray-100 px-1 rounded">/ce:plan</code>: Turn ideas into detailed plans</span></li>
+              <li className="flex"><span className="mr-2">4.</span><span><code className="bg-gray-100 px-1 rounded">/ce:work</code>: Execute with worktrees & task tracking</span></li>
+              <li className="flex"><span className="mr-2">5.</span><span><code className="bg-gray-100 px-1 rounded">/ce:review</code>: Multi-agent code review</span></li>
+              <li className="flex"><span className="mr-2">6.</span><span><code className="bg-gray-100 px-1 rounded">/ce:compound</code>: Document learnings for next cycle</span></li>
             </ul>
           </div>
 
@@ -322,7 +322,7 @@ export const speckitSlides: SlideType[] = [
               <li className="flex"><span className="mr-2">•</span><span><strong>80% planning & review, 20% execution</strong></span></li>
               <li className="flex"><span className="mr-2">•</span><span>Each unit of work makes the next easier</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Plans inform future plans, reviews catch more</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Patterns get documented & reused</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Document and reuse patterns</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Quality stays high so changes stay easy</span></li>
             </ul>
           </div>

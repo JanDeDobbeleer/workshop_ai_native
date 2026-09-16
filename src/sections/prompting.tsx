@@ -86,7 +86,7 @@ export const promptingSlides: SlideType[] = [
                 • Ask the model to generate prompts based on your existing code
                 patterns
               </li>
-              <li>• Request removal of ambiguity and verbosity</li>
+              <li>• Ask it to remove ambiguous or wordy phrasing</li>
               <li>• Have AI validate prompts for clarity and consistency</li>
             </ul>
           </div>
@@ -112,8 +112,8 @@ ambiguity and keep the instructions concise.`}
 
         <div className="bg-green-100 p-4 rounded-lg">
           <p className="text-sm italic text-green-900">
-            <strong>Key Benefit:</strong> Generate prompts that speak the
-            model's language and are optimized for AI understanding.
+            <strong>Key Benefit:</strong> Generate prompts phrased in the
+            model's language, so the AI understands them faster.
           </p>
         </div>
       </div>
@@ -129,8 +129,8 @@ ambiguity and keep the instructions concise.`}
             Build a Feedback Loop
           </h3>
           <p className="text-gray-700">
-            After generating output, ask the model to explain deviations and
-            adjust prompts for future tasks.
+            After the model generates output, ask it to explain deviations
+            and adjust prompts for future tasks.
           </p>
         </div>
 
@@ -149,9 +149,9 @@ ambiguity and keep the instructions concise.`}
           <div className="bg-white p-4 rounded-lg shadow border border-orange-200">
             <h4 className="font-semibold text-orange-900 mb-2">✨ Achieves:</h4>
             <ul className="space-y-2 text-gray-700">
-              <li>• Prompts evolve with needs</li>
-              <li>• Reduced code review friction</li>
-              <li>• Consistent AI outputs</li>
+              <li>• Prompts evolve with your needs</li>
+              <li>• Less code review friction</li>
+              <li>• More consistent AI outputs</li>
             </ul>
           </div>
         </div>
@@ -192,8 +192,8 @@ these mistakes in the future.`}
           </h3>
           <p className="text-lg text-gray-700">
             A tight <strong>human-in-the-loop workflow</strong> that is faster
-            and safer than skipping planning. AI coding power isn't in
-            automation — it's in an efficient feedback loop.
+            and safer than skipping planning. AI coding power comes from an
+            efficient feedback loop, not automation.
           </p>
         </div>
 
@@ -234,7 +234,7 @@ these mistakes in the future.`}
             <ul className="space-y-2 text-gray-700">
               <li>• Catch mistakes before writing code</li>
               <li>• Surface flawed approaches early</li>
-              <li>• Reduce iteration cost significantly</li>
+              <li>• Reduce iteration cost</li>
               <li>• Build confidence in AI suggestions</li>
               <li>• Make the loop compound over time</li>
             </ul>

@@ -12,7 +12,7 @@ export const softwareFactoriesSlides: SlideType[] = [
           Software Factories
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Addendum: automating the software development life cycle — and where that idea breaks
+          Addendum: automating the software development life cycle (and where that idea breaks)
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-slate-300 rounded-full"></div>
@@ -33,7 +33,7 @@ export const softwareFactoriesSlides: SlideType[] = [
           </h3>
           <p className="text-lg text-gray-700">
             A software factory uses loops, graphs, and whatever else works to
-            automate as much of the SDLC as possible — planning, coding,
+            automate as much of the SDLC as possible: planning, coding,
             review, testing, shipping. It's a spectrum, not a switch.
           </p>
         </div>
@@ -62,8 +62,8 @@ export const softwareFactoriesSlides: SlideType[] = [
         <div className="bg-slate-100 p-4 rounded-lg">
           <p className="text-center text-gray-700">
             <strong>Takeaway:</strong> Automating large parts of the SDLC is a
-            reasonable goal. Full "lights off" automation is not — at least
-            not yet.
+            reasonable goal. Full "lights off" automation is not (at least
+            not yet).
           </p>
         </div>
       </div>
@@ -80,7 +80,7 @@ export const softwareFactoriesSlides: SlideType[] = [
           </h3>
           <p className="text-lg text-gray-700">
             Strip away the hype and a software factory rests on a small set
-            of primitives — most of them still rough around the edges.
+            of primitives (most of them still rough around the edges).
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -89,9 +89,9 @@ export const softwareFactoriesSlides: SlideType[] = [
               📋 Work as a First-Class Citizen
             </h4>
             <ul className="text-sm text-gray-600 space-y-1">
-              <li>• A real board/tracker — Linear, Jira, GitHub Issues</li>
+              <li>• A real board/tracker: Linear, Jira, GitHub Issues</li>
               <li>• Tracks work items and dependencies between them</li>
-              <li>• Tracks which agent — not just which human — is assigned to what</li>
+              <li>• Tracks which agent (not just which human) is assigned to what</li>
             </ul>
           </div>
           <div className="bg-white p-5 rounded-lg shadow border border-slate-200">
@@ -100,7 +100,7 @@ export const softwareFactoriesSlides: SlideType[] = [
             </h4>
             <ul className="text-sm text-gray-600 space-y-1">
               <li>• Multiple agents working the same codebase at once</li>
-              <li>• Git worktrees for single-machine parallelism — covered in the Multi-Agent section</li>
+              <li>• Git worktrees for single-machine parallelism (covered in the Multi-Agent section)</li>
               <li>• Containers/sandboxes (e.g. Docker) for stronger isolation</li>
             </ul>
           </div>
@@ -108,7 +108,7 @@ export const softwareFactoriesSlides: SlideType[] = [
         <div className="bg-slate-100 p-4 rounded-lg">
           <p className="text-center text-gray-700">
             <strong>Honest caveat:</strong> spinning up a full dev container
-            per agent — especially with a database or test suite — is still
+            per agent (especially with a database or test suite) is still
             slow. This primitive mostly works, but it isn't fast yet.
           </p>
         </div>
@@ -126,7 +126,7 @@ export const softwareFactoriesSlides: SlideType[] = [
           </h3>
           <p className="text-lg text-gray-700">
             Today, most people running agents authenticate them under their
-            own personal accounts — there's no dedicated service identity for
+            own personal accounts: no dedicated service identity exists for
             an agent. That doesn't hold up once agents need to talk to source
             control, issue trackers, and other internal systems at scale.
           </p>
@@ -155,8 +155,8 @@ export const softwareFactoriesSlides: SlideType[] = [
         </div>
         <div className="bg-slate-100 p-4 rounded-lg">
           <p className="text-center text-gray-700">
-            <strong>Takeaway:</strong> Identity and access control — not raw
-            security risk — is the bigger open problem in software factories
+            <strong>Takeaway:</strong> Identity and access control (not raw
+            security risk) is the bigger open problem in software factories
             today.
           </p>
         </div>
@@ -173,8 +173,8 @@ export const softwareFactoriesSlides: SlideType[] = [
             Hold Off on Both
           </h3>
           <p className="text-lg text-gray-700">
-            If you're evaluating whether to buy a software-factory product,
-            or build your own, for a typical enterprise — it's too soon on
+            If you're a typical enterprise deciding whether to buy a
+            software-factory product or build your own, it's too soon on
             both counts. The primitives above aren't well-understood or
             standardized yet.
           </p>
@@ -185,7 +185,7 @@ export const softwareFactoriesSlides: SlideType[] = [
               🏗️ The Exception
             </h4>
             <ul className="text-sm text-gray-600 space-y-1">
-              <li>• Hyperscale engineering orgs — Uber, Netflix, Stripe — are already building internal software factories</li>
+              <li>• Hyperscale engineering orgs (Uber, Netflix, Stripe) are already building internal software factories</li>
               <li>• Some of their primitives are starting to look similar across companies</li>
               <li>• Worth watching, not yet worth copying wholesale</li>
             </ul>
@@ -202,8 +202,8 @@ export const softwareFactoriesSlides: SlideType[] = [
         </div>
         <div className="bg-slate-100 p-4 rounded-lg">
           <p className="text-center text-gray-700">
-            <strong>Takeaway:</strong> watch what the hyperscalers converge
-            on — don't buy or build a factory around it yet.
+            <strong>Takeaway:</strong> Watch what the hyperscalers converge
+            on. Don't buy or build a factory around it yet.
           </p>
         </div>
       </div>
@@ -220,8 +220,8 @@ export const softwareFactoriesSlides: SlideType[] = [
           </h3>
           <p className="text-lg text-gray-700">
             You don't need much: a GitHub account for an issue tracker/board,
-            plus whatever coding-agent subscriptions you already have —
-            Copilot, Claude, ChatGPT.
+            plus whatever coding-agent subscriptions you already have
+            (Copilot, Claude, ChatGPT).
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -230,7 +230,7 @@ export const softwareFactoriesSlides: SlideType[] = [
               🎯 The Challenge
             </h4>
             <p className="text-sm text-gray-600">
-              Build a small, narrowly-scoped software factory this year —
+              Build a small, narrowly-scoped software factory this year,
               purely to learn what these agents can do that a plain script
               by yourself couldn't.
             </p>
@@ -248,8 +248,54 @@ export const softwareFactoriesSlides: SlideType[] = [
         </div>
         <div className="bg-slate-100 p-4 rounded-lg">
           <p className="text-center text-gray-700">
-            <strong>Go build one:</strong> small, scoped, and yours — the
+            <strong>Go build one:</strong> small, scoped, and yours. The
             point is what you learn, not what you ship.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Demo: The Primitives, Already Assembled",
+    subtitle: "oh-my-posh: one real repo, not a reference architecture",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-slate-500">
+          <p className="text-gray-700">
+            Every primitive from this section is present in one production repo, not a demo built to prove the concept.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          <div className="bg-white p-3 rounded-lg shadow border border-slate-200">
+            <h4 className="font-semibold text-slate-900 text-sm mb-1">📋 Work Tracking</h4>
+            <p className="text-xs text-gray-600">GitHub Issues, structured templates</p>
+          </div>
+          <div className="bg-white p-3 rounded-lg shadow border border-slate-200">
+            <h4 className="font-semibold text-slate-900 text-sm mb-1">🌳 Parallel Execution</h4>
+            <p className="text-xs text-gray-600">.claude/worktrees/, 3 sessions live</p>
+          </div>
+          <div className="bg-white p-3 rounded-lg shadow border border-slate-200">
+            <h4 className="font-semibold text-slate-900 text-sm mb-1">📦 Distributed Config</h4>
+            <p className="text-xs text-gray-600">apm.yml, one source, two tool targets</p>
+          </div>
+          <div className="bg-white p-3 rounded-lg shadow border border-slate-200">
+            <h4 className="font-semibold text-slate-900 text-sm mb-1">🚀 Automated Publishing</h4>
+            <p className="text-xs text-gray-600">publish-mcp.yml, CI-triggered on push</p>
+          </div>
+          <div className="bg-white p-3 rounded-lg shadow border border-slate-200">
+            <h4 className="font-semibold text-slate-900 text-sm mb-1">🔍 Review Automation</h4>
+            <p className="text-xs text-gray-600">architecture.agent.md + PR fixup flow</p>
+          </div>
+          <div className="bg-white p-3 rounded-lg shadow border border-slate-200">
+            <h4 className="font-semibold text-slate-900 text-sm mb-1">🔁 Triggered Analysis</h4>
+            <p className="text-xs text-gray-600">issue-analyzer.agent.md</p>
+          </div>
+        </div>
+
+        <div className="bg-slate-100 p-4 rounded-lg">
+          <p className="text-sm italic text-slate-900">
+            <strong>What's still missing:</strong> exactly what the video calls out. issue-analyzer runs under a human's <code className="bg-white px-1 rounded">gh</code> auth, not a scoped service identity. The identity-and-access-control primitive isn't solved here either.
           </p>
         </div>
       </div>

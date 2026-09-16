@@ -15,7 +15,7 @@ export const instructionsSlides: SlideType[] = [
           Instructions
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Persistent guidance — where to put it in each tool
+          Persistent guidance: where to put it in each tool
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-green-300 rounded-full"></div>
@@ -35,7 +35,7 @@ export const instructionsSlides: SlideType[] = [
               <div className="text-4xl">📋</div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Context That Persists</h3>
-                <p className="text-gray-400">Define standards once — every agent session inherits them automatically</p>
+                <p className="text-gray-400">Define standards once. Every agent session inherits them automatically.</p>
               </div>
             </div>
           </div>
@@ -44,9 +44,9 @@ export const instructionsSlides: SlideType[] = [
             <div className="bg-white p-4 md:p-5 rounded-lg shadow border border-gray-200">
               <h4 className="font-bold text-gray-900 mb-3">🎯 Three Concepts (not filenames)</h4>
               <ul className="text-sm text-gray-700 space-y-2">
-                <li>• <strong>Project-wide rules</strong> — apply everywhere in the repo</li>
-                <li>• <strong>Scoped rules</strong> — only for certain files or folders</li>
-                <li>• <strong>Cross-tool convention</strong> — one file multiple tools read</li>
+                <li>• <strong>Project-wide rules</strong>: apply everywhere in the repo</li>
+                <li>• <strong>Scoped rules</strong>: apply only to certain files or folders</li>
+                <li>• <strong>Cross-tool convention</strong>: one file that multiple tools read</li>
               </ul>
             </div>
 
@@ -72,12 +72,12 @@ export const instructionsSlides: SlideType[] = [
     },
     {
       title: "Where Do I Put Instructions?",
-      subtitle: "Same capability — different paths per tool",
+      subtitle: "Same capability: different paths per tool",
       content: (
         <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
           <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
             <p className="text-gray-700">
-              Rows are <strong>concepts</strong>. Columns are <strong>tools</strong>. Find your column — that is where you put project standards.
+              Rows are <strong>concepts</strong>. Columns are <strong>tools</strong>. Find your column: that is where you put project standards.
             </p>
           </div>
           <ToolMatrix
@@ -122,7 +122,7 @@ export const instructionsSlides: SlideType[] = [
                     <code className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-mono">*.instructions.md</code>
                     <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">Conditional</span>
                   </div>
-                  <p className="text-gray-700 text-sm mb-2">Multiple files with <strong>glob patterns</strong> — apply different rules to different file types.</p>
+                  <p className="text-gray-700 text-sm mb-2">Multiple files with <strong>glob patterns</strong>: apply different rules to different file types.</p>
                   <p className="text-gray-500 text-xs">✓ e.g., applyTo: "**/*.py" for Python-specific guidelines</p>
                 </div>
               </div>
@@ -136,7 +136,7 @@ export const instructionsSlides: SlideType[] = [
                     <code className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-mono">AGENTS.md</code>
                     <span className="bg-purple-500 text-white text-xs px-2 py-1 rounded">Multi-Agent</span>
                   </div>
-                  <p className="text-gray-700 text-sm mb-2">Universal format for <strong>multiple AI agents</strong> — Copilot, Claude Code, and others.</p>
+                  <p className="text-gray-700 text-sm mb-2">Universal format for <strong>multiple AI agents</strong>: Copilot, Claude Code, and others.</p>
                   <p className="text-gray-500 text-xs">✓ Root or subfolders for different project areas (experimental)</p>
                 </div>
               </div>
@@ -222,7 +222,7 @@ export const instructionsSlides: SlideType[] = [
               <div className="bg-red-50 p-4 rounded-lg border border-red-200">
                 <h4 className="font-semibold text-red-900 mb-2">❌ Don't</h4>
                 <ul className="text-sm text-gray-700 space-y-1">
-                  <li>• Write essays — be concise</li>
+                  <li>• Write essays; be concise</li>
                   <li>• Include sensitive information</li>
                   <li>• Contradict yourself</li>
                   <li>• Expect 100% compliance</li>
@@ -247,7 +247,7 @@ export const instructionsSlides: SlideType[] = [
           <div className="bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
             <h3 className="text-sm font-bold text-green-900 mb-1">What are Prompt Files?</h3>
             <p className="text-sm text-gray-700">
-              Markdown files that define reusable prompts for common development tasks. Run them on-demand in chat to ensure consistent, high-quality AI interactions.
+              Markdown files that define reusable prompts for common development tasks. Run them on-demand in chat for consistent, high-quality AI interactions.
             </p>
           </div>
 
@@ -390,7 +390,7 @@ description: "React component standards"
         <div className="flex flex-col space-y-5 max-w-4xl mx-auto">
           <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
             <p className="text-gray-700">
-              <code className="bg-purple-100 px-1 rounded font-mono">AGENTS.md</code> is a convention that works across multiple AI coding assistants — GitHub Copilot, Claude Code, Cursor, and more.
+              <code className="bg-purple-100 px-1 rounded font-mono">AGENTS.md</code> is a convention that works across multiple AI coding assistants: GitHub Copilot, Claude Code, Cursor, and more.
             </p>
             <p className="text-sm text-gray-600 mt-2">
               For portable <strong>skills</strong> (not instructions), see <strong>Agents &amp; Skills → Two Portable Layers</strong>.
@@ -654,6 +654,13 @@ these mistakes in the future.`}
                 </a>
               </div>
             </div>
+          </div>
+
+          <div className="bg-white p-4 rounded-lg shadow border border-green-200 max-w-3xl">
+            <h4 className="font-semibold text-green-900 mb-2">🔗 The Thin-Pointer Pattern</h4>
+            <p className="text-gray-700 text-sm">
+              oh-my-posh's entire <code className="bg-gray-100 px-1 rounded text-xs">.github/copilot-instructions.md</code> is 5 lines: <em>"All agent guidance lives in AGENTS.md... follow it in full."</em> One source of truth, no drift between a Claude-flavored copy and a Copilot-flavored copy.
+            </p>
           </div>
 
           <div className="flex space-x-2 mt-4">

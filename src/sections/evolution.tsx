@@ -46,7 +46,7 @@ export const evolutionSlides: SlideType[] = [
                 <div className="h-1.5 bg-green-400 rounded-full w-5/6 opacity-60"></div>
               </div>
             </div>
-            <p className="text-xs text-gray-300 text-center leading-tight">Zero or Near-Zero AI: maybe code completions, sometimes ask Chat questions</p>
+            <p className="text-xs text-gray-300 text-center leading-tight">Zero or Near-Zero AI: occasional code completions and chat questions</p>
           </div>
 
           {/* Stage 2 */}
@@ -64,7 +64,7 @@ export const evolutionSlides: SlideType[] = [
                 <div className="bg-orange-600 text-white text-[10px] font-bold px-2 py-1 rounded">Y/N?</div>
               </div>
             </div>
-            <p className="text-xs text-gray-300 text-center leading-tight">Coding agent in IDE, permissions turned on. Narrow coding agent in a sidebar asks your permission to run tools.</p>
+            <p className="text-xs text-gray-300 text-center leading-tight">Coding agent in IDE, permissions on. A narrow sidebar agent asks before running tools.</p>
           </div>
 
           {/* Stage 3 */}
@@ -82,7 +82,7 @@ export const evolutionSlides: SlideType[] = [
                 <div className="bg-purple-600 text-white text-xs font-bold px-3 py-1.5 rounded">YOLO</div>
               </div>
             </div>
-            <p className="text-xs text-gray-300 text-center leading-tight">Agent in IDE, YOLO mode: Trust goes up. You turn off permissions, agent gets wider.</p>
+            <p className="text-xs text-gray-300 text-center leading-tight">Agent in IDE, YOLO mode: trust rises as you turn off permissions, and the agent widens.</p>
           </div>
 
           {/* Stage 4 */}
@@ -109,7 +109,7 @@ export const evolutionSlides: SlideType[] = [
                 <div className="h-1 bg-green-400 rounded-full opacity-60"></div>
               </div>
             </div>
-            <p className="text-xs text-gray-300 text-center leading-tight">In IDE, wide agent: Your agent gradually grows to fill the screen. Code is just for diffs.</p>
+            <p className="text-xs text-gray-300 text-center leading-tight">In IDE, wide agent: the agent gradually fills the screen, and code becomes just diffs.</p>
           </div>
 
           {/* Stage 5 */}
@@ -127,7 +127,7 @@ export const evolutionSlides: SlideType[] = [
               </div>
               <div className="text-green-400 text-[8px] font-mono">█</div>
             </div>
-            <p className="text-xs text-gray-300 text-center leading-tight">CLI, single agent. Diffs scroll by. You may or may not look at them.</p>
+            <p className="text-xs text-gray-300 text-center leading-tight">CLI, single agent: diffs scroll by, and you may or may not review them.</p>
           </div>
 
           {/* Stage 6 */}
@@ -145,7 +145,7 @@ export const evolutionSlides: SlideType[] = [
                 </div>
               ))}
             </div>
-            <p className="text-xs text-gray-300 text-center leading-tight">CLI, multi-agent. You regularly use 3 to 5 parallel instances.</p>
+            <p className="text-xs text-gray-300 text-center leading-tight">CLI, multi-agent: you regularly run 3 to 5 parallel instances.</p>
           </div>
 
           {/* Stage 7 */}
@@ -168,7 +168,7 @@ export const evolutionSlides: SlideType[] = [
                 ))}
               </div>
             </div>
-            <p className="text-xs text-gray-300 text-center leading-tight">10+ agents, hand-managed. You are starting to push the limits of hand-management.</p>
+            <p className="text-xs text-gray-300 text-center leading-tight">10+ agents, hand-managed: you're starting to push the limits of hand-management.</p>
           </div>
 
           {/* Stage 8 */}
@@ -221,11 +221,11 @@ export const evolutionSlides: SlideType[] = [
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Occasional use of AI chat for questions</span>
+                <span>Occasional AI chat for questions</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Code completions may be enabled</span>
+                <span>Optional code completions</span>
               </li>
             </ul>
           </div>
@@ -267,7 +267,7 @@ export const evolutionSlides: SlideType[] = [
             What's needed to evolve
           </h4>
           <p className="text-green-800">
-            Learn the skills to produce high-quality responses from AI tools; get comfortable and efficient with AI assistance
+            Learn to get high-quality output from AI tools, and grow comfortable and efficient using them
           </p>
         </div>
       </div>
@@ -303,7 +303,7 @@ export const evolutionSlides: SlideType[] = [
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Trust level increases significantly</span>
+                <span>Trust rises sharply</span>
               </li>
             </ul>
           </div>
@@ -345,7 +345,7 @@ export const evolutionSlides: SlideType[] = [
             What's needed to evolve
           </h4>
           <p className="text-green-800">
-            Build trust in the agent's judgment; begin letting it operate with more autonomy
+            Build trust in the agent's judgment, and let it operate with more autonomy
           </p>
         </div>
       </div>
@@ -410,7 +410,7 @@ export const evolutionSlides: SlideType[] = [
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Manual coordination of agents</span>
+                <span>Manual agent coordination</span>
               </li>
             </ul>
           </div>
@@ -451,7 +451,7 @@ export const evolutionSlides: SlideType[] = [
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Manual orchestration becoming difficult</span>
+                <span>Manual orchestration grows difficult</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
@@ -459,7 +459,7 @@ export const evolutionSlides: SlideType[] = [
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>Seeing need for automation</span>
+                <span>Growing need for automation</span>
               </li>
             </ul>
           </div>
@@ -488,7 +488,7 @@ export const evolutionSlides: SlideType[] = [
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                <span>"Vibe coding" - throughput over perfection</span>
+                <span>"Vibe coding": throughput over perfection</span>
               </li>
             </ul>
           </div>
@@ -501,7 +501,7 @@ export const evolutionSlides: SlideType[] = [
             Prerequisites for Stage 8
           </h4>
           <p className="text-yellow-800">
-            Must be Stage 6-7 minimum to use orchestration tools • Embrace "vibe coding" mentality • Comfortable with nondeterministic workflows
+            Reach Stage 6-7 before using orchestration tools • Embrace the "vibe coding" mentality • Get comfortable with nondeterministic workflows
           </p>
         </div>
       </div>
@@ -509,7 +509,7 @@ export const evolutionSlides: SlideType[] = [
   },
   {
     title: "Key Insights: The Evolution Path",
-    subtitle: "Understanding the transformation",
+    subtitle: "Five insights on the transformation",
     content: (
       <div className="flex flex-col items-center md:justify-center md:h-full space-y-8 px-8">
         <div className="grid grid-cols-1 gap-6 max-w-5xl w-full">
@@ -519,7 +519,7 @@ export const evolutionSlides: SlideType[] = [
               Trust is the Unlock
             </h4>
             <p className="text-blue-50">
-              Each stage requires increasing trust in AI agents. The progression is fundamentally about learning to let go of control.
+              Each stage requires more trust in AI agents. The progression is about learning to let go of control.
             </p>
           </div>
 
@@ -559,7 +559,7 @@ export const evolutionSlides: SlideType[] = [
               Tools Follow Needs
             </h4>
             <p className="text-teal-50">
-              Don't try to use Stage 8 tools at Stage 3. Let your pain points guide you. Tools needs emerge naturally at each stage.
+              Don't try to use Stage 8 tools at Stage 3. Let your pain points guide you. Tool needs emerge naturally at each stage.
             </p>
           </div>
         </div>

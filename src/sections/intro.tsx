@@ -53,7 +53,7 @@ export const introSlides: SlideType[] = [
 
           <div className="bg-white p-4 md:p-5 rounded-lg shadow border border-gray-200">
             <h4 className="font-semibold text-gray-900 mb-2 text-sm md:text-base">Technology Adoption Lifecycle</h4>
-            <p className="text-gray-700 text-sm md:text-base">The traditional technology adoption lifecycle is challenged by AI's rapid evolution and integration.</p>
+            <p className="text-gray-700 text-sm md:text-base">AI's rapid evolution and integration challenge the traditional technology adoption lifecycle.</p>
           </div>
 
           <div className="bg-white p-4 md:p-5 rounded-lg shadow border border-gray-200">

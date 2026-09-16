@@ -14,7 +14,7 @@ export const multiagentSlides: SlideType[] = [
           Multi-Agent
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl">
-          Parallel orchestration — define, delegate, isolate, synthesize
+          Parallel orchestration: define, delegate, isolate, synthesize
         </p>
         <div className="flex space-x-2 mt-4">
           <div className="w-3 h-3 bg-purple-300 rounded-full"></div>
@@ -64,7 +64,7 @@ export const multiagentSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
-          <p className="text-gray-700">Every multi-agent workflow follows the same loop — tool-specific mechanics differ; the sequence does not.</p>
+          <p className="text-gray-700">Every multi-agent workflow follows the same loop. Tool-specific mechanics differ; the sequence does not.</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
           {[
@@ -108,7 +108,7 @@ export const multiagentSlides: SlideType[] = [
             <h4 className="font-semibold text-red-900 mb-2">❌ Hurts when</h4>
             <ul className="space-y-1 text-sm text-gray-700">
               <li>• Same file, conflicting edits</li>
-              <li>• Vague prompts — parallelism amplifies confusion</li>
+              <li>• Vague prompts: parallelism amplifies confusion</li>
               <li>• Deep agent trees with no human checkpoint</li>
               <li>• Fire-and-forget with no synthesis step</li>
             </ul>
@@ -124,7 +124,7 @@ export const multiagentSlides: SlideType[] = [
   },
   {
     title: "Orchestration by Tool",
-    subtitle: "Five-step loop — cross-tool matrix",
+    subtitle: "Five-step loop: cross-tool matrix",
     content: (
       <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
         <ToolMatrix
@@ -142,7 +142,7 @@ export const multiagentSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
-          <p className="text-gray-700">Prefer <strong>hub-and-spoke</strong> delegation — one parent agent assigns work and synthesizes results. Avoid peer-to-peer agent mesh fantasies.</p>
+          <p className="text-gray-700">Prefer <strong>hub-and-spoke</strong> delegation: one parent agent assigns work and synthesizes results. Avoid peer-to-peer agent mesh fantasies.</p>
         </div>
         <div className="flex flex-col items-center gap-2 py-4">
           <div className="bg-purple-600 text-white px-6 py-3 rounded-lg font-bold">Orchestrator</div>
@@ -162,7 +162,7 @@ export const multiagentSlides: SlideType[] = [
           </div>
         </div>
         <div className="bg-purple-100 p-3 rounded-lg">
-          <p className="text-sm italic text-purple-900">Results flow back to the hub — not sideways between agents.</p>
+          <p className="text-sm italic text-purple-900">Results flow back to the hub, not sideways between agents.</p>
         </div>
       </div>
     )
@@ -189,12 +189,12 @@ export const multiagentSlides: SlideType[] = [
   },
   {
     title: "Multi-Agent Development with Git Worktrees",
-    subtitle: "The isolate step — parallel workspaces",
+    subtitle: "The isolate step: parallel workspaces",
     content: (
       <div className="flex flex-col items-center md:justify-center md:h-full space-y-6">
         <div className="bg-gradient-to-r from-purple-500 to-blue-500 p-6 rounded-lg shadow-xl max-w-3xl">
           <h3 className="text-2xl font-bold text-white mb-2">Git worktrees = filesystem isolation</h3>
-          <p className="text-purple-100">Each agent gets its own directory and branch — no stashing, no WIP commits, no clone spam.</p>
+          <p className="text-purple-100">Each agent gets its own directory and branch: no stashing, no WIP commits, no clone spam.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl w-full">
           <div className="bg-white p-4 rounded-lg shadow border-t-4 border-purple-500 text-center">
@@ -224,14 +224,14 @@ export const multiagentSlides: SlideType[] = [
         <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
           <h3 className="text-2xl font-bold text-purple-900 mb-4">What is a Git Worktree?</h3>
           <p className="text-lg text-gray-700">
-            Check out multiple branches of the same repository simultaneously — each in its own directory, sharing one <code className="bg-purple-100 px-1 rounded">.git</code> database.
+            Check out multiple branches of the same repository simultaneously, each in its own directory, sharing one <code className="bg-purple-100 px-1 rounded">.git</code> database.
           </p>
         </div>
         <div className="bg-white p-5 rounded-lg shadow border border-purple-200">
           <ul className="space-y-2 text-gray-700">
             <li className="flex"><span className="mr-2">•</span><span>No stashing or WIP commits to switch context</span></li>
             <li className="flex"><span className="mr-2">•</span><span>Git prevents checking out the same branch twice</span></li>
-            <li className="flex"><span className="mr-2">•</span><span>Tool-agnostic — works with Cursor, Copilot, Claude, Devin</span></li>
+            <li className="flex"><span className="mr-2">•</span><span>Tool-agnostic: works with Cursor, Copilot, Claude, Devin</span></li>
           </ul>
         </div>
       </div>
@@ -245,14 +245,14 @@ export const multiagentSlides: SlideType[] = [
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
           <div className="bg-gray-50 p-4 md:p-6 rounded-lg border-l-4 border-gray-500">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Traditional Branches</h3>
-            <p className="text-sm text-gray-700 mb-3">One folder — switch branch, files change in place.</p>
+            <p className="text-sm text-gray-700 mb-3">One folder: switch branch, files change in place.</p>
             <div className="bg-yellow-50 border border-yellow-300 p-3 rounded text-sm text-yellow-900">
               ⚠️ Two agents on one checkout = conflicts
             </div>
           </div>
           <div className="bg-purple-50 p-4 md:p-6 rounded-lg border-l-4 border-purple-500">
             <h3 className="text-xl font-bold text-purple-900 mb-4">Git Worktrees</h3>
-            <p className="text-sm text-gray-700 mb-3">Multiple folders — each branch has its own working directory.</p>
+            <p className="text-sm text-gray-700 mb-3">Multiple folders: each branch has its own working directory.</p>
             <div className="bg-green-50 border border-green-300 p-3 rounded text-sm text-green-900">
               ✓ Agent A in <code>repo-feature/</code>, Agent B in <code>repo-fix/</code>
             </div>
@@ -314,7 +314,7 @@ export const multiagentSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
-          <p className="text-gray-700">Parallel agents produce parallel diffs. <strong>Synthesis</strong> is your review gate — never skip it for production code.</p>
+          <p className="text-gray-700">Parallel agents produce parallel diffs. <strong>Synthesis</strong> is your review gate: never skip it for production code.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
@@ -342,7 +342,7 @@ export const multiagentSlides: SlideType[] = [
   },
   {
     title: "Orchestration Surfaces",
-    subtitle: "Vendor callouts — fleet management UI",
+    subtitle: "Vendor callouts: fleet management UI",
     content: (
       <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
@@ -365,7 +365,38 @@ export const multiagentSlides: SlideType[] = [
           </div>
         </div>
         <div className="bg-gray-100 p-3 rounded-lg">
-          <p className="text-sm text-gray-600">Use orchestration UI when managing 3+ parallel agents — not for every single task.</p>
+          <p className="text-sm text-gray-600">Use orchestration UI when managing 3+ parallel agents, not for every task.</p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Demo: Worktrees in Active Use",
+    subtitle: "oh-my-posh: .claude/worktrees/, live at time of writing",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+          <p className="text-gray-700">
+            This isn't a staged example. <code className="bg-purple-100 px-1 rounded">.claude/worktrees/</code> in this repo had three parallel sessions running at once, each with a full isolated checkout.
+          </p>
+        </div>
+
+        <div className="bg-gray-900 p-4 rounded-lg">
+          <pre className="text-green-400 text-xs overflow-x-auto">{`.claude/worktrees/
+  git-status-performance-d68c3d/
+  heuristic-robinson-e44709/
+  oh-my-posh-statusline-cleanup-1990e0/`}</pre>
+        </div>
+
+        <div className="bg-white p-4 rounded-lg shadow border border-purple-200">
+          <h4 className="font-semibold text-purple-900 mb-2">🔎 Try It</h4>
+          <p className="text-sm text-gray-700"><code className="bg-gray-100 px-1 rounded text-xs">cd</code> into one and run <code className="bg-gray-100 px-1 rounded text-xs">git log</code>. It's a real, independent branch mid-flight, not a copy of the main tree.</p>
+        </div>
+
+        <div className="bg-purple-100 p-4 rounded-lg">
+          <p className="text-sm italic text-purple-900">
+            <strong>Key insight:</strong> each worktree is a full checkout sharing one <code className="bg-purple-50 px-1 rounded">.git</code>. No clone-per-agent overhead, no branch-switching collisions between sessions.
+          </p>
         </div>
       </div>
     )

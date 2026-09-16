@@ -69,7 +69,7 @@ export const llmSlides: SlideType[] = [
         <div className="bg-indigo-50 p-4 md:p-5 rounded-lg border-l-4 border-indigo-500">
           <h4 className="font-bold text-indigo-900 mb-2 text-sm md:text-base">Large Language Models (LLMs)</h4>
           <ul className="text-gray-700 space-y-2 text-sm md:text-base">
-            <li className="flex"><span className="mr-2">•</span><span>AI systems trained on massive amounts of text data to understand and generate human-like language</span></li>
+            <li className="flex"><span className="mr-2">•</span><span>AI systems trained on huge amounts of text to understand and generate human-like language</span></li>
             <li className="flex"><span className="mr-2">•</span><span>Learn patterns, grammar, facts, and reasoning abilities from their training data</span></li>
             <li className="flex"><span className="mr-2">•</span><span>Can perform tasks like writing, answering questions, coding, and analysis</span></li>
           </ul>
@@ -90,7 +90,7 @@ export const llmSlides: SlideType[] = [
   },
   {
     title: "How Transformers Work",
-    subtitle: "From input to output - a visual flow",
+    subtitle: "From input to output: a visual flow",
     content: (
       <div className="flex flex-col items-center md:justify-center md:h-full">
         <div className="w-full max-w-5xl">
@@ -218,7 +218,7 @@ export const llmSlides: SlideType[] = [
           <div className="mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
             <div className="bg-gray-50 p-3 rounded-lg">
               <p className="font-semibold text-gray-800 text-sm md:text-base">Tokenization</p>
-              <p className="text-gray-600 text-xs md:text-base">Text is split into smaller units (tokens) the model can process</p>
+              <p className="text-gray-600 text-xs md:text-base">The model splits text into smaller units (tokens) it can process</p>
             </div>
             <div className="bg-gray-50 p-3 rounded-lg">
               <p className="font-semibold text-gray-800 text-sm md:text-base">Embedding & Attention</p>
@@ -240,7 +240,7 @@ export const llmSlides: SlideType[] = [
       <div className="flex flex-col space-y-4 md:space-y-6 max-w-3xl mx-auto items-center md:justify-center md:h-full">
         <div className="bg-indigo-50 p-3 md:p-4 rounded-lg border-l-4 border-indigo-500">
           <h4 className="font-bold text-indigo-900 mb-2 text-sm md:text-base">What are Parameters?</h4>
-          <p className="text-gray-700 text-sm md:text-base">Parameters are the internal weights and connections the model learns during training. Think of them as the "knowledge" stored in the neural network - more parameters = more capacity to learn patterns.</p>
+          <p className="text-gray-700 text-sm md:text-base">Parameters are the internal weights and connections the model learns during training. Think of them as the model's stored knowledge: more parameters means more capacity to learn patterns.</p>
         </div>
 
         <p className="text-center text-base md:text-lg text-gray-700">LLMs gained reasoning abilities through scaling in several key ways:</p>
@@ -259,7 +259,7 @@ export const llmSlides: SlideType[] = [
             <ul className="text-gray-700 space-y-2 text-sm md:text-base">
               <li className="flex"><span className="mr-2">•</span><span>At certain scales, models develop new capabilities</span></li>
               <li className="flex"><span className="mr-2">•</span><span>Multi-step reasoning emerged in larger models</span></li>
-              <li className="flex"><span className="mr-2">•</span><span>Below threshold, abilities don't appear</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>These abilities appear only above a specific threshold</span></li>
             </ul>
           </div>
 
@@ -309,7 +309,7 @@ export const llmSlides: SlideType[] = [
 
         <div className="bg-indigo-100 p-3 md:p-4 rounded-lg w-full">
           <p className="text-xs md:text-sm font-semibold text-indigo-900 text-center">
-            Bottom Line: GPUs are the key enabler that made the modern AI revolution possible
+            Bottom Line: GPUs made the modern AI revolution possible
           </p>
         </div>
       </div>
@@ -323,22 +323,22 @@ export const llmSlides: SlideType[] = [
         <div className="bg-green-50 p-4 md:p-5 rounded-lg border-l-4 border-green-500">
           <h4 className="font-bold text-green-900 mb-2 md:mb-3 text-sm md:text-base">✅ Strengths</h4>
           <ul className="text-gray-700 space-y-2 text-sm md:text-base">
-            <li className="flex"><span className="mr-2">•</span><span><strong>Versatility</strong> - Handle diverse tasks (writing, coding, analysis, translation) without task-specific training</span></li>
-            <li className="flex"><span className="mr-2">•</span><span><strong>Pattern Recognition</strong> - Excel at identifying complex patterns and relationships in data</span></li>
-            <li className="flex"><span className="mr-2">•</span><span><strong>Natural Language</strong> - Generate human-like text and understand context and nuance</span></li>
-            <li className="flex"><span className="mr-2">•</span><span><strong>Knowledge Breadth</strong> - Trained on vast amounts of information across countless domains</span></li>
-            <li className="flex"><span className="mr-2">•</span><span><strong>Few-Shot Learning</strong> - Learn new tasks from just a few examples in the prompt</span></li>
+            <li className="flex"><span className="mr-2">•</span><span><strong>Versatility</strong>: Handle diverse tasks (writing, coding, analysis, translation) without task-specific training</span></li>
+            <li className="flex"><span className="mr-2">•</span><span><strong>Pattern Recognition</strong>: Excel at identifying complex patterns and relationships in data</span></li>
+            <li className="flex"><span className="mr-2">•</span><span><strong>Natural Language</strong>: Generate human-like text and understand context and nuance</span></li>
+            <li className="flex"><span className="mr-2">•</span><span><strong>Knowledge Breadth</strong>: Trained on vast amounts of information across countless domains</span></li>
+            <li className="flex"><span className="mr-2">•</span><span><strong>Few-Shot Learning</strong>: Learn new tasks from just a few examples in the prompt</span></li>
           </ul>
         </div>
 
         <div className="bg-red-50 p-4 md:p-5 rounded-lg border-l-4 border-red-500">
           <h4 className="font-bold text-red-900 mb-2 md:mb-3 text-sm md:text-base">⚠️ Weaknesses</h4>
           <ul className="text-gray-700 space-y-2 text-sm md:text-base">
-            <li className="flex"><span className="mr-2">•</span><span><strong>Hallucinations</strong> - Predict plausible-sounding text rather than compute or reason; can confidently generate false information</span></li>
-            <li className="flex"><span className="mr-2">•</span><span><strong>No True Understanding</strong> - Pattern matching, not genuine comprehension</span></li>
-            <li className="flex"><span className="mr-2">•</span><span><strong>Knowledge & Memory Limitations</strong> - Training data cutoffs and no persistent memory</span></li>
-            <li className="flex"><span className="mr-2">•</span><span><strong>Bias & Accuracy</strong> - Reflects training data biases and can struggle with precise calculations</span></li>
-            <li className="flex"><span className="mr-2">•</span><span><strong>Computational Cost</strong> - Expensive to train and run at scale</span></li>
+            <li className="flex"><span className="mr-2">•</span><span><strong>Hallucinations</strong>: Predict plausible-sounding text rather than compute or reason; can confidently generate false information</span></li>
+            <li className="flex"><span className="mr-2">•</span><span><strong>No True Understanding</strong>: Pattern matching, not genuine comprehension</span></li>
+            <li className="flex"><span className="mr-2">•</span><span><strong>Knowledge & Memory Limitations</strong>: Training data cutoffs and no persistent memory</span></li>
+            <li className="flex"><span className="mr-2">•</span><span><strong>Bias & Accuracy</strong>: Reflects training data biases and can struggle with precise calculations</span></li>
+            <li className="flex"><span className="mr-2">•</span><span><strong>Computational Cost</strong>: Expensive to train and run at scale</span></li>
           </ul>
         </div>
       </div>

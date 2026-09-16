@@ -79,7 +79,7 @@ export const securitySlides: SlideType[] = [
                     <span className="text-sm font-bold text-slate-500">1</span>
                     <div className="space-y-1">
                       <p className="text-sm font-semibold text-slate-800">Machine + user context enters Copilot</p>
-                      <p className="text-xs text-slate-600 md:text-sm">System context and user intent are assembled into a single payload.</p>
+                      <p className="text-xs text-slate-600 md:text-sm">Copilot assembles system context and user intent into a single payload.</p>
                     </div>
                   </div>
 
@@ -94,7 +94,7 @@ export const securitySlides: SlideType[] = [
                   <div className="grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-blue-200 bg-blue-50 p-2.5">
                     <span className="text-sm font-bold text-blue-700">3</span>
                     <div className="space-y-1">
-                      <p className="text-sm font-semibold text-blue-900">Validated output is streamed back to the user</p>
+                      <p className="text-sm font-semibold text-blue-900">Copilot streams validated output back to the user</p>
                       <p className="text-xs text-blue-800 md:text-sm">Post-model checks run before final output reaches the client.</p>
                     </div>
                   </div>
@@ -153,15 +153,15 @@ export const securitySlides: SlideType[] = [
             <h4 className="font-bold text-red-900 text-lg">Invisible Unicode Attack</h4>
           </div>
           <div className="space-y-2 text-gray-700 text-sm">
-            <p>Invisible characters can be embedded in code that <strong>hide harmful instructions</strong> from developers while affecting code behavior.</p>
+            <p>Attackers can embed invisible characters in code that <strong>hide harmful instructions</strong> from developers while altering code behavior.</p>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>Bad actors inject invisible characters into open-source repositories</li>
               <li>These become part of Copilot's context when building prompts</li>
               <li>Compromised code suggestions can spread undetected across many files</li>
-              <li>By the time detected, damage may be widespread</li>
+              <li>Damage may already be widespread by the time anyone notices</li>
             </ul>
             <div className="mt-2 text-xs text-gray-500">
-              Source: <a href="https://idanhabler.medium.com/hiding-in-plain-sight-weaponizing-invisible-unicode-to-attack-llms-f9033865ec10" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Hiding in Plain Sight — Weaponizing Invisible Unicode to Attack LLMs</a>
+              Source: <a href="https://idanhabler.medium.com/hiding-in-plain-sight-weaponizing-invisible-unicode-to-attack-llms-f9033865ec10" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Hiding in Plain Sight: Weaponizing Invisible Unicode to Attack LLMs</a>
             </div>
           </div>
         </div>
@@ -200,7 +200,7 @@ export const securitySlides: SlideType[] = [
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
           <h3 className="text-xl font-bold text-green-900 mb-2">Defense in Depth</h3>
-          <p className="text-gray-700">GenAI security must guard against malicious code in real time — both inputs and outputs.</p>
+          <p className="text-gray-700">GenAI security must guard against malicious code in real time, in both inputs and outputs.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -229,7 +229,7 @@ export const securitySlides: SlideType[] = [
             <h4 className="font-bold text-gray-900 mb-2 flex items-center">
               <span className="text-orange-500 mr-2">⚡</span> Real-Time Screening
             </h4>
-            <p className="text-gray-600 text-sm">Guard against malicious code at every stage — not just periodic scans.</p>
+            <p className="text-gray-600 text-sm">Guard against malicious code at every stage, not just with periodic scans.</p>
           </div>
         </div>
 
@@ -246,7 +246,7 @@ export const securitySlides: SlideType[] = [
 
         <div className="bg-blue-50 p-3 rounded-lg">
           <p className="text-sm text-blue-900 text-center">
-            <strong>Source:</strong> <a href="https://prompt.security/blog/securing-enterprise-data-in-the-face-of-github-copilot-vulnerabilities" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Prompt Security — Securing Enterprise Data</a>
+            <strong>Source:</strong> <a href="https://prompt.security/blog/securing-enterprise-data-in-the-face-of-github-copilot-vulnerabilities" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Prompt Security: Securing Enterprise Data</a>
           </p>
         </div>
       </div>
@@ -298,7 +298,7 @@ export const securitySlides: SlideType[] = [
 
         <div className="bg-blue-50 p-3 rounded-lg">
           <p className="text-sm text-blue-900 text-center">
-            <strong>Source:</strong> <a href="https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">GitHub Docs — Excluding content from GitHub Copilot</a>
+            <strong>Source:</strong> <a href="https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">GitHub Docs: Excluding content from GitHub Copilot</a>
           </p>
         </div>
       </div>

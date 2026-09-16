@@ -27,7 +27,7 @@ export const sdkSlides: SlideType[] = [
   },
   {
     title: "Agent SDKs by Tool",
-    subtitle: "Programmatic runtimes — maturity varies",
+    subtitle: "Programmatic runtimes: maturity varies",
     content: (
       <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
         <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
@@ -50,7 +50,7 @@ export const sdkSlides: SlideType[] = [
             Multi-platform SDK for integrating GitHub Copilot Agent into apps and services
           </p>
           <p className="text-gray-700">
-            <strong>Agents for every app.</strong> Embed Copilot's agentic workflows in your application—now available in <span className="font-semibold">Technical Preview</span> as a programmable SDK for Python, TypeScript, Go, and .NET.
+            <strong>Agents for every app.</strong> Embed Copilot's agentic workflows in your application. It's now available in <span className="font-semibold">Technical Preview</span> as a programmable SDK for Python, TypeScript, Go, and .NET.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export const sdkSlides: SlideType[] = [
 
         <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
           <p className="text-sm text-yellow-900">
-            <strong>⚠️ Technical Preview:</strong> Currently in Technical Preview. While functional for development and testing, it may not yet be suitable for production use.
+            <strong>⚠️ Technical Preview:</strong> Functional for development and testing, but it may not yet suit production use.
           </p>
         </div>
       </div>
@@ -200,7 +200,7 @@ console.`}<code className="text-blue-400">{`log`}</code>{`(response?.data.conten
   },
   {
     title: "Custom Tools",
-    subtitle: "Give Copilot the ability to call your code",
+    subtitle: "Lets Copilot call your code",
     content: (
       <div className="flex flex-col space-y-6 max-w-4xl mx-auto">
         <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
@@ -252,7 +252,7 @@ console.`}<code className="text-blue-400">{`log`}</code>{`(response?.data.conten
             <div className="flex items-start">
               <div className="bg-indigo-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</div>
               <div>
-                <p className="text-gray-700">The result is sent back to Copilot, which <strong>incorporates it</strong> into the response</p>
+                <p className="text-gray-700">The SDK sends the result back to Copilot, which <strong>incorporates it</strong> into the response</p>
               </div>
             </div>
           </div>
