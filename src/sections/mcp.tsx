@@ -35,7 +35,7 @@ export const mcpSlides: SlideType[] = [
           </p>
         </div>
         <ToolMatrix
-          columns={STANDARD_TOOL_COLUMNS}
+          columns={STANDARD_TOOL_COLUMNS.filter((c) => c.id !== 'cursor' && c.id !== 'devin')}
           rows={mcpMatrixRows}
           footnote={
             <>

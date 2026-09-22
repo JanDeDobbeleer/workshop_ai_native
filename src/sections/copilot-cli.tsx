@@ -35,7 +35,7 @@ export const copilotCliSlides: SlideType[] = [
             Terminal agents share the same capabilities as IDE agents. They often add richer scripting, CI integration, and cloud delegation.
           </p>
         </div>
-        <ToolMatrix columns={STANDARD_TOOL_COLUMNS} rows={terminalAgentsMatrixRows} />
+        <ToolMatrix columns={STANDARD_TOOL_COLUMNS.filter((c) => c.id !== 'cursor' && c.id !== 'devin')} rows={terminalAgentsMatrixRows} />
       </div>
     )
   },
@@ -238,43 +238,6 @@ export const copilotCliSlides: SlideType[] = [
           <p className="text-sm italic text-gray-900">
             <strong>Learn More:</strong> <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/use-hooks" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Using hooks with GitHub Copilot agents</a>
           </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Fleet",
-    subtitle: "Run tasks in parallel with subagents for faster completion of complex requests",
-    content: (
-      <div className="flex flex-col space-y-5 max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
-            <h4 className="font-semibold text-gray-900 mb-3">⚙️ How It Works:</h4>
-            <ul className="space-y-2 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2">1.</span><span>Main agent analyzes the prompt for parallelizable subtasks</span></li>
-              <li className="flex"><span className="mr-2">2.</span><span>Acts as orchestrator, managing workflow and dependencies</span></li>
-              <li className="flex"><span className="mr-2">3.</span><span>Independent subtasks run in parallel via subagents</span></li>
-              <li className="flex"><span className="mr-2">4.</span><span>Each subagent has its own context window and can use custom agents</span></li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
-            <h4 className="font-semibold text-gray-900 mb-3">✅ When to Use:</h4>
-            <ul className="space-y-2 text-gray-700 text-sm">
-              <li className="flex"><span className="mr-2 text-green-600">✓</span><span>Large or complex multi-step tasks (e.g. refactoring, test suites)</span></li>
-              <li className="flex"><span className="mr-2 text-green-600">✓</span><span>Parallelizable work with independent subtasks</span></li>
-              <li className="flex"><span className="mr-2 text-green-600">✓</span><span>Automated workflows in autopilot mode</span></li>
-              <li className="flex"><span className="mr-2 text-yellow-500">~</span><span>Sequential tasks won't benefit from parallelization</span></li>
-              <li className="flex"><span className="mr-2 text-yellow-500">~</span><span>May consume more premium requests than single-agent</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-gray-900 p-4 rounded-lg font-mono text-sm">
-          <p className="text-gray-400 mb-1"># Use plan mode first (Shift+Tab), then hand off to fleet</p>
-          <p className="text-yellow-300">&gt; /fleet implement the new user auth feature with tests and docs</p>
-          <p className="text-gray-400 mt-3 mb-1"># Reference a custom agent for a specific subtask</p>
-          <p className="text-green-400">Use @test-writer to create comprehensive unit tests for the auth module</p>
         </div>
       </div>
     )

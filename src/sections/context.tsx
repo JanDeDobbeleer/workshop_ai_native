@@ -75,7 +75,7 @@ export const contextSlides: SlideType[] = [
             Every tool combines <strong>implicit context</strong> (open files, index) with <strong>explicit attachments</strong> you add per prompt.
           </p>
         </div>
-        <ToolMatrix columns={STANDARD_TOOL_COLUMNS} rows={contextMatrixRows} />
+        <ToolMatrix columns={STANDARD_TOOL_COLUMNS.filter((c) => c.id !== 'cursor' && c.id !== 'devin')} rows={contextMatrixRows} />
       </div>
     )
   },

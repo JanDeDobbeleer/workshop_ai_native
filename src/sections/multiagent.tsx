@@ -128,10 +128,9 @@ export const multiagentSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-4 max-w-4xl mx-auto">
         <ToolMatrix
-          columns={STANDARD_TOOL_COLUMNS}
+          columns={STANDARD_TOOL_COLUMNS.filter((c) => c.id !== 'cursor' && c.id !== 'devin')}
           rows={orchestrationMatrixRows}
           density="compact"
-          footnote="Devin ACP registry may still show ~/.windsurf/acp/ (legacy path) in docs."
         />
       </div>
     )

@@ -35,7 +35,7 @@ export const sdkSlides: SlideType[] = [
             SDKs embed the same agent loop (plan → tools → iterate) in your app. Copilot SDK is the most integrated with GitHub; others use their vendor APIs.
           </p>
         </div>
-        <ToolMatrix columns={STANDARD_TOOL_COLUMNS} rows={agentSdksMatrixRows} />
+        <ToolMatrix columns={STANDARD_TOOL_COLUMNS.filter((c) => c.id !== 'cursor' && c.id !== 'devin')} rows={agentSdksMatrixRows} />
       </div>
     )
   },
