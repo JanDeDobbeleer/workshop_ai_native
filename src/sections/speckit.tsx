@@ -71,15 +71,15 @@ export const speckitSlides: SlideType[] = [
     )
   },
   {
-    title: "SDD Implementations: Two Approaches",
+    title: "SDD Implementations: Three Approaches",
     subtitle: "Different tools, same philosophy: choose what works for your workflow",
     content: (
-      <div className="flex flex-col space-y-3 max-w-4xl mx-auto">
+      <div className="flex flex-col space-y-3 max-w-6xl mx-auto">
         <div className="bg-gradient-to-r from-teal-500 to-blue-500 p-4 rounded-lg text-white">
-          <p className="text-center text-sm">Both implementations provide <strong>plan and execute</strong> capabilities to go from spec to working code</p>
+          <p className="text-center text-sm">All three provide <strong>plan and execute</strong> capabilities to go from spec to working code</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-white p-4 rounded-lg shadow border-2 border-teal-500">
             <div className="flex items-center space-x-2 mb-3">
               <div className="text-2xl">🌱</div>
@@ -137,157 +137,95 @@ export const speckitSlides: SlideType[] = [
               <code className="bg-gray-100 px-2 py-0.5 rounded">github.com/EveryInc/compound-engineering-plugin</code>
             </div>
           </div>
+
+          <div className="bg-white p-4 rounded-lg shadow border-2 border-emerald-500">
+            <div className="flex items-center space-x-2 mb-3">
+              <div className="text-2xl">🦸</div>
+              <h3 className="text-lg font-bold text-gray-900">Superpowers</h3>
+            </div>
+            <p className="text-xs text-gray-700 mb-3">Skill-triggered methodology: activates automatically, no slash commands to remember</p>
+
+            <div className="space-y-2">
+              <div className="bg-emerald-50 p-2 rounded">
+                <h4 className="text-xs font-bold text-gray-900 mb-1">Key Features</h4>
+                <ul className="text-xs text-gray-700 space-y-0.5">
+                  <li className="flex"><span className="mr-1">•</span><span>7 chained Agent Skills, not commands</span></li>
+                  <li className="flex"><span className="mr-1">•</span><span>Mandatory TDD: red, green, refactor</span></li>
+                  <li className="flex"><span className="mr-1">•</span><span>Auto worktree per feature branch</span></li>
+                  <li className="flex"><span className="mr-1">•</span><span>Works across 15+ agents (Claude, Codex, Cursor, Gemini, and more)</span></li>
+                </ul>
+              </div>
+
+              <div className="bg-blue-50 p-2 rounded">
+                <h4 className="text-xs font-bold text-gray-900 mb-1">Plan & Execute</h4>
+                <p className="text-xs text-gray-700"><code className="bg-blue-100 px-1 rounded">brainstorming</code> drafts the spec, <code className="bg-blue-100 px-1 rounded">writing-plans</code> breaks it into tasks, <code className="bg-blue-100 px-1 rounded">subagent-driven-development</code> executes and reviews each one</p>
+              </div>
+            </div>
+
+            <div className="mt-3 text-xs text-center">
+              <code className="bg-gray-100 px-2 py-0.5 rounded">github.com/obra/superpowers</code>
+            </div>
+          </div>
         </div>
 
         <div className="bg-orange-50 px-4 py-3 rounded-lg border border-orange-200">
           <p className="text-center text-orange-900 text-xs">
-            <strong>Choose Based On:</strong> Spec Kit for AI-agnostic templates; Compound Engineering for Claude Code with cross-tool support
+            <strong>Choose Based On:</strong> Spec Kit for AI-agnostic templates; Compound Engineering for Claude Code with cross-tool support; Superpowers for a mandatory, skill-driven TDD process
           </p>
         </div>
       </div>
     )
   },
   {
-    title: "Using Spec Kit",
-    subtitle: "CLI-based approach: install once, use everywhere",
+    title: "Spec Kit: Plan & Execute",
+    subtitle: "CLI-based, template-driven: install once, run the same commands everywhere",
     content: (
-      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
-          <h3 className="text-xl font-bold text-white mb-4">Prerequisites</h3>
-          <div className="grid grid-cols-2 gap-3 text-sm">
-            <div className="flex items-center space-x-2 text-gray-300">
-              <span className="text-green-400">✓</span>
-              <span>Python 3.11+</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-300">
-              <span className="text-green-400">✓</span>
-              <span>Git</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-300">
-              <span className="text-green-400">✓</span>
-              <span>uv (package manager)</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-300">
-              <span className="text-green-400">✓</span>
-              <span>Supported AI agent</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <div className="bg-white p-5 rounded-lg shadow border-l-4 border-green-500">
-            <h4 className="font-bold text-gray-900 mb-3">Option 1: Persistent Install (Recommended)</h4>
-            <p className="text-sm text-gray-700 mb-3">Install once, use everywhere: the tool stays on PATH and runs via the <code className="bg-gray-100 px-2 py-1 rounded text-xs">specify</code> command.</p>
-            <CodeBlock
-              code="uv tool install specify-cli --from git+https://github.com/github/spec-kit.git"
-              className="bg-gray-900 p-4 rounded overflow-x-auto"
-            >
-              <code className="text-green-400 text-sm font-mono">
-                uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
-              </code>
-            </CodeBlock>
-            <p className="text-sm text-gray-700 mt-3 mb-2">Then use directly:</p>
-            <CodeBlock
-              code="specify init my-project --ai copilot"
-              className="bg-gray-900 p-4 rounded overflow-x-auto"
-            >
-              <code className="text-blue-400 text-sm font-mono">
-                specify init my-project --ai copilot
-              </code>
-            </CodeBlock>
-          </div>
-
-          <div className="bg-white p-5 rounded-lg shadow border-l-4 border-blue-500">
-            <h4 className="font-bold text-gray-900 mb-3">Option 2: One-Time Usage</h4>
-            <p className="text-sm text-gray-700 mb-3">Run directly without installing. Good for trying it out.</p>
-            <CodeBlock
-              code="uvx --from git+https://github.com/github/spec-kit.git \\\n  specify init my-project --ai copilot"
-              className="bg-gray-900 p-4 rounded overflow-x-auto"
-            >
-              <code className="text-green-400 text-sm font-mono">
-                uvx --from git+https://github.com/github/spec-kit.git specify init my-project --ai copilot
-              </code>
-            </CodeBlock>
-          </div>
-        </div>
-
-        <div className="bg-blue-50 px-6 py-4 rounded-lg">
-          <p className="text-center text-blue-900 text-sm">
-            <strong>Upgrade:</strong> <code className="bg-blue-100 px-2 py-1 rounded text-xs">uv tool install specify-cli --force --from git+...</code>
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Spec Kit: Plan & Execute Workflow",
-    subtitle: "Structured commands take you from requirements to running code",
-    content: (
-      <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
+      <div className="flex flex-col space-y-3 max-w-4xl mx-auto">
         <div className="bg-gradient-to-r from-teal-500 to-blue-500 p-4 rounded-lg text-white">
-          <h3 className="text-xl font-bold mb-1">The Spec Kit Process</h3>
-          <p className="text-teal-50 text-sm">Bootstrap → constitution → spec → <strong>plan → tasks → implement</strong></p>
+          <h3 className="text-xl font-bold mb-1">The Spec Kit Workflow</h3>
+          <p className="text-teal-50 text-sm"><strong>Bootstrap → Constitution → Specify → Plan → Tasks → Implement</strong></p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="flex items-start space-x-3 bg-white p-3 rounded-lg shadow">
-            <div className="flex-shrink-0 w-7 h-7 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
-            <div>
-              <h4 className="font-bold text-gray-900 text-sm">Bootstrap Project</h4>
-              <code className="text-xs bg-gray-100 px-2 py-0.5 rounded block mb-1">specify init --ai copilot</code>
-              <p className="text-xs text-gray-600">Scaffolds .specify/ and prompts</p>
-            </div>
+          <div className="bg-white p-3 rounded-lg shadow border-l-4 border-teal-500">
+            <h4 className="font-bold text-gray-900 text-sm mb-2">🔄 The Workflow</h4>
+            <ul className="text-xs text-gray-700 space-y-1">
+              <li className="flex"><span className="mr-2">1.</span><span><code className="bg-gray-100 px-1 rounded">specify init</code>: scaffolds .specify/ and prompts</span></li>
+              <li className="flex"><span className="mr-2">2.</span><span><code className="bg-gray-100 px-1 rounded">/speckit.constitution</code>: define principles & rules</span></li>
+              <li className="flex"><span className="mr-2">3.</span><span><code className="bg-gray-100 px-1 rounded">/speckit.specify</code>: describe what & why</span></li>
+              <li className="flex"><span className="mr-2">4.</span><span><code className="bg-gray-100 px-1 rounded">/speckit.plan</code>: tech stack & how to build</span></li>
+              <li className="flex"><span className="mr-2">5.</span><span><code className="bg-gray-100 px-1 rounded">/speckit.tasks</code>: actionable task list with deps</span></li>
+              <li className="flex"><span className="mr-2">6.</span><span><code className="bg-gray-100 px-1 rounded">/speckit.implement</code>: validates & executes tasks</span></li>
+            </ul>
           </div>
 
-          <div className="flex items-start space-x-3 bg-white p-3 rounded-lg shadow">
-            <div className="flex-shrink-0 w-7 h-7 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
-            <div>
-              <h4 className="font-bold text-gray-900 text-sm">Constitution</h4>
-              <code className="text-xs bg-gray-100 px-2 py-0.5 rounded block mb-1">/speckit.constitution</code>
-              <p className="text-xs text-gray-600">Define principles & rules</p>
-            </div>
-          </div>
-
-          <div className="flex items-start space-x-3 bg-white p-3 rounded-lg shadow">
-            <div className="flex-shrink-0 w-7 h-7 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
-            <div>
-              <h4 className="font-bold text-gray-900 text-sm">Specify Requirements</h4>
-              <code className="text-xs bg-gray-100 px-2 py-0.5 rounded block mb-1">/speckit.specify</code>
-              <p className="text-xs text-gray-600">Describe <strong>what</strong> & <strong>why</strong></p>
-            </div>
-          </div>
-
-          <div className="flex items-start space-x-3 bg-white p-3 rounded-lg shadow">
-            <div className="flex-shrink-0 w-7 h-7 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
-            <div>
-              <h4 className="font-bold text-gray-900 text-sm">Technical Plan</h4>
-              <code className="text-xs bg-gray-100 px-2 py-0.5 rounded block mb-1">/speckit.plan</code>
-              <p className="text-xs text-gray-600">Tech stack & <strong>how</strong> to build</p>
-            </div>
-          </div>
-
-          <div className="flex items-start space-x-3 bg-white p-3 rounded-lg shadow">
-            <div className="flex-shrink-0 w-7 h-7 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
-            <div>
-              <h4 className="font-bold text-gray-900 text-sm">Break Into Tasks</h4>
-              <code className="text-xs bg-gray-100 px-2 py-0.5 rounded block mb-1">/speckit.tasks</code>
-              <p className="text-xs text-gray-600">Actionable task list with deps</p>
-            </div>
-          </div>
-
-          <div className="flex items-start space-x-3 bg-white p-3 rounded-lg shadow">
-            <div className="flex-shrink-0 w-7 h-7 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">6</div>
-            <div>
-              <h4 className="font-bold text-gray-900 text-sm">Execute</h4>
-              <code className="text-xs bg-gray-100 px-2 py-0.5 rounded block mb-1">/speckit.implement</code>
-              <p className="text-xs text-gray-600">Validates & executes tasks</p>
-            </div>
+          <div className="bg-white p-3 rounded-lg shadow border-l-4 border-blue-500">
+            <h4 className="font-bold text-gray-900 text-sm mb-2">💡 Key Features</h4>
+            <ul className="text-xs text-gray-700 space-y-1">
+              <li className="flex"><span className="mr-2">•</span><span><strong>AI-agnostic:</strong> works the same across agents</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Template-based scaffolding, not free-form prompts</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Explicit command per step: no guessing what's next</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Detailed initial prompts pay off: more detail now, less tweaking later</span></li>
+            </ul>
           </div>
         </div>
 
-        <div className="bg-orange-50 px-4 py-3 rounded-lg border border-orange-200">
-          <p className="text-center text-orange-900 text-xs">
-            <strong>Pro Tip:</strong> Provide detailed initial prompts for higher quality specs. More detail = less tweaking later.
+        <div className="bg-teal-50 p-3 rounded-lg border border-teal-200">
+          <h4 className="font-bold text-teal-900 text-sm mb-2">Installation</h4>
+          <CodeBlock
+            code="uv tool install specify-cli --from git+https://github.com/github/spec-kit.git"
+            className="bg-gray-900 p-2 rounded"
+          >
+            <code className="text-green-400 text-xs font-mono">
+              uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
+            </code>
+          </CodeBlock>
+          <p className="text-xs text-gray-700 mt-2">Then <code className="bg-white px-1 rounded">specify init my-project --ai copilot</code>. No install? Run it once via <code className="bg-white px-1 rounded">uvx --from git+... specify init</code> instead.</p>
+        </div>
+
+        <div className="bg-blue-50 px-4 py-2 rounded-lg">
+          <p className="text-center text-blue-900 text-xs">
+            <strong>Best For:</strong> Teams wanting an AI-agnostic, template-driven workflow with an explicit command at every step
           </p>
         </div>
       </div>
@@ -351,6 +289,63 @@ export const speckitSlides: SlideType[] = [
         <div className="bg-blue-50 px-4 py-2 rounded-lg">
           <p className="text-center text-blue-900 text-xs">
             <strong>Best For:</strong> Teams wanting structured compound workflows where each cycle makes future work easier
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Superpowers: Skill-Triggered Workflow",
+    subtitle: "No slash commands: the methodology activates itself",
+    content: (
+      <div className="flex flex-col space-y-3 max-w-4xl mx-auto">
+        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 p-4 rounded-lg text-white">
+          <h3 className="text-xl font-bold mb-1">The Basic Workflow</h3>
+          <p className="text-emerald-50 text-sm"><strong>Brainstorm → Worktree → Plan → Implement (TDD) → Review → Finish</strong></p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="bg-white p-3 rounded-lg shadow border-l-4 border-emerald-500">
+            <h4 className="font-bold text-gray-900 text-sm mb-2">🔄 The 7 Skills</h4>
+            <ul className="text-xs text-gray-700 space-y-1">
+              <li className="flex"><span className="mr-2">1.</span><span><code className="bg-gray-100 px-1 rounded">brainstorming</code>: questions, alternatives, a design doc</span></li>
+              <li className="flex"><span className="mr-2">2.</span><span><code className="bg-gray-100 px-1 rounded">using-git-worktrees</code>: isolated branch, clean baseline</span></li>
+              <li className="flex"><span className="mr-2">3.</span><span><code className="bg-gray-100 px-1 rounded">writing-plans</code>: 2-5 minute tasks, exact file paths</span></li>
+              <li className="flex"><span className="mr-2">4.</span><span><code className="bg-gray-100 px-1 rounded">subagent-driven-development</code>: fresh subagent per task</span></li>
+              <li className="flex"><span className="mr-2">5.</span><span><code className="bg-gray-100 px-1 rounded">test-driven-development</code>: red, green, refactor</span></li>
+              <li className="flex"><span className="mr-2">6.</span><span><code className="bg-gray-100 px-1 rounded">requesting-code-review</code>: severity-ranked, blocks on critical</span></li>
+              <li className="flex"><span className="mr-2">7.</span><span><code className="bg-gray-100 px-1 rounded">finishing-a-development-branch</code>: merge, PR, or discard</span></li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-3 rounded-lg shadow border-l-4 border-teal-500">
+            <h4 className="font-bold text-gray-900 text-sm mb-2">💡 Philosophy</h4>
+            <ul className="text-xs text-gray-700 space-y-1">
+              <li className="flex"><span className="mr-2">•</span><span><strong>Mandatory workflows, not suggestions</strong></span></li>
+              <li className="flex"><span className="mr-2">•</span><span>The agent checks for relevant skills before any task</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>Deletes code written before its test existed</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>YAGNI and DRY enforced during planning, not after</span></li>
+              <li className="flex"><span className="mr-2">•</span><span>A subagent can work autonomously for hours without drifting from the plan</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+          <h4 className="font-bold text-emerald-900 text-sm mb-2">Installation (Claude Code)</h4>
+          <CodeBlock
+            code="/plugin install superpowers@claude-plugins-official"
+            className="bg-gray-900 p-2 rounded"
+          >
+            <code className="text-green-400 text-xs font-mono">
+              /plugin install superpowers@claude-plugins-official
+            </code>
+          </CodeBlock>
+          <p className="text-xs text-gray-700 mt-2">Also installs separately for Codex, Cursor, Gemini CLI, Copilot CLI, and 10+ other agents: see the repo for each harness's steps.</p>
+        </div>
+
+        <div className="bg-blue-50 px-4 py-2 rounded-lg">
+          <p className="text-center text-blue-900 text-xs">
+            <strong>Best For:</strong> Teams who want the process enforced automatically instead of remembering which slash command to run next
           </p>
         </div>
       </div>
