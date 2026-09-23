@@ -143,19 +143,21 @@ export const multiagentSlides: SlideType[] = [
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
           <p className="text-gray-700">Prefer <strong>hub-and-spoke</strong> delegation: one parent agent assigns work and synthesizes results. Avoid peer-to-peer agent mesh fantasies.</p>
         </div>
-        <div className="flex flex-col items-center gap-2 py-4">
+        <div className="flex flex-col items-center py-4">
           <div className="bg-purple-600 text-white px-6 py-3 rounded-lg font-bold">Orchestrator</div>
-          <div className="flex gap-8">
-            <div className="flex flex-col items-center">
-              <div className="h-8 w-px bg-purple-300" />
+          <div className="h-6 w-px bg-purple-300" />
+          <div className="relative flex w-full max-w-lg">
+            <div className="absolute top-0 left-[16.6667%] right-[16.6667%] h-px bg-purple-300" />
+            <div className="flex-1 flex flex-col items-center">
+              <div className="h-6 w-px bg-purple-300" />
               <div className="bg-white border border-purple-200 px-4 py-2 rounded-lg text-sm">Agent A</div>
             </div>
-            <div className="flex flex-col items-center">
-              <div className="h-8 w-px bg-purple-300" />
+            <div className="flex-1 flex flex-col items-center">
+              <div className="h-6 w-px bg-purple-300" />
               <div className="bg-white border border-purple-200 px-4 py-2 rounded-lg text-sm">Agent B</div>
             </div>
-            <div className="flex flex-col items-center">
-              <div className="h-8 w-px bg-purple-300" />
+            <div className="flex-1 flex flex-col items-center">
+              <div className="h-6 w-px bg-purple-300" />
               <div className="bg-white border border-purple-200 px-4 py-2 rounded-lg text-sm">Agent C</div>
             </div>
           </div>

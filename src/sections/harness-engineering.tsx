@@ -113,7 +113,7 @@ export const harnessEngineeringSlides: SlideType[] = [
         <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
           <h3 className="text-2xl font-bold text-amber-900 mb-4">Wire Up Back-Pressure</h3>
           <p className="text-lg text-gray-700">
-            An outer harness needs ways for the agent to verify itself instead of asserting it's done. This builds directly on what the Security section already covers: linters, security scanners, and static analysis aren't just review-time gates. They're feedback signals an agent can run itself.
+            An outer harness needs ways for the agent to verify itself instead of asserting it's done. This builds directly on what the Security section already covers: an agent can run linters, security scanners, and static analysis itself as feedback signals, not only at review time.
           </p>
         </div>
 
