@@ -62,7 +62,7 @@ const ExportDeck: React.FC = () => (
       >
         {(slide.title || slide.subtitle) && (
           <div className="mb-6 text-center flex-shrink-0">
-            <h1 className="text-4xl font-bold text-gray-800 mb-2">{slide.title}</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 mb-2">{slide.title}</h1>
             <p className="text-xl text-gray-600">{slide.subtitle}</p>
           </div>
         )}

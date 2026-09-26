@@ -352,7 +352,7 @@ const FourDSlides = () => {
       <div className="flex-1 flex flex-col p-4 pt-8 md:p-8 min-w-0 min-h-0">
         {(slides[currentSlide].title || slides[currentSlide].subtitle) && (
           <div className="mb-4 md:mb-6 text-center flex-shrink-0">
-            <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-1 md:mb-2">
+            <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-1 md:mb-2">
               {slides[currentSlide].title}
             </h1>
             <p className="text-base md:text-xl text-gray-600">
