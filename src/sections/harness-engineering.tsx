@@ -2,17 +2,19 @@ import { Wrench } from 'lucide-react';
 import { CodeBlock } from '../components/CodeBlock';
 import { SlideType } from './types';
 
-const gofmtHook = `{
-  "hooks": {
-    "PostToolUse": [{
-      "matcher": "Edit|Write",
-      "hooks": [{
-        "type": "command",
-        "command": "jq -r '.tool_input.file_path | select(endswith(\\".go\\"))' | xargs -r gofmt -w"
-      }]
-    }]
-  }
-}`;
+const claudeStopHook = `"Stop": [{
+  "hooks": [{
+    "type": "command",
+    "command": "go run \\"$CLAUDE_PROJECT_DIR/.agents/hooks/main.go\\" --harness claude",
+    "timeout": 600
+  }]
+}]`;
+
+const copilotStopHook = `"agentStop": [{
+  "type": "command",
+  "bash": "go run .agents/hooks/main.go --harness copilot",
+  "timeoutSec": 600
+}]`;
 
 export const harnessEngineeringSlides: SlideType[] = [
   {
@@ -199,40 +201,44 @@ export const harnessEngineeringSlides: SlideType[] = [
     )
   },
   {
-    title: "Demo: oh-my-posh + a Hook from the Docs",
-    subtitle: "Signal and reviewer from the repo, hook from the docs (the repo has none yet)",
+    title: "Demo: oh-my-posh Stop Hooks",
+    subtitle: "One Go script, wired into Claude Code and Copilot",
     content: (
-      <div className="flex flex-col space-y-4 max-w-3xl mx-auto">
+      <div className="flex flex-col space-y-3 max-w-4xl mx-auto">
+        <div className="bg-amber-50 p-3 rounded-lg border-l-4 border-amber-500">
+          <p className="text-gray-700">
+            <strong>The problem:</strong> agents skipped the pre-commit gate and learned about failures from CI, one rework round trip later. Now the checks run before the agent may finish.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">Objective Signal</h4>
-            <p className="text-sm text-gray-700 mb-2">AGENTS.md's Key Commands, run from <code className="bg-gray-100 px-1 rounded text-xs">src/</code>:</p>
-            <code className="block bg-gray-900 text-green-400 text-xs p-2 rounded">go test ./...<br/>golangci-lint run</code>
+            <h4 className="font-semibold text-amber-900 mb-1 text-sm"><code>.claude/settings.json</code></h4>
+            <CodeBlock code={claudeStopHook} className="bg-gray-900 p-2 rounded font-mono text-xs text-green-400 overflow-x-auto">
+              <pre>{claudeStopHook}</pre>
+            </CodeBlock>
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">architecture.agent.md</h4>
-            <p className="text-sm text-gray-700">
-              A committed review agent checks nesting depth, hot-path I/O, Law-of-Demeter dot chains, and primitive obsession: the same checklist every time, not whatever a reviewer happens to remember.
-            </p>
+            <h4 className="font-semibold text-amber-900 mb-1 text-sm"><code>.github/hooks/quality.json</code></h4>
+            <CodeBlock code={copilotStopHook} className="bg-gray-900 p-2 rounded font-mono text-xs text-green-400 overflow-x-auto">
+              <pre>{copilotStopHook}</pre>
+            </CodeBlock>
           </div>
         </div>
 
         <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
-          <h4 className="font-semibold text-amber-900 mb-1">New: a PostToolUse Hook</h4>
-          <p className="text-sm text-gray-700 mb-2">
-            <code className="bg-gray-100 px-1 rounded text-xs">.claude/settings.json</code>: runs <code className="bg-gray-100 px-1 rounded text-xs">gofmt</code> on the Go file the agent just touched, using the path from the hook's stdin JSON (<code className="bg-gray-100 px-1 rounded text-xs">tool_input.file_path</code>):
-          </p>
-          <CodeBlock
-            code={gofmtHook}
-            className="bg-gray-900 p-3 rounded font-mono text-xs text-green-400 overflow-x-auto"
-          >
-            <pre>{gofmtHook}</pre>
-          </CodeBlock>
+          <h4 className="font-semibold text-amber-900 mb-2">What <code className="bg-gray-100 px-1 rounded text-sm">.agents/hooks/main.go</code> Does</h4>
+          <ul className="space-y-1 text-sm text-gray-700">
+            <li>• Checks only changed files (<code className="bg-gray-100 px-1 rounded text-xs">git status</code>): format, modernize, fieldalignment, golangci-lint, go test, markdownlint, plus other-OS builds for platform code</li>
+            <li>• On failure, prints <code className="bg-gray-100 px-1 rounded text-xs">{`{"decision": "block", "reason": ...}`}</code>: the agent keeps working with the errors as its next prompt</li>
+            <li>• Error messages carry fix instructions, e.g. &quot;Reorder the fields by hand, keeping their comments&quot;</li>
+            <li>• Respects <code className="bg-gray-100 px-1 rounded text-xs">stop_hook_active</code> (no endless loop) and caches a hash of passing files</li>
+          </ul>
         </div>
 
-        <div className="bg-amber-100 p-4 rounded-lg">
+        <div className="bg-amber-100 p-3 rounded-lg">
           <p className="text-sm italic text-amber-900">
-            <strong>This is Step 2 wiring:</strong> every edit gets checked without the agent having to remember. Copilot: same idea in <code className="bg-amber-50 px-1 rounded">.github/hooks/*.json</code>.
+            <strong>Gotcha:</strong> Copilot CLI also reads <code className="bg-amber-50 px-1 rounded">.claude/settings.json</code>, so the Claude hook exits early unless <code className="bg-amber-50 px-1 rounded">CLAUDE_PROJECT_DIR</code> is set, to avoid running twice.
           </p>
         </div>
       </div>
