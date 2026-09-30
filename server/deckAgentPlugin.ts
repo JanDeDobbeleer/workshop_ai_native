@@ -2,6 +2,7 @@ import path from 'node:path';
 import type { Plugin, ViteDevServer, WebSocketClient } from 'vite';
 import type { CopilotClient, CopilotSession } from '@github/copilot-sdk';
 import { DeckAgentEvent, deckAgentInstructions, toolDefinitions } from '../src/agent/deckAgentProtocol';
+import { listRepoFiles, readRepoFile } from './repoReader';
 import type { HelloPayload, PromptPayload, StatusPayload, ToolResultPayload } from '../src/agent/deckAgentProtocol';
 
 const DEFAULT_MODEL = 'gpt-5-mini';
@@ -34,6 +35,33 @@ export const deckAgentPlugin = (): Plugin => ({
     const model = process.env.DECK_AGENT_MODEL || DEFAULT_MODEL;
     const log = (message: string) => server.config.logger.info(`[deck-agent] ${message}`, { timestamp: true });
     const logError = (message: string) => server.config.logger.error(`[deck-agent] ${message}`, { timestamp: true });
+
+    // Read-only and allow-listed in repoReader; the only file access the session gets
+    const repoTools = [
+      {
+        name: 'listRepoFiles',
+        description: 'List readable repository files (README, Markdown, source) in a directory, relative to the repo root.',
+        parameters: {
+          type: 'object',
+          properties: { dir: { type: 'string', description: 'Directory such as "src" (default: repo root)' } },
+          additionalProperties: false,
+        },
+        skipPermission: true,
+        handler: (args: { dir?: string }) => listRepoFiles(server.config.root, args?.dir).catch(errorMessage),
+      },
+      {
+        name: 'readRepoFile',
+        description: 'Read one repository file (README, Markdown, or source) by repo-relative path.',
+        parameters: {
+          type: 'object',
+          properties: { path: { type: 'string', description: 'Repo-relative path, e.g. "README.md"' } },
+          required: ['path'],
+          additionalProperties: false,
+        },
+        skipPermission: true,
+        handler: (args: { path: string }) => readRepoFile(server.config.root, String(args?.path ?? '')).catch(errorMessage),
+      },
+    ];
 
     const clients = new Map<WebSocketClient, ClientState>();
     let copilot: Promise<{ client: CopilotClient; sdk: typeof import('@github/copilot-sdk') }> | undefined;
@@ -105,14 +133,17 @@ export const deckAgentPlugin = (): Plugin => ({
         }
         const session = await client.createSession({
           model,
-          tools: toolDefinitions.map((tool) => ({
-            name: tool.name,
-            description: tool.description,
-            parameters: tool.parameters,
-            skipPermission: true,
-            handler: (args: unknown) => callBrowser(ws, state, tool.name, args),
-          })),
-          availableTools: toolDefinitions.reduce((set, tool) => set.addCustom(tool.name), new sdk.ToolSet()),
+          tools: [
+            ...toolDefinitions.map((tool) => ({
+              name: tool.name,
+              description: tool.description,
+              parameters: tool.parameters,
+              skipPermission: true,
+              handler: (args: unknown) => callBrowser(ws, state, tool.name, args),
+            })),
+            ...repoTools,
+          ],
+          availableTools: [...toolDefinitions, ...repoTools].reduce((set, tool) => set.addCustom(tool.name), new sdk.ToolSet()),
           onPermissionRequest: () => ({ kind: 'reject', feedback: 'Only deck navigation tools are allowed.' }),
           infiniteSessions: { enabled: false },
           // Nothing from the host machine: no repo instructions, skills, memory or cross-session store

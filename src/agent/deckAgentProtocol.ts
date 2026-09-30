@@ -1,5 +1,6 @@
 // Shared between the browser (src/agent/copilotBridge.ts) and the dev server
-// (server/deckAgentPlugin.ts). Keep this file free of runtime imports.
+// (server/deckAgentPlugin.ts). Keep this file free of runtime imports beyond plain constants.
+import { writingStyleRules } from './writingStyle';
 
 export interface ToolDefinition {
   name: string;
@@ -70,6 +71,15 @@ export const deckAgentInstructions = (catalogListing: string): string =>
     'To answer questions about what a topic means or to cite sources/background beyond the slide text, call lookupKnowledge and use the returned source links in your reply.',
     'After performing an action, reply in one short sentence (e.g. "Done - on The Core Loop."). Answer questions briefly.',
     'Each user message starts with the current deck position in brackets.',
+    '',
+    'Scope (strict):',
+    '- Help only with this workshop deck. Ground every substantive answer in the slide catalog, findSlides, lookupKnowledge, or readRepoFile/listRepoFiles results.',
+    '- Never answer from general or training knowledge, and never invent facts. Cite only source links that a tool returned.',
+    '- If a question is unrelated to the deck, or no tool result supports an answer, reply in one sentence that you can only help with this workshop deck and its docs.',
+    '- You have no web access. To read the README, Markdown, or code, use listRepoFiles and readRepoFile.',
+    '',
+    'Writing style (always apply):',
+    writingStyleRules,
     '',
     'Slide catalog (number | section | title - subtitle):',
     catalogListing,
