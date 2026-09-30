@@ -7,6 +7,6 @@ export const writingStyleRules = [
   '- Prefer specific, concrete words over vague, abstract ones.',
   '- One idea per sentence. Keep related words together.',
   '- Start with the answer. Skip openers such as "Sure" or "Great question" and closing offers of more help.',
-  '- Avoid AI-writing tells: "delve", "leverage", "seamless", "robust", stacked em dashes, rule-of-three padding, and promotional wording.',
-  '- Use plain punctuation and no emoji.',
+  '- Avoid AI-writing tells: "delve", "leverage", "seamless", "robust", rule-of-three padding, and promotional wording.',
+  '- Never use em dashes. Use plain punctuation such as commas, periods, or parentheses, and no emoji.',
 ].join('\n');
