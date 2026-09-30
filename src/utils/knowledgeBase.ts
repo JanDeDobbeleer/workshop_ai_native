@@ -19,8 +19,8 @@ interface ParsedFrontMatter {
   body: string;
 }
 
-// Raw Markdown for every knowledge file, bundled at build time.
-const files = import.meta.glob('../knowledge/**/*.md', {
+// Bundle knowledge entries, not authoring README files.
+const files = import.meta.glob(['../knowledge/**/*.md', '!../knowledge/**/README.md'], {
   query: '?raw',
   import: 'default',
   eager: true,

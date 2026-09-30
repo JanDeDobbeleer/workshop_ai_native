@@ -6,8 +6,8 @@ on the slides themselves. The assistant searches these files with its `lookupKno
 (see `src/agent/navigationTools.ts`) and can also surface them through `findSlides`.
 
 Nothing here is rendered in the slideshow. It is agent-only data, loaded at build time via
-Vite `import.meta.glob('../knowledge/**/*.md', { query: '?raw', ... })` in
-`src/utils/knowledgeBase.ts`.
+Vite's raw Markdown glob in `src/utils/knowledgeBase.ts`. Authoring `README.md` files
+are excluded from the assistant's search index.
 
 ## Layout
 
@@ -72,7 +72,8 @@ The loader builds a `name → section` map from `sectionData` in `src/slides/dec
 - `npm run check:knowledge` (also run automatically at the start of `npm run build`) is the
   fail-loud version: it derives the section order and slide counts from `deck.ts` +
   `src/sections/*.tsx` and exits non-zero if any file has an unknown section, an out-of-range
-  ordinal, or an empty body — so a slide reorder can't silently break the mapping.
+  ordinal, or an empty (including whitespace-only) body — so a slide reorder can't
+  silently break the mapping.
 
 ## Adding more
 

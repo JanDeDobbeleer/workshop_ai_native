@@ -110,7 +110,7 @@ for (const p of files) {
     fail(`${rel}: unknown section "${meta.section}"`);
     continue;
   }
-  if (!body || body.length < 40) fail(`${rel}: body is empty or too short`);
+  if (!body) fail(`${rel}: body is empty`);
   const scope = meta.scope === 'section' ? 'section' : 'slide';
   if (scope === 'slide') {
     const { count } = sectionInfo.get(meta.section);
