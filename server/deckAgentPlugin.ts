@@ -1,4 +1,5 @@
 import path from 'node:path';
+import { performance } from 'node:perf_hooks';
 import type { Plugin, ViteDevServer, WebSocketClient } from 'vite';
 import type { CopilotClient, CopilotSession } from '@github/copilot-sdk';
 import { DeckAgentEvent, deckAgentInstructions, toolDefinitions } from '../src/agent/deckAgentProtocol';
@@ -12,6 +13,8 @@ const PROMPT_TIMEOUT_MS = 120_000;
 interface PendingToolCall {
   resolve: (result: string) => void;
   timer: ReturnType<typeof setTimeout>;
+  startedAt: number;
+  name: string;
 }
 
 interface ClientState {
@@ -22,6 +25,7 @@ interface ClientState {
 }
 
 const errorMessage = (error: unknown): string => (error instanceof Error ? error.message : String(error));
+const elapsedMs = (startedAt: number): number => Math.round(performance.now() - startedAt);
 
 /**
  * Runs the GitHub Copilot SDK inside the Vite dev server and bridges it to the deck's
@@ -73,8 +77,9 @@ export const deckAgentPlugin = (): Plugin => ({
         // Empty mode needs its own state directory; keep it out of ~/.copilot and out of git
         const baseDirectory = path.resolve(server.config.root, 'node_modules/.cache/deck-agent');
         const client = new sdk.CopilotClient({ mode: 'empty', baseDirectory });
+        const startupAt = performance.now();
         await client.start();
-        log('Copilot runtime started');
+        log(`Copilot runtime started in ${elapsedMs(startupAt)}ms`);
         return { client, sdk };
       })();
       copilot.catch(() => {
@@ -100,11 +105,13 @@ export const deckAgentPlugin = (): Plugin => ({
     const callBrowser = (ws: WebSocketClient, state: ClientState, name: string, args: unknown): Promise<string> =>
       new Promise((resolve) => {
         const callId = String(++nextCallId);
+        const startedAt = performance.now();
         const timer = setTimeout(() => {
           state.pendingToolCalls.delete(callId);
+          log(`browser tool ${name} call=${callId} timed out after ${elapsedMs(startedAt)}ms`);
           resolve('The deck did not respond.');
         }, TOOL_TIMEOUT_MS);
-        state.pendingToolCalls.set(callId, { resolve, timer });
+        state.pendingToolCalls.set(callId, { resolve, timer, startedAt, name });
         ws.send(DeckAgentEvent.toolCall, { callId, name, args: args ?? {} });
       });
 
@@ -117,6 +124,7 @@ export const deckAgentPlugin = (): Plugin => ({
     };
 
     server.ws.on(DeckAgentEvent.hello, async (data: HelloPayload, ws: WebSocketClient) => {
+      const setupAt = performance.now();
       const state = stateFor(ws);
       const generation = ++state.generation;
       const previous = state.session;
@@ -127,10 +135,13 @@ export const deckAgentPlugin = (): Plugin => ({
       try {
         const { client, sdk } = await startCopilot();
         // The runtime silently falls back to another model for unknown ids, so check up front
+        const modelListAt = performance.now();
         const modelIds = (await client.listModels()).map((m) => m.id);
+        log(`model list loaded in ${elapsedMs(modelListAt)}ms (${modelIds.length} available)`);
         if (!modelIds.includes(model)) {
           throw new Error(`Model "${model}" is not available. Set DECK_AGENT_MODEL to one of: ${modelIds.join(', ')}`);
         }
+        const sessionSetupAt = performance.now();
         const session = await client.createSession({
           model,
           tools: [
@@ -158,11 +169,11 @@ export const deckAgentPlugin = (): Plugin => ({
           return;
         }
         state.session = session;
-        log(`session ready (model ${model})`);
+        log(`session created in ${elapsedMs(sessionSetupAt)}ms; ready (model ${model}) after ${elapsedMs(setupAt)}ms total`);
         sendStatus({ state: 'ready', model });
       } catch (error) {
         const message = explain(error);
-        logError(message);
+        logError(`session setup failed after ${elapsedMs(setupAt)}ms: ${message}`);
         if (generation === state.generation) {
           sendStatus({ state: 'error', message });
         }
@@ -175,6 +186,7 @@ export const deckAgentPlugin = (): Plugin => ({
       if (call) {
         clearTimeout(call.timer);
         pending?.delete(callId);
+        log(`browser tool ${call.name} call=${callId} completed in ${elapsedMs(call.startedAt)}ms`);
         call.resolve(result);
       }
     });
@@ -185,12 +197,14 @@ export const deckAgentPlugin = (): Plugin => ({
         ws.send(DeckAgentEvent.error, { requestId, message: 'Assistant not ready.' });
         return;
       }
+      const promptAt = performance.now();
       try {
         const event = await session.sendAndWait({ prompt: `[${position}]\n${text}` }, PROMPT_TIMEOUT_MS);
+        log(`prompt request=${requestId} completed in ${elapsedMs(promptAt)}ms`);
         ws.send(DeckAgentEvent.reply, { requestId, reply: event?.data.content?.trim() || 'Done.' });
       } catch (error) {
         const message = explain(error);
-        logError(message);
+        logError(`prompt request=${requestId} failed after ${elapsedMs(promptAt)}ms: ${message}`);
         ws.send(DeckAgentEvent.error, { requestId, message });
       }
     });

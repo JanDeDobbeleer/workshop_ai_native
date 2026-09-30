@@ -114,6 +114,12 @@ $env:DECK_AGENT_MODEL = "mai-code-1.1-flash"; npm run dev
 
 The chat shows the connection status. If the session can't start, the chat shows the reason, for example that you're not logged in, or that the model isn't available along with the models your account can use.
 
+### Assistant latency diagnostics
+
+The Vite server terminal logs elapsed times for Copilot runtime startup, model-list loading, session creation/readiness, each prompt through its final response, and each browser tool round trip (including timeouts). Prompt timings cover the complete SDK turn, including any model/tool steps; prompt text and reply content are not logged. Runtime startup is a one-time cold-start cost per dev-server process, while session setup occurs when a page connects.
+
+To compare models, restart `npm run dev` with a different `DECK_AGENT_MODEL` and send the same representative prompts in a fresh page session. Compare startup/setup separately from prompt durations, and distinguish the first prompt from later prompts so cold-start effects do not skew the comparison.
+
 ### What the agent can do
 
 The session is locked down to the deck's navigation tools: go to a slide or section, search slides, next/previous, go back, and "where am I". It can also look up a curated Markdown knowledge base (see [`src/knowledge/README.md`](src/knowledge/README.md)) for background details and source links that aren't on the slides themselves. It can also list and read the README, Markdown and source under `src/`, `server/` and `docs/`, through a read-only, allow-listed reader that rejects paths outside the repo, dotfiles, `node_modules` and build output. It has no shell, write or web access, and it doesn't load custom instructions, skills or memory from your machine. Each page load starts a new conversation.
