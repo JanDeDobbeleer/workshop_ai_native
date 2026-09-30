@@ -82,11 +82,11 @@ crypto.subtle.digest('SHA-256', new TextEncoder().encode('your-password'))
 | Previous slide  | ← arrow key or Previous button   |
 | Jump to section | Hamburger menu or dot indicators |
 | Toggle nav side | Panel toggle button              |
-| Deck assistant  | ✨ floating button (bottom-right, `npm run dev` only) |
+| Deck assistant  | Chat-bot button (bottom-right, `npm run dev` only); click outside or press Esc to close |
 
 ## Deck Assistant
 
-A pop-out chat (✨ button, bottom-right) that drives the deck from plain text. It is powered by the [GitHub Copilot SDK](https://github.com/github/copilot-sdk), which runs inside the Vite dev server. The model calls a small set of navigation tools, and those tools run in the page. For example:
+A pop-out chat (chat-bot button, bottom-right) that drives the deck from plain text. It is powered by the [GitHub Copilot SDK](https://github.com/github/copilot-sdk), which runs inside the Vite dev server. The model calls a small set of navigation tools, and those tools run in the page. For example:
 
 - "Go to the slide about the core loop": finds the slide by title/content and jumps to it
 - "Go back to where I was": returns to the slide the last jump started from (menu jumps count too)
