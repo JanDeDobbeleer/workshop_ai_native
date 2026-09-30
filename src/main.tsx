@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { ChevronLeft, ChevronRight, Menu, X, Presentation, Sparkles, Target, Box, Code, Terminal, ShieldAlert, ScrollText, MessageSquare, Brain, Puzzle, Network, PanelRight, PanelLeft, Plug, TrendingUp, Cpu, FileCode, Wrench, HeartHandshake, RefreshCw, Workflow, Factory } from 'lucide-react';
-import { introSlides, llmSlides, fluencySlides, modelsSlides, copilotCliSlides, securitySlides, instructionsSlides, promptingSlides, agentsSlides, harnessEngineeringSlides, habitatEngineeringSlides, contextSlides, evolutionSlides, multiagentSlides, loopEngineeringSlides, sdkSlides, mcpSlides, closingSlides, ollamaSlides, graphEngineeringSlides, softwareFactoriesSlides, speckitSlides } from './sections';
+import { ChevronLeft, ChevronRight, Menu, X, PanelRight, PanelLeft } from 'lucide-react';
+import { NavigationProvider, useNavigation } from './context/NavigationContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import './index.css';
@@ -16,48 +16,6 @@ import './index.css';
 const WORKSHOP_PASSWORD_HASH = import.meta.env.VITE_WORKSHOP_PASSWORD_HASH ||
   'ee510d1a07ac7e6491ea191cd1918ea553ed2a358c8a0a04c1b90bd89222c314'; // hash of 'workshop'
 
-// Section definitions with metadata
-const sections = [
-  { name: 'Introduction', slides: introSlides, color: 'gray', icon: Presentation },
-  { name: 'Evolution', slides: evolutionSlides, color: 'indigo', icon: TrendingUp },
-  { name: 'LLM Basics', slides: llmSlides, color: 'blue', icon: Sparkles },
-  { name: '4D Fluency', slides: fluencySlides, color: 'green', icon: Target },
-  { name: 'Models', slides: modelsSlides, color: 'orange', icon: Box },
-  { name: 'Prompting', slides: promptingSlides, color: 'indigo', icon: MessageSquare },
-  { name: 'Instructions', slides: instructionsSlides, color: 'green', icon: ScrollText },
-  { name: 'Agents & Skills', slides: agentsSlides, color: 'purple', icon: Puzzle },
-  { name: 'Context', slides: contextSlides, color: 'purple', icon: Brain },
-  { name: 'Spec Kit', slides: speckitSlides, color: 'teal', icon: FileCode },
-  { name: 'Security', slides: securitySlides, color: 'red', icon: ShieldAlert },
-  { name: 'MCP', slides: mcpSlides, color: 'teal', icon: Plug },
-  { name: 'Harness Engineering', slides: harnessEngineeringSlides, color: 'amber', icon: Wrench },
-  { name: 'Habitat Engineering', slides: habitatEngineeringSlides, color: 'rose', icon: HeartHandshake },
-  { name: 'Terminal Agents', slides: copilotCliSlides, color: 'gray', icon: Terminal },
-  { name: 'Multi-Agent', slides: multiagentSlides, color: 'purple', icon: Network },
-  { name: 'Loop Engineering', slides: loopEngineeringSlides, color: 'cyan', icon: RefreshCw },
-  { name: 'Graph Engineering', slides: graphEngineeringSlides, color: 'slate', icon: Workflow },
-  { name: 'Closing', slides: closingSlides, color: 'gray', icon: Presentation },
-  { name: '__addendum__', slides: [], color: 'gray', icon: Presentation },
-  { name: 'Ollama', slides: ollamaSlides, color: 'blue', icon: Cpu },
-  { name: 'Agent SDKs', slides: sdkSlides, color: 'indigo', icon: Code },
-  { name: 'Software Factories', slides: softwareFactoriesSlides, color: 'slate', icon: Factory },
-];
-
-// Calculate section start indices
-const getSectionStartIndices = () => {
-  let index = 0;
-  return sections.map((section) => {
-    const startIndex = index;
-    index += section.slides.length;
-    return { ...section, startIndex, endIndex: index - 1 };
-  });
-};
-
-const sectionData = getSectionStartIndices();
-const mainContentEndIndex =
-  sectionData.find((s) => s.name === 'Closing')?.endIndex ??
-  sectionData.reduce((acc, s) => acc + s.slides.length, 0) - 1;
-
 const FourDSlides = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [navOnLeft, setNavOnLeft] = useState(() => {
@@ -65,54 +23,10 @@ const FourDSlides = () => {
     const stored = localStorage.getItem('navOnLeft');
     return stored === 'true';
   });
-  const [currentSlide, setCurrentSlide] = useState(() => {
-    // Read initial slide from query parameter (1-based)
-    const params = new URLSearchParams(window.location.search);
-    const slideParam = params.get('slide');
-    if (slideParam) {
-      const slideNumber = parseInt(slideParam, 10);
-      if (!isNaN(slideNumber) && slideNumber > 0) {
-        return slideNumber - 1; // Convert to 0-based index
-      }
-    }
-    return 0;
-  });
-
-  // Combine all slide sections
-  const slides = [
-    ...introSlides,
-    ...evolutionSlides,
-    ...llmSlides,
-    ...fluencySlides,
-    ...modelsSlides,
-    ...promptingSlides,
-    ...instructionsSlides,
-    ...agentsSlides,
-    ...contextSlides,
-    ...speckitSlides,
-    ...securitySlides,
-    ...mcpSlides,
-    ...harnessEngineeringSlides,
-    ...habitatEngineeringSlides,
-    ...copilotCliSlides,
-    ...multiagentSlides,
-    ...loopEngineeringSlides,
-    ...graphEngineeringSlides,
-    ...closingSlides,
-    ...ollamaSlides,
-    ...sdkSlides,
-    ...softwareFactoriesSlides,
-  ];
-
-  // Get current section based on slide index
-  const getCurrentSection = () => {
-    return sectionData.find(
-      (section) => currentSlide >= section.startIndex && currentSlide <= section.endIndex
-    );
-  };
+  const { currentSlide, setCurrentSlide, gotoSlide, currentSection, sectionData, mainContentEndIndex, slides } = useNavigation();
 
   const jumpToSection = (startIndex: number) => {
-    setCurrentSlide(startIndex);
+    gotoSlide(startIndex);
     setMenuOpen(false);
   };
 
@@ -271,7 +185,7 @@ const FourDSlides = () => {
                   </li>
                 );
               }
-              const isActive = getCurrentSection()?.name === section.name;
+              const isActive = currentSection?.name === section.name;
               const colorClasses: Record<string, string> = {
                 gray: 'bg-gray-100 border-gray-500 text-gray-900',
                 blue: 'bg-blue-50 border-blue-500 text-blue-900',
@@ -437,7 +351,9 @@ const App = () => {
     <AuthProvider passwordHash={WORKSHOP_PASSWORD_HASH}>
       <LogoutHelper />
       <ProtectedRoute passwordHash={WORKSHOP_PASSWORD_HASH}>
-        <FourDSlides />
+        <NavigationProvider>
+          <FourDSlides />
+        </NavigationProvider>
       </ProtectedRoute>
     </AuthProvider>
   );
