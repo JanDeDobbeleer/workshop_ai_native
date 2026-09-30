@@ -244,56 +244,6 @@ export const habitatEngineeringSlides: SlideType[] = [
     )
   },
   {
-    title: "A Hidden Gem, Still Early",
-    subtitle: "Less hype than harness/loop engineering, for now.",
-    content: (
-      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
-        <div className="bg-rose-50 p-4 rounded-lg border-l-4 border-rose-500">
-          <h3 className="text-xl font-bold text-rose-900 mb-2">Honest framing</h3>
-          <p className="text-gray-700">Of all the new terms in this workshop, habitat engineering is the least developed. There isn't much public consensus yet on what "good" looks like. But as teams scale past the solo-engineer-plus-agent setup, it's likely to matter more, not less.</p>
-        </div>
-
-        <div className="bg-white p-4 rounded-lg shadow border border-rose-200">
-          <h4 className="font-semibold text-rose-900 mb-2">📖 Where the Term Comes From</h4>
-          <p className="text-sm text-gray-700">
-            The term is associated with <strong>Russ Miles</strong>, who writes about it as part of his "Sovereign Engineer" / "Sovereign Apprentice" work. Worth reading as further exploration of the idea, though the writing style leans heavily AI-generated. The underlying ideas are still worth engaging with.
-          </p>
-        </div>
-
-        <div className="bg-rose-100 p-4 rounded-lg">
-          <p className="text-sm italic text-rose-900">
-            <strong>Take it as a starting point, not a spec:</strong> this is a concept to watch and shape, not one to follow blindly.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Habitat Engineering Checklist",
-    subtitle: "Start here.",
-    content: (
-      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
-        <div className="bg-white p-5 rounded-lg shadow border border-rose-200">
-          <h4 className="font-semibold text-rose-900 mb-3">✅ Checklist</h4>
-          <ul className="space-y-2 text-gray-700 text-sm">
-            <li className="flex"><span className="mr-2">✅</span><span>Architecture documented somewhere agents and humans both read</span></li>
-            <li className="flex"><span className="mr-2">✅</span><span>AGENTS.md / custom instructions kept current</span></li>
-            <li className="flex"><span className="mr-2">✅</span><span>Skills capture recurring workflows</span></li>
-            <li className="flex"><span className="mr-2">✅</span><span>Config packaged &amp; versioned (e.g. APM) so it travels with the repo</span></li>
-            <li className="flex"><span className="mr-2">✅</span><span>A review process both humans and agents participate in</span></li>
-            <li className="flex"><span className="mr-2">✅</span><span>Onboarding docs a new hire (or a new agent session) could actually follow</span></li>
-          </ul>
-        </div>
-
-        <div className="bg-rose-100 p-4 rounded-lg">
-          <p className="text-sm italic text-rose-900">
-            <strong>Pro Tip:</strong> Design your habitat for the multiplayer case from day one. The team you build for today is never just you plus one agent for long.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
     title: "Demo: A Real Habitat in Production",
     subtitle: "oh-my-posh: project-knowledge skill + apm.yml",
     content: (
