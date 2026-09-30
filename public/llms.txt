@@ -23,7 +23,8 @@
 - [Model Context Protocol (MCP)](https://ainativedev.itdepends.be): The universal standard for connecting AI to external systems — MCP servers, tools, resources, and how to expose your own APIs to AI
 - [Team Knowledge](https://ainativedev.itdepends.be): Shared knowledge bases and team-wide AI configuration — Copilot Spaces, APM, shared instruction repos
 - [Terminal Agents](https://ainativedev.itdepends.be): CLI entry points across tools — Copilot CLI deep dive, Claude Code, Cursor, Codex, Devin Desktop
-- [Multi-Agent](https://ainativedev.itdepends.be): Parallel orchestration — define/delegate/parallelize/isolate/synthesize, worktrees, and when multi-agent helps vs hurts
+- [Multi-Agent](https://ainativedev.itdepends.be): Multiple scoped conversations that add capacity through bounded outcomes, separate context, isolated code work, reviewable handback, and sufficient review capacity
+- [Graph Engineering](https://ainativedev.itdepends.be): Explicit workflow design using state, nodes, edges, routing, safe fan-out and fan-in, gates, synthesis, verification, and a deliberate complexity budget
 - [Closing](https://ainativedev.itdepends.be): Workshop summary, next steps, and feedback
 
 ## Optional / Addendum

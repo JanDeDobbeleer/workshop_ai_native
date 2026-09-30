@@ -20,7 +20,9 @@ An interactive slideshow for the **AI Native Developer Workshop**, built with Re
 | MCP               | Model Context Protocol                             |
 | Team Knowledge    | Shared knowledge bases (Spaces, APM, repos)        |
 | Terminal Agents   | CLI entry points — Copilot, Claude, Cursor, Codex  |
-| Multi-Agent       | Parallel orchestration, worktrees, synthesis       |
+| Multi-Agent       | Scoped conversations, isolated code work, review capacity |
+| Loop Engineering  | Reliable sequential agent workflows                |
+| Graph Engineering | Explicit routing, safe branches, gates, synthesis  |
 | Closing           | Summary and next steps                             |
 | Ollama *(addendum)* | Running models locally                           |
 | Agent SDKs *(addendum)* | Programmatic agent runtimes                    |

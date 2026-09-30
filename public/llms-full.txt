@@ -94,7 +94,11 @@ Covers how the developer role changes at each stage and what skills matter most.
 
 ## Section: Multi-Agent
 
-Orchestrating multiple AI agents. Topics: five-step loop (define → delegate → parallelize → isolate → synthesize), hub-and-spoke delegation, git worktrees for isolation, orchestration matrices across tools, when multi-agent helps vs hurts, synthesis and merge discipline, and practical patterns for complex tasks.
+Running multiple independent agent conversations at once to add capacity. Topics: bounded outcomes, separate context, worktree isolation for code-writing sessions, reviewable branch/diff/PR handback, clear ownership, and the human review capacity needed to absorb parallel work.
+
+## Section: Graph Engineering
+
+Designing execution flow as an explicit graph. Topics: state, nodes, fixed and conditional edges, safe fan-out and fan-in, bounded branch contracts, integration ownership, review and verification gates, graphs described in Markdown, graphs enforced by a harness, and the complexity cost of every added edge.
 
 ## Section: Agent SDKs
 

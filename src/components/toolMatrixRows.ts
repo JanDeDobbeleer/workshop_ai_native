@@ -122,59 +122,6 @@ export const mcpMatrixRows: ToolMatrixRow[] = [
   },
 ];
 
-export const orchestrationMatrixRows: ToolMatrixRow[] = [
-  {
-    label: 'Define',
-    cells: {
-      cursor: { kind: 'code', value: '.cursor/agents/*.md' },
-      claude: { kind: 'code', value: '.claude/agents/*.md' },
-      copilot: { kind: 'code', value: '.github/agents/*.md' },
-      codex: { kind: 'code', value: '.codex/agents/*.toml' },
-      devin: { kind: 'code', value: '.devin/agents/<name>/AGENT.md' },
-    },
-  },
-  {
-    label: 'Delegate',
-    cells: {
-      cursor: { kind: 'text', value: 'Subagent spawn' },
-      claude: { kind: 'text', value: 'Auto-delegate via description' },
-      copilot: { kind: 'text', value: 'Handoffs between session types' },
-      codex: { kind: 'text', value: 'Subagent tree' },
-      devin: { kind: 'text', value: 'ACC / Kanban assign' },
-    },
-  },
-  {
-    label: 'Parallelize',
-    cells: {
-      cursor: { kind: 'text', value: '/multitask, async subagents' },
-      claude: { kind: 'text', value: 'Parallel subagent tree' },
-      copilot: { kind: 'text', value: 'Cloud + background sessions' },
-      codex: { kind: 'text', value: 'agents.max_threads' },
-      devin: { kind: 'text', value: 'Parallel local + cloud lanes' },
-    },
-  },
-  {
-    label: 'Isolate',
-    cells: {
-      cursor: { kind: 'text', value: 'Git worktrees' },
-      claude: { kind: 'text', value: 'worktree isolation option' },
-      copilot: { kind: 'text', value: 'Worktrees where supported' },
-      codex: { kind: 'text', value: 'Worktrees' },
-      devin: { kind: 'text', value: 'Git worktrees' },
-    },
-  },
-  {
-    label: 'Synthesize',
-    cells: {
-      cursor: { kind: 'text', value: 'Parent chat + human review' },
-      claude: { kind: 'text', value: 'Parent summarizes' },
-      copilot: { kind: 'text', value: 'PR / session handback' },
-      codex: { kind: 'text', value: 'Parent thread merge' },
-      devin: { kind: 'text', value: 'ACC review + merge' },
-    },
-  },
-];
-
 export const terminalAgentsMatrixRows: ToolMatrixRow[] = [
   {
     label: 'CLI entry point',
