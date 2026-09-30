@@ -61,5 +61,15 @@ export const mainContentEndIndex =
 // All slides combined; derived from `sections` so indices always line up with `sectionData`
 export const slides: SlideType[] = sections.flatMap((section) => section.slides);
 
+// Linear forward navigation is capped at the end of the Closing section, but once a
+// reader is inside the addendum (reached via the menu) Next must advance within it.
+export const nextIndex = (i: number): number =>
+  i <= mainContentEndIndex
+    ? Math.min(i + 1, mainContentEndIndex)
+    : Math.min(i + 1, slides.length - 1);
+
+export const canGoNext = (i: number): boolean =>
+  i < mainContentEndIndex - 1 || (i > mainContentEndIndex && i < slides.length - 1);
+
 export const findSectionForSlide = (index: number): SectionMeta | undefined =>
   sectionData.find((section) => index >= section.startIndex && index <= section.endIndex);

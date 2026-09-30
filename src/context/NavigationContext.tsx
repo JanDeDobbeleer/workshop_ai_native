@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useContext, useMemo, useRef, useState } from 'react';
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
-import { sections, sectionData, mainContentEndIndex, slides, findSectionForSlide } from '../slides/deck';
+import { sections, sectionData, mainContentEndIndex, slides, findSectionForSlide, nextIndex } from '../slides/deck';
 import type { Section, SectionMeta } from '../slides/deck';
 import type { SlideType } from '../sections';
 import { slideCatalog } from '../utils/slideCatalog';
@@ -95,7 +95,7 @@ export const NavigationProvider: React.FC<{ children: ReactNode }> = ({ children
   }, [setCurrentSlide, updateBackStack]);
 
   const next = useCallback(() => {
-    setCurrentSlide((prev) => Math.min(prev + 1, mainContentEndIndex));
+    setCurrentSlide((prev) => nextIndex(prev));
     return currentRef.current;
   }, [setCurrentSlide]);
 

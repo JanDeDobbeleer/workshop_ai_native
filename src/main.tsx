@@ -5,6 +5,7 @@ import { NavigationProvider, useNavigation } from './context/NavigationContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { CopilotChat } from './components/CopilotChat';
+import { nextIndex, canGoNext } from './slides/deck';
 import './index.css';
 
 // Workshop password hash (SHA-256)
@@ -24,7 +25,7 @@ const FourDSlides = () => {
     const stored = localStorage.getItem('navOnLeft');
     return stored === 'true';
   });
-  const { currentSlide, setCurrentSlide, gotoSlide, currentSection, sectionData, mainContentEndIndex, slides } = useNavigation();
+  const { currentSlide, setCurrentSlide, gotoSlide, currentSection, sectionData, slides } = useNavigation();
 
   const jumpToSection = (startIndex: number) => {
     gotoSlide(startIndex);
@@ -49,11 +50,11 @@ const FourDSlides = () => {
   };
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => Math.min(prev + 1, mainContentEndIndex));
+    setCurrentSlide((prev) => nextIndex(prev));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlide((prev) => Math.max(prev - 1, 0));
   };
 
   // Validate and clamp currentSlide to valid range
@@ -70,7 +71,7 @@ const FourDSlides = () => {
       if (e.key === 'Escape' && menuOpen) {
         setMenuOpen(false);
       } else if (e.key === 'ArrowRight' && !menuOpen) {
-        setCurrentSlide((prev) => Math.min(prev + 1, mainContentEndIndex));
+        setCurrentSlide((prev) => nextIndex(prev));
       } else if (e.key === 'ArrowLeft' && !menuOpen) {
         setCurrentSlide((prev) => Math.max(prev - 1, 0));
       }
@@ -101,7 +102,7 @@ const FourDSlides = () => {
           setCurrentSlide((prev) => Math.max(prev - 1, 0));
         } else {
           // Swiped left - go to next slide
-          setCurrentSlide((prev) => Math.min(prev + 1, mainContentEndIndex));
+          setCurrentSlide((prev) => nextIndex(prev));
         }
       }
     };
@@ -300,7 +301,7 @@ const FourDSlides = () => {
             </div>
 
             <div className="flex justify-end">
-              {currentSlide < mainContentEndIndex - 1 && (
+              {canGoNext(currentSlide) && (
                 <button
                   onClick={nextSlide}
                   className="flex items-center space-x-1 md:space-x-2 px-3 py-1.5 md:px-4 md:py-2 bg-white rounded-lg shadow hover:bg-gray-50 transition-all text-sm md:text-base md:hidden"
@@ -316,7 +317,7 @@ const FourDSlides = () => {
           </div>
 
           <div className="hidden md:flex md:flex-1 md:justify-end">
-            {currentSlide < mainContentEndIndex - 1 && (
+            {canGoNext(currentSlide) && (
               <button
                 onClick={nextSlide}
                 className="flex items-center space-x-2 px-4 py-2 bg-white rounded-lg shadow hover:bg-gray-50 transition-all"
