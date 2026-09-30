@@ -69,6 +69,10 @@ The loader builds a `name → section` map from `sectionData` in `src/slides/dec
 - An unknown section name or an out-of-range `slide` leaves the entry unmapped
   (`slideIndex: -1`); it stays searchable and logs a `console.warn` in dev so you can fix the
   ordinal.
+- `npm run check:knowledge` (also run automatically at the start of `npm run build`) is the
+  fail-loud version: it derives the section order and slide counts from `deck.ts` +
+  `src/sections/*.tsx` and exits non-zero if any file has an unknown section, an out-of-range
+  ordinal, or an empty body — so a slide reorder can't silently break the mapping.
 
 ## Adding more
 
@@ -76,7 +80,12 @@ The loader builds a `name → section` map from `sectionData` in `src/slides/dec
 2. Add `_section.md` (`scope: section`) with a short overview and the section's links.
 3. For per-slide depth, read the matching `src/sections/<file>.tsx`, count slide objects to get
    the ordinal, and add `<NN>-<slide-slug>.md`.
-4. Run `npm run dev` and watch the console for unresolved-mapping warnings.
+4. Run `npm run check:knowledge` to confirm every file resolves (and watch the `npm run dev`
+   console for unresolved-mapping warnings).
+
+When adding `sources`, verify each link is live and that its description matches the actual
+page — the agent has no web access, so the description in the body is what informs it, and an
+inaccurate summary is worse than no source at all.
 
 Seeded so far: `_section.md` for every section, plus per-slide files for the three densest
 sections — **MCP**, **Context**, and **Instructions**. Extend the rest the same way.

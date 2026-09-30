@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && tsc -p tsconfig.node.json && vite build",
+    "build": "node scripts/check-knowledge.mjs && tsc && tsc -p tsconfig.node.json && vite build",
+    "check:knowledge": "node scripts/check-knowledge.mjs",
     "preview": "vite preview",
     "build:export": "vite build --config vite.config.export.ts",
     "export": "node scripts/export-pdf.js"
