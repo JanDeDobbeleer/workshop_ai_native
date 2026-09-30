@@ -12,5 +12,6 @@ hub-and-spoke delegation, an independence test, and using git worktrees so paral
 never share a working tree.
 
 Source links:
-- **github.com/github/app**: GitHub's app/platform referenced for orchestration.
+- **github.com/github/app**: the GitHub Copilot desktop app, an agent-native experience for
+  running and orchestrating coding agents.
 - **docs.devin.ai**: Devin's documentation, an example autonomous multi-agent system.

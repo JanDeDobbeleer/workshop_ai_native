@@ -10,7 +10,9 @@ and user output, with an OWASP-style view of the risks. Covers real vulnerabilit
 AI coding assistants and concrete actions developers and organizations can take.
 
 Source links:
-- **arXiv:2309.07639**: research on LLM security/vulnerabilities.
+- **arXiv:2309.07639** ("Your Code Secret Belongs to Me"): shows neural code-completion
+  tools can memorize and emit hard-coded credentials from their training data — a concrete
+  data-leakage risk of AI coding assistants.
 - **"Hiding in Plain Sight" (Idan Habler)**: weaponizing invisible Unicode to smuggle
   instructions past humans into an LLM (a prompt-injection vector).
 - **Prompt Security blog**: securing enterprise data against Copilot-style vulnerabilities.
