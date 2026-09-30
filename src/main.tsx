@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Menu, X, PanelRight, PanelLeft } from 'lucid
 import { NavigationProvider, useNavigation } from './context/NavigationContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import { CopilotChat } from './components/CopilotChat';
 import './index.css';
 
 // Workshop password hash (SHA-256)
@@ -353,6 +354,7 @@ const App = () => {
       <ProtectedRoute passwordHash={WORKSHOP_PASSWORD_HASH}>
         <NavigationProvider>
           <FourDSlides />
+          <CopilotChat />
         </NavigationProvider>
       </ProtectedRoute>
     </AuthProvider>
