@@ -45,6 +45,17 @@ export const toolDefinitions: ToolDefinition[] = [
     description: 'Go back to the slide the user was on before the most recent jump ("go back to where I was").',
     parameters: noParams,
   },
+  {
+    name: 'lookupKnowledge',
+    description:
+      'Search the curated knowledge base for background details, definitions, and source links that expand on the slides. Use this when the user asks what a topic means or wants detail/sources, not just navigation.',
+    parameters: {
+      type: 'object',
+      properties: { query: { type: 'string', description: 'Keywords/topic to look up' } },
+      required: ['query'],
+      additionalProperties: false,
+    },
+  },
   { name: 'nextSlide', description: 'Move to the next slide.', parameters: noParams },
   { name: 'prevSlide', description: 'Move to the previous slide.', parameters: noParams },
   { name: 'whereAmI', description: 'Describe the current slide.', parameters: noParams },
@@ -56,6 +67,7 @@ export const deckAgentInstructions = (catalogListing: string): string =>
     'When the user asks to move around the deck, call the navigation tools; do not just describe what you would do.',
     'Use the catalog below to pick a slide number. If unsure which slide matches, call findSlides first, then gotoSlide.',
     'When the user asks to go back to where they were, call goBack.',
+    'To answer questions about what a topic means or to cite sources/background beyond the slide text, call lookupKnowledge and use the returned source links in your reply.',
     'After performing an action, reply in one short sentence (e.g. "Done - on The Core Loop."). Answer questions briefly.',
     'Each user message starts with the current deck position in brackets.',
     '',

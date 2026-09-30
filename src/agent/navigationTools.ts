@@ -1,5 +1,6 @@
 import type { NavigationContextType } from '../context/NavigationContext';
 import type { SlideCatalogEntry } from '../utils/slideCatalog';
+import { searchKnowledge } from '../utils/knowledgeBase';
 import type { ToolExecutor } from './types';
 
 // Slide numbers shown to the model and the user are 1-based, matching the deck URL (?slide=N)
@@ -23,7 +24,7 @@ export const findSlides = (catalog: SlideCatalogEntry[], query: string, limit = 
   return catalog
     .map((entry) => {
       const heading = `${entry.title} ${entry.subtitle}`.toLowerCase();
-      const body = entry.text.toLowerCase();
+      const body = (entry.text + ' ' + (entry.knowledge ?? '')).toLowerCase();
       let score = 0;
       tokens.forEach((token) => {
         if (heading.includes(token)) score += 3;
@@ -70,6 +71,20 @@ export const createToolExecutor = (nav: NavigationContextType): ToolExecutor => 
           return 'No matching slides.';
         }
         return matches.map((entry) => `[${slideNumber(entry)}] ${entry.section} - ${slideLabel(entry)}${entry.subtitle ? `: ${entry.subtitle}` : ''}`).join('\n');
+      }
+      case 'lookupKnowledge': {
+        const matches = searchKnowledge(String(args.query ?? ''), 3);
+        if (matches.length === 0) {
+          return 'No matching knowledge base entries.';
+        }
+        return matches
+          .map((entry) => {
+            const loc = entry.slideIndex >= 0 ? ` (slide ${entry.slideIndex + 1})` : '';
+            const body = entry.body.length > 700 ? `${entry.body.slice(0, 700)}…` : entry.body;
+            const src = entry.sources.length ? `\nSources: ${entry.sources.join(', ')}` : '';
+            return `## ${entry.title || entry.section}${loc}\n${body}${src}`;
+          })
+          .join('\n\n');
       }
       case 'goBack': {
         const target = nav.goBack();

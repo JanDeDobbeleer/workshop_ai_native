@@ -116,4 +116,4 @@ The chat shows the connection status. If the session can't start, the chat shows
 
 ### What the agent can do
 
-The session is locked down to the deck's navigation tools: go to a slide or section, search slides, next/previous, go back, and "where am I". It has no shell, file or web access, and it doesn't load custom instructions, skills or memory from your machine. Each page load starts a new conversation.
+The session is locked down to the deck's navigation tools: go to a slide or section, search slides, next/previous, go back, and "where am I". It can also look up a curated Markdown knowledge base (see [`src/knowledge/README.md`](src/knowledge/README.md)) for background details and source links that aren't on the slides themselves. It has no shell, file or web access, and it doesn't load custom instructions, skills or memory from your machine. Each page load starts a new conversation.
