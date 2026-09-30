@@ -354,7 +354,7 @@ const App = () => {
       <ProtectedRoute passwordHash={WORKSHOP_PASSWORD_HASH}>
         <NavigationProvider>
           <FourDSlides />
-          <CopilotChat />
+          {import.meta.hot && <CopilotChat hot={import.meta.hot} />}
         </NavigationProvider>
       </ProtectedRoute>
     </AuthProvider>

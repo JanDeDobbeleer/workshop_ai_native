@@ -1,85 +1,74 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Bot, Loader2, Send, Settings, Sparkles, X } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Bot, Loader2, Send, Sparkles, X } from 'lucide-react';
 import { useNavigation } from '../context/NavigationContext';
 import { createToolExecutor } from '../agent/navigationTools';
-import { createBackend, DEFAULT_AGENT_CONFIG } from '../agent/openAICompatBackend';
-import type { AgentConfig, ChatMessage } from '../agent/types';
+import { createCopilotBridge } from '../agent/copilotBridge';
+import type { CopilotBridge, HotChannel } from '../agent/copilotBridge';
+import type { StatusPayload } from '../agent/deckAgentProtocol';
+import type { ChatMessage } from '../agent/types';
 
 interface UiMessage extends ChatMessage {
-  role: 'user' | 'assistant';
   isError?: boolean;
 }
 
-const STORAGE_PREFIX = 'copilot_chat_';
-const CONFIG_KEYS: (keyof AgentConfig)[] = ['apiKey', 'model', 'baseUrl'];
-const SUGGESTIONS = ['Go to the core loop slide', 'Go back to where I was', 'Where am I?'];
+type ConnectionStatus = StatusPayload | { state: 'connecting' };
 
-const loadConfig = (): AgentConfig => {
-  const config = { ...DEFAULT_AGENT_CONFIG };
-  CONFIG_KEYS.forEach((key) => {
-    const stored = sessionStorage.getItem(STORAGE_PREFIX + key);
-    if (stored) {
-      config[key] = stored;
-    }
-  });
-  return config;
-};
+interface CopilotChatProps {
+  /** The dev server's HMR channel; the assistant only exists under `npm run dev` */
+  hot: HotChannel;
+}
+
+const SUGGESTIONS = ['Go to the core loop slide', 'Go back to where I was', 'Where am I?'];
 
 // Keep keyboard/touch events inside the chat from reaching the deck's window listeners
 const stopPropagation = (e: React.SyntheticEvent) => e.stopPropagation();
 
-export const CopilotChat: React.FC = () => {
+export const CopilotChat: React.FC<CopilotChatProps> = ({ hot }) => {
   const nav = useNavigation();
   const [isOpen, setIsOpen] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
-  const [config, setConfig] = useState<AgentConfig>(loadConfig);
+  const [status, setStatus] = useState<ConnectionStatus>({ state: 'connecting' });
   const [messages, setMessages] = useState<UiMessage[]>([]);
   const [input, setInput] = useState('');
   const [isThinking, setIsThinking] = useState(false);
+  const bridgeRef = useRef<CopilotBridge>();
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Navigation methods are stable and read live state, so the backend only changes with config
-  const { gotoSlide, gotoSection, goBack, next, prev, getCurrentSlide, catalog } = nav;
-  const backend = useMemo(() => {
-    const executor = createToolExecutor(nav);
-    return createBackend(config, executor, catalog);
-  }, [config, gotoSlide, gotoSection, goBack, next, prev, getCurrentSlide, catalog]);
+  // Navigation methods are stable and read live state, so the bridge lives as long as the HMR channel
+  useEffect(() => {
+    const bridge = createCopilotBridge(hot, createToolExecutor(nav), nav.catalog);
+    bridgeRef.current = bridge;
+    setStatus({ state: 'connecting' });
+    bridge.connect(setStatus);
+    return () => {
+      bridge.dispose();
+      bridgeRef.current = undefined;
+    };
+  }, [hot]);
+
+  const isReady = status.state === 'ready';
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: 'smooth' });
   }, [messages, isThinking]);
 
   useEffect(() => {
-    if (isOpen && !showSettings) {
+    if (isOpen && isReady) {
       inputRef.current?.focus();
     }
-  }, [isOpen, showSettings, isThinking]);
-
-  const updateConfig = (key: keyof AgentConfig, value: string) => {
-    setConfig((prev) => ({ ...prev, [key]: value }));
-    if (value) {
-      sessionStorage.setItem(STORAGE_PREFIX + key, value);
-    } else {
-      sessionStorage.removeItem(STORAGE_PREFIX + key);
-    }
-  };
+  }, [isOpen, isReady, isThinking]);
 
   const send = async (text: string) => {
     const trimmed = text.trim();
-    if (!trimmed || isThinking) {
+    const bridge = bridgeRef.current;
+    if (!trimmed || isThinking || !isReady || !bridge) {
       return;
     }
-    if (!config.apiKey) {
-      setShowSettings(true);
-      return;
-    }
-    const history = messages.filter((m) => !m.isError);
     setMessages((prev) => [...prev, { role: 'user', content: trimmed }]);
     setInput('');
     setIsThinking(true);
     try {
-      const { reply } = await backend.send(trimmed, history);
+      const { reply } = await bridge.send(trimmed);
       setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
     } catch (error) {
       setMessages((prev) => [...prev, { role: 'assistant', content: (error as Error).message, isError: true }]);
@@ -100,7 +89,7 @@ export const CopilotChat: React.FC = () => {
     }
   };
 
-  const currentEntry = catalog[nav.currentSlide];
+  const currentEntry = nav.catalog[nav.currentSlide];
   const positionLabel = currentEntry?.title || currentEntry?.section || '';
 
   return (
@@ -124,61 +113,37 @@ export const CopilotChat: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-1">
-              <button
-                onClick={() => setShowSettings((prev) => !prev)}
-                className={`p-1.5 rounded-lg hover:bg-white/20 transition-colors ${showSettings ? 'bg-white/20' : ''}`}
-                aria-label="Assistant settings"
-                aria-pressed={showSettings}
-              >
-                <Settings className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-1.5 rounded-lg hover:bg-white/20 transition-colors"
-                aria-label="Close assistant"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="p-1.5 rounded-lg hover:bg-white/20 transition-colors"
+              aria-label="Close assistant"
+            >
+              <X className="w-4 h-4" />
+            </button>
           </div>
 
-          {showSettings && (
-            <div className="px-4 py-3 space-y-2 bg-gray-50 border-b border-gray-200 text-xs">
-              {!config.apiKey && (
-                <p className="text-amber-700">Add a GitHub Models token (or another OpenAI-compatible key) to start chatting. It is kept in this browser session only.</p>
-              )}
-              <label className="block">
-                <span className="text-gray-600 font-medium">API token</span>
-                <input
-                  type="password"
-                  value={config.apiKey}
-                  onChange={(e) => updateConfig('apiKey', e.target.value)}
-                  placeholder="github_pat_..."
-                  autoComplete="off"
-                  className="mt-0.5 w-full px-2 py-1.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                />
-              </label>
-              <label className="block">
-                <span className="text-gray-600 font-medium">Model</span>
-                <input
-                  value={config.model}
-                  onChange={(e) => updateConfig('model', e.target.value)}
-                  placeholder={DEFAULT_AGENT_CONFIG.model}
-                  className="mt-0.5 w-full px-2 py-1.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                />
-              </label>
-              <label className="block">
-                <span className="text-gray-600 font-medium">Endpoint</span>
-                <input
-                  value={config.baseUrl}
-                  onChange={(e) => updateConfig('baseUrl', e.target.value)}
-                  placeholder={DEFAULT_AGENT_CONFIG.baseUrl}
-                  className="mt-0.5 w-full px-2 py-1.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                />
-              </label>
-            </div>
-          )}
+          <div
+            role="status"
+            className={`px-4 py-1.5 text-xs border-b ${
+              status.state === 'error'
+                ? 'bg-red-50 text-red-800 border-red-200'
+                : 'bg-gray-50 text-gray-500 border-gray-200'
+            }`}
+          >
+            {status.state === 'connecting' && (
+              <span className="flex items-center gap-1.5">
+                <Loader2 className="w-3 h-3 animate-spin" />
+                Connecting to Copilot…
+              </span>
+            )}
+            {status.state === 'ready' && (
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-green-500" />
+                Connected to Copilot ({status.model})
+              </span>
+            )}
+            {status.state === 'error' && <span className="break-words">{status.message}</span>}
+          </div>
 
           <div ref={listRef} className="flex-1 min-h-[12rem] overflow-y-auto px-4 py-3 space-y-2 bg-gradient-to-b from-white to-gray-50">
             {messages.length === 0 && (
@@ -190,7 +155,8 @@ export const CopilotChat: React.FC = () => {
                     <button
                       key={suggestion}
                       onClick={() => void send(suggestion)}
-                      className="px-2.5 py-1 text-xs rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 transition-colors"
+                      disabled={!isReady}
+                      className="px-2.5 py-1 text-xs rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                     >
                       {suggestion}
                     </button>
@@ -231,14 +197,14 @@ export const CopilotChat: React.FC = () => {
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              disabled={isThinking}
-              placeholder={config.apiKey ? 'e.g. jump to the core loop' : 'Add a token in settings first'}
+              disabled={isThinking || !isReady}
+              placeholder={isReady ? 'e.g. jump to the core loop' : 'Waiting for Copilot…'}
               autoComplete="off"
               className="flex-1 px-3 py-2 text-sm rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 disabled:bg-gray-100"
             />
             <button
               type="submit"
-              disabled={isThinking || !input.trim()}
+              disabled={isThinking || !isReady || !input.trim()}
               className="p-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               aria-label="Send message"
             >

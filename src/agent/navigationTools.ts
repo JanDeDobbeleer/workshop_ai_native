@@ -1,70 +1,6 @@
 import type { NavigationContextType } from '../context/NavigationContext';
 import type { SlideCatalogEntry } from '../utils/slideCatalog';
-import type { ToolDefinition, ToolExecutor } from './types';
-
-const noParams = { type: 'object', properties: {}, additionalProperties: false };
-
-const tools: ToolDefinition[] = [
-  {
-    type: 'function',
-    function: {
-      name: 'gotoSlide',
-      description: 'Jump to a slide by its number from the slide catalog. The current slide is remembered so the user can go back later.',
-      parameters: {
-        type: 'object',
-        properties: { number: { type: 'integer', description: 'Slide number from the catalog (1-based)' } },
-        required: ['number'],
-        additionalProperties: false,
-      },
-    },
-  },
-  {
-    type: 'function',
-    function: {
-      name: 'gotoSection',
-      description: 'Jump to the first slide of a section by its exact section name.',
-      parameters: {
-        type: 'object',
-        properties: { name: { type: 'string', description: 'Section name, e.g. "Prompting"' } },
-        required: ['name'],
-        additionalProperties: false,
-      },
-    },
-  },
-  {
-    type: 'function',
-    function: {
-      name: 'findSlides',
-      description: 'Search slide titles and content. Returns the best matching slides with their numbers.',
-      parameters: {
-        type: 'object',
-        properties: { query: { type: 'string', description: 'Keywords to search for' } },
-        required: ['query'],
-        additionalProperties: false,
-      },
-    },
-  },
-  {
-    type: 'function',
-    function: {
-      name: 'goBack',
-      description: 'Go back to the slide the user was on before the most recent jump ("go back to where I was").',
-      parameters: noParams,
-    },
-  },
-  {
-    type: 'function',
-    function: { name: 'nextSlide', description: 'Move to the next slide.', parameters: noParams },
-  },
-  {
-    type: 'function',
-    function: { name: 'prevSlide', description: 'Move to the previous slide.', parameters: noParams },
-  },
-  {
-    type: 'function',
-    function: { name: 'whereAmI', description: 'Describe the current slide.', parameters: noParams },
-  },
-];
+import type { ToolExecutor } from './types';
 
 // Slide numbers shown to the model and the user are 1-based, matching the deck URL (?slide=N)
 export const slideNumber = (entry: SlideCatalogEntry): number => entry.index + 1;
@@ -161,5 +97,11 @@ export const createToolExecutor = (nav: NavigationContextType): ToolExecutor => 
   const describePosition = (): string =>
     `Currently on ${describeSlide(current())}.`;
 
-  return { tools, execute, describePosition };
+  return { execute, describePosition };
 };
+
+// Compact one-line-per-slide listing the agent gets in its system message
+export const catalogListing = (catalog: SlideCatalogEntry[]): string =>
+  catalog
+    .map((entry) => `${slideNumber(entry)} | ${entry.section} | ${slideLabel(entry)}${entry.subtitle ? ` - ${entry.subtitle}` : ''}`)
+    .join('\n');

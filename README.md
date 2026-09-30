@@ -82,11 +82,11 @@ crypto.subtle.digest('SHA-256', new TextEncoder().encode('your-password'))
 | Previous slide  | ← arrow key or Previous button   |
 | Jump to section | Hamburger menu or dot indicators |
 | Toggle nav side | Panel toggle button              |
-| Deck assistant  | ✨ floating button (bottom-right) |
+| Deck assistant  | ✨ floating button (bottom-right, `npm run dev` only) |
 
 ## Deck Assistant
 
-A pop-out chat (✨ button, bottom-right) that drives the deck from plain text. It uses an OpenAI-compatible chat-completions model with tool calling to navigate the slides. For example:
+A pop-out chat (✨ button, bottom-right) that drives the deck from plain text. It is powered by the [GitHub Copilot SDK](https://github.com/github/copilot-sdk), which runs inside the Vite dev server. The model calls a small set of navigation tools, and those tools run in the page. For example:
 
 - "Go to the slide about the core loop": finds the slide by title/content and jumps to it
 - "Go back to where I was": returns to the slide the last jump started from (menu jumps count too)
@@ -94,14 +94,26 @@ A pop-out chat (✨ button, bottom-right) that drives the deck from plain text. 
 
 Slide numbers in replies match the `?slide=N` URL. The button animates while the model is thinking.
 
-### Setup
+### Requirements
 
-Open the chat, click the gear icon, and enter:
+The assistant only exists when you run the site locally with `npm run dev`. `npm run build` and the deployed site don't include it.
 
-| Setting  | Default                                | Notes |
-| -------- | -------------------------------------- | ----- |
-| API token | *(empty)*                             | A [GitHub token](https://github.com/settings/tokens) with **Models: read** for GitHub Models, or a key for the endpoint below |
-| Model    | `openai/gpt-4o-mini`                   | Any model the endpoint serves that supports tool calling |
-| Endpoint | `https://models.github.ai/inference`   | Any OpenAI-compatible base URL (`/chat/completions` is appended). Point it at a proxy if the browser blocks the call (CORS) |
+- Node.js ^20.19 or >=22.12
+- A GitHub Copilot subscription
+- A logged-in Copilot CLI user (run `copilot` and use `/login`), or a token in `GH_TOKEN` / `GITHUB_TOKEN`
 
-Settings live in `sessionStorage` for the current browser session only. The token is never put in the build. Don't put one in a `VITE_` environment variable, because those values end up in the published bundle.
+The model defaults to `gpt-5-mini`. To use a different Copilot model, for example Microsoft's `mai-code-1.1-flash`:
+
+```bash
+DECK_AGENT_MODEL=mai-code-1.1-flash npm run dev
+```
+
+```powershell
+$env:DECK_AGENT_MODEL = "mai-code-1.1-flash"; npm run dev
+```
+
+The chat shows the connection status. If the session can't start, the chat shows the reason, for example that you're not logged in, or that the model isn't available along with the models your account can use.
+
+### What the agent can do
+
+The session is locked down to the deck's navigation tools: go to a slide or section, search slides, next/previous, go back, and "where am I". It has no shell, file or web access, and it doesn't load custom instructions, skills or memory from your machine. Each page load starts a new conversation.
