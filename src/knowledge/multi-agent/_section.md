@@ -11,9 +11,10 @@ an isolated workspace, while research and review may only need separate context.
 focused branch, diff, or pull request. The practical limit is human operating capacity: ownership
 must stay separate, outcomes must remain independently reviewable, and every handback needs review.
 
-The section distinguishes three complementary decisions: agents define reusable workers, sessions
-add capacity, and graphs define execution flow. It also uses a captured oh-my-posh worktree example
-to show how separate working directories prevent live workspace collisions.
+The section presents each conversation as one independent, linear lane. Running several lanes at
+once adds capacity without coupling the conversations: the human operator starts, monitors,
+reviews, and integrates each result separately. A captured oh-my-posh worktree example shows how
+separate working directories prevent live workspace collisions.
 
 Source links:
 - **git-scm.com/docs/git-worktree**: Git's reference for managing multiple working trees.

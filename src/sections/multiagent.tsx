@@ -23,26 +23,26 @@ export const multiagentSlides: SlideType[] = [
     )
   },
   {
-    title: "Workers, Capacity, and Flow",
-    subtitle: "Three related decisions, not competing definitions",
+    title: "One Conversation per Lane",
+    subtitle: "Parallel capacity without coupling the conversations",
     content: (
       <div className="flex flex-col space-y-5 max-w-4xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-white p-5 rounded-lg shadow border-t-4 border-green-500">
-            <h3 className="text-lg font-bold text-green-900 mb-2">Agents define workers</h3>
-            <p className="text-sm text-gray-700">A reusable role packages instructions, tools, and permissions for a kind of work.</p>
+            <h3 className="text-lg font-bold text-green-900 mb-2">One linear conversation</h3>
+            <p className="text-sm text-gray-700">Each session owns one bounded outcome and works through it independently.</p>
           </div>
           <div className="bg-white p-5 rounded-lg shadow border-t-4 border-purple-500">
-            <h3 className="text-lg font-bold text-purple-900 mb-2">Sessions add capacity</h3>
-            <p className="text-sm text-gray-700">Several conversations can own separate outcomes at the same time.</p>
+            <h3 className="text-lg font-bold text-purple-900 mb-2">Several parallel lanes</h3>
+            <p className="text-sm text-gray-700">Independent sessions run at the same time to increase useful capacity.</p>
           </div>
-          <div className="bg-white p-5 rounded-lg shadow border-t-4 border-slate-500">
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Graphs define flow</h3>
-            <p className="text-sm text-gray-700">Nodes and edges decide what runs, when it runs, and where results meet.</p>
+          <div className="bg-white p-5 rounded-lg shadow border-t-4 border-blue-500">
+            <h3 className="text-lg font-bold text-blue-900 mb-2">One human coordinator</h3>
+            <p className="text-sm text-gray-700">You start, monitor, review, and integrate each conversation separately.</p>
           </div>
         </div>
         <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
-          <p className="text-gray-700 text-center">These choices work together. A graph may coordinate several agents and sessions, while a person still owns the outcome.</p>
+          <p className="text-gray-700 text-center">The conversations do not coordinate with each other. Parallelism comes from running several clear, linear assignments at once.</p>
         </div>
       </div>
     )
