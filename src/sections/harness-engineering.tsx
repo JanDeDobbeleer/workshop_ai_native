@@ -1,20 +1,5 @@
 import { Wrench } from 'lucide-react';
-import { CodeBlock } from '../components/CodeBlock';
 import { SlideType } from './types';
-
-const claudeStopHook = `"Stop": [{
-  "hooks": [{
-    "type": "command",
-    "command": "go run \\"$CLAUDE_PROJECT_DIR/.agents/hooks/main.go\\" --harness claude",
-    "timeout": 600
-  }]
-}]`;
-
-const copilotStopHook = `"agentStop": [{
-  "type": "command",
-  "bash": "go run .agents/hooks/main.go --harness copilot",
-  "timeoutSec": 600
-}]`;
 
 export const harnessEngineeringSlides: SlideType[] = [
   {
@@ -39,37 +24,37 @@ export const harnessEngineeringSlides: SlideType[] = [
   },
   {
     title: "What Is a Harness?",
-    subtitle: "The layer around the model",
+    subtitle: "The flow around the model",
     content: (
       <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
         <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
-          <h3 className="text-2xl font-bold text-amber-900 mb-4">The Layer Around the Model</h3>
+          <h3 className="text-2xl font-bold text-amber-900 mb-4">Everything between request and result</h3>
           <p className="text-lg text-gray-700">
-            A harness wraps a model and manages its context, tool access, verification, and safety. It decides what the model sees, what it can do, and when it stops.
+            A harness is the layer around the model. It decides what the agent sees, what it can do, what checks run, and whether it may finish.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">Same Model, Different Product</h4>
+            <h4 className="font-semibold text-amber-900 mb-2">Same model, different result</h4>
             <ul className="space-y-2 text-gray-700">
-              <li>• The same Claude model powers chat, Claude Code, and API integrations</li>
-              <li>• The harness is the difference</li>
+              <li>• Chat, coding agents, and app integrations can use the same model</li>
+              <li>• The harness is what makes them behave differently</li>
             </ul>
           </div>
 
           <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">Why It Matters</h4>
+            <h4 className="font-semibold text-amber-900 mb-2">Why it matters</h4>
             <ul className="space-y-2 text-gray-700">
+              <li>• Multi-step work compounds errors</li>
               <li>• At 95% success per step, a 20-step task finishes only 36% of the time</li>
-              <li>• OpenAI's Codex harness: ~5 months, ~1M lines of code, ~1,500 merged PRs, 3 engineers growing to 7, zero hand-written code</li>
             </ul>
           </div>
         </div>
 
         <div className="bg-amber-100 p-4 rounded-lg">
           <p className="text-sm italic text-amber-900">
-            <strong>Key Insight:</strong> When the agent struggles, ask &quot;what capability is missing, and how do we make it both legible and enforceable for the agent?&quot; (OpenAI). Caveat: results depend on investing in the repo's tooling. They don't transfer for free.
+            <strong>Simple version:</strong> the model generates options. The harness controls the workflow.
           </p>
         </div>
 
@@ -80,165 +65,121 @@ export const harnessEngineeringSlides: SlideType[] = [
     )
   },
   {
-    title: "Step 1: The Repo Is the System of Record",
-    subtitle: "If the agent can't see it, it doesn't exist",
+    title: "The Harness Is the Flow",
+    subtitle: "Everything between request and result",
     content: (
-      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
-          <h3 className="text-2xl font-bold text-amber-900 mb-4">A Map, Not a Manual</h3>
-          <p className="text-lg text-gray-700">
-            An AGENTS.md of about 100 lines is a table of contents pointing into <code className="bg-white px-1 rounded text-sm">docs/</code>: design docs, execution plans, product specs, references, and <code className="bg-white px-1 rounded text-sm">ARCHITECTURE.md</code>.
-          </p>
-        </div>
+      <div className="flex flex-col space-y-6 max-w-4xl mx-auto">
+        <pre className="bg-amber-900 text-amber-50 p-4 rounded-lg text-sm md:text-base overflow-x-auto text-center">{`request → load context → use tools → run checks → finish or retry`}</pre>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">Why One Giant AGENTS.md Fails</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li>• It crowds out the actual task</li>
-              <li>• When everything is important, nothing is</li>
-              <li>• It goes stale</li>
-              <li>• It's hard to verify</li>
-            </ul>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
+            <h4 className="font-semibold text-amber-900 mb-2">Context</h4>
+            <p className="text-sm text-gray-700">Give the agent the right files, rules, and task details.</p>
           </div>
-
-          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">Plans Are Checked-In Artifacts</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li>• Progress and decision logs live in the repo, not in someone's head</li>
-              <li>• Slack threads and Google Docs are invisible to the agent</li>
-              <li>• If the agent can't see it, it doesn't exist</li>
-            </ul>
+          <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
+            <h4 className="font-semibold text-amber-900 mb-2">Tools</h4>
+            <p className="text-sm text-gray-700">Let it read, edit, search, run commands, or call systems.</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
+            <h4 className="font-semibold text-amber-900 mb-2">Checks</h4>
+            <p className="text-sm text-gray-700">Run tests, linters, or other rules that catch bad work early.</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
+            <h4 className="font-semibold text-amber-900 mb-2">Stopping</h4>
+            <p className="text-sm text-gray-700">Decide whether the agent may finish or must keep working.</p>
           </div>
         </div>
 
-        <div className="bg-amber-100 p-4 rounded-lg">
-          <p className="text-sm italic text-amber-900">
-            <strong>Remember:</strong> See the Instructions (Thin-Pointer) and Habitat sections for how to write these files well.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Step 2: Mechanical Enforcement + Feedback Hooks",
-    subtitle: "Checks that always run",
-    content: (
-      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
-          <h3 className="text-2xl font-bold text-amber-900 mb-4">Enforce Invariants, Not Implementations</h3>
-          <p className="text-lg text-gray-700">
-            Custom linters and structural tests check invariants. Write lint error messages as fix instructions: error messages are prompts. Hooks make checks &quot;always happen rather than relying on the LLM to choose to run them&quot; (Claude Code docs).
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">After Every Edit</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li>• Claude Code: <code className="bg-gray-100 px-1 rounded text-sm">PostToolUse</code> with matcher <code className="bg-gray-100 px-1 rounded text-sm">Edit|Write</code> runs a formatter/linter</li>
-              <li>• Exit code 2 sends stderr back to Claude</li>
-              <li>• Copilot's <code className="bg-gray-100 px-1 rounded text-sm">postToolUse</code> can return extra context the model sees</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">Don't Stop Until Checks Pass</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li>• Claude Code's <code className="bg-gray-100 px-1 rounded text-sm">Stop</code> hook blocks; Copilot's <code className="bg-gray-100 px-1 rounded text-sm">agentStop</code> &quot;block&quot; decision forces another turn with the reason as the next prompt</li>
-              <li>• Both give up after 8 consecutive blocks; check <code className="bg-gray-100 px-1 rounded text-sm">stop_hook_active</code></li>
-              <li>• Config: Claude Code <code className="bg-gray-100 px-1 rounded text-sm">.claude/settings.json</code> (commit it); Copilot <code className="bg-gray-100 px-1 rounded text-sm">.github/hooks/*.json</code></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-amber-100 p-4 rounded-lg">
-          <p className="text-sm italic text-amber-900">
-            <strong>Also from OpenAI:</strong> make the running app legible to the agent (boot it, inspect the UI, query logs and metrics) and let agents review each other's changes.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Step 3: Safety Gates, Context, Cleanup",
-    subtitle: "Block, brief, and keep tidy",
-    content: (
-      <div className="flex flex-col space-y-6 max-w-3xl mx-auto">
-        <div className="bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
-          <h3 className="text-2xl font-bold text-amber-900 mb-4">Block Before It Runs</h3>
-          <p className="text-lg text-gray-700">
-            <code className="bg-white px-1 rounded text-sm">PreToolUse</code> (Claude Code) / <code className="bg-white px-1 rounded text-sm">preToolUse</code> (Copilot) can deny with a reason the agent sees, e.g. <code className="bg-white px-1 rounded text-sm">rm -rf</code>, edits to <code className="bg-white px-1 rounded text-sm">.env</code> or <code className="bg-white px-1 rounded text-sm">.git/</code>. Copilot command hooks fail closed. Not a hard wall: for strict allow/deny, use the permission system.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">Load Context at Session Start</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li>• <code className="bg-gray-100 px-1 rounded text-sm">SessionStart</code> (Claude Code): plain stdout becomes context, e.g. re-inject conventions after compaction</li>
-              <li>• <code className="bg-gray-100 px-1 rounded text-sm">sessionStart</code> (Copilot): via <code className="bg-gray-100 px-1 rounded text-sm">additionalContext</code></li>
-              <li>• Static rules stay in AGENTS.md; hooks are for dynamic context</li>
-            </ul>
-          </div>
-
-          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-2">Garbage Collection (OpenAI)</h4>
-            <ul className="space-y-2 text-gray-700">
-              <li>• Encode &quot;golden principles&quot; in the repo</li>
-              <li>• Recurring background agents scan for drift and open small refactor PRs</li>
-              <li>• Replaced Friday &quot;AI slop&quot; cleanup that took 20% of the week</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-amber-100 p-4 rounded-lg">
-          <p className="text-sm italic text-amber-900">
-            <strong>Key Insight:</strong> &quot;When documentation falls short, we promote the rule into code.&quot; (OpenAI)
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Demo: oh-my-posh Stop Hooks",
-    subtitle: "One Go script, wired into Claude Code and Copilot",
-    content: (
-      <div className="flex flex-col space-y-3 max-w-4xl mx-auto">
-        <div className="bg-amber-50 p-3 rounded-lg border-l-4 border-amber-500">
+        <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-500">
           <p className="text-gray-700">
-            <strong>The problem:</strong> agents skipped the pre-commit gate and learned about failures from CI, one rework round trip later. Now the checks run before the agent may finish.
+            If you remember one thing, remember this: a harness is not just prompt text. It is the flow that guides, checks, and bounds the agent.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "What the Harness Does",
+    subtitle: "Before work · during work · before finish",
+    content: (
+      <div className="flex flex-col space-y-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
+            <h4 className="font-semibold text-amber-900 mb-3">Before work</h4>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li>• Load the right context</li>
+              <li>• Set the rules</li>
+              <li>• Make the task legible</li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
+            <h4 className="font-semibold text-amber-900 mb-3">During work</h4>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li>• Limit tool access</li>
+              <li>• Block unsafe actions</li>
+              <li>• Feed back useful errors</li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-5 rounded-lg shadow border border-amber-200">
+            <h4 className="font-semibold text-amber-900 mb-3">Before finish</h4>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li>• Run checks</li>
+              <li>• Reject bad output</li>
+              <li>• Allow finish only when it passes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-amber-100 p-4 rounded-lg">
+          <p className="text-sm italic text-amber-900">
+            <strong>Good harness design:</strong> make the work easy for the agent to see, and easy for the system to enforce.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Example: Agent Tries to Stop",
+    subtitle: "Checks decide whether it may finish",
+    content: (
+      <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
+        <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-500">
+          <p className="text-gray-700">
+            In oh-my-posh, the problem was simple: the agent would stop, CI would fail later, and the work came back for rework.
           </p>
         </div>
 
+        <pre className="bg-amber-900 text-amber-50 p-4 rounded-lg text-sm md:text-base overflow-x-auto text-center">{`agent says "done"
+        ↓
+harness runs checks
+        ↓
+fail → send errors back → keep working
+pass → allow finish`}</pre>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-1 text-sm"><code>.claude/settings.json</code></h4>
-            <CodeBlock code={claudeStopHook} className="bg-gray-900 p-2 rounded font-mono text-xs text-green-400 overflow-x-auto">
-              <pre>{claudeStopHook}</pre>
-            </CodeBlock>
+            <h4 className="font-semibold text-amber-900 mb-2">What changed</h4>
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• Checks moved earlier</li>
+              <li>• Failures became immediate feedback</li>
+              <li>• The agent could fix its own mistakes in the same flow</li>
+            </ul>
           </div>
           <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
-            <h4 className="font-semibold text-amber-900 mb-1 text-sm"><code>.github/hooks/quality.json</code></h4>
-            <CodeBlock code={copilotStopHook} className="bg-gray-900 p-2 rounded font-mono text-xs text-green-400 overflow-x-auto">
-              <pre>{copilotStopHook}</pre>
-            </CodeBlock>
+            <h4 className="font-semibold text-amber-900 mb-2">What to remember</h4>
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• The exact tool does not matter most</li>
+              <li>• The key is that checks always run</li>
+              <li>• The harness decides whether the agent may stop</li>
+            </ul>
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-lg shadow border border-amber-200">
-          <h4 className="font-semibold text-amber-900 mb-2">What <code className="bg-gray-100 px-1 rounded text-sm">.agents/hooks/main.go</code> Does</h4>
-          <ul className="space-y-1 text-sm text-gray-700">
-            <li>• Checks only changed files (<code className="bg-gray-100 px-1 rounded text-xs">git status</code>): format, modernize, fieldalignment, golangci-lint, go test, markdownlint, plus other-OS builds for platform code</li>
-            <li>• On failure, prints <code className="bg-gray-100 px-1 rounded text-xs">{`{"decision": "block", "reason": ...}`}</code>: the agent keeps working with the errors as its next prompt</li>
-            <li>• Error messages carry fix instructions, e.g. &quot;Reorder the fields by hand, keeping their comments&quot;</li>
-            <li>• Respects <code className="bg-gray-100 px-1 rounded text-xs">stop_hook_active</code> (no endless loop) and caches a hash of passing files</li>
-          </ul>
-        </div>
-
-        <div className="bg-amber-100 p-3 rounded-lg">
+        <div className="bg-amber-100 p-4 rounded-lg">
           <p className="text-sm italic text-amber-900">
-            <strong>Gotcha:</strong> Copilot CLI also reads <code className="bg-amber-50 px-1 rounded">.claude/settings.json</code>, so the Claude hook exits early unless <code className="bg-amber-50 px-1 rounded">CLAUDE_PROJECT_DIR</code> is set, to avoid running twice.
+            Hooks, scripts, tests, and gates are all just ways to implement the same idea: control the flow.
           </p>
         </div>
       </div>

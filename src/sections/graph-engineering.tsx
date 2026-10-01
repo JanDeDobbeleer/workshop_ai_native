@@ -30,7 +30,7 @@ export const graphEngineeringSlides: SlideType[] = [
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-cyan-50 p-4 rounded-lg border-l-4 border-cyan-500">
             <h3 className="font-bold text-cyan-900 mb-2">Simple loop</h3>
-            <p className="text-sm text-gray-700 mb-3">Repeat a small sequence until a checkable outcome is reached.</p>
+            <p className="text-sm text-gray-700 mb-3">This is the simplest harness: a small flow around the model.</p>
             <code className="block bg-white p-3 rounded text-xs text-center">work → check → retry or finish</code>
           </div>
           <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-slate-500">
@@ -54,7 +54,7 @@ export const graphEngineeringSlides: SlideType[] = [
           </div>
         </div>
         <div className="bg-slate-100 p-3 rounded-lg">
-          <p className="text-sm text-gray-700 text-center">Graphs can branch, join, and cycle. Start with a simple loop and make the wider flow explicit only when needed.</p>
+          <p className="text-sm text-gray-700 text-center">When the harness stays simple, a loop is enough. When the flow needs branches, joins, and gates, make it explicit as a graph.</p>
         </div>
       </div>
     )
@@ -126,7 +126,7 @@ export const graphEngineeringSlides: SlideType[] = [
     content: (
       <div className="flex flex-col space-y-5 max-w-3xl mx-auto">
         <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-slate-500">
-          <p className="text-gray-700"><a href="https://github.com/JanDeDobbeleer/pi-graph" target="_blank" rel="noopener noreferrer" className="text-slate-800 font-semibold hover:underline">pi-graph</a> packages the workflow as a <a href="https://pi.dev/" target="_blank" rel="noopener noreferrer" className="text-slate-800 font-semibold hover:underline">pi</a> extension. Markdown still describes each phase; the harness controls when the phase may end.</p>
+          <p className="text-gray-700"><a href="https://github.com/JanDeDobbeleer/pi-graph" target="_blank" rel="noopener noreferrer" className="text-slate-800 font-semibold hover:underline">pi-graph</a> packages the workflow as a <a href="https://pi.dev/" target="_blank" rel="noopener noreferrer" className="text-slate-800 font-semibold hover:underline">pi</a> extension. In other words: the harness flow is now explicit, and the harness controls when each phase may end.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white p-5 rounded-lg shadow border border-slate-200">
