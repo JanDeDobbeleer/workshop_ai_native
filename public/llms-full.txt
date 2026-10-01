@@ -46,7 +46,7 @@ Running AI models locally. Topics: transforming AI accessibility, local inferenc
 
 ## Section: Terminal Agents
 
-CLI entry points for agentic coding across tools. Topics: GitHub Copilot CLI (interactive and programmatic modes, approval flags, hooks, fleet mode), Claude Code CLI, Cursor agent CLI, Codex, and Devin Desktop — cloud vs local agents, MCP integration, and building agentic workflows in the terminal.
+Agentic coding tools can be launched directly from the shell with entry commands such as `claude`, `copilot`, or `codex`. They share a practical repository loop: open the project, describe a bounded outcome with relevant context and constraints, review requested actions, let the agent edit files and run checks, inspect the diff, and iterate. Use an interactive session for exploratory work or a one-shot or scripted invocation for repeatable automation. Start with least-privilege permissions and explicit approval for consequential actions; increase autonomy only in trusted, isolated environments with clear limits.
 
 ## Section: Security
 
