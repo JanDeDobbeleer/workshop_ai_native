@@ -194,3 +194,6 @@ test/
 
 # Azure Static Web Apps assembled output
 swa-dist/
+
+# Azure Functions local settings (secrets)
+api/local.settings.json
