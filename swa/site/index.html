@@ -1,15 +1,169 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workshops | IT depends</title>
-    <meta name="description" content="Upcoming AI-native developer workshops by Jan De Dobbeleer." />
-  </head>
-  <body>
-    <main style="font-family: system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem">
-      <h1>Workshops</h1>
-      <p>Registration opens soon.</p>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applied AI Native Software Engineering | IT depends workshops</title>
+  <meta name="description" content="Practical AI native software engineering workshops by Jan De Dobbeleer: terminology, tools and real workflows. Next session November 2026, or book a tailored session for your team." />
+  <meta name="theme-color" content="#1e5667" />
+  <link rel="canonical" href="https://workshop.itdepends.be/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Applied AI Native Software Engineering" />
+  <meta property="og:description" content="Concepts and practice, together all evening. Next session November 2026." />
+  <meta property="og:url" content="https://workshop.itdepends.be/" />
+  <link rel="preload" href="/fonts/space-grotesk-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav class="nav" aria-label="Main">
+        <div class="brand">IT depends <span class="brand-sep">/</span> workshops</div>
+        <div class="nav-right">
+          <div class="lang" role="group" aria-label="Language">
+            <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
+          </div>
+          <a class="nav-link" href="#agenda" data-i18n="navAgenda">Agenda</a>
+          <a class="nav-link" href="#tailored" data-i18n="navTailored">Tailored session</a>
+          <a class="nav-link" href="/deck/" data-i18n="navDeck">Slide deck</a>
+        </div>
+      </nav>
+
+      <div class="hero-body">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="eyebrow">Next workshop · November 2026</span></div>
+          <h1>Applied AI Native Software Engineering</h1>
+          <p class="lede" data-i18n="lede">AI is changing how software gets built. Most of what you hear about it is hype, or buzzwords without much behind them. This session is different.</p>
+          <div class="actions">
+            <button type="button" class="btn btn-accent" disabled data-i18n="register">Registration opens soon</button>
+            <a class="btn btn-ghost" href="/deck/" data-i18n="deck">Open the slide deck</a>
+          </div>
+        </div>
+
+        <aside class="facts" aria-label="Session details">
+          <div class="fact">
+            <div class="fact-label" data-i18n="whenLabel">When</div>
+            <div class="fact-value">November 2026</div>
+            <div class="fact-note" data-i18n="whenNote">Exact date to be announced</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label" data-i18n="timeLabel">Time</div>
+            <div class="fact-value">18:00–21:30</div>
+            <div class="fact-note" data-i18n="timeNote">Doors at 17:30, food beforehand</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label" data-i18n="whereLabel">Where</div>
+            <div class="fact-value">[LOCATION]</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label" data-i18n="priceLabel">Price</div>
+            <div class="fact-value fact-price">€125</div>
+            <div class="fact-note" data-i18n="priceNote">Per person, one price for the whole evening</div>
+            <div class="fact-invoice" data-i18n="invoice">Need an invoice? Provide your VAT details and you receive it after the session.</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="agenda" class="section wrap">
+      <div class="section-head">
+        <h2 data-i18n="agendaHeading">Agenda</h2>
+        <div class="muted" data-i18n="agendaNote">More dates are added as they are planned.</div>
+      </div>
+      <ol class="agenda">
+        <li class="event">
+          <div class="event-date">
+            <span class="event-month">NOV</span>
+            <span class="event-day" data-i18n="ev1Day">Date TBA</span>
+          </div>
+          <div class="event-main">
+            <div class="event-title">Applied AI Native Software Engineering</div>
+            <div class="muted" data-i18n="ev1Meta">Evening session · 18:00–21:30 · doors 17:30, food beforehand · [LOCATION]</div>
+          </div>
+          <div class="event-price">€125</div>
+          <div class="chip" data-i18n="ev1Status">Registration soon</div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section wrap about">
+      <h2 class="about-heading" data-i18n="aboutHeading">Concepts and practice, together all evening.</h2>
+      <div class="about-copy">
+        <p data-i18n="about1">Jan walks you through what AI native software engineering actually means and how to apply it: the terminology (agentic, AI native, vibe coding), the tools, and the real workflows, drawn from years as an open source developer.</p>
+        <p data-i18n="about2">Concepts and practice run together throughout the evening, not split into theory and hands-on. You leave with both the vocabulary to talk about this work and concrete examples to build with.</p>
+      </div>
+    </section>
+
+    <section class="band band-light">
+      <div class="wrap section">
+        <h2 data-i18n="takeHeading">What you take home</h2>
+        <div class="take">
+          <div class="take-item">
+            <div class="take-n">01</div>
+            <h3 data-i18n="take1Title">The vocabulary</h3>
+            <p data-i18n="take1Body">Agentic, AI native, vibe coding: what the words mean and how to use them with your team.</p>
+          </div>
+          <div class="take-item">
+            <div class="take-n">02</div>
+            <h3 data-i18n="take2Title">Tools and workflows</h3>
+            <p data-i18n="take2Body">The tools and the real workflows behind AI native engineering, not the hype.</p>
+          </div>
+          <div class="take-item">
+            <div class="take-n">03</div>
+            <h3 data-i18n="take3Title">Examples to build with</h3>
+            <p data-i18n="take3Body">Concrete implementation examples you can start applying right away.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap about">
+      <h2 class="about-heading" data-i18n="practicalHeading">Good to know</h2>
+      <ul class="practical">
+        <li data-i18n="practical1">No laptop required, just something to take notes.</li>
+        <li data-i18n="practical2">One break midway through the evening.</li>
+        <li data-i18n="practical3">Time to keep talking once the formal Q&amp;A wraps.</li>
+        <li data-i18n="practical4">Slides and resources go out after the session.</li>
+      </ul>
+    </section>
+
+    <section id="tailored" class="band band-light">
+      <div class="wrap section tailored">
+        <div class="tailored-copy">
+          <h2 class="about-heading" data-i18n="tailoredHeading">Need this for your team? Book a tailored session.</h2>
+          <p data-i18n="tailoredBody">Bring the workshop to your company. Get in touch and we shape the session around your team, your tools and your questions.</p>
+          <a class="btn btn-primary" href="mailto:workshop@itdepends.be?subject=Tailored%20AI%20Native%20workshop" data-i18n="tailoredCta">Request a tailored session</a>
+        </div>
+        <ul class="tailored-facts">
+          <li data-i18n="tailoredFact1">6 hours: a full day, or 2 × 3-hour evenings</li>
+          <li data-i18n="tailoredFact2">Teams and individuals</li>
+          <li data-i18n="tailoredFact3">Hands-on demos with real tools</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band band-primary">
+      <div class="wrap closing">
+        <p data-i18n="closing">Whether you are starting your AI native journey or already underway, you leave with a full backpack: terminology and implementation examples, ready to put to work.</p>
+        <div class="actions">
+          <button type="button" class="btn btn-accent" disabled data-i18n="register">Registration opens soon</button>
+          <a class="btn btn-ghost" href="/deck/" data-i18n="deck">Open the slide deck</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <div>© IT depends · Jan De Dobbeleer</div>
+      <div data-i18n="footer">Slides and resources are shared after the session.</div>
+    </div>
+  </footer>
+</body>
 </html>
