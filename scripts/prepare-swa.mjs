@@ -36,6 +36,16 @@ for (const entry of DECK_ALLOW_LIST) {
   fs.cpSync(from, path.join(deckOutDir, entry), { recursive: true });
 }
 
+// Azure serves /deck (no trailing slash) without redirecting, so the deck's relative
+// asset URLs (base './') would resolve against /. Pin them to /deck/ in the SWA copy only.
+const deckIndex = path.join(deckOutDir, 'index.html');
+const html = fs.readFileSync(deckIndex, 'utf8');
+if (!/<head[^>]*>/i.test(html)) {
+  console.error('dist/index.html has no <head>; cannot inject <base>.');
+  process.exit(1);
+}
+fs.writeFileSync(deckIndex, html.replace(/<head([^>]*)>/i, '<head$1>\n    <base href="/deck/" />'));
+
 // The deck's index.html links /favicon.svg (absolute), so serve it from the root too.
 fs.copyFileSync(path.join(distDir, 'favicon.svg'), path.join(outDir, 'favicon.svg'));
 
