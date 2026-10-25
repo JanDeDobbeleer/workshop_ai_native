@@ -13,10 +13,13 @@ import './index.css';
 //   crypto.subtle.digest('SHA-256', new TextEncoder().encode('your-password'))
 //     .then(buf => Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join(''))
 //     .then(console.log)
-// Local dev hash is for 'workshop', production uses VITE_WORKSHOP_PASSWORD_HASH env var
+// Local dev (vite dev) falls back to the hash of 'workshop'; production builds
+// require VITE_WORKSHOP_PASSWORD_HASH (enforced in vite.config.ts).
 // This is not actual security, just a simple gate to prevent casual access
-const WORKSHOP_PASSWORD_HASH = import.meta.env.VITE_WORKSHOP_PASSWORD_HASH ||
-  'ee510d1a07ac7e6491ea191cd1918ea553ed2a358c8a0a04c1b90bd89222c314'; // hash of 'workshop'
+const DEV_FALLBACK_HASH = import.meta.env.DEV
+  ? 'ee510d1a07ac7e6491ea191cd1918ea553ed2a358c8a0a04c1b90bd89222c314' // hash of 'workshop'
+  : '';
+const WORKSHOP_PASSWORD_HASH = import.meta.env.VITE_WORKSHOP_PASSWORD_HASH || DEV_FALLBACK_HASH;
 
 const FourDSlides = () => {
   const [menuOpen, setMenuOpen] = useState(false);
