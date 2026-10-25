@@ -191,3 +191,6 @@ docs/_book
 test/
 
 # End of https://www.toptal.com/developers/gitignore/api/react,visualstudiocode,node,vue
+
+# Azure Static Web Apps assembled output
+swa-dist/
